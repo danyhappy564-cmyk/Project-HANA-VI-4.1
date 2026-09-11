@@ -1,0 +1,29 @@
+{
+    "itemids": {
+        "5caf187cae92157c28402f44": {
+            "Name": "HANA'VI Tactical ASh-12 12.7x55 full-size sound suppressor",
+            "ShortName": "ASh-12 FSS",
+            "Description": "A full-size sound suppressor manufactured by TsKIB for the ASh-12 12.7x55 automatic rifle."
+        },
+        "5caf17c9ae92150b30006cc2": {
+            "Name": "HANA'VI Tactical MTs-558 12.7x55 muzzle brake-compensator",
+            "ShortName": "MTs-558",
+            "Description": "A standard-issue muzzle brake for the MTs-558 rifle, manufactured by TsKIB."
+        },
+        "5cdaa99dd7f00c002412d111": {
+            "Name": "HANA'VI Tactical MTs-558 barrel handguard",
+            "ShortName": "MTs HG",
+            "Description": "A handguard for the MTs-558 rifle's barrel, manufactured by TsKIB."
+        },
+        "5caf1691ae92152ac412ecc2": {
+            "Name": "HANA'VI Tactical ASh-12 full-size sight carry handle",
+            "ShortName": "ASh-12 FCH",
+            "Description": "A detachable full-size carry handle with iron sight for the ASh-12 assault rifles."
+        },
+        "5cadf6eeae921500134b2111": {
+            "Name": "HANA'VI Tactical 12.7x55mm PS12 Sabot",
+            "ShortName": "SABOT",
+            "Description": "A 12.7x55mm PS12 special cartridge with an 15 gram hypersonic armor-piercing bullet with a sabot core. This cartridge was designed to penetrate armor at a top speed of Mach 3. However, due to its design, it has a high probability of bouncing off various surfaces."
+        }
+    }
+}

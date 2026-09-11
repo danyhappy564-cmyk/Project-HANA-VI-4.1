@@ -1,0 +1,65 @@
+{
+	"ItemPresets": {
+		"4D4350524553455449440800": {
+			"_id": "4D4350524553455449440800",
+			"_type": "Preset",
+			"_changeWeaponName": true,
+			"_name": "FADE",
+			"_parent": "4D4350524553455449440801",
+			"_items": [
+				{
+					"_id": "4D4350524553455449440801",
+					"_tpl": "5a7ae0c351dfba0017554310",
+					"upd": {
+						"Repairable": {
+							"MaxDurability": 100,
+							"Durability": 100
+						},
+						"FireMode": {
+							"FireMode": "single"
+						}
+					}
+				},
+				{
+					"_id": "4D4350524553455449440802",
+					"_tpl": "5a6b5f868dc32e000a311389",
+					"parentId": "4D4350524553455449440801",
+					"slotId": "mod_barrel"
+				},
+				{
+					"_id": "4D4350524553455449440803",
+					"_tpl": "5a7b4960e899ef197b331a2d",
+					"parentId": "4D4350524553455449440801",
+					"slotId": "mod_pistol_grip"
+				},
+				{
+					"_id": "4D4350524553455449440804",
+					"_tpl": "4D4341544C41534745415209",
+					"parentId": "4D4350524553455449440801",
+					"slotId": "mod_reciever"
+				},
+				{
+					"_id": "4D4350524553455449440805",
+					"_tpl": "5a718da68dc32e000d46d264",
+					"parentId": "4D4350524553455449440801",
+					"slotId": "mod_magazine"
+				},
+				{
+					"_id": "4D4350524553455449440806",
+					"_tpl": "5a7d912f159bd400165484f3",
+					"parentId": "4D4350524553455449440804",
+					"slotId": "mod_sight_rear"
+				},
+				{
+					"_id": "4D4350524553455449440807",
+					"_tpl": "5a7d9104159bd400134c8c21",
+					"parentId": "4D4350524553455449440804",
+					"slotId": "mod_sight_front"
+				}
+			]
+		}
+	},
+	"config": {
+		"Mastering": []
+	}
+}

@@ -1,0 +1,35 @@
+{
+    "overwriteProperties": {
+        "itemTplToClone": "5cdaa99dd7f00c002412d0b2",
+        "overrideProperties": {
+            "Ergonomics": -1,
+            "Prefab": {
+                "path": "shak12/handguard_mc558_2.bundle",
+                "rcid": ""
+            },
+            "Weight": 0.03,
+            "HeatFactor": 0.95,
+            "CoolFactor": 1.04,
+            "Slots": []
+        },
+        "parentId": "55818a104bdc2db9688b4569",
+        "newId": "5cdaa99dd7f00c002412d111",
+        "fleaPriceRoubles": 9580,
+        "handbookPriceRoubles": 13500,
+        "handbookParentId": "5b5f75e486f77447ec5d7712",
+        "locales": {
+            "en": {
+                "Name": "MTs-558 barrel handguard",
+                "ShortName": "MTs-558",
+                "Description": "A standard-issue muzzle brake for the MTs-558 rifle, manufactured by TsKIB."
+            }
+        }
+    },
+    "traderToAdd": {
+        "traderID": "5a7c2eca46aef81a7ca2145d",
+        "loyal_level_items": 2,
+        "barter_scheme": "ROUBLES",
+        "barter_scheme_value": 3578,
+        "BuyRestrictionMax": 3
+    }
+}

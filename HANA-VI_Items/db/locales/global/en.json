@@ -1,0 +1,329 @@
+{
+"5a01ad4786f77450561fAD69 Name": "HANA'VI Tactical PPSh-41 7.62x25mm 510mm barrel with rib",
+"5a01ad4786f77450561fAD69 ShortName": "PPSh 510mm rib",
+"5a01ad4786f77450561fAD69 Description": "PPSh-41's 510mm Barrel with rib mount. Manufactured by HANA'VI Tactical.",
+
+"5a01ad4786f774505619AD75 Name": "HANA'VI Tactical KS-23 23ga 510mm barrel with rib",
+"5a01ad4786f774505619AD75 ShortName": "KS-23 510mm rib",
+"5a01ad4786f774505619AD75 Description": "KS-23's 510mm Barrel with rib mount. Manufactured by HANA'VI Tactical.",
+
+"6a946d4786f77450561fAD69 Name": "HANA'VI Tactical Toy gun 20x1mm 1000-round magazine",
+"6a946d4786f77450561fAD69 Shortname": "NA'VI Drum",
+"6a946d4786f77450561fAD69 Description": "A Standard disk drum magazine for the Soviet toy gun. Not recommended to load it with coins. Manufactured in the USSR. Tuned by HANA'VI Tactical.",
+
+"6a946d4865f77450561fAD69 Name": "HANA'VI Tactical 20x1mm Carbon disk",
+"6a946d4865f77450561fAD69 Shortname": "Gen2 Disk",
+"6a946d4865f77450561fAD69 Description": "A Second generation toy ammunition in the form of a 20x1mm Carbon disk for the Soviet plastic toy gun. Compared to previous generation disks, bullet speed and damage increased sharply. No one knows why. Maybe it's magic. Manufactured by HANA'VI Tactical.",
+
+"AA01ad4786f774505619AD75 Name": "HANA'VI Tactical Tokarev PU custom mount",
+"AA01ad4786f774505619AD75 Shortname": "PU Custom",
+"AA01ad4786f774505619AD75 Description": "Designed specially for the SVT rifle, the Tokarev custom mount allows installation of the some scopes on the rifle. Manufactured by HANA'VI Tactical.",
+
+"AA01ad46a9f774505619AD75 Name": "HANA'VI Tactical VSSM dust cover",
+"AA01ad46a9f774505619AD75 Shortname": "VSSM",
+"AA01ad46a9f774505619AD75 Description": "VSSM dust cover with integrated Picatinny rail is compatible with all models of TsNIITochMash rifles based on VSS/Val platform. Replicate by HANA'VI Tactical, Manufactured by TsNIITochMash.",
+
+"AA01ad46a9f464905619AD75 Name": "HANA'VI Tactical VSSM Stock",
+"AA01ad46a9f464905619AD75 Shortname": "VSSM",
+"AA01ad46a9f464905619AD75 Description": "A polymer VSSM stock for VSS Marksman rifles, Replicate by HANA'VI Tactical, Manufactured by TsNIITochMash.",
+
+"67932708c270d2b12d050355 Name": "HANA'VI Tactical Chopped Surefire 60 Round Mag",
+"67932708c270d2b12d050355 Shortname": "SF40",
+"67932708c270d2b12d050355 Description": "This is a Surefire 60 round magazine that has been chopped to the length of a 30 round stanag mag, its quad stack nature grants this 40 rounds in the footprint of a 30 round mag. Fits into standard double stanag rifle pouches. ",
+
+"67932708c270d2b12d050356 Name": "HANA'VI Tactical Iranian Contract 40 round MP5 mag",
+"67932708c270d2b12d050356 Shortname": "MP540",
+"67932708c270d2b12d050356 Description": "40 round MP5 magazine manufactured by HK manufactured on contract for Iran, allegedly for The Shah in the early 70s.  ",
+
+"67932708c270d2b12d050357 Name": "HANA'VI Tactical Chip McCormick 1911 Extended Mag",
+"67932708c270d2b12d050357 Shortname": "1911 Chip",
+"67932708c270d2b12d050357 Description": "The Chip McCormick 1911 mag, with an extended basepad, granting the user 10 rounds of 45ACP ",
+
+"67932708c270d2b12d050358 Name": "HANA'VI Tactical KS-23 Plus 3+4 extension",
+"67932708c270d2b12d050358 Shortname": "KS-23 3+4",
+"67932708c270d2b12d050358 Description": "A 4 shell extension for the KS-23 3 round shotgun",
+
+"67932708c270d2b12d050359 Name": "HANA'VI Tactical Magpul AICS 5+5 Mag (Black)",
+"67932708c270d2b12d050359 Shortname": "ACIC5-B",
+"67932708c270d2b12d050359 Description": "The Magpul AICS pattern magazine with a +5 round black basepad attached",
+
+"67932708c270d2b12d05035a Name": "HANA'VI Tactical Magpul AICS 5+5 Mag (Green)",
+"67932708c270d2b12d05035a Shortname": "ACIC5-G",
+"67932708c270d2b12d05035a Description": "The Magpul AICS pattern magazine with a +5 round green basepad attached",
+
+"67932708c270d2b12d05035b Name": "HANA'VI Tactical Magpul AICS 5+5 Mag (Red)",
+"67932708c270d2b12d05035b Shortname": "ACIC5-R",
+"67932708c270d2b12d05035b Description": "The Magpul AICS pattern magazine with a +5 round red basepad attached",
+
+"67932708c270d2b12d05035c Name": "HANA'VI Tactical Magpul AICS 5+5 Mag (Tan)",
+"67932708c270d2b12d05035c Shortname": "ACIC5-T",
+"67932708c270d2b12d05035c Description": "The Magpul AICS pattern magazine with a +5 round tan basepad attached",
+
+"67932708c270d2b12d05035d Name": "HANA'VI Tactical Magpul AICS 10+5 Mag (Black)",
+"67932708c270d2b12d05035d Shortname": "ACIC10-B",
+"67932708c270d2b12d05035d Description": "The Magpul AICS pattern magazine with a +5 round black basepad attached",
+
+"67932708c270d2b12d05035e Name": "HANA'VI Tactical Magpul AICS 10+5 Mag (Green)",
+"67932708c270d2b12d05035e Shortname": "ACIC10-G",
+"67932708c270d2b12d05035e Description": "The Magpul AICS pattern magazine with a +5 round green basepad attached",
+
+"67932708c270d2b12d05035f Name": "HANA'VI Tactical Magpul AICS 10+5 Mag (Red)",
+"67932708c270d2b12d05035f Shortname": "ACIC10-R",
+"67932708c270d2b12d05035f Description": "The Magpul AICS pattern magazine with a +5 round red basepad attached",
+
+"67932708c270d2b12d050360 Name": "HANA'VI Tactical Magpul AICS 10+5 Mag (Tan)",
+"67932708c270d2b12d050360 Shortname": "ACIC10-T",
+"67932708c270d2b12d050360 Description": "The Magpul AICS pattern magazine with a +5 round tan basepad attached",
+
+"67932708c270d2b12d050361 Name": "HANA'VI Tactical Magpul SR25 20+5 Mag (Black)",
+"67932708c270d2b12d050361 Shortname": "SR25PLUS-B",
+"67932708c270d2b12d050361 Description": "The Magpul SR25 pattern magazine with a +5 round black basepad attached",
+
+"67932708c270d2b12d050362 Name": "HANA'VI Tactical Magpul SR25 20+5 Mag (Green)",
+"67932708c270d2b12d050362 Shortname": "SR25PLUS-G",
+"67932708c270d2b12d050362 Description": "The Magpul SR25 pattern magazine with a +5 round green basepad attached",
+
+"67932708c270d2b12d050363 Name": "HANA'VI Tactical Magpul SR25 20+5 Mag (Red)",
+"67932708c270d2b12d050363 Shortname": "SR25PLUS-R",
+"67932708c270d2b12d050363 Description": "The Magpul SR25 pattern magazine with a +5 round red basepad attached",
+
+"67932708c270d2b12d050364 Name": "HANA'VI Tactical Magpul SR25 20+5 Mag (Tan)",
+"67932708c270d2b12d050364 Shortname": "SR25PLUS-T",
+"67932708c270d2b12d050364 Description": "The Magpul SR25 pattern magazine with a +5 round tan basepad attached",
+
+"67932708c270d2b12d050365 Name": "HANA'VI Tactical MBX 140mm mag (Red)",
+"67932708c270d2b12d050365 Shortname": "MBX 140-R",
+"67932708c270d2b12d050365 Description": "The MBX 140mm Glock Magazine with a Red Basepad",
+
+"67932708c270d2b12d050366 Name": "HANA'VI Tactical MBX 170mm mag (Red)",
+"67932708c270d2b12d050366 Shortname": "MBX 170-R",
+"67932708c270d2b12d050366 Description": "The MBX 170mm Glock Magazine with a Red Basepad",
+
+"67932708c270d2b12d050367 Name": "HANA'VI Tactical MBX 170mm mag bottomless (Red)",
+"67932708c270d2b12d050367 Shortname": "MBX 170-R B",
+"67932708c270d2b12d050367 Description": "The MBX 170mm Glock Magazine with a Red Basepad. Used to be bottomless. ;)",
+
+"67932708c270d2b12d050368 Name": "HANA'VI Tactical Magpul 10+5 5.56 PMAG (Black)",
+"67932708c270d2b12d050368 Shortname": "PMAG 15-B",
+"67932708c270d2b12d050368 Description": "The Magpul 10 round PMAG with a Black Basepad",
+
+"67932708c270d2b12d050369 Name": "HANA'VI Tactical Magpul 10+5 5.56 PMAG (Red)",
+"67932708c270d2b12d050369 Shortname": "PMAG 15-R",
+"67932708c270d2b12d050369 Description": "The Magpul 10 round PMAG with a Red Basepad",
+
+"67932708c270d2b12d05036a Name": "HANA'VI Tactical Magpul 10+5 5.56 PMAG (Green)",
+"67932708c270d2b12d05036a Shortname": "PMAG 15-G",
+"67932708c270d2b12d05036a Description": "The Magpul 10 round PMAG with a Green Basepad",
+
+"67932708c270d2b12d05036b Name": "HANA'VI Tactical Magpul 10+5 5.56 PMAG (Tan)",
+"67932708c270d2b12d05036b Shortname": "PMAG 15-T",
+"67932708c270d2b12d05036b Description": "The Magpul 10 round PMAG with a Tan Basepad",
+
+"67932708c270d2b12d05036c Name": "HANA'VI Tactical Magpul D50 7.62 Drum",
+"67932708c270d2b12d05036c Shortname": "D50",
+"67932708c270d2b12d05036c Description": "The Magpul PMAG D-50 is a rugged, lightweight, and reliable 50-round polymer drum magazine designed for 7.62x51 NATO/.308 Winchester ammunition for SR25/M110 pattern rifles. It’s capable of using longer-than-SAAMI-spec match ammunition, up to 2.830” OAL, such as M118LR. Engineered to the same exacting standards as the famous Magpul PMAG and PMAG D-60® drum magazines, the D-50 continues the PMAG tradition of high-capacity performance and dependability.  In addition, the D-50 brings GEN M3 features, which means enhanced strength, durability, and reliability.",
+
+"67932708c270d2b12d05036d Name": "HANA'VI Tactical Magpul 20+5 5.56 PMAG (Black)",
+"67932708c270d2b12d05036d Shortname": "PMAG 25-B",
+"67932708c270d2b12d05036d Description": "The Magpul 20 round PMAG with a Black Basepad",
+
+"67932708c270d2b12d05036e Name": "HANA'VI Tactical Magpul 20+5 5.56 PMAG (Green)",
+"67932708c270d2b12d05036e Shortname": "PMAG 25-G",
+"67932708c270d2b12d05036e Description": "The Magpul 20 round PMAG with a Green Basepad",
+
+"67932708c270d2b12d05036f Name": "HANA'VI Tactical Magpul 20+5 5.56 PMAG (Red)",
+"67932708c270d2b12d05036f Shortname": "PMAG 25-R",
+"67932708c270d2b12d05036f Description": "The Magpul 20 round PMAG with a Red Basepad",
+
+"67932708c270d2b12d050370 Name": "HANA'VI Tactical Magpul 20+5 5.56 PMAG (Tan)",
+"67932708c270d2b12d050370 Shortname": "PMAG 25-T",
+"67932708c270d2b12d050370 Description": "The Magpul 20 round PMAG with a Tan Basepad",
+
+"67932708c270d2b12d050371 Name": "HANA'VI Tactical Magpul 30+5 5.56 PMAG (Black)",
+"67932708c270d2b12d050371 Shortname": "PMAG 35-B",
+"67932708c270d2b12d050371 Description": "The Magpul 30 round PMAG with a Black Basepad",
+
+"67932708c270d2b12d050372 Name": "HANA'VI Tactical Magpul 30+5 5.56 PMAG (Green)",
+"67932708c270d2b12d050372 Shortname": "PMAG 35-G",
+"67932708c270d2b12d050372 Description": "The Magpul 30 round PMAG with a Green Basepad",
+
+"67932708c270d2b12d050373 Name": "HANA'VI Tactical Magpul 30+5 5.56 PMAG (Red)",
+"67932708c270d2b12d050373 Shortname": "PMAG 35-R",
+"67932708c270d2b12d050373 Description": "The Magpul 30 round PMAG with a Red Basepad",
+
+"67932708c270d2b12d050374 Name": "HANA'VI Tactical Magpul 30+5 5.56 PMAG (TAN)",
+"67932708c270d2b12d050374 Shortname": "PMAG 35-T",
+"67932708c270d2b12d050374 Description": "The Magpul 30 round PMAG with a Tan Basepad",
+
+"67932708c270d2b12d050375 Name": "HANA'VI Tactical Magpul 40+5 5.56 PMAG (Black)",
+"67932708c270d2b12d050375 Shortname": "PMAG 45-B",
+"67932708c270d2b12d050375 Description": "The Magpul 40 round PMAG with a Black Basepad",
+
+"67932708c270d2b12d050376 Name": "HANA'VI Tactical Magpul 40+5 5.56 PMAG (Green)",
+"67932708c270d2b12d050376 Shortname": "PMAG 45-G",
+"67932708c270d2b12d050376 Description": "The Magpul 40 round PMAG with a Green Basepad",
+
+"67932708c270d2b12d050377 Name": "HANA'VI Tactical Magpul 40+5 5.56 PMAG (Red)",
+"67932708c270d2b12d050377 Shortname": "PMAG 45-R",
+"67932708c270d2b12d050377 Description": "The Magpul 40 round PMAG with a Red Basepad",
+
+"67932708c270d2b12d050378 Name": "HANA'VI Tactical Magpul 40+5 5.56 PMAG (Tan)",
+"67932708c270d2b12d050378 Shortname": "PMAG 45-T",
+"67932708c270d2b12d050378 Description": "The Magpul 40 round PMAG with a Tan Basepad",
+
+"67932708c270d2b12d050379 Name": "HANA'VI Tactical Magpul 20+5 7.62x39 PMAG (Black)",
+"67932708c270d2b12d050379 Shortname": "PMAG7 25-B",
+"67932708c270d2b12d050379 Description": "The Magpul 20 round 7.62x39 PMAG with a Black Basepad",
+
+"67932708c270d2b12d05037a Name": "HANA'VI Tactical Magpul 20+5 7.62x39 PMAG (Green)",
+"67932708c270d2b12d05037a Shortname": "PMAG7 25-G",
+"67932708c270d2b12d05037a Description": "The Magpul 20 round 7.62x39 PMAG with a Green Basepad",
+
+"67932708c270d2b12d05037b Name": "HANA'VI Tactical Magpul 20+5 7.62x39 PMAG (Red)",
+"67932708c270d2b12d05037b Shortname": "PMAG7 25-R",
+"67932708c270d2b12d05037b Description": "The Magpul 20 round 7.62x39 PMAG with a Red Basepad",
+
+"67932708c270d2b12d05037c Name": "HANA'VI Tactical Magpul 20+5 7.62x39 PMAG (Tan)",
+"67932708c270d2b12d05037c Shortname": "PMAG7 25-T",
+"67932708c270d2b12d05037c Description": "The Magpul 20 round 7.62x39 PMAG with a Tan Basepad",
+
+"67932708c270d2b12d05037d Name": "HANA'VI Tactical Magpul 30+5 7.62x39 Black PMAG (Black)",
+"67932708c270d2b12d05037d Shortname": "PMAG7 35-BB",
+"67932708c270d2b12d05037d Description": "The Black Magpul 30 round 7.62x39 PMAG with a Black Basepad",
+
+"67932708c270d2b12d05037e Name": "HANA'VI Tactical Magpul 30+5 7.62x39 Black PMAG (Green)",
+"67932708c270d2b12d05037e Shortname": "PMAG7 35-BG",
+"67932708c270d2b12d05037e Description": "The Black Magpul 30 round 7.62x39 PMAG with a Green Basepad",
+
+"67932708c270d2b12d05037f Name": "HANA'VI Tactical Magpul 30+5 7.62x39 Black PMAG (Red)",
+"67932708c270d2b12d05037f Shortname": "PMAG7 35-BR",
+"67932708c270d2b12d05037f Description": "The Black Magpul 30 round 7.62x39 PMAG with a Red Basepad",
+
+"67932708c270d2b12d050380 Name": "HANA'VI Tactical Magpul 30+5 7.62x39 Black PMAG (Tan)",
+"67932708c270d2b12d050380 Shortname": "PMAG7 35-BT",
+"67932708c270d2b12d050380 Description": "The Black Magpul 30 round 7.62x39 PMAG with a Tan Basepad",
+
+"67932708c270d2b12d050381 Name": "HANA'VI Tactical Magpul 30+5 7.62x39 FDE PMAG (Black)",
+"67932708c270d2b12d050381 Shortname": "PMAG7 35-FB",
+"67932708c270d2b12d050381 Description": "The FDE Magpul 30 round 7.62x39 PMAG with a Black Basepad",
+
+"67932708c270d2b12d050382 Name": "HANA'VI Tactical Magpul 30+5 7.62x39 FDE PMAG (Green)",
+"67932708c270d2b12d050382 Shortname": "PMAG7 35-FG",
+"67932708c270d2b12d050382 Description": "The FDE Magpul 30 round 7.62x39 PMAG with a Green Basepad",
+
+"67932708c270d2b12d050383 Name": "HANA'VI Tactical Magpul 30+5 7.62x39 FDE PMAG (Red)",
+"67932708c270d2b12d050383 Shortname": "PMAG7 35-FR",
+"67932708c270d2b12d050383 Description": "The FDE Magpul 30 round 7.62x39 PMAG with a Red Basepad",
+
+"67932708c270d2b12d050384 Name": "HANA'VI Tactical Magpul 30+5 7.62x39 FDE PMAG (Tan)",
+"67932708c270d2b12d050384 Shortname": "PMAG7 35-FT",
+"67932708c270d2b12d050384 Description": "The FDE Magpul 30 round 7.62x39 PMAG with a Tan Basepad",
+
+"67932708c270d2b12d050385 Name": "HANA'VI Tactical PCC 33+30 Black Glock Mag (Black)",
+"67932708c270d2b12d050385 Shortname": "G63-BB",
+"67932708c270d2b12d050385 Description": "The Black Glock 33 round PCC mag with a Black +30 Basepad",
+
+"67932708c270d2b12d050386 Name": "HANA'VI Tactical PCC 33+30 Black Glock Mag (Green)",
+"67932708c270d2b12d050386 Shortname": "G63-BG",
+"67932708c270d2b12d050386 Description": "The Black Glock 33 round PCC mag with a Green +30 Basepad",
+
+"67932708c270d2b12d050387 Name": "HANA'VI Tactical PCC 33+30 Black Glock Mag (Red)",
+"67932708c270d2b12d050387 Shortname": "G63-BR",
+"67932708c270d2b12d050387 Description": "The Black Glock 33 round PCC mag with a Red +30 Basepad",
+
+"67932708c270d2b12d050388 Name": "HANA'VI Tactical PCC 33+30 Black Glock Mag (Tan)",
+"67932708c270d2b12d050388 Shortname": "G63-BT",
+"67932708c270d2b12d050388 Description": "The Black Glock 33 round PCC mag with a Tan +30 Basepad",
+
+"67932708c270d2b12d050389 Name": "HANA'VI Tactical Competition Saiga 20rd Mag",
+"67932708c270d2b12d050389 Shortname": "S20",
+"67932708c270d2b12d050389 Description": "Two Saiga 10rd shotgun mags stuck together into one magazine because fuck you.",
+
+"67932708c270d2b12d05038a Name": "HANA'VI Tactical 9A91-30 round magazine",
+"67932708c270d2b12d05038a Shortname": "9A91-30",
+"67932708c270d2b12d05038a Description": "A modified 30-round magazine for the 9A-91 automatic rifle and VSK-94 marksman rifle. Manufactured by Tula KPB Instrument Design Bureau.",
+
+"67932708c270d2b12d05038b Name": "HANA'VI Tactical APS 20+15 round magazine",
+"67932708c270d2b12d05038b Shortname": "APS-35",
+"67932708c270d2b12d05038b Description": "Standard 20-round magazine for Molot-produced APS pistols. And another 15 rounds mounted to it for a total of 35 rounds.Features a side observation slot.",
+
+"67932708c270d2b12d05038c Name": "HANA'VI Tactical APS 20+30 round magazine",
+"67932708c270d2b12d05038c Shortname": "APS-50",
+"67932708c270d2b12d05038c Description": "Standard 20-round magazine for Molot-produced APS pistols. And +30 rounds mounted to it for a total of 50 rounds.Features a side observation slot.",
+
+"67932708c270d2b12d05038d Name": "HANA'VI Tactical ASH12 20+5 round magazine",
+"67932708c270d2b12d05038d Shortname": "ASH25",
+"67932708c270d2b12d05038d Description": "20-round magazine for 12.7x55 ASh-12 with a plus 5 basepad.",
+
+"67932708c270d2b12d05038e Name": "HANA'VI Tactical DVL 15 Round magazine",
+"67932708c270d2b12d05038e Shortname": "DVL15",
+"67932708c270d2b12d05038e Description": "Extended DVL-10 sniper rifle magazine by LOBAEV Arms , for .308 cartridges",
+
+"67932708c270d2b12d05038f Name": "HANA'VI Tactical DVL 20 Round magazine",
+"67932708c270d2b12d05038f Shortname": "DVL20",
+"67932708c270d2b12d05038f Description": "Extended DVL-10 sniper rifle magazine by LOBAEV Arms , for .308 cartridges",
+
+"67932708c270d2b12d050390 Name": "HANA'VI Tactical Beretta M9 17+5 magazine",
+"67932708c270d2b12d050390 Shortname": "M9-23",
+"67932708c270d2b12d050390 Description": "Standard 17-round 9x19 magazine for M9A3 with a +5 basepad",
+
+"67932708c270d2b12d050391 Name": "HANA'VI Tactical ORSIS 10 round magazine",
+"67932708c270d2b12d050391 Shortname": "ORSIS10",
+"67932708c270d2b12d050391 Description": "T-5000 sniper rifle magazine by Orsis, for .308 cartridges.",
+
+"67932708c270d2b12d050392 Name": "HANA'VI Tactical PP-19-01 9x19 30+10 magazine",
+"67932708c270d2b12d050392 Shortname": "PP19-40",
+"67932708c270d2b12d050392 Description": "Standard 30 round 9x19 magazine for the PP-19-01 and a +10 PCC basepad, for a 40 round total ammo capacity.",
+
+"67932708c270d2b12d050393 Name": "HANA'VI Tactical PP-19-01-Red 9x19 30+10 magazine",
+"67932708c270d2b12d050393 Shortname": "PP19-40-R",
+"67932708c270d2b12d050393 Description": "Standard 30 round 9x19 magazine for the PP-19-01 and a +10 PCC basepad, for a 40 round total ammo capacity. This ones red cuz Ork logic.",
+
+"67932708c270d2b12d050394 Name": "HANA'VI Tactical PP-91 9x19 30+10 magazine",
+"67932708c270d2b12d050394 Shortname": "PP91-40",
+"67932708c270d2b12d050394 Description": "Standard 30-round capacity 9х18 magazine for PP-91-01 \"Kedr-B\" and PP-9 \"Klin\" SMGs, and also for PP-91-01-02, PP-91-05-04, and PP-91-07 based SMGs, manufactured by ZMZ, with an added +10 PCC basepad",
+
+"67932708c270d2b12d050395 Name": "HANA'VI Tactical PP-91 9x19 30+30 magazine",
+"67932708c270d2b12d050395 Shortname": "PP91-60",
+"67932708c270d2b12d050395 Description": "Standard 30-round capacity 9х18 magazine for PP-91-01 \"Kedr-B\" and PP-9 \"Klin\" SMGs, and also for PP-91-01-02, PP-91-05-04, and PP-91-07 based SMGs, manufactured by ZMZ, with an added +30 PCC basepad",
+
+"67932708c270d2b12d050396 Name": "HANA'VI Tactical SR3M 30+5 magazine",
+"67932708c270d2b12d050396 Shortname": "SR3M-35",
+"67932708c270d2b12d050396 Description": "30-round steel TSNIITochMash 6L25 magazine for 9x39 SR3M,VSS and AS VAL ammo, with a +5 basepad",
+
+"67932708c270d2b12d050397 Name": "HANA'VI Tactical SR3M 40 magazine",
+"67932708c270d2b12d050397 Shortname": "SR3M-40",
+"67932708c270d2b12d050397 Description": "40-round extended steel TSNIITochMash 6L25 magazine for 9x39 SR3M,VSS and AS VAL ammo",
+
+"67932708c270d2b12d050398 Name": "HANA'VI Tactical SR3M 40+5 magazine",
+"67932708c270d2b12d050398 Shortname": "SR3M-45",
+"67932708c270d2b12d050398 Description": "40-round extended steel TSNIITochMash 6L25 magazine for 9x39 SR3M,VSS and AS VAL ammo with a +5 basepad extension",
+
+"67932708c270d2b12d050399 Name": "HANA'VI Tactical TOZ 10 shot magazine",
+"67932708c270d2b12d050399 Shortname": "TOZ-10",
+"67932708c270d2b12d050399 Description": "10-shot 20ga magazine for shotguns 20-01 MC and TOZ-106",
+
+"679edba49f79e7dd6e00abcd Name": "HANA'VI Tactical Arsenal SLR-106 30+5",
+"679edba49f79e7dd6e00abcd Shortname": "C-10 30+5",
+"679edba49f79e7dd6e00abcd Description": "A 30-round 5.56x45 'Waffle Pattern' magazine for the SLR-106 civilian AK-based rifles with a +5 extended basepad. Manufactured by Circle 10",
+
+"679edba49f79e7dd6e00abce Name": "HANA'VI Tactical Arsenal SLR-106 40",
+"679edba49f79e7dd6e00abce Shortname": "C-10 40",
+"679edba49f79e7dd6e00abce Description": "A 40-round 5.56x45 'Waffle Pattern' magazine for the SLR-106 civilian AK-based rifles. Manufactured by Circle 10",
+
+"679edba49f79e7dd6e00abcf Name": "HANA'VI Tactical Arsenal SLR-106 40+5",
+"679edba49f79e7dd6e00abcf Shortname": "C-10 40+5",
+"679edba49f79e7dd6e00abcf Description": "A 40-round 5.56x45 'Waffle Pattern' magazine for the SLR-106 civilian AK-based rifles with a +5 extended basepad. Manufactured by Circle 10",
+
+"679edba49f79e7dd6e00abd0 Name": "HANA'VI Tactical FN 57 20+10 round Extended Mag Black",
+"679edba49f79e7dd6e00abd0 Shortname": "FN 57 20+10",
+"679edba49f79e7dd6e00abd0 Description": "A factory extended 30 round FN57 magazine",
+
+"679edba49f79e7dd6e00abd1 Name": "HANA'VI Tactical FN 57 20+10 round Extended Mag FDE",
+"679edba49f79e7dd6e00abd1 Shortname": "FN 57 20+10 FDE",
+"679edba49f79e7dd6e00abd1 Description": "A factory extended 30 round FN57 magazine",
+
+"679edba49f79e7dd6e00abd2 Name": "HANA'VI Tactical Modified FAL Mag",
+"679edba49f79e7dd6e00abd2 Shortname": "SCAR-FAL 30",
+"679edba49f79e7dd6e00abd2 Description": "Step 1: file down the forward tab then hit it with a hammer. Step 2: add JB weld to the sides of the front the magazine. Step 3: use a file to take away the curve on the forward part. Boom done. "
+}

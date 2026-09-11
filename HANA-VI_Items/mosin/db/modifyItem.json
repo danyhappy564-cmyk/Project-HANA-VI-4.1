@@ -1,0 +1,899 @@
+{
+    "itemsToAdd": [
+        {
+            "_id": "558ada594bdc2db9688b456a",
+            "slotAdd": {
+                "targetId": [
+                    "5ae08f0a5acfc408fb1398a1",
+                    "5bfd297f0db834001a669119"
+                ],
+                "slotName": [
+                    "mod_stock",
+                    "mod_stock"
+                ]
+            },
+            "handbook": {
+                "Id": "558ada594bdc2db9688b456a",
+                "ParentId": "5b5f757486f774093e6cb507",
+                "Price": 23000
+            },
+            "traderAssort": {
+                "traderName": "5a7c2eca46aef81a7ca2145d",
+                "itemList": {
+                    "items": {
+                        "_id": "558ada594bdc2db9688b456a",
+                        "_tpl": "558ada594bdc2db9688b456a",
+                        "parentId": "hideout",
+                        "slotId": "hideout",
+                        "upd": {
+                            "StackObjectsCount": 999,
+                            "UnlimitedCount": false,
+                            "BuyRestrictionMax": 4
+                        }
+                    },
+                    "barter_scheme": {
+                        "558ada594bdc2db9688b456a": [
+                            [
+                                {
+                                    "_tpl": "5449016a4bdc2d6f028b456f",
+                                    "count": 18000
+                                }
+                            ]
+                        ]
+                    },
+                    "loyal_level_items": {
+                        "lyconoxpmmosinid": 1
+                    }
+                }
+            }
+        },
+        {
+            "handbook": {
+                "Id": "62811f828193842bca4a45c3",
+                "ParentId": "5b5f757486f774093e6cb507",
+                "Price": 19288
+            }
+        },
+        {
+            "_id": "62811e335631d45794793c95",
+            "handbook": {
+                "Id": "62811e335631d45794793c95",
+                "ParentId": "5b5f761f86f774094242f1a1",
+                "Price": 23870
+            },
+            "traderAssort": {
+                "traderName": "5a7c2eca46aef81a7ca2145d",
+                "itemList": {
+                    "items": {
+                        "_id": "62811e335631d45794793c95",
+                        "_tpl": "62811e335631d45794793c95",
+                        "parentId": "hideout",
+                        "slotId": "hideout",
+                        "upd": {
+                            "StackObjectsCount": 10,
+                            "UnlimitedCount": false,
+                            "BuyRestrictionMax": 4
+                        }
+                    },
+                    "barter_scheme": {
+                        "62811e335631d45794793c95": [
+                            [
+                                {
+                                    "_tpl": "5449016a4bdc2d6f028b456f",
+                                    "count": 8339
+                                }
+                            ]
+                        ]
+                    },
+                    "loyal_level_items": {
+                        "62811e335631d45794793c95": 1
+                    }
+                }
+            }
+        },
+        {
+            "_id": "62811e2531e26c1f344e6554",
+            "handbook": {
+                "Id": "62811e2531e26c1f344e6554",
+                "ParentId": "5b5f761f86f774094242f1a1",
+                "Price": 29880
+            },
+            "traderAssort": {
+                "traderName": "5a7c2eca46aef81a7ca2145d",
+                "itemList": {
+                    "items": {
+                        "_id": "62811e2531e26c1f344e6554",
+                        "_tpl": "62811e2531e26c1f344e6554",
+                        "parentId": "hideout",
+                        "slotId": "hideout",
+                        "upd": {
+                            "StackObjectsCount": 10,
+                            "UnlimitedCount": false,
+                            "BuyRestrictionMax": 4
+                        }
+                    },
+                    "barter_scheme": {
+                        "62811e2531e26c1f344e6554": [
+                            [
+                                {
+                                    "_tpl": "5449016a4bdc2d6f028b456f",
+                                    "count": 15569
+                                }
+                            ]
+                        ]
+                    },
+                    "loyal_level_items": {
+                        "62811e2531e26c1f344e6554": 3
+                    }
+                }
+            }
+        },
+        {
+            "_id": "6281212a09427b40ab36e770",
+            "handbook": {
+                "Id": "6281212a09427b40ab36e770",
+                "ParentId": "5b5f761f86f774094242f1a1",
+                "Price": 29880
+            },
+            "traderAssort": {
+                "traderName": "5a7c2eca46aef81a7ca2145d",
+                "itemList": {
+                    "items": {
+                        "_id": "6281212a09427b40ab36e770",
+                        "_tpl": "6281212a09427b40ab36e770",
+                        "parentId": "hideout",
+                        "slotId": "hideout",
+                        "upd": {
+                            "StackObjectsCount": 10,
+                            "UnlimitedCount": false,
+                            "BuyRestrictionMax": 4
+                        }
+                    },
+                    "barter_scheme": {
+                        "6281212a09427b40ab36e770": [
+                            [
+                                {
+                                    "_tpl": "5449016a4bdc2d6f028b456f",
+                                    "count": 12680
+                                }
+                            ]
+                        ]
+                    },
+                    "loyal_level_items": {
+                        "6281212a09427b40ab36e770": 1
+                    }
+                }
+            }
+        },
+        {
+            "_id": "6281209662cba23f6c43ca19",
+            "handbook": {
+                "Id": "6281209662cba23f6c43ca19",
+                "ParentId": "5b5f75e486f77447ec5d7712",
+                "Price": 39880
+            },
+            "traderAssort": {
+                "traderName": "5a7c2eca46aef81a7ca2145d",
+                "itemList": {
+                    "items": {
+                        "_id": "6281209662cba23f6c43ca19",
+                        "_tpl": "6281209662cba23f6c43ca19",
+                        "parentId": "hideout",
+                        "slotId": "hideout",
+                        "upd": {
+                            "StackObjectsCount": 10,
+                            "UnlimitedCount": false,
+                            "BuyRestrictionMax": 4
+                        }
+                    },
+                    "barter_scheme": {
+                        "6281209662cba23f6c43ca19": [
+                            [
+                                {
+                                    "_tpl": "5449016a4bdc2d6f028b456f",
+                                    "count": 32119
+                                }
+                            ]
+                        ]
+                    },
+                    "loyal_level_items": {
+                        "6281209662cba23f6c43ca19": 4
+                    }
+                }
+            }
+        },
+        {
+            "_id": "6281204f308cb521f87a8f4a",
+            "slotAdd": {
+                "targetId": [
+                    "5ae08f0a5acfc408fb1398a1",
+                    "5bfd297f0db834001a669119"
+                ],
+                "slotName": [
+                    "mod_stock",
+                    "mod_stock"
+                ]
+            },
+            "handbook": {
+                "Id": "6281204f308cb521f87a8f4a",
+                "ParentId": "5b5f764186f77447ec5d7714",
+                "Price": 48810
+            },
+            "traderAssort": {
+                "traderName": "5a7c2eca46aef81a7ca2145d",
+                "itemList": {
+                    "items": {
+                        "_id": "6281204f308cb521f87a8f4a",
+                        "_tpl": "6281204f308cb521f87a8f4a",
+                        "parentId": "hideout",
+                        "slotId": "hideout",
+                        "upd": {
+                            "StackObjectsCount": 10,
+                            "UnlimitedCount": false,
+                            "BuyRestrictionMax": 4
+                        }
+                    },
+                    "barter_scheme": {
+                        "6281204f308cb521f87a8f4a": [
+                            [
+                                {
+                                    "_tpl": "5449016a4bdc2d6f028b456f",
+                                    "count": 35111
+                                }
+                            ]
+                        ]
+                    },
+                    "loyal_level_items": {
+                        "6281204f308cb521f87a8f4a": 1
+                    }
+                }
+            }
+        },
+        {
+            "_id": "5d25a6a48abbc306c64d6310",
+            "slotAdd": {
+                "targetId": [
+                    "5ae08f0a5acfc408fb1398a1",
+                    "5bfd297f0db834001a669119"
+                ],
+                "slotName": [
+                    "mod_magazine",
+                    "mod_magazine"
+                ]
+            },
+            "handbook": {
+                "Id": "5d25a6a48abbc306c64d6310",
+                "ParentId": "5b5f754a86f774094242f19b",
+                "Price": 23000
+            },
+            "traderAssort": {
+                "traderName": "5a7c2eca46aef81a7ca2145d",
+                "itemList": {
+                    "items": {
+                        "_id": "5d25a6a48abbc306c64d6310",
+                        "_tpl": "5d25a6a48abbc306c64d6310",
+                        "parentId": "hideout",
+                        "slotId": "hideout",
+                        "upd": {
+                            "StackObjectsCount": 999,
+                            "UnlimitedCount": false,
+                            "BuyRestrictionMax": 10
+                        }
+                    },
+                    "barter_scheme": {
+                        "5d25a6a48abbc306c64d6310": [
+                            [
+                                {
+                                    "_tpl": "5449016a4bdc2d6f028b456f",
+                                    "count": 8119
+                                }
+                            ]
+                        ]
+                    },
+                    "loyal_level_items": {
+                        "lyconoxpmmosinid": 4
+                    }
+                }
+            }
+        },
+        {
+            "_id": "5d25a6a48abbc306c64e6310",
+            "slotAdd": {
+                "targetId": [
+                    "5ae08f0a5acfc408fb1398a1",
+                    "5bfd297f0db834001a669119"
+                ],
+                "slotName": [
+                    "mod_magazine",
+                    "mod_magazine"
+                ]
+            },
+            "handbook": {
+                "Id": "5d25a6a48abbc306c64e6310",
+                "ParentId": "5b5f754a86f774094242f19b",
+                "Price": 17500
+            },
+            "traderAssort": {
+                "traderName": "5a7c2eca46aef81a7ca2145d",
+                "itemList": {
+                    "items": {
+                        "_id": "5d25a6a48abbc306c64e6310",
+                        "_tpl": "5d25a6a48abbc306c64e6310",
+                        "parentId": "hideout",
+                        "slotId": "hideout",
+                        "upd": {
+                            "StackObjectsCount": 29,
+                            "UnlimitedCount": false,
+                            "BuyRestrictionMax": 10
+                        }
+                    },
+                    "barter_scheme": {
+                        "5d25a6a48abbc306c64e6310": [
+                            [
+                                {
+                                    "_tpl": "5449016a4bdc2d6f028b456f",
+                                    "count": 6285
+                                }
+                            ]
+                        ]
+                    },
+                    "loyal_level_items": {
+                        "lyconoxpmmosinid": 3
+                    }
+                }
+            }
+        },
+        {
+            "_id": "5d024f5cd7ad1a04a067e92b",
+            "slotAdd": {
+                "targetId": [
+                    "5b3f7bf05acfc433000ecf6b"
+                ],
+                "slotName": [
+                    "mod_mount"
+                ]
+            },
+            "handbook": {
+                "Id": "5d024f5cd7ad1a04a067e92b",
+                "ParentId": "5b5f755f86f77447ec5d770e",
+                "Price": 9800
+            },
+            "traderAssort": {
+                "traderName": "5a7c2eca46aef81a7ca2145d",
+                "itemList": {
+                    "items": {
+                        "_id": "5d024f5cd7ad1a04a067e92b",
+                        "_tpl": "5d024f5cd7ad1a04a067e92b",
+                        "parentId": "hideout",
+                        "slotId": "hideout",
+                        "upd": {
+                            "StackObjectsCount": 3,
+                            "UnlimitedCount": false,
+                            "BuyRestrictionMax": 3
+                        }
+                    },
+                    "barter_scheme": {
+                        "5d024f5cd7ad1a04a067e92b": [
+                            [
+                                {
+                                    "_tpl": "5449016a4bdc2d6f028b456f",
+                                    "count": 17668
+                                }
+                            ]
+                        ]
+                    },
+                    "loyal_level_items": {
+                        "lyconoxpmmosinid": 4
+                    }
+                }
+            }
+        },
+        {
+            "_id": "628bbf828193842bca4a45c4",
+            "slotAdd": {
+                "targetId": [],
+                "slotName": []
+            },
+            "handbook": {
+                "Id": "628bbf828193842bca4a45c4",
+                "ParentId": "5b5f757486f774093e6cb507",
+                "Price": 22238
+            },
+            "traderAssort": {
+                "traderName": "5a7c2eca46aef81a7ca2145d",
+                "itemList": {
+                    "items": {
+                        "_id": "628bbf828193842bca4a45c4",
+                        "_tpl": "628bbf828193842bca4a45c4",
+                        "parentId": "hideout",
+                        "slotId": "hideout",
+                        "upd": {
+                            "StackObjectsCount": 10,
+                            "UnlimitedCount": false,
+                            "BuyRestrictionMax": 4
+                        }
+                    },
+                    "barter_scheme": {
+                        "628bbf828193842bca4a45c4": [
+                            [
+                                {
+                                    "_tpl": "5449016a4bdc2d6f028b456f",
+                                    "count": 12699
+                                }
+                            ]
+                        ]
+                    },
+                    "loyal_level_items": {
+                        "628bbf828193842bca4a45c4": 2
+                    }
+                }
+            }
+        },
+        {
+            "_id": "628dfe2531e26c1f344e6555",
+            "slotAdd": {
+                "targetId": [],
+                "slotName": []
+            },
+            "handbook": {
+                "Id": "628dfe2531e26c1f344e6555",
+                "ParentId": "5b5f761f86f774094242f1a1",
+                "Price": 31880
+            },
+            "traderAssort": {
+                "traderName": "5a7c2eca46aef81a7ca2145d",
+                "itemList": {
+                    "items": {
+                        "_id": "628dfe2531e26c1f344e6555",
+                        "_tpl": "628dfe2531e26c1f344e6555",
+                        "parentId": "hideout",
+                        "slotId": "hideout",
+                        "upd": {
+                            "StackObjectsCount": 10,
+                            "UnlimitedCount": false,
+                            "BuyRestrictionMax": 4
+                        }
+                    },
+                    "barter_scheme": {
+                        "628dfe2531e26c1f344e6555": [
+                            [
+                                {
+                                    "_tpl": "5449016a4bdc2d6f028b456f",
+                                    "count": 19869
+                                }
+                            ]
+                        ]
+                    },
+                    "loyal_level_items": {
+                        "628dfe2531e26c1f344e6555": 3
+                    }
+                }
+            }
+        },
+        {
+            "_id": "628fb12a09427b40ab36e771",
+            "slotAdd": {
+                "targetId": [],
+                "slotName": []
+            },
+            "handbook": {
+                "Id": "628fb12a09427b40ab36e771",
+                "ParentId": "5b5f761f86f774094242f1a1",
+                "Price": 42880
+            },
+            "traderAssort": {
+                "traderName": "5a7c2eca46aef81a7ca2145d",
+                "itemList": {
+                    "items": {
+                        "_id": "628fb12a09427b40ab36e771",
+                        "_tpl": "628fb12a09427b40ab36e771",
+                        "parentId": "hideout",
+                        "slotId": "hideout",
+                        "upd": {
+                            "StackObjectsCount": 10,
+                            "UnlimitedCount": false,
+                            "BuyRestrictionMax": 4
+                        }
+                    },
+                    "barter_scheme": {
+                        "628fb12a09427b40ab36e771": [
+                            [
+                                {
+                                    "_tpl": "5449016a4bdc2d6f028b456f",
+                                    "count": 29845
+                                }
+                            ]
+                        ]
+                    },
+                    "loyal_level_items": {
+                        "628fb12a09427b40ab36e771": 1
+                    }
+                }
+            }
+        },
+        {
+            "_id": "6281dc9662cba23f6c43ca1a",
+            "slotAdd": {
+                "targetId": [],
+                "slotName": []
+            },
+            "handbook": {
+                "Id": "6281dc9662cba23f6c43ca1a",
+                "ParentId": "5b5f75e486f77447ec5d7712",
+                "Price": 44880
+            },
+            "traderAssort": {
+                "traderName": "5a7c2eca46aef81a7ca2145d",
+                "itemList": {
+                    "items": {
+                        "_id": "6281dc9662cba23f6c43ca1a",
+                        "_tpl": "6281dc9662cba23f6c43ca1a",
+                        "parentId": "hideout",
+                        "slotId": "hideout",
+                        "upd": {
+                            "StackObjectsCount": 10,
+                            "UnlimitedCount": false,
+                            "BuyRestrictionMax": 4
+                        }
+                    },
+                    "barter_scheme": {
+                        "6281dc9662cba23f6c43ca1a": [
+                            [
+                                {
+                                    "_tpl": "5449016a4bdc2d6f028b456f",
+                                    "count": 35216
+                                }
+                            ]
+                        ]
+                    },
+                    "loyal_level_items": {
+                        "6281dc9662cba23f6c43ca1a": 4
+                    }
+                }
+            }
+        },
+        {
+            "_id": "6281ed4f308cb521f87a8f4b",
+            "slotAdd": {
+                "targetId": [
+                    "5ae08f0a5acfc408fb1398a1",
+                    "5bfd297f0db834001a669119"
+                ],
+                "slotName": [
+                    "mod_stock",
+                    "mod_stock"
+                ]
+            },
+            "handbook": {
+                "Id": "6281ed4f308cb521f87a8f4b",
+                "ParentId": "5b5f764186f77447ec5d7714",
+                "Price": 38810
+            },
+            "traderAssort": {
+                "traderName": "5a7c2eca46aef81a7ca2145d",
+                "itemList": {
+                    "items": {
+                        "_id": "6281ed4f308cb521f87a8f4b",
+                        "_tpl": "6281ed4f308cb521f87a8f4b",
+                        "parentId": "hideout",
+                        "slotId": "hideout",
+                        "upd": {
+                            "StackObjectsCount": 10,
+                            "UnlimitedCount": false,
+                            "BuyRestrictionMax": 4
+                        }
+                    },
+                    "barter_scheme": {
+                        "6281ed4f308cb521f87a8f4b": [
+                            [
+                                {
+                                    "_tpl": "5449016a4bdc2d6f028b456f",
+                                    "count": 32767
+                                }
+                            ]
+                        ]
+                    },
+                    "loyal_level_items": {
+                        "6281ed4f308cb521f87a8f4b": 4
+                    }
+                }
+            }
+        },
+        {
+            "_id": "5ae09ccd5acfc4001562219d",
+            "slotAdd": {
+                "targetId": [
+                    "5ae08f0a5acfc408fb1398a1",
+                    "5bfd297f0db834001a669119"
+                ],
+                "slotName": [
+                    "mod_barrel",
+                    "mod_barrel"
+                ]
+            },
+            "handbook": {
+                "Id": "5ae09ccd5acfc4001562219d",
+                "ParentId": "5b5f75c686f774094242f19f",
+                "Price": 150000
+            },
+            "traderAssort": {
+                "traderName": "5a7c2eca46aef81a7ca2145d",
+                "itemList": {
+                    "items": {
+                        "_id": "5ae09ccd5acfc4001562219d",
+                        "_tpl": "5ae09ccd5acfc4001562219d",
+                        "parentId": "hideout",
+                        "slotId": "hideout",
+                        "upd": {
+                            "StackObjectsCount": 10,
+                            "UnlimitedCount": false,
+                            "BuyRestrictionMax": 1
+                        }
+                    },
+                    "barter_scheme": {
+                        "5ae09ccd5acfc4001562219d": [
+                            [
+                                {
+                                    "_tpl": "5ae09bff5acfc4001562219d",
+                                    "count": 1
+                                },
+                                {
+                                    "_tpl": "573475fb24597737fb1379e1",
+                                    "count": 1
+                                },
+                                {
+                                    "_tpl": "5b86a0e586f7745b600ccb23",
+                                    "count": 2
+                                }
+                            ]
+                        ]
+                    },
+                    "loyal_level_items": {
+                        "5ae09ccd5acfc4001562219d": 1
+                    }
+                }
+            }
+        },
+        {
+            "_id": "5bae13bad4351e00320244af",
+            "slotAdd": {
+                "targetId": [
+                    "5ae08f0a5acfc408fb1398a1",
+                    "5bfd297f0db834001a669119"
+                ],
+                "slotName": [
+                    "mod_stock",
+                    "mod_stock"
+                ]
+            },
+            "handbook": {
+                "Id": "5bae13bad4351e00320244af",
+                "ParentId": "5b5f757486f774093e6cb507",
+                "Price": 33500
+            },
+            "traderAssort": {
+                "traderName": "5a7c2eca46aef81a7ca2145d",
+                "itemList": {
+                    "items": {
+                        "_id": "5bae13bad4351e00320244af",
+                        "_tpl": "5bae13bad4351e00320244af",
+                        "parentId": "hideout",
+                        "slotId": "hideout",
+                        "upd": {
+                            "StackObjectsCount": 10,
+                            "UnlimitedCount": false,
+                            "BuyRestrictionMax": 4
+                        }
+                    },
+                    "barter_scheme": {
+                        "5bae13bad4351e00320244af": [
+                            [
+                                {
+                                    "_tpl": "5449016a4bdc2d6f028b456f",
+                                    "count": 17668
+                                }
+                            ]
+                        ]
+                    },
+                    "loyal_level_items": {
+                        "5bae13bad4351e00320244af": 4
+                    }
+                }
+            }
+        },
+        {
+            "_id": "5888961624597754281cccf3",
+            "handbook": {
+                "Id": "5888961624597754281cccf3",
+                "ParentId": "5b5f71c186f77409407a7ec0",
+                "Price": 13500
+            }
+        },
+        {
+            "_id": "5bbdb811d4351e45020243c7",
+            "slotAdd": {
+                "targetId": [
+                    "5ae09bff5acfc4001562219d",
+                    "5bfd4cbe0db834001b73449f",
+                    "5bfd4cd60db834001c38f095"
+                ],
+                "slotName": [
+                    "mod_sight_rear",
+                    "mod_sight_rear",
+                    "mod_sight_rear"
+                ]
+            },
+            "handbook": {
+                "Id": "5bbdb811d4351e45020243c7",
+                "ParentId": "5b5f755f86f77447ec5d770e",
+                "Price": 13500
+            }
+        },
+        {
+            "_id": "628120c21d5df4475f46a333",
+            "_name": "mount_keyslot_accuracy_international_at_x_forend_rail_ultimax",
+            "slotAdd": {
+                "targetId": [
+                    "6281209662cba23f6c43ca19",
+                    "6281dc9662cba23f6c43ca1a"
+                ],
+                "slotName": [
+                    "mod_mount_000",
+                    "mod_mount_000"
+                ]
+            },
+            "handbook": {
+                "Id": "628120c21d5df4475f46a333",
+                "ParentId": "5b5f755f86f77447ec5d770e",
+                "Price": 99999
+            },
+            "traderAssort": {
+                "traderName": "5a7c2eca46aef81a7ca2145d",
+                "itemList": {
+                    "items": {
+                        "_id": "628120c21d5df4475f46a333",
+                        "_tpl": "628120c21d5df4475f46a333",
+                        "parentId": "hideout",
+                        "slotId": "hideout",
+                        "upd": {
+                            "StackObjectsCount": 10,
+                            "UnlimitedCount": false,
+                            "BuyRestrictionMax": 1
+                        }
+                    },
+                    "barter_scheme": {
+                        "628120c21d5df4475f46a333": [
+                            [
+                                {
+                                    "_tpl": "628120c21d5df4475f46a337",
+                                    "count": 2
+                                },
+                                {
+                                    "_tpl": "5734770f24597738025ee254",
+                                    "count": 1
+                                },
+                                {
+                                    "_tpl": "60391a8b3364dc22b04d0ce5",
+                                    "count": 1
+                                }
+                            ]
+                        ]
+                    },
+                    "loyal_level_items": {
+                        "628120c21d5df4475f46a333": 2
+                    }
+                }
+            }
+        },
+        {
+            "_id": "5ae09bff5acfc4001562ccca",
+            "_name": "barrel_mosin_izhmash_mosin_800mm",
+            "slotAdd": {
+                "targetId": [
+                    "5ae08f0a5acfc408fb1398a1",
+                    "5bfd297f0db834001a669119"
+                ],
+                "slotName": [
+                    "mod_barrel",
+                    "mod_barrel"
+                ]
+            },
+            "handbook": {
+                "Id": "5ae09bff5acfc4001562ccca",
+                "ParentId": "5b5f73ec86f774093e6cb4fd",
+                "Price": 8000
+            },
+            "traderAssort": {
+                "traderName": "5a7c2eca46aef81a7ca2145d",
+                "itemList": {
+                    "items": {
+                        "_id": "5ae09bff5acfc4001562ccca",
+                        "_tpl": "5ae09bff5acfc4001562ccca",
+                        "parentId": "hideout",
+                        "slotId": "hideout",
+                        "upd": {
+                            "StackObjectsCount": 4,
+                            "UnlimitedCount": false,
+                            "BuyRestrictionMax": 1
+                        }
+                    },
+                    "barter_scheme": {
+                        "5ae09bff5acfc4001562ccca": [
+                            [
+                                {
+                                    "_tpl": "5449016a4bdc2d6f028b456f",
+                                    "count": 14000
+                                }
+                            ]
+                        ]
+                    },
+                    "loyal_level_items": {
+                        "5ae09bff5acfc4001562ccca": 1
+                    }
+                }
+            }
+        },
+        {
+            "_id": "5ae099875acfc4001714e123",
+            "_name": "sight_front_mosin_izhmash_mosin_model_1891",
+            "slotAdd": {
+                "targetId": [
+                    "5ae09bff5acfc4001562219d",
+                    "5bfd4cbe0db834001b73449f",
+                    "5bfd4cd60db834001c38f095"
+                ],
+                "slotName": [
+                    "mod_sight_front",
+                    "mod_sight_front",
+                    "mod_sight_front"
+                ]
+            },
+            "handbook": {
+                "Id": "5ae099875acfc4001714e123",
+                "ParentId": "5b5f73ec86f774093e6cb4fd",
+                "Price": 800
+            },
+            "traderAssort": {
+                "traderName": "5a7c2eca46aef81a7ca2145d",
+                "itemList": {
+                    "items": {
+                        "_id": "5ae099875acfc4001714e123",
+                        "_tpl": "5ae099875acfc4001714e123",
+                        "parentId": "hideout",
+                        "slotId": "hideout",
+                        "upd": {
+                            "StackObjectsCount": 4,
+                            "UnlimitedCount": false,
+                            "BuyRestrictionMax": 1
+                        }
+                    },
+                    "barter_scheme": {
+                        "5ae099875acfc4001714e123": [
+                            [
+                                {
+                                    "_tpl": "5449016a4bdc2d6f028b456f",
+                                    "count": 1000
+                                }
+                            ]
+                        ]
+                    },
+                    "loyal_level_items": {
+                        "5ae099875acfc4001714e123": 1
+                    }
+                }
+            }
+        }
+    ],
+    "itemsToConflicts": [
+        {
+            "_id": "628120c21d5df4475f46a337",
+            "ConflictingItems": [
+                "5bc5a372d4351e44f824d17f",
+                "5bbdb811d4351e45020113c7",
+                "5ae09bff5acfc4001562219d",
+                "5bfd4c980db834001b73449d",
+                "5ae09bff5acfc4001562ccca"
+            ]
+        }
+    ]
+}
