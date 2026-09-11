@@ -1,0 +1,12 @@
+{
+  "_comment": [
+    "HANA-VI's All Examined — SPT 4.1 포팅본 설정",
+    "enabled          : 전체 on/off",
+    "excludeItemIds   : 검사 완료 처리에서 뺄 아이템 ID 목록",
+    "excludeParentIds : 검사 완료 처리에서 뺄 아이템 '분류(_parent)' ID 목록",
+    "3.11 원본에는 없던 설정이다. 원본과 똑같이 쓰려면 두 목록을 비워 두면 된다."
+  ],
+  "enabled": true,
+  "excludeItemIds": [],
+  "excludeParentIds": []
+}

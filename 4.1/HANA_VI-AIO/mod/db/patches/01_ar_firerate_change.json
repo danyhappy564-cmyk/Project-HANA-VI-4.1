@@ -1,0 +1,350 @@
+{
+  "key": "ar_firerate_change",
+  "title": "돌격소총 연사속도 조정",
+  "enabled": true,
+  "ops": [
+    {
+      "op": "setProps",
+      "targets": [
+        "57dc2fa62459775949412633"
+      ],
+      "props": {
+        "bFirerate": 735
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "583990e32459771419544dd2"
+      ],
+      "props": {
+        "bFirerate": 735
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "5839a40f24597726f856b511"
+      ],
+      "props": {
+        "bFirerate": 735
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "5ac66cb05acfc40198510a10"
+      ],
+      "props": {
+        "bFirerate": 700
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "5ac66d015acfc400180ae6e4"
+      ],
+      "props": {
+        "bFirerate": 675
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "5ac66d2e5acfc43b321d4b53"
+      ],
+      "props": {
+        "bFirerate": 625
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "5ac66d725acfc43b321d4b60"
+      ],
+      "props": {
+        "bFirerate": 625
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "5ac66d9b5acfc4001633997a"
+      ],
+      "props": {
+        "bFirerate": 675
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "5ac4cd105acfc40016339859"
+      ],
+      "props": {
+        "bFirerate": 700
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "5beed0f50db834001c062b12"
+      ],
+      "props": {
+        "bFirerate": 725
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "6499849fc93611967b034949"
+      ],
+      "props": {
+        "bFirerate": 750
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "5bf3e03b0db834001d2c4a9c"
+      ],
+      "props": {
+        "bFirerate": 675
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "5644bd2b4bdc2d3b4c8b4572"
+      ],
+      "props": {
+        "bFirerate": 675
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "5bf3e0490db83400196199af"
+      ],
+      "props": {
+        "bFirerate": 675
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "5ab8e9fcd8ce870019439434"
+      ],
+      "props": {
+        "bFirerate": 675
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "59e6152586f77473dc057aa1"
+      ],
+      "props": {
+        "bFirerate": 550
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "59e6687d86f77411d949b251"
+      ],
+      "props": {
+        "bFirerate": 450
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "628b5638ad252a16da6dd245"
+      ],
+      "props": {
+        "bFirerate": 625
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "628b9c37a733087d0d7fe84b"
+      ],
+      "props": {
+        "bFirerate": 625
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "628a60ae6b1d481ff772e9c8"
+      ],
+      "props": {
+        "bFirerate": 650
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "606587252535c57a13424cfd"
+      ],
+      "props": {
+        "bFirerate": 675
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "6184055050224f204c1da540"
+      ],
+      "props": {
+        "bFirerate": 700
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "618428466ef05c2ce828f218"
+      ],
+      "props": {
+        "bFirerate": 700
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "5c488a752e221602b412af63"
+      ],
+      "props": {
+        "bFirerate": 675
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "63171672192e68c5460cebc5"
+      ],
+      "props": {
+        "bFirerate": 725
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "5c07c60e0db834002330051f"
+      ],
+      "props": {
+        "bFirerate": 600
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "5d43021ca4b9362eab4b5e25"
+      ],
+      "props": {
+        "bFirerate": 700
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "645e0c6b3b381ede770e1cc9"
+      ],
+      "props": {
+        "bFirerate": 850
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "644674a13d52156624001fbc"
+      ],
+      "props": {
+        "bFirerate": 850
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "6183afd850224f204c1da514"
+      ],
+      "props": {
+        "bFirerate": 650
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "6165ac306ef05c2ce828ef74"
+      ],
+      "props": {
+        "bFirerate": 650
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "65290f395ae2ae97b80fdf2d"
+      ],
+      "props": {
+        "bFirerate": 750
+      }
+    },
+    {
+      "op": "appendProps",
+      "targets": [
+        "59e6152586f77473dc057aa1"
+      ],
+      "props": {
+        "weapFireType": [
+          "fullauto"
+        ]
+      }
+    },
+    {
+      "op": "appendProps",
+      "targets": [
+        "59e6687d86f77411d949b251"
+      ],
+      "props": {
+        "weapFireType": [
+          "fullauto"
+        ]
+      }
+    },
+    {
+      "op": "appendProps",
+      "targets": [
+        "628b5638ad252a16da6dd245"
+      ],
+      "props": {
+        "weapFireType": [
+          "fullauto"
+        ]
+      }
+    },
+    {
+      "op": "appendProps",
+      "targets": [
+        "628b9c37a733087d0d7fe84b"
+      ],
+      "props": {
+        "weapFireType": [
+          "fullauto"
+        ]
+      }
+    },
+    {
+      "op": "appendProps",
+      "targets": [
+        "5d43021ca4b9362eab4b5e25"
+      ],
+      "props": {
+        "weapFireType": [
+          "fullauto"
+        ]
+      }
+    }
+  ]
+}

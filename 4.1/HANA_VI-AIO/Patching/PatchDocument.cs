@@ -1,0 +1,95 @@
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+namespace HanaVi.Aio.Patching;
+
+/// <summary>패치가 적용되는 서버 로드 단계.</summary>
+public enum PatchStage
+{
+    /// <summary>DB 에 아이템 키를 새로 추가하는 작업. 반드시 여기여야 한다.</summary>
+    Preload,
+
+    /// <summary>기존 아이템의 값만 고치는 작업. 다른 모드가 추가한 아이템까지 잡으려면 여기.</summary>
+    PostLoad,
+
+    /// <summary>상인 어사트(판매 목록)에 올리는 작업.</summary>
+    Trader,
+}
+
+/// <summary>db/patches/*.json 한 개에 대응.</summary>
+public class PatchDocument
+{
+    [JsonPropertyName("key")] public string Key { get; set; } = "";
+    [JsonPropertyName("title")] public string Title { get; set; } = "";
+    [JsonPropertyName("enabled")] public bool Enabled { get; set; } = true;
+
+    /// <summary>이 파일 안에서만 쓰는 ID 묶음. ops 에서 "@이름" 으로 참조한다.</summary>
+    [JsonPropertyName("sets")] public Dictionary<string, List<string>> Sets { get; set; } = new();
+
+    [JsonPropertyName("ops")] public List<PatchOp> Ops { get; set; } = new();
+
+    /// <summary>패치 파일 이름 (로그/오류 메시지용). JSON 에는 없다.</summary>
+    [JsonIgnore] public string SourceFile { get; set; } = "";
+}
+
+/// <summary>패치 한 줄. op 종류에 따라 쓰는 필드가 다르다.</summary>
+public class PatchOp
+{
+    [JsonPropertyName("op")] public string Op { get; set; } = "";
+
+    /// <summary>이 op 만 다른 단계에서 돌려야 할 때 지정. 없으면 PostLoad.</summary>
+    [JsonPropertyName("stage")] public string? Stage { get; set; }
+
+    // ----- 대상 지정 (셋 중 하나) -----
+    /// <summary>아이템 ID 목록. 문자열 하나("@세트이름")거나 배열이다.</summary>
+    [JsonPropertyName("targets")] public JsonElement? Targets { get; set; }
+
+    /// <summary>_parent 가 이 값인 아이템 전부.</summary>
+    [JsonPropertyName("targetsByParent")] public List<string>? TargetsByParent { get; set; }
+
+    /// <summary>DB 의 모든 아이템.</summary>
+    [JsonPropertyName("targetsAll")] public bool TargetsAll { get; set; }
+
+    // ----- setProps / appendProps -----
+    /// <summary>게임 JSON 기준 프로퍼티 이름 → 값. (예: {"bFirerate": 700})</summary>
+    [JsonPropertyName("props")] public Dictionary<string, JsonElement>? Props { get; set; }
+
+    // ----- addFilter -----
+    /// <summary>slot | chamber | cartridge | grid</summary>
+    [JsonPropertyName("into")] public string? Into { get; set; }
+
+    /// <summary>슬롯 이름 목록. ["*"] 이면 모든 슬롯.</summary>
+    [JsonPropertyName("slots")] public List<string>? Slots { get; set; }
+
+    /// <summary>슬롯을 이름이 아니라 순서(0부터)로 지정할 때.</summary>
+    [JsonPropertyName("slotIndexes")] public List<int>? SlotIndexes { get; set; }
+
+    /// <summary>기존 필터에 이 ID 들이 들어있는 슬롯에만 적용.</summary>
+    [JsonPropertyName("whenFilterContains")] public List<string>? WhenFilterContains { get; set; }
+
+    /// <summary>필터에 추가할 ID 목록.</summary>
+    [JsonPropertyName("add")] public JsonElement? Add { get; set; }
+
+    // ----- cloneItem -----
+    [JsonPropertyName("from")] public string? From { get; set; }
+    [JsonPropertyName("newId")] public string? NewId { get; set; }
+
+    // ----- handbookEntry -----
+    [JsonPropertyName("id")] public string? Id { get; set; }
+    [JsonPropertyName("parentId")] public string? ParentId { get; set; }
+    [JsonPropertyName("price")] public double? Price { get; set; }
+    [JsonPropertyName("canSellOnRagfair")] public bool? CanSellOnRagfair { get; set; }
+
+    // ----- traderOffer -----
+    [JsonPropertyName("traderId")] public string? TraderId { get; set; }
+    [JsonPropertyName("count")] public int? Count { get; set; }
+    [JsonPropertyName("currency")] public string? Currency { get; set; }
+    [JsonPropertyName("loyaltyLevel")] public int? LoyaltyLevel { get; set; }
+
+    public PatchStage ResolvedStage => Stage?.ToLowerInvariant() switch
+    {
+        "preload" => PatchStage.Preload,
+        "trader" => PatchStage.Trader,
+        _ => PatchStage.PostLoad,
+    };
+}

@@ -1,0 +1,24 @@
+{
+  "key": "tatm_can_use_n15",
+  "title": "TATM 마운트에 N-15 야시경 허용",
+  "enabled": true,
+  "sets": {
+    "tatm": [
+      "5a16b8a9fcdbcb00165aa6ca"
+    ],
+    "n15": [
+      "5c066e3a0db834001b7353f0"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": "@tatm",
+      "into": "slot",
+      "slots": [
+        "mod_nvg"
+      ],
+      "add": "@n15"
+    }
+  ]
+}

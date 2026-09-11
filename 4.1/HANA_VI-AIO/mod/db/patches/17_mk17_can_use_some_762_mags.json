@@ -1,0 +1,30 @@
+{
+  "key": "mk17_can_use_some_762_mags",
+  "title": "MK17 / G28에 일부 7.62 탄창 허용",
+  "enabled": true,
+  "sets": {
+    "mk17": [
+      "6165ac306ef05c2ce828ef74",
+      "6183afd850224f204c1da514",
+      "6176aca650224f204c1da3fb"
+    ],
+    "mk17mags": [
+      "5df8f535bb49d91fb446d6b0",
+      "5df8f541c41b2312ea3335e3",
+      "5a3501acc4a282000d72293a",
+      "65293c38fc460e50a509cb25",
+      "65293c7a17e14363030ad308"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": "@mk17",
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "add": "@mk17mags"
+    }
+  ]
+}

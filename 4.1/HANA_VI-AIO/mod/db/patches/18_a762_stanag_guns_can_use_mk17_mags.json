@@ -1,0 +1,29 @@
+{
+  "key": "a762_stanag_guns_can_use_mk17_mags",
+  "title": "AR-10 계열에 SCAR-H 탄창 허용",
+  "enabled": true,
+  "sets": {
+    "ar10": [
+      "5dcbd56fdbd3d91b3e5468d5",
+      "65290f395ae2ae97b80fdf2d",
+      "5a367e5dc4a282000e49738f",
+      "5df8ce05b11454561e39243b",
+      "6176aca650224f204c1da3fb"
+    ],
+    "scar17mags": [
+      "618168dc8004cc50514c34fc",
+      "6183d53f1cb55961fa0fdcda"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": "@ar10",
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "add": "@scar17mags"
+    }
+  ]
+}

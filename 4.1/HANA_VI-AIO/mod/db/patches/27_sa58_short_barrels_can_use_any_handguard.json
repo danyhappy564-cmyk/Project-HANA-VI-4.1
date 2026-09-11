@@ -1,0 +1,17 @@
+{
+  "key": "sa58_short_barrels_can_use_any_handguard",
+  "title": "SA-58 단축 배럴 핸드가드 제한 해제",
+  "enabled": true,
+  "ops": [
+    {
+      "op": "setProps",
+      "targets": [
+        "5b099a765acfc47a8607efe3",
+        "5b7be1125acfc4001876c0e5"
+      ],
+      "props": {
+        "ConflictingItems": []
+      }
+    }
+  ]
+}

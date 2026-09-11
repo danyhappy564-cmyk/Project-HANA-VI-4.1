@@ -1,0 +1,21 @@
+{
+  "key": "pnv_57e_anywhere",
+  "title": "PNV-57E를 모든 야시경 슬롯에 허용",
+  "enabled": true,
+  "sets": {
+    "pnv57e": [
+      "67506ca81f18589016006aa6"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_nvg"
+      ],
+      "add": "@pnv57e"
+    }
+  ]
+}

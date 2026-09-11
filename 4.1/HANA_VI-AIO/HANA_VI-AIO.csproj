@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>HANA_VI-AIO</AssemblyName>
+    <RootNamespace>HanaVi.Aio</RootNamespace>
+    <Version>4.1.0</Version>
+  </PropertyGroup>
+</Project>

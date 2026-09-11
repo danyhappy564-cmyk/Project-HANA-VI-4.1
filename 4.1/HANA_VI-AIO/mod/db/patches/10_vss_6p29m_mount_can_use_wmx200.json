@@ -1,0 +1,28 @@
+{
+  "key": "vss_6p29m_mount_can_use_wmx200",
+  "title": "VSS 6P29M 마운트에 WMX200 허용",
+  "enabled": true,
+  "sets": {
+    "vss_6p29m": [
+      "59eb7ebe86f7740b373438ce"
+    ],
+    "wmx200": [
+      "626becf9582c3e319310b837"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": "@vss_6p29m",
+      "into": "slot",
+      "slots": [
+        "*"
+      ],
+      "_intendedSlots": [
+        "mod_tactical_000"
+      ],
+      "_note": "원본 3.11 코드가 `_name == \"A\" || \"B\"` 로 작성돼 자바스크립트에서 항상 참이었음 → 지정한 슬롯이 아니라 '모든 슬롯'에 적용됐다. 게임플레이를 원본과 동일하게 유지하려고 그대로 재현한다. 의도대로 고치려면 slots 를 _intendedSlots 값으로 바꿔라.",
+      "add": "@wmx200"
+    }
+  ]
+}

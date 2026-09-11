@@ -1,0 +1,38 @@
+{
+  "key": "ak_partisan_stock_can_use_more_ak",
+  "title": "파르티잔 스톡을 더 많은 AK 계열에 허용",
+  "enabled": true,
+  "sets": {
+    "partisanstock": [
+      "66ac9d9740e27931602042d4"
+    ],
+    "moreak": [
+      "5ac4cd105acfc40016339859",
+      "5ac66cb05acfc40198510a10",
+      "5ac66d015acfc400180ae6e4",
+      "5ac66d2e5acfc43b321d4b53",
+      "5ac66d725acfc43b321d4b60",
+      "5ac66d9b5acfc4001633997a",
+      "5bf3e0490db83400196199af",
+      "5ab8e9fcd8ce870019439434",
+      "57dc2fa62459775949412633",
+      "583990e32459771419544dd2",
+      "5839a40f24597726f856b511",
+      "57c44b372459772d2b39b8ce",
+      "576165642459773c7a400233",
+      "59f9cabd86f7743a10721f46",
+      "59984ab886f7743e98271174"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": "@moreak",
+      "into": "slot",
+      "slots": [
+        "mod_stock"
+      ],
+      "add": "@partisanstock"
+    }
+  ]
+}

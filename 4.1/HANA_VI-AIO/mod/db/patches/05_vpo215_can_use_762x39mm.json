@@ -1,0 +1,23 @@
+{
+  "key": "vpo215_can_use_762x39mm",
+  "title": "VPO-215에 7.62x39mm 사용 허용",
+  "enabled": true,
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": [
+        "5de652c31b7e3716273428be"
+      ],
+      "into": "chamber",
+      "add": "@m43"
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5de653abf76fdc1ce94a5a2a"
+      ],
+      "into": "cartridge",
+      "add": "@m43"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "key": "bit_dt_can_use_some_sights",
+  "title": "BIT DT 마운트에 일부 도트 허용",
+  "enabled": true,
+  "sets": {
+    "sights": [
+      "616584766ef05c2ce828ef57",
+      "5c7d55f52e221644f31bff6a",
+      "59f9d81586f7744c7506ee62",
+      "558022b54bdc2dac148b458d",
+      "58491f3324597764bc48fa02",
+      "584924ec24597768f12ae244",
+      "5d2da1e948f035477b1ce2ba",
+      "64785e7c19d732620e045e15",
+      "6165ac8c290d254f5e6b2f6c",
+      "655f13e0a246670fb0373245",
+      "60a23797a37c940de7062d02",
+      "6477772ea8a38bb2050ed4db",
+      "6478641c19d732620e045e17",
+      "5d2dc3e548f035404a1a4798",
+      "584984812459776a704a82a6",
+      "626bb8532c923541184624b4",
+      "609a63b6e2ff132951242d09",
+      "5c0505e00db834001b735073",
+      "570fd721d2720bc5458b4596",
+      "5b30b0dc5acfc400153b7124"
+    ],
+    "bitdtmount": [
+      "638db77630c4240f9e06f8b6"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": "@bitdtmount",
+      "into": "slot",
+      "slots": [
+        "mod_scope"
+      ],
+      "add": "@sights"
+    }
+  ]
+}

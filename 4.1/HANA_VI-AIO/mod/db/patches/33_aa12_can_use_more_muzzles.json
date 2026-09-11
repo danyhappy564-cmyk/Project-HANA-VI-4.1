@@ -1,0 +1,27 @@
+{
+  "key": "aa12_can_use_more_muzzles",
+  "title": "AA-12 배럴에 12게이지 총구 장치 허용",
+  "enabled": true,
+  "sets": {
+    "a12gamuzzles": [
+      "5c0111ab0db834001966914d",
+      "560838c94bdc2d77798b4569",
+      "5b363dea5acfc4771e1c5e7e"
+    ],
+    "aa12barrels": [
+      "670fd03dc424cf758f006946",
+      "670fd0a8d8d4eae4790c8187"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": "@aa12barrels",
+      "into": "slot",
+      "slots": [
+        "mod_muzzle"
+      ],
+      "add": "@a12gamuzzles"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "key": "smg_firerate_change",
+  "title": "기관단총 연사속도 조정",
+  "enabled": true,
+  "ops": [
+    {
+      "op": "setProps",
+      "targets": [
+        "5fc3f2d5900b1d5091531e57"
+      ],
+      "props": {
+        "bFirerate": 1200
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "5fc3e272f8b6a877a729eac5"
+      ],
+      "props": {
+        "bFirerate": 700
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "60339954d62c9b14ed777c06"
+      ],
+      "props": {
+        "bFirerate": 775
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "59984ab886f7743e98271174"
+      ],
+      "props": {
+        "bFirerate": 750
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "59f9cabd86f7743a10721f46"
+      ],
+      "props": {
+        "bFirerate": 700
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "62e14904c2699c0ec93adc47"
+      ],
+      "props": {
+        "bFirerate": 900
+      }
+    },
+    {
+      "op": "appendProps",
+      "targets": [
+        "60339954d62c9b14ed777c06"
+      ],
+      "props": {
+        "weapFireType": [
+          "fullauto"
+        ]
+      }
+    },
+    {
+      "op": "appendProps",
+      "targets": [
+        "59f9cabd86f7743a10721f46"
+      ],
+      "props": {
+        "weapFireType": [
+          "fullauto"
+        ]
+      }
+    }
+  ]
+}

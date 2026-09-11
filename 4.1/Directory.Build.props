@@ -1,0 +1,75 @@
+<Project>
+
+  <!-- ==========================================================================
+       Project HANA-VI 4.1 — 공통 빌드 설정
+       서버 모드는 전부 net10.0, SPT 4.1.5 기준.
+       NuGet 패키지 이름은 SPTushonka.* 이지만 어셈블리/네임스페이스는 SPTarkov.* 다.
+       ========================================================================== -->
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <SptVersion>4.1.5</SptVersion>
+
+    <!-- 빌드 산출물을 SPT 설치 폴더로 바로 복사할 때 쓰는 경로.
+         다른 경로에 설치했으면 `dotnet build -p:SptRoot="D:\SPT"` 처럼 덮어쓰면 된다. -->
+    <SptRoot Condition="'$(SptRoot)' == '' And '$(SPT_ROOT)' != ''">$(SPT_ROOT)</SptRoot>
+    <SptRoot Condition="'$(SptRoot)' == ''">E:\SPT 4.1</SptRoot>
+    <SptServerMods>$(SptRoot)\SPT_Runtime\user\mods</SptServerMods>
+
+    <!-- 서버가 모드 DLL 옆의 파일을 그대로 읽으므로 참조 DLL은 복사하지 않는다. -->
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SPTushonka.Common" Version="$(SptVersion)" />
+    <PackageReference Include="SPTushonka.DI" Version="$(SptVersion)" />
+    <PackageReference Include="SPTushonka.Reflection" Version="$(SptVersion)" />
+    <PackageReference Include="SPTushonka.Server.Core" Version="$(SptVersion)" />
+  </ItemGroup>
+
+  <!-- mod/ 아래 payload(config.json, db/**)는 전부 출력 폴더로 복사된다.
+       ModHelper.GetAbsolutePathToModFolder() 가 이 폴더를 가리킨다. -->
+  <ItemGroup>
+    <None Include="mod\**\*" CopyToOutputDirectory="PreserveNewest" LinkBase="" />
+  </ItemGroup>
+
+  <!-- ========== 배포: 빌드 결과를 user/mods/<모드이름>/ 로 복사 ==========
+       SPT 설치 폴더가 실제로 존재할 때만 동작한다 (CI/리눅스에서는 자동으로 건너뜀). -->
+  <Target Name="DeployToSpt" AfterTargets="Build"
+          Condition="'$(Configuration)' == 'Release' And Exists('$(SptServerMods)')">
+    <PropertyGroup>
+      <DeployDir>$(SptServerMods)\$(MSBuildProjectName)</DeployDir>
+    </PropertyGroup>
+    <ItemGroup>
+      <DeployFiles Include="$(OutputPath)**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(DeployFiles)"
+          DestinationFiles="@(DeployFiles->'$(DeployDir)\%(RecursiveDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true" />
+    <Message Importance="high" Text="[배포 완료] $(DeployDir)" />
+  </Target>
+
+  <!-- ========== 릴리스 패키징: release/<모드이름>-<버전>.zip ========== -->
+  <Target Name="PackageRelease" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
+    <PropertyGroup>
+      <StageDir>$(MSBuildProjectDirectory)\obj\release-stage\$(MSBuildProjectName)</StageDir>
+      <ZipPath>$(MSBuildProjectDirectory)\release\$(MSBuildProjectName)-$(Version).zip</ZipPath>
+    </PropertyGroup>
+    <RemoveDir Directories="$(StageDir)" />
+    <ItemGroup>
+      <StageFiles Include="$(OutputPath)**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(StageFiles)"
+          DestinationFiles="@(StageFiles->'$(StageDir)\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <MakeDir Directories="$(MSBuildProjectDirectory)\release" />
+    <Delete Files="$(ZipPath)" />
+    <ZipDirectory SourceDirectory="$(MSBuildProjectDirectory)\obj\release-stage"
+                  DestinationFile="$(ZipPath)" />
+    <Message Importance="high" Text="[패키징 완료] $(ZipPath)" />
+  </Target>
+
+</Project>

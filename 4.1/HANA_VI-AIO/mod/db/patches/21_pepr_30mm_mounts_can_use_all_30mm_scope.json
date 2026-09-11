@@ -1,0 +1,26 @@
+{
+  "key": "pepr_30mm_mounts_can_use_all_30mm_scope",
+  "title": "PEPR 30mm 마운트에 30mm 조준경 전부 허용",
+  "enabled": true,
+  "sets": {
+    "pepr30mm": [
+      "5b2389515acfc4771e1be0c0"
+    ],
+    "scope30mm": [
+      "618ba27d9008e4636a67f61d",
+      "617151c1d92c473c770214ab",
+      "6567e7681265c8a131069b0f"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": "@pepr30mm",
+      "into": "slot",
+      "slots": [
+        "mod_scope_000"
+      ],
+      "add": "@scope30mm"
+    }
+  ]
+}

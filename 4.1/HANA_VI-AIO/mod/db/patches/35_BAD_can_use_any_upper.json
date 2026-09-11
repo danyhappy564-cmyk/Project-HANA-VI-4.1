@@ -1,0 +1,21 @@
+{
+  "key": "BAD_can_use_any_upper",
+  "title": "BAD 레버 어퍼 충돌 제거",
+  "enabled": true,
+  "sets": {
+    "BAD": [
+      "675307301f7c19a9780f2668"
+    ]
+  },
+  "ops": [
+    {
+      "op": "setProps",
+      "targets": [
+        "675307301f7c19a9780f2668"
+      ],
+      "props": {
+        "ConflictingItems": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "key": "some_mounts_can_use_tactical_device",
+  "title": "일부 마운트/스코프에 전술장비 장착 허용",
+  "enabled": true,
+  "sets": {
+    "modscope": [
+      "5649a2464bdc2d91118b45a8",
+      "5b3b6e495acfc4330140bd88",
+      "63fc44e2429a8a166c7f61e6",
+      "57adff4f24597737f373b6e6"
+    ],
+    "tacticaldevice": [
+      "5a800961159bd4315e3a1657",
+      "57fd23e32459772d0805bcf1",
+      "544909bb4bdc2d6f028b4577",
+      "5c06595c0db834001a66af6c",
+      "5cc9c20cd7f00c001336c65d",
+      "5d2369418abbc306c62e0c80",
+      "5b07dd285acfc4001754240d",
+      "56def37dd2720bec348b456a",
+      "5a7b483fe899ef0016170d15",
+      "61605d88ffa6e502ac5e7eeb",
+      "5a5f1ce64f39f90b401987bc",
+      "560d657b4bdc2da74d8b4572",
+      "5b3a337e5acfc4704b4a19a0",
+      "5c5952732e2216398b5abda2",
+      "57d17e212459775a1179a0f5",
+      "6267c6396b642f77f56f5c1c",
+      "6272370ee4013c5d7e31f418",
+      "6272379924e29f06af4d5ecb",
+      "626becf9582c3e319310b837",
+      "644a3df63b0b6f03e101e065",
+      "646f6322f43d0c5d62063715"
+    ],
+    "modmount": [
+      "57ac965c24597706be5f975c",
+      "57aca93d2459771f2c7e26db"
+    ],
+    "scope001002": [
+      "5b2389515acfc4771e1be0c0",
+      "5aa66c72e5b5b00016327c93",
+      "6171407e50224f204c1da3c5",
+      "61713cc4d8e3106d9806c109"
+    ],
+    "jp30mm": [
+      "5a37ca54c4a282000d72296a"
+    ],
+    "geis30mmmount": [
+      "618b9682a3884f56c957ca78",
+      "618ba92152ecee1505530bd3"
+    ],
+    "railgasblock": [
+      "56ea8d2fd2720b7c698b4570",
+      "5a34fbadc4a28200741e230a"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": "@modscope",
+      "into": "slot",
+      "slots": [
+        "mod_scope"
+      ],
+      "add": "@tacticaldevice"
+    },
+    {
+      "op": "addFilter",
+      "targets": "@modmount",
+      "into": "slot",
+      "slots": [
+        "mod_mount"
+      ],
+      "add": "@tacticaldevice"
+    },
+    {
+      "op": "addFilter",
+      "targets": "@scope001002",
+      "into": "slot",
+      "slots": [
+        "*"
+      ],
+      "_intendedSlots": [
+        "mod_scope_001"
+      ],
+      "_note": "원본 3.11 코드가 `_name == \"A\" || \"B\"` 로 작성돼 자바스크립트에서 항상 참이었음 → 지정한 슬롯이 아니라 '모든 슬롯'에 적용됐다. 게임플레이를 원본과 동일하게 유지하려고 그대로 재현한다. 의도대로 고치려면 slots 를 _intendedSlots 값으로 바꿔라.",
+      "whenFilterContains": [
+        "577d128124597739d65d0e56"
+      ],
+      "add": "@tacticaldevice"
+    },
+    {
+      "op": "addFilter",
+      "targets": "@jp30mm",
+      "into": "slot",
+      "slots": [
+        "mod_scope_001"
+      ],
+      "add": "@tacticaldevice"
+    },
+    {
+      "op": "addFilter",
+      "targets": "@geis30mmmount",
+      "into": "slot",
+      "slots": [
+        "mod_scope"
+      ],
+      "add": "@tacticaldevice"
+    },
+    {
+      "op": "addFilter",
+      "targets": "@railgasblock",
+      "into": "slot",
+      "slots": [
+        "mod_sight_front"
+      ],
+      "add": "@tacticaldevice"
+    }
+  ]
+}

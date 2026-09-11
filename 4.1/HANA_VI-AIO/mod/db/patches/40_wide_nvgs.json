@@ -1,0 +1,23 @@
+{
+  "key": "wide_nvgs",
+  "title": "야시경 시야(MaskSize) 확대",
+  "enabled": true,
+  "sets": {
+    "nvgs": [
+      "5c0558060db834001b735271",
+      "57235b6f24597759bf5a30f1",
+      "5c066e3a0db834001b7353f0",
+      "5c0696830db834001d23f5da",
+      "67506ca81f18589016006aa6"
+    ]
+  },
+  "ops": [
+    {
+      "op": "setProps",
+      "targets": "@nvgs",
+      "props": {
+        "MaskSize": 1
+      }
+    }
+  ]
+}

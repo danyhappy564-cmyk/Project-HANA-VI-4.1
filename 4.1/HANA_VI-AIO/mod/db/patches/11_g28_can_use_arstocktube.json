@@ -1,0 +1,30 @@
+{
+  "key": "g28_can_use_arstocktube",
+  "title": "G28에 AR 스톡 튜브 허용",
+  "enabled": true,
+  "sets": {
+    "g28a": [
+      "6176aca650224f204c1da3fb"
+    ],
+    "arstocktube": [
+      "5649be884bdc2d79388b4577",
+      "5d120a10d7ad1a4e1026ba85",
+      "5b0800175acfc400153aebd4",
+      "602e3f1254072b51b239f713",
+      "5c793fb92e221644f31bfb64",
+      "5c793fc42e221600114ca25d",
+      "638de3603a1a4031d8260b8c"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": "@g28a",
+      "into": "slot",
+      "slots": [
+        "mod_stock"
+      ],
+      "add": "@arstocktube"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "key": "no_mount_extrasize",
+  "title": "마운트류 차지공간(ExtraSize) 제거",
+  "enabled": true,
+  "ops": [
+    {
+      "op": "setProps",
+      "targetsByParent": [
+        "55818b224bdc2dde698b456f"
+      ],
+      "props": {
+        "ExtraSizeLeft": 0,
+        "ExtraSizeRight": 0,
+        "ExtraSizeUp": 0,
+        "ExtraSizeDown": 0
+      }
+    }
+  ]
+}

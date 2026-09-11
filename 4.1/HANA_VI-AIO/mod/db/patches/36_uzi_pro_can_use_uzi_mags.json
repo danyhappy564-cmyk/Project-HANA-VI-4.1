@@ -1,0 +1,30 @@
+{
+  "key": "uzi_pro_can_use_uzi_mags",
+  "title": "UZI PRO에 UZI 탄창 허용",
+  "enabled": true,
+  "sets": {
+    "uzimags": [
+      "66992713ae08c5c29e0c4f97",
+      "6699271b9950f5f4cd060299",
+      "669927203c4fda6471005cbe",
+      "66992725ae08c5c29e0c4f9a",
+      "6699272a3c4fda6471005cc1",
+      "676176a162e0497044079f46"
+    ],
+    "uzi_pro": [
+      "668e71a8dadf42204c032ce1",
+      "6680304edadb7aa61d00cef0"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": "@uzi_pro",
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "add": "@uzimags"
+    }
+  ]
+}

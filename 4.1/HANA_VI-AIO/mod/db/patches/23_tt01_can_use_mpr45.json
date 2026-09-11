@@ -1,0 +1,24 @@
+{
+  "key": "tt01_can_use_mpr45",
+  "title": "TT01 마운트에 MPR45 허용",
+  "enabled": true,
+  "sets": {
+    "tt01": [
+      "5649d9a14bdc2d79388b4580"
+    ],
+    "mpr45": [
+      "5649a2464bdc2d91118b45a8"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": "@tt01",
+      "into": "slot",
+      "slots": [
+        "mod_scope"
+      ],
+      "add": "@mpr45"
+    }
+  ]
+}

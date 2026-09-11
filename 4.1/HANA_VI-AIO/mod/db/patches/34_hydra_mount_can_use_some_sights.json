@@ -1,0 +1,31 @@
+{
+  "key": "hydra_mount_can_use_some_sights",
+  "title": "하이드라 마운트에 일부 도트 허용",
+  "enabled": true,
+  "sets": {
+    "hydramounts": [
+      "65392f611406374f82152ba5",
+      "653931da5db71d30ab1d6296"
+    ],
+    "somesights": [
+      "5a33b652c4a28232996e407c",
+      "58d2664f86f7747fec5834f6",
+      "5a33b2c9c4a282000c5a9511",
+      "577d128124597739d65d0e56",
+      "615d8d878004cc50514c3233",
+      "57ae0171245977343c27bfcf",
+      "609bab8b455afd752b2e6138"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": "@hydramounts",
+      "into": "slot",
+      "slots": [
+        "mod_scope"
+      ],
+      "add": "@somesights"
+    }
+  ]
+}

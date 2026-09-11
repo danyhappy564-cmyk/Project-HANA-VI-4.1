@@ -1,0 +1,15 @@
+{
+  "key": "mcx_can_use_223",
+  "title": "MCX에 5.56 NATO 허용",
+  "enabled": true,
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": [
+        "5fbcc1d9016cce60e8341ab3"
+      ],
+      "into": "chamber",
+      "add": "@x223"
+    }
+  ]
+}

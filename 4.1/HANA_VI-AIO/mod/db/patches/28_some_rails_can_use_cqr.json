@@ -1,0 +1,62 @@
+{
+  "key": "some_rails_can_use_cqr",
+  "title": "다수 레일에 CQR 그립 허용",
+  "enabled": true,
+  "sets": {
+    "cqr": [
+      "5a7dbfc1159bd40016548fde"
+    ],
+    "griprails": [
+      "5b7be4895acfc400170e2dd5",
+      "5b4736b986f77405cb415c10",
+      "5b800ebc86f774394e230a90",
+      "5b8403a086f7747ff856f4e2",
+      "5d15ce51d7ad1a1eff619092",
+      "5cf4e3f3d7f00c06595bc7f0",
+      "5648ae314bdc2d3d1c8b457f",
+      "5cbda392ae92155f3c17c39f",
+      "5f6331e097199b7db2128dc2",
+      "5c617a5f2e2216000f1e81b3",
+      "5648b4534bdc2d3d1c8b4580",
+      "5efaf417aeb21837e749c7f2",
+      "647dba3142c479dde701b654",
+      "647dd2b8a12ebf96c3031655",
+      "649ec127c93611967b034957",
+      "5d133067d7ad1a33013f95b4",
+      "5beec3e30db8340019619424",
+      "5bb20dfcd4351e00334c9e24",
+      "5b7be1ca5acfc400170e2d2f",
+      "5b099a9d5acfc47a8607efe7",
+      "5a9d6d21a2750c00137fa649",
+      "5a957c3fa2750c00137fa5f7",
+      "5a9548c9159bd400133e97b3",
+      "5827272a24597748c74bdeea",
+      "58272b392459774b4c7b3ccd",
+      "55d45f484bdc2d972f8b456d",
+      "5a788031c585673f2b5c1c79",
+      "5d010d1cd7ad1a59283b1ce7",
+      "5d19cd96d7ad1a4a992c9f52",
+      "5e5699df2161e06ac158df6f",
+      "5f63418ef5750b524b45f116",
+      "5b4736b986f77405cb415c10",
+      "6388c4ac8d895f557a0c6515",
+      "59eb7ebe86f7740b373438ce",
+      "5f2aa493cd375f14e15eea72",
+      "5fc53954f8b6a877a729eaeb",
+      "5fbb976df9986c4cff3fe5f2",
+      "5fbb978207e8a97d1f0902d3",
+      "653ed19d22e1ef3d9002c328"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": "@griprails",
+      "into": "slot",
+      "slots": [
+        "mod_foregrip"
+      ],
+      "add": "@cqr"
+    }
+  ]
+}

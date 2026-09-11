@@ -1,0 +1,78 @@
+{
+  "key": "rpd_tacticalkit",
+  "title": "RPD 전술 키트(핸드가드/조준기/총구/바이포드)",
+  "enabled": true,
+  "sets": {
+    "addrpd": [
+      "6513ef33e06849f06c0957ca",
+      "65268d8ecb944ff1e90ea385"
+    ],
+    "handguards_rpd": [
+      "6491c6f6ef312a876705191b"
+    ],
+    "rearsight_mount": [
+      "5c064c400db834001d23f468",
+      "5addbffe5acfc4001714dfac"
+    ],
+    "addrpdbarrel": [
+      "6513eff1e06849f06c0957d4",
+      "65266fd43341ed9aa903dd56"
+    ],
+    "muzzle_m43": [
+      "59d64fc686f774171b243fe2",
+      "5a0d716f1526d8000d26b1e2",
+      "5f633f68f5750b524b45f112",
+      "5c878ebb2e2216001219d48a",
+      "59e61eb386f77440d64f5daf",
+      "59e8a00d86f7742ad93b569c",
+      "5a9ea27ca2750c00137fa672",
+      "5cc9ad73d7f00c000e2579d4",
+      "5c7951452e221644f31bfd5c",
+      "615d8e9867085e45ef1409c6",
+      "5a0abb6e1526d8000a025282",
+      "59bffc1f86f77435b128b872",
+      "593d489686f7745c6255d58a",
+      "5a0d63621526d8dba31fe3bf",
+      "5a9fbacda2750c00141e080f",
+      "64942bfc6ee699f6890dff95"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": "@addrpd",
+      "into": "slot",
+      "slots": [
+        "mod_handguard"
+      ],
+      "add": "@handguards_rpd"
+    },
+    {
+      "op": "addFilter",
+      "targets": "@addrpd",
+      "into": "slot",
+      "slots": [
+        "mod_sight_rear"
+      ],
+      "add": "@rearsight_mount"
+    },
+    {
+      "op": "addFilter",
+      "targets": "@addrpdbarrel",
+      "into": "slot",
+      "slots": [
+        "mod_muzzle"
+      ],
+      "add": "@muzzle_m43"
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "6513f037e06849f06c0957d7"
+      ],
+      "props": {
+        "ConflictingItems": []
+      }
+    }
+  ]
+}

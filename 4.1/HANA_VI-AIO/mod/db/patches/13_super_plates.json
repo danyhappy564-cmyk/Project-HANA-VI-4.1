@@ -1,0 +1,19 @@
+{
+  "key": "super_plates",
+  "title": "모든 방탄판 성능 상향",
+  "enabled": true,
+  "ops": [
+    {
+      "op": "setProps",
+      "targetsByParent": [
+        "644120aa86ffbe10ee032b6f"
+      ],
+      "props": {
+        "ArmorMaterial": "Aramid",
+        "ArmorType": "Heavy",
+        "Durability": 50,
+        "MaxDurability": 50
+      }
+    }
+  ]
+}

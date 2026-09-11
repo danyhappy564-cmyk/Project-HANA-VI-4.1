@@ -1,0 +1,199 @@
+{
+  "key": "vss_val_can_use_more_ammo",
+  "title": "VSS / AS VAL / SR-3M 다구경 + 탄창 확장",
+  "enabled": true,
+  "sets": {
+    "vssval_m43mags": [
+      "59e5d83b86f7745aed03d262",
+      "5a01c29586f77474660c694c",
+      "5ac66bea5acfc43b321d4aec",
+      "59d625f086f774661516605d",
+      "5b1fd4e35acfc40018633c39",
+      "5a0060fc86f7745793204432",
+      "59e5f5a486f7746c530b3ce2",
+      "5b1fb3e15acfc4001637f068",
+      "59d6272486f77466146386ff",
+      "5e21a3c67e40bd02257a008a",
+      "5cbdc23eae9215001136a407",
+      "5c6175362e221600133e3b94",
+      "59fafc5086f7740dbe19f6c3",
+      "59fafc9386f774067d462453",
+      "5cfe8010d7ad1a59283b14c6",
+      "6272874a6c47bd74f92e2087",
+      "64b9cf0ac12b9c38db26923a"
+    ],
+    "vssval_223mags": [
+      "5c0548ae0db834001966a3c2",
+      "5ac66c5d5acfc4001718d314",
+      "6764139c44b3c96e7b0e2f7b"
+    ],
+    "vssval_m74mags": [
+      "564ca9df4bdc2d35148b4569",
+      "564ca99c4bdc2d16268b4589",
+      "55d480c04bdc2d1d4e8b456a",
+      "5cbdaf89ae9215000e5b9c94",
+      "55d481904bdc2d8c2f8b456a",
+      "55d482194bdc2d1d4e8b456b",
+      "55d4837c4bdc2d1d4e8b456c",
+      "5aaa4194e5b5b055d06310a5",
+      "5bed61680db834001d2c45ab",
+      "5bed625c0db834001c062946",
+      "649ec30cb013f04a700e60fb",
+      "64b9e265c94d0d15c5027e35"
+    ],
+    "vss_val": [
+      "57838ad32459774a17445cd2",
+      "57c44b372459772d2b39b8ce",
+      "651450ce0e00edc794068371"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": [
+        "57838ad32459774a17445cd2"
+      ],
+      "into": "chamber",
+      "add": "@m43"
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "57838ad32459774a17445cd2"
+      ],
+      "into": "chamber",
+      "add": "@x366tkm"
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "57838ad32459774a17445cd2"
+      ],
+      "into": "chamber",
+      "add": "@x223"
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "57838ad32459774a17445cd2"
+      ],
+      "into": "chamber",
+      "add": "@x300blk"
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "57838ad32459774a17445cd2"
+      ],
+      "into": "chamber",
+      "add": "@m74"
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "57c44b372459772d2b39b8ce"
+      ],
+      "into": "chamber",
+      "add": "@m43"
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "57c44b372459772d2b39b8ce"
+      ],
+      "into": "chamber",
+      "add": "@x366tkm"
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "57c44b372459772d2b39b8ce"
+      ],
+      "into": "chamber",
+      "add": "@x223"
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "57c44b372459772d2b39b8ce"
+      ],
+      "into": "chamber",
+      "add": "@x300blk"
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "57c44b372459772d2b39b8ce"
+      ],
+      "into": "chamber",
+      "add": "@m74"
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "651450ce0e00edc794068371"
+      ],
+      "into": "chamber",
+      "add": "@m43"
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "651450ce0e00edc794068371"
+      ],
+      "into": "chamber",
+      "add": "@x366tkm"
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "651450ce0e00edc794068371"
+      ],
+      "into": "chamber",
+      "add": "@x223"
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "651450ce0e00edc794068371"
+      ],
+      "into": "chamber",
+      "add": "@x300blk"
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "651450ce0e00edc794068371"
+      ],
+      "into": "chamber",
+      "add": "@m74"
+    },
+    {
+      "op": "addFilter",
+      "targets": "@vss_val",
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "add": "@vssval_m43mags"
+    },
+    {
+      "op": "addFilter",
+      "targets": "@vss_val",
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "add": "@vssval_223mags"
+    },
+    {
+      "op": "addFilter",
+      "targets": "@vss_val",
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "add": "@vssval_m74mags"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "key": "dmr_firerate_change",
+  "title": "지정사수소총 연사속도 조정 + 연발 추가",
+  "enabled": true,
+  "ops": [
+    {
+      "op": "setProps",
+      "targets": [
+        "57838ad32459774a17445cd2"
+      ],
+      "props": {
+        "bFirerate": 875
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "5aafa857e5b5b00018480968"
+      ],
+      "props": {
+        "bFirerate": 700
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "5df8ce05b11454561e39243b"
+      ],
+      "props": {
+        "bFirerate": 700
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "6176aca650224f204c1da3fb"
+      ],
+      "props": {
+        "bFirerate": 625
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "5a367e5dc4a282000e49738f"
+      ],
+      "props": {
+        "bFirerate": 600
+      }
+    },
+    {
+      "op": "appendProps",
+      "targets": [
+        "5aafa857e5b5b00018480968"
+      ],
+      "props": {
+        "weapFireType": [
+          "fullauto"
+        ]
+      }
+    },
+    {
+      "op": "appendProps",
+      "targets": [
+        "5df8ce05b11454561e39243b"
+      ],
+      "props": {
+        "weapFireType": [
+          "fullauto"
+        ]
+      }
+    },
+    {
+      "op": "appendProps",
+      "targets": [
+        "6176aca650224f204c1da3fb"
+      ],
+      "props": {
+        "weapFireType": [
+          "fullauto"
+        ]
+      }
+    },
+    {
+      "op": "appendProps",
+      "targets": [
+        "5a367e5dc4a282000e49738f"
+      ],
+      "props": {
+        "weapFireType": [
+          "fullauto"
+        ]
+      }
+    }
+  ]
+}

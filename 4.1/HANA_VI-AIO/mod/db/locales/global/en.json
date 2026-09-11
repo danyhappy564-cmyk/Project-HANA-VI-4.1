@@ -1,0 +1,7 @@
+{
+  "_comment": "키 형식은 '<아이템ID> Name' / '<아이템ID> ShortName' / '<아이템ID> Description' 이다. 파일 이름(en, ko, ...)이 곧 언어 코드다.",
+
+  "AA01ad4786f774505619AD75 Name": "SVT-40 custom scope mount",
+  "AA01ad4786f774505619AD75 ShortName": "SVT-40 mount",
+  "AA01ad4786f774505619AD75 Description": "A custom-machined dovetail-to-picatinny adapter for the SVT-40, accepting virtually any modern optic. Added by HANA-VI's All In One."
+}

@@ -1,0 +1,24 @@
+{
+  "key": "uzi_pro_more_barrels",
+  "title": "UZI PRO SMG에 권총용 배럴 허용",
+  "enabled": true,
+  "sets": {
+    "pabarrel": [
+      "668031705014e211b4078046"
+    ],
+    "uzi_pro_smg": [
+      "668e71a8dadf42204c032ce1"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": "@uzi_pro_smg",
+      "into": "slot",
+      "slots": [
+        "mod_barrel"
+      ],
+      "add": "@pabarrel"
+    }
+  ]
+}

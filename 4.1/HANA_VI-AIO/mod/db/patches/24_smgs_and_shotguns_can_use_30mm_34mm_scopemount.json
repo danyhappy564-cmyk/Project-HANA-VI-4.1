@@ -1,0 +1,47 @@
+{
+  "key": "smgs_and_shotguns_can_use_30mm_34mm_scopemount",
+  "title": "기관단총/산탄총에 30mm·34mm 스코프 마운트 허용",
+  "enabled": true,
+  "sets": {
+    "scopemount": [
+      "57c69dd424597774c03b7bbc",
+      "5b3b99265acfc4704b4a1afb",
+      "5a37ca54c4a282000d72296a",
+      "618b9643526131765025ab35",
+      "618bab21526131765025ab3f",
+      "6567e751a715f85433025998",
+      "5b2389515acfc4771e1be0c0",
+      "6171407e50224f204c1da3c5",
+      "62811f461d5df4475f46a332",
+      "61713cc4d8e3106d9806c109",
+      "5c86592b2e2216000e69e77c",
+      "5aa66c72e5b5b00016327c93",
+      "5aa66a9be5b5b0214e506e89",
+      "5dff77c759400025ea5150cf"
+    ],
+    "addscopemount": [
+      "5ba26383d4351e00334c93d9",
+      "5bd70322209c4d00d7167b8f",
+      "5cc700ede4a949033c734315",
+      "5cc7015ae4a949001152b4c6",
+      "5fc3f2d5900b1d5091531e57",
+      "5fb64bc92b1b027b1f50bcf2",
+      "5fc3e272f8b6a877a729eac5",
+      "62e281349ecd3f493f6df954",
+      "55d48a634bdc2d8b2f8b456a",
+      "5dfe14f30b92095fd441edaf",
+      "5a78948ec5856700177b1124"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": "@addscopemount",
+      "into": "slot",
+      "slots": [
+        "mod_scope"
+      ],
+      "add": "@scopemount"
+    }
+  ]
+}

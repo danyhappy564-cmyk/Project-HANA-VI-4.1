@@ -1,0 +1,23 @@
+{
+  "key": "sks_can_use_366tkm",
+  "title": "SKS / OP-SKS에 .366 TKM 허용",
+  "enabled": true,
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": [
+        "574d967124597745970e7c94"
+      ],
+      "into": "chamber",
+      "add": "@x366tkm"
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "587e02ff24597743df3deaeb"
+      ],
+      "into": "chamber",
+      "add": "@x366tkm"
+    }
+  ]
+}

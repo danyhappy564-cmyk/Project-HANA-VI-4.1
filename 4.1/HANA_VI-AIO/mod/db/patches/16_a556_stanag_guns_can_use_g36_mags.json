@@ -1,0 +1,31 @@
+{
+  "key": "a556_stanag_guns_can_use_g36_mags",
+  "title": "5.56 STANAG 총기에 G36 탄창 허용",
+  "enabled": true,
+  "sets": {
+    "stanag": [
+      "5447a9cd4bdc2dbd208b4567",
+      "5bb2475ed4351e00853264e3",
+      "5fbcc1d9016cce60e8341ab3",
+      "5c07c60e0db834002330051f",
+      "5d43021ca4b9362eab4b5e25",
+      "5c488a752e221602b412af63",
+      "6184055050224f204c1da540",
+      "618428466ef05c2ce828f218"
+    ],
+    "g36mag": [
+      "62307b7b10d2321fa8741921"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": "@stanag",
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "add": "@g36mag"
+    }
+  ]
+}

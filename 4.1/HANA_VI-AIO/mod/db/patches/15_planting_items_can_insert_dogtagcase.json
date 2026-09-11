@@ -1,0 +1,24 @@
+{
+  "key": "planting_items_can_insert_dogtagcase",
+  "title": "인식표 케이스에 설치형 퀘스트 아이템 수납",
+  "enabled": true,
+  "sets": {
+    "dogtagcase": [
+      "5c093e3486f77430cb02e593"
+    ],
+    "planting_items": [
+      "5991b51486f77447b112d44f",
+      "5ac78a9b86f7741cca0bbd8d",
+      "544fb5454bdc2df8738b456a",
+      "5b4391a586f7745321235ab2"
+    ]
+  },
+  "ops": [
+    {
+      "op": "addFilter",
+      "targets": "@dogtagcase",
+      "into": "grid",
+      "add": "@planting_items"
+    }
+  ]
+}

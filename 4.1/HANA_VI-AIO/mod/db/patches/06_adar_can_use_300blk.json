@@ -1,0 +1,26 @@
+{
+  "key": "adar_can_use_300blk",
+  "title": "ADAR 2-15에 .300 BLK + 연발 허용",
+  "enabled": true,
+  "ops": [
+    {
+      "op": "appendProps",
+      "targets": [
+        "5c07c60e0db834002330051f"
+      ],
+      "props": {
+        "weapFireType": [
+          "fullauto"
+        ]
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5c07c60e0db834002330051f"
+      ],
+      "into": "chamber",
+      "add": "@x300blk"
+    }
+  ]
+}
