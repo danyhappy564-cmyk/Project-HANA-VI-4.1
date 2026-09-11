@@ -230,6 +230,18 @@ var clone = cloner.Clone(source) with { Id = newId };   // ICloner 는 깊은 �
 3.11 원본은 무조건 전체였습니다. `config.json` 의 `excludeItemIds` /
 `excludeParentIds` 로 일부를 뺄 수 있게 했습니다. 비워 두면 원본과 동일합니다.
 
+### 4-5. 프리셋 ID 가 고정됐습니다
+
+tt33k 의 무기 프리셋 3개는 원본에서 `generateRandomID()` 로 **서버가 켜질 때마다
+다른 ID** 를 받았습니다. 프리셋 이름에서 고정 ID 를 만들어 매번 같은 값이 되게 했습니다.
+저장된 프로필이 프리셋을 참조할 때 안전합니다.
+
+### 4-6. SPT 가 모르는 게임 프로퍼티도 전달됩니다
+
+`PenetrationChance` 처럼 게임은 읽지만 SPT 4.1 의 `TemplateItemProperties` 에는
+없는 값이 있습니다. 이런 값은 `ExtensionData`(`[JsonExtensionData]`)에 담아
+클라이언트로 그대로 전달합니다. 검증 스크립트는 오류가 아니라 경고로 알려 줍니다.
+
 ### 4-4. SVT-40 커스텀 마운트에 이름이 생겼습니다
 
 원본 코드는 `db/locales/global/en.json` 을 읽게 돼 있었는데 **그 파일이 저장소에
@@ -263,6 +275,15 @@ if (slot._name == "mod_tactical_000" || "mod_tactical_001")
 **의도대로 고치려면** `"slots"` 값을 `_intendedSlots` 값으로 바꾸면 됩니다.
 해당하는 패치는 2개입니다: `vss_6p29m_mount_can_use_wmx200`,
 `some_mounts_can_use_tactical_device`.
+
+### 옮기지 않은 무효 코드
+
+아래 두 가지는 3.11 에서도 아무 효과가 없던 코드라 옮기지 않았습니다.
+
+| 원본 코드 | 왜 무효인가 |
+|---|---|
+| `pistolType54._props.RecoilCenter[1] = 0.3` | `RecoilCenter` 는 배열이 아니라 `{x,y,z}` 객체다. 자바스크립트에서 `[1]` 대입은 게임이 무시하는 숫자 키를 만들 뿐이다 |
+| ATLAS 숙련도에 `"0088_ATL_SR25_FDE_8800"` 추가 | 이 ID 의 아이템이 ATLAS 팩에 없다. 원본 ATLAS 모드에서 가져온 잔재로, 존재하지 않는 템플릿을 가리킨다 |
 
 ---
 
@@ -307,16 +328,40 @@ stage 규칙(`cloneItem` 은 `preload` 여야 함)을 검사했습니다. 전부
 
 ---
 
-## 7. 아직 포팅하지 않은 것
+## 7. 포팅 결과 요약
 
-| 모드 | 원본 규모 | 상태 |
+| 모드 | 원본 | 4.1 결과 |
 |---|---|---|
-| `HANA_VI-AIO` | 1,865줄 | ✅ 완료 |
-| `HANA-VI-AllExamined` | 31줄 | ✅ 완료 |
-| `HANA-VI_Items` | **6,711줄** + 아이템팩 12개 | ⏳ 미착수 |
-| `HANA-VI-SuperAmmo` | **1,499줄** | ⏳ 미착수 |
+| `HANA_VI-AIO` | 1,865줄 | 패치 42개 / 작업 150개 |
+| `HANA-VI-AllExamined` | 31줄 | 로더 1개 + 제외 목록 설정 |
+| `HANA-VI-SuperAmmo` | 1,499줄 | 특수탄 28종 / 패치 5개 / 작업 136개 |
+| `HANA-VI_Items` | 6,711줄 | 아이템 팩 11개 + 패치 8개 / 작업 505개 |
 
-`HANA-VI_Items` 는 커스텀 아이템 등록 프레임워크(복제 → 필터 등록 → 상인 →
-로케일 → 의상)라서, AIO 의 패치 엔진보다 한 단계 큰 작업입니다.
-`cloneItem` / `handbookEntry` / `traderOffer` op 는 이미 그쪽을 염두에 두고
-만들어 둔 것이라, 같은 엔진을 확장해서 쓸 수 있습니다.
+TypeScript 약 10,100줄 → C# 엔진(파일 21개) + JSON 데이터.
+
+### 아이템 팩 11개를 어떻게 처리했나
+
+3.11 은 팩마다 전용 주입 함수를 두고 있었습니다 (`injectAtlasGear`, `injectCarlQhb`,
+`applyMosinExtension`, `applyG36Extension` …). 데이터 형식은 5종뿐인데 코드는 11벌이었습니다.
+
+4.1 포팅본은 **형식별 처리기 5개 + 설명서(`db/packs.json`)** 로 바꿨습니다.
+팩 데이터(JSON)는 **변환하지 않고 3.11 원본 그대로** 씁니다. 변환하면 그 과정에서
+값이 어긋날 위험이 있고, HANA_VI 가 익숙한 파일 구조도 깨지기 때문입니다.
+
+| format | 팩 | 처리 |
+|---|---|---|
+| `hanamod` | ATLAS-GEAR, Carl-QHB, SIG_MCX_VIRTUS, SDTAC_KITS, qbz191 | `PackInjector` |
+| `wtt` | Items | SPT `CustomItemService.CreateItemFromClone` |
+| `raw` | mxlr | 완성된 템플릿을 그대로 얹음 |
+| `mosin` | mosin | `newitems.json` + `modifyItem.json` |
+| `nerv` | g36, nervex | `nerv_inv/*.json` |
+
+`tt33k`(844줄)만 팩이 아니라 코드 내장형이라, 패치 데이터(op 98개)로 옮겼습니다.
+
+### 패치 엔진 op 10종
+
+`setProps` `adjustProps` `appendProps` `addFilter` `cloneItem`
+`handbookEntry` `addPreset` `traderOffer` `questWeapons` `masteryTemplates`
+
+대상 지정 4종(`targets` / `targetsByParent` / `targetsByBaseClass` / `targetsAll`)과
+`whenPropEquals` 로 좁히기를 조합하면 3.11 의 모든 반복문 패턴이 표현됩니다.
