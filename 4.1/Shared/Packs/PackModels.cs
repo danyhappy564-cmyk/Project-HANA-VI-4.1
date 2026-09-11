@@ -14,6 +14,16 @@ public class PackManifest
     [JsonPropertyName("name")] public string Name { get; set; } = "";
     [JsonPropertyName("enabled")] public bool Enabled { get; set; } = true;
 
+    /// <summary>
+    /// 팩 데이터의 형식. 3.11 원본이 팩마다 다른 형식을 쓰고 있어 그대로 유지한다.
+    ///   hanamod : items.json / clothes.json / globals.json / traders/ (팩 5개)
+    ///   wtt     : 무기 하나당 파일 하나, overrideProperties + addtoTraders (db/Items)
+    ///   raw     : templates/items.json 을 DB 에 그대로 얹는다 (mxlr)
+    ///   mosin   : newitems.json + modifyItem.json
+    ///   nerv    : nerv_inv/*.json — overwriteProperties + slotsToAdd + traderToAdd (g36, nervex)
+    /// </summary>
+    [JsonPropertyName("format")] public string Format { get; set; } = "hanamod";
+
     /// <summary>mod/db/packs/ 기준 상대 경로. 예: "ATLAS-GEAR/database"</summary>
     [JsonPropertyName("folder")] public string Folder { get; set; } = "";
 

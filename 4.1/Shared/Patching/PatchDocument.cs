@@ -95,6 +95,20 @@ public class PatchOp
     /// </summary>
     [JsonPropertyName("slotProps")] public Dictionary<string, JsonElement>? SlotProps { get; set; }
 
+    // ----- questWeapons / masteryTemplates -----
+    /// <summary>questWeapons: 대상 퀘스트 ID. masteryTemplates: 숙련도 이름(예: "TT").</summary>
+    [JsonPropertyName("questId")] public string? QuestId { get; set; }
+
+    [JsonPropertyName("masteryName")] public string? MasteryName { get; set; }
+
+    /// <summary>숙련도 Level2 / Level3 요구치를 함께 바꿀 때.</summary>
+    [JsonPropertyName("level2")] public int? Level2 { get; set; }
+    [JsonPropertyName("level3")] public int? Level3 { get; set; }
+
+    // ----- addPreset -----
+    /// <summary>무기 프리셋 정의 (globals.ItemPresets 에 들어간다).</summary>
+    [JsonPropertyName("preset")] public JsonElement? Preset { get; set; }
+
     // ----- cloneItem -----
     [JsonPropertyName("from")] public string? From { get; set; }
     [JsonPropertyName("newId")] public string? NewId { get; set; }

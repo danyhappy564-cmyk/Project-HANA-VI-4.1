@@ -1,9 +1,11 @@
 [
   {
     "_comment": [
-      "아이템 팩 목록. 이 파일에서 enabled 를 false 로 바꾸면 그 팩만 통째로 꺼진다.",
+      "아이템 팩 목록. enabled 를 false 로 바꾸면 그 팩만 통째로 꺼진다.",
       "folder 는 db/packs/ 기준 상대 경로다. 팩 데이터(JSON)는 3.11 원본 그대로라",
-      "아이템 스탯이나 가격을 바꾸려면 해당 팩 폴더의 *_items.json 을 고치면 된다."
+      "아이템 스탯이나 가격을 바꾸려면 해당 팩 폴더의 JSON 을 직접 고치면 된다.",
+      "format 은 그 팩의 데이터 형식이다 (hanamod / wtt / raw / mosin / nerv).",
+      "3.11 이 팩마다 다른 형식을 쓰고 있어서 그대로 유지했다."
     ]
   },
   {
@@ -18,7 +20,8 @@
       "custom_clothes"
     ],
     "useGlobals": true,
-    "useTraders": true
+    "useTraders": true,
+    "format": "hanamod"
   },
   {
     "key": "carl_qhb",
@@ -32,7 +35,8 @@
       "GW_clothes"
     ],
     "useGlobals": true,
-    "useTraders": true
+    "useTraders": true,
+    "format": "hanamod"
   },
   {
     "key": "sig_mcx_virtus",
@@ -46,7 +50,8 @@
       "VIR_clothes"
     ],
     "useGlobals": true,
-    "useTraders": true
+    "useTraders": true,
+    "format": "hanamod"
   },
   {
     "key": "sdtac_kits",
@@ -60,7 +65,8 @@
       "SDtac_clothes"
     ],
     "useGlobals": true,
-    "useTraders": true
+    "useTraders": true,
+    "format": "hanamod"
   },
   {
     "key": "qbz191",
@@ -74,6 +80,63 @@
       "clothes"
     ],
     "useGlobals": true,
+    "useTraders": true,
+    "format": "hanamod"
+  },
+  {
+    "key": "wtt_items",
+    "name": "WTT-style Custom Weapons",
+    "enabled": true,
+    "format": "wtt",
+    "folder": "Items",
+    "itemFiles": [],
+    "clothesFiles": [],
+    "useGlobals": false,
+    "useTraders": true
+  },
+  {
+    "key": "mxlr",
+    "name": "MXLR",
+    "enabled": true,
+    "format": "raw",
+    "folder": "mxlr",
+    "itemFiles": [],
+    "clothesFiles": [],
+    "useGlobals": false,
+    "useTraders": false,
+    "_note": "3.11 injectMxlr 은 items/handbook/locales 만 읽는다. 이 팩 폴더의 traders/, globals.json, mods_compatible.json, mods_conflicting.json 은 원본에서도 쓰이지 않는다(보존만 함)."
+  },
+  {
+    "key": "mosin",
+    "name": "Mosin AICS Chassis",
+    "enabled": true,
+    "format": "mosin",
+    "folder": "mosin",
+    "itemFiles": [],
+    "clothesFiles": [],
+    "useGlobals": false,
+    "useTraders": true
+  },
+  {
+    "key": "g36",
+    "name": "G36 Parts",
+    "enabled": true,
+    "format": "nerv",
+    "folder": "g36",
+    "itemFiles": [],
+    "clothesFiles": [],
+    "useGlobals": false,
+    "useTraders": true
+  },
+  {
+    "key": "nervex",
+    "name": "NERVEX Parts",
+    "enabled": true,
+    "format": "nerv",
+    "folder": "nervex",
+    "itemFiles": [],
+    "clothesFiles": [],
+    "useGlobals": false,
     "useTraders": true
   }
 ]

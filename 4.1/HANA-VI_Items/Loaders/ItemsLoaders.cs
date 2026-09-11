@@ -27,6 +27,7 @@ public class ItemsPackLoader(
     PatchLoader loader,
     PackReader reader,
     PackInjector injector,
+    ExtraPackInjector extra,
     TemplateTable templates,
     GlobalTable globals
 ) : IOnLoad
@@ -44,15 +45,26 @@ public class ItemsPackLoader(
         {
             if (!pack.Enabled) continue;
 
-            var madeItems = injector.InjectItems(pack, templates, globals);
-            var madeClothes = injector.InjectClothing(pack, templates);
+            // 팩마다 데이터 형식이 달라서 여기서 갈라 준다.
+            // 형식을 통일하지 않은 이유는 팩 JSON 을 3.11 원본 그대로 두기 위해서다.
+            var madeItems = pack.Format switch
+            {
+                "wtt" => extra.InjectWtt(pack, templates),
+                "raw" => extra.InjectRaw(pack, templates),
+                "mosin" => extra.InjectMosin(pack, templates),
+                "nerv" => extra.InjectNerv(pack, templates),
+                _ => injector.InjectItems(pack, templates, globals),
+            };
+
+            var madeClothes = pack.Format == "hanamod" ? injector.InjectClothing(pack, templates) : 0;
+
             items += madeItems;
             clothes += madeClothes;
             packs++;
 
             if (loader.Config.VerboseLogging)
             {
-                logger.Info($"[{ItemsMod.Name}] {pack.Name} — 아이템 {madeItems}개" +
+                logger.Info($"[{ItemsMod.Name}] {pack.Name} ({pack.Format}) — 아이템 {madeItems}개" +
                             (madeClothes > 0 ? $", 의류 {madeClothes}개" : ""));
             }
         }
@@ -77,8 +89,16 @@ public class ItemsLocaleLoader(
 
     protected override void Run()
     {
-        // 먼저 파일 기반 로케일(공통 처리)
+        // 1) 모드 자체 로케일 (db/locales/global)
         base.Run();
+
+        // 2) 팩마다 딸린 로케일 폴더 (db/packs/<팩>/locales/global).
+        //    3.11 은 팩별 injector 안에서 각자 읽었는데, 형식이 같아 한곳에서 처리한다.
+        foreach (var pack in reader.Manifests)
+        {
+            if (!pack.Enabled) continue;
+            LoadFolder(Path.Combine(reader.PackFolder(pack), "locales", "global"));
+        }
 
         // 그 다음, 팩 JSON 안에 들어 있는 locales 항목.
         // 3.11 은 이걸 곧바로 로케일 딕셔너리에 넣었지만, 4.1 은 LazyLoad 라서
@@ -123,6 +143,7 @@ public class ItemsTraderLoader(
     PatchLoader loader,
     PackReader reader,
     PackInjector injector,
+    ExtraPackInjector extra,
     TradersTable traders
 ) : TraderLoaderBase(logger, loader, traders)
 {
@@ -140,7 +161,16 @@ public class ItemsTraderLoader(
         var added = 0;
         foreach (var pack in reader.Manifests)
         {
-            if (pack.Enabled) added += injector.InjectTraders(pack, traders, config.Lvl1Traders);
+            if (!pack.Enabled) continue;
+
+            added += pack.Format switch
+            {
+                "wtt" => extra.InjectWttTraders(pack, traders),
+                "mosin" => extra.InjectMosinTraders(pack, traders),
+                "nerv" => extra.InjectNervTraders(pack, traders),
+                "raw" => 0,   // 3.11 injectMxlr 은 상인을 건드리지 않는다
+                _ => injector.InjectTraders(pack, traders, config.Lvl1Traders),
+            };
         }
 
         if (added > 0) logger.Info($"[{ItemsMod.Name}] 팩 상인 물품 {added}건 등록");

@@ -4,6 +4,7 @@ using SPTarkov.DI.Annotations;
 using SPTarkov.Server.Core.Models.Common;
 using SPTarkov.Server.Core.Models.Eft.Common.Tables;
 using SPTarkov.Server.Core.Models.Spt.Tables;
+using SPTarkov.Server.Core.Utils;
 using SPTarkov.Server.Core.Utils.Cloners;
 
 namespace HanaVi.Shared.Patching;
@@ -13,7 +14,12 @@ namespace HanaVi.Shared.Patching;
 /// 3.11 원본의 1865줄짜리 postDBLoad 가 하던 일이 전부 여기 op 6종으로 표현된다.
 /// </summary>
 [Injectable(InjectionType.Singleton)]
-public class PatchEngine(ISptLogger<PatchEngine> logger, PatchLoader loader, ICloner cloner)
+public class PatchEngine(
+    ISptLogger<PatchEngine> logger,
+    PatchLoader loader,
+    ICloner cloner,
+    JsonUtil jsonUtil,
+    GlobalTable globals)
 {
     /// <summary>한 단계(stage)에 해당하는 op 만 골라서 적용하고, 적용한 op 개수를 돌려준다.</summary>
     public int Apply(PatchDocument doc, PatchStage stage, TemplateTable templates)
@@ -30,10 +36,14 @@ public class PatchEngine(ISptLogger<PatchEngine> logger, PatchLoader loader, ICl
                 var did = op.Op switch
                 {
                     "setProps" => SetProps(doc, op, items),
+                    "adjustProps" => AdjustProps(doc, op, items),
                     "appendProps" => AppendProps(doc, op, items),
                     "addFilter" => AddFilter(doc, op, items),
                     "cloneItem" => CloneItem(doc, op, items),
                     "handbookEntry" => HandbookEntry(op, templates, items),
+                    "addPreset" => AddPreset(doc, op),
+                    "questWeapons" => QuestWeapons(doc, op, templates),
+                    "masteryTemplates" => MasteryTemplates(doc, op),
                     _ => Unknown(doc, op),
                 };
 
@@ -167,6 +177,46 @@ public class PatchEngine(ISptLogger<PatchEngine> logger, PatchLoader loader, ICl
             {
                 var resolved = loader.ResolveValue(value, doc);
                 if (PropertyMap.TrySet(item.Properties!, name, resolved, out var error)) touched = true;
+                else logger.Error($"[{doc.ModName}] {doc.SourceFile} ({item.Id}): {error}");
+            }
+        }
+
+        return touched;
+    }
+
+    /// <summary>
+    /// 값을 덮어쓰는 게 아니라 '더한다'. 3.11 의 `item._props.Recoil -= 2` 같은 코드에 대응한다.
+    /// 원본 값에 상대적이라, 다른 모드가 먼저 값을 바꿔 놨어도 그 위에 얹힌다.
+    /// </summary>
+    private bool AdjustProps(PatchDocument doc, PatchOp op, Dictionary<MongoId, TemplateItem> items)
+    {
+        if (op.Props is null or { Count: 0 }) return false;
+
+        var touched = false;
+        foreach (var item in Targets(doc, op, items))
+        {
+            foreach (var (name, raw) in op.Props)
+            {
+                var delta = loader.ResolveValue(raw, doc);
+                if (delta.ValueKind != JsonValueKind.Number)
+                {
+                    logger.Error($"[{doc.ModName}] {doc.SourceFile}: adjustProps 의 '{name}' 은 숫자여야 한다");
+                    continue;
+                }
+
+                var prop = PropertyMap.Find(item.Properties!.GetType(), name);
+                if (prop is null)
+                {
+                    logger.Error($"[{doc.ModName}] {doc.SourceFile} ({item.Id}): '{name}' 프로퍼티가 없다");
+                    continue;
+                }
+
+                var current = prop.GetValue(item.Properties);
+                var baseValue = current is null ? 0d : Convert.ToDouble(current);
+                var next = baseValue + delta.GetDouble();
+
+                var element = JsonSerializer.SerializeToElement(next);
+                if (PropertyMap.TrySet(item.Properties, name, element, out var error)) touched = true;
                 else logger.Error($"[{doc.ModName}] {doc.SourceFile} ({item.Id}): {error}");
             }
         }
@@ -329,6 +379,106 @@ public class PatchEngine(ISptLogger<PatchEngine> logger, PatchLoader loader, ICl
         items[newId] = clone;
         logger.Info($"[{doc.ModName}] 새 아이템 등록: {newId} ({op.From} 복제)");
         return true;
+    }
+
+    /// <summary>
+    /// 무기 프리셋을 globals.ItemPresets 에 등록한다 (기본 조립 상태로 진열되는 그 프리셋).
+    /// 아이템이 먼저 있어야 하므로 stage 는 preload 다.
+    /// </summary>
+    private bool AddPreset(PatchDocument doc, PatchOp op)
+    {
+        if (op.Preset is not { ValueKind: JsonValueKind.Object } raw) return false;
+        if (!MongoIds.TryParse(op.Id, out var presetId))
+        {
+            logger.Error($"[{doc.ModName}] {doc.SourceFile}: addPreset 의 id 가 24자 16진수가 아니다");
+            return false;
+        }
+
+        globals.ItemPresets ??= new Dictionary<MongoId, Preset>();
+        if (globals.ItemPresets.ContainsKey(presetId)) return false;
+
+        try
+        {
+            var preset = jsonUtil.Deserialize<Preset>(raw.GetRawText());
+            if (preset is null) return false;
+
+            globals.ItemPresets[presetId] = preset;
+            return true;
+        }
+        catch (Exception ex)
+        {
+            logger.Error($"[{doc.ModName}] {doc.SourceFile}: 프리셋 {presetId} 를 읽지 못했다 — {ex.Message}");
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// 퀘스트의 "이 무기로 처치" 조건에 무기를 더한다.
+    /// 3.11 의 tt33k 가 TT 관련 퀘스트에 새 권총 3종을 넣던 처리에 대응한다.
+    /// </summary>
+    private bool QuestWeapons(PatchDocument doc, PatchOp op, TemplateTable templates)
+    {
+        if (!MongoIds.TryParse(op.QuestId, out var questId)) return false;
+
+        var add = loader.Resolve(op.Add, doc);
+        if (add.Count == 0) return false;
+
+        if (templates.Quests is null || !templates.Quests.TryGetValue(questId, out var quest))
+        {
+            logger.Warning($"[{doc.ModName}] {doc.SourceFile}: 퀘스트 {op.QuestId} 를 찾을 수 없어 건너뛴다");
+            return false;
+        }
+
+        var touched = false;
+        foreach (var condition in quest.Conditions?.AvailableForFinish ?? [])
+        {
+            foreach (var counter in condition.Counter?.Conditions ?? [])
+            {
+                if (counter.Weapon is null) continue;
+
+                foreach (var id in add) counter.Weapon.Add(id);
+                touched = true;
+            }
+        }
+
+        return touched;
+    }
+
+    /// <summary>무기 숙련도(Mastering)에 템플릿을 더하고, 필요하면 레벨 요구치도 바꾼다.</summary>
+    private bool MasteryTemplates(PatchDocument doc, PatchOp op)
+    {
+        if (op.MasteryName is null || globals.Configuration?.Mastering is null) return false;
+
+        var add = MongoIds.ParseValid(loader.Resolve(op.Add, doc)).ToList();
+        var touched = false;
+
+        foreach (var mastery in globals.Configuration.Mastering)
+        {
+            if (mastery.Name != op.MasteryName) continue;
+
+            if (op.Level2 is { } l2) mastery.Level2 = l2;
+            if (op.Level3 is { } l3) mastery.Level3 = l3;
+
+            if (add.Count > 0)
+            {
+                var list = mastery.Templates?.ToList() ?? new List<MongoId>();
+                foreach (var id in add)
+                {
+                    if (!list.Contains(id)) list.Add(id);
+                }
+
+                mastery.Templates = list;
+            }
+
+            touched = true;
+        }
+
+        if (!touched)
+        {
+            logger.Warning($"[{doc.ModName}] {doc.SourceFile}: 숙련도 '{op.MasteryName}' 을(를) 찾을 수 없다");
+        }
+
+        return touched;
     }
 
     private bool HandbookEntry(PatchOp op, TemplateTable templates, Dictionary<MongoId, TemplateItem> items)

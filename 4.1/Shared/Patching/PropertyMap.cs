@@ -48,12 +48,24 @@ internal static class PropertyMap
     public static PropertyInfo? Find(Type type, string jsonName)
         => For(type).GetValueOrDefault(jsonName);
 
-    /// <summary>JSON 값을 프로퍼티 타입으로 변환해서 대입한다.</summary>
+    /// <summary>
+    /// JSON 값을 프로퍼티 타입으로 변환해서 대입한다.
+    ///
+    /// SPT 가 모델링하지 않은 게임 프로퍼티(예: PenetrationChance)는 C# 프로퍼티가 없다.
+    /// 그런 값은 [JsonExtensionData] 자리(ExtensionData)에 넣어 둔다. 서버가 클라이언트로
+    /// 아이템을 보낼 때 그대로 직렬화되므로 게임에는 정상적으로 전달된다.
+    /// </summary>
     public static bool TrySet(object target, string jsonName, JsonElement value, out string error)
     {
         var prop = Find(target.GetType(), jsonName);
         if (prop is null)
         {
+            if (TrySetExtension(target, jsonName, value))
+            {
+                error = "";
+                return true;
+            }
+
             error = $"'{jsonName}' 프로퍼티를 {target.GetType().Name} 에서 찾을 수 없다";
             return false;
         }
@@ -76,6 +88,28 @@ internal static class PropertyMap
             error = $"'{jsonName}' 에 {value} 를 넣을 수 없다 ({prop.PropertyType.Name}): {ex.Message}";
             return false;
         }
+    }
+
+    /// <summary>
+    /// SPT 타입에 없는 프로퍼티를 ExtensionData 에 담는다.
+    /// 이 딕셔너리는 [JsonExtensionData] 로 표시돼 있어, 직렬화할 때 최상위 키로 다시 펼쳐진다.
+    /// </summary>
+    private static bool TrySetExtension(object target, string jsonName, JsonElement value)
+    {
+        var ext = target.GetType().GetProperty("ExtensionData",
+            BindingFlags.Public | BindingFlags.Instance);
+
+        if (ext is null || !ext.CanRead) return false;
+        if (ext.GetValue(target) is not IDictionary<string, object> dict)
+        {
+            if (!ext.CanWrite) return false;
+
+            dict = new Dictionary<string, object>();
+            ext.SetValue(target, dict);
+        }
+
+        dict[jsonName] = value.Clone();
+        return true;
     }
 
     /// <summary>

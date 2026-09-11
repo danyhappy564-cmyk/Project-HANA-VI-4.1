@@ -25,7 +25,8 @@ ammo   = load_opt(os.path.join(MOD, 'db', 'ammo.json'), {})
 values = load_opt(os.path.join(MOD, 'db', 'values.json'), {})
 config = json.load(open(os.path.join(MOD, 'config.json'), encoding='utf-8'))
 
-OPS = {'setProps', 'appendProps', 'addFilter', 'cloneItem', 'handbookEntry', 'traderOffer'}
+OPS = {'setProps', 'adjustProps', 'appendProps', 'addFilter', 'cloneItem',
+       'handbookEntry', 'traderOffer', 'addPreset', 'questWeapons', 'masteryTemplates'}
 INTO = {'slot', 'chamber', 'cartridge', 'grid'}
 STAGES = {'preload', 'postload', 'trader'}
 ID = re.compile(r'^[0-9a-zA-Z]{24}$')
@@ -74,7 +75,7 @@ for fn in sorted(os.listdir(patchdir)):
 
         targeting = sum([bool(op.get('targets')), bool(op.get('targetsByParent')),
                          bool(op.get('targetsAll')), bool(op.get('targetsByBaseClass'))])
-        if kind in ('setProps', 'appendProps', 'addFilter') and targeting != 1:
+        if kind in ('setProps', 'adjustProps', 'appendProps', 'addFilter') and targeting != 1:
             where(f"{tag}: 대상 지정이 정확히 하나여야 한다 "
                   f"(targets / targetsByParent / targetsByBaseClass / targetsAll)")
 
@@ -89,10 +90,11 @@ for fn in sorted(os.listdir(patchdir)):
                     n_ids += 1
                     if not ID.match(v): where(f"{tag}.{f} 의 '{v}' 는 24자 ID 형식이 아니다")
 
-        if kind in ('setProps', 'appendProps'):
+        if kind in ('setProps', 'adjustProps', 'appendProps'):
             for name, val in (op.get('props') or {}).items():
                 if props and name.lower() not in props and name.lower() not in JSON_ALIASES:
-                    where(f"{tag}: TemplateItemProperties 에 '{name}' 프로퍼티가 없다")
+                    warns.append(f"{fn} {tag}: SPT 타입에 '{name}' 프로퍼티가 없다 "
+                                 f"→ ExtensionData 로 전달된다 (게임에는 반영되지만 SPT 코드는 못 읽는다)")
                 if isinstance(val, str) and val.startswith('$') and val[1:] not in values:
                     where(f"{tag}: '{val}' 을(를) db/values.json 에서 찾을 수 없다")
                 if kind == 'appendProps' and not isinstance(val, list):
@@ -114,7 +116,8 @@ for fn in sorted(os.listdir(patchdir)):
         if kind == 'cloneItem':
             for name, val in (op.get('props') or {}).items():
                 if props and name.lower() not in props and name.lower() not in JSON_ALIASES:
-                    where(f"{tag}: TemplateItemProperties 에 '{name}' 프로퍼티가 없다")
+                    warns.append(f"{fn} {tag}: SPT 타입에 '{name}' 프로퍼티가 없다 "
+                                 f"→ ExtensionData 로 전달된다")
                 if isinstance(val, str) and val.startswith('$') and val[1:] not in values:
                     where(f"{tag}: '{val}' 을(를) db/values.json 에서 찾을 수 없다")
             for f in ('newParentId',):
@@ -130,6 +133,18 @@ for fn in sorted(os.listdir(patchdir)):
                 if op.get(f):
                     n_ids += 1
                     if not ID.match(op[f]): where(f"{tag}.{f} 의 '{op[f]}' 는 24자 ID 형식이 아니다")
+
+        if kind == 'questWeapons':
+            if not ID.match(op.get('questId','')): where(f"{tag}: questId 가 24자 ID 형식이 아니다")
+            if not op.get('add'): where(f"{tag}: add 가 비어 있다")
+
+        if kind == 'masteryTemplates' and not op.get('masteryName'):
+            where(f"{tag}: masteryName 이 없다")
+
+        if kind == 'addPreset':
+            if op.get('stage') != 'preload':
+                where(f"{tag}: addPreset 은 stage=preload 여야 한다")
+            if not op.get('preset'): where(f"{tag}: preset 정의가 비어 있다")
 
         if kind == 'handbookEntry' and op.get('stage') != 'preload':
             where(f"{tag}: handbookEntry 는 stage=preload 여야 한다")

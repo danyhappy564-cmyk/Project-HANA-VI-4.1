@@ -1,5 +1,6 @@
 using System.Reflection;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using HanaVi.Shared.Patching;
 using SPTarkov.Common.Models.Logging;
 using SPTarkov.Server.Core.DI;
@@ -194,23 +195,28 @@ public abstract class LocaleLoaderBase(
         AllowTrailingCommas = true,
     };
 
+    /// <summary>이 모드의 폴더 경로. 파생 클래스가 팩 로케일 폴더를 찾을 때 쓴다.</summary>
+    protected string ModFolder => modHelper.GetAbsolutePathToModFolder(Assembly.GetExecutingAssembly());
+
     protected override void Run()
     {
-        var dir = Path.Combine(
-            modHelper.GetAbsolutePathToModFolder(Assembly.GetExecutingAssembly()),
-            "db", "locales", "global");
+        LoadFolder(Path.Combine(ModFolder, "db", "locales", "global"));
+    }
 
-        if (!Directory.Exists(dir)) return;
+    /// <summary>지정한 폴더의 *.json 을 언어별로 읽어 로케일에 얹는다.</summary>
+    protected int LoadFolder(string dir)
+    {
+        if (!Directory.Exists(dir)) return 0;
 
         var loaded = 0;
         foreach (var file in Directory.GetFiles(dir, "*.json"))
         {
             var code = Path.GetFileNameWithoutExtension(file);
 
-            Dictionary<string, string>? entries;
+            Dictionary<string, string>? payload;
             try
             {
-                entries = JsonSerializer.Deserialize<Dictionary<string, string>>(File.ReadAllText(file), Options);
+                payload = ReadLocaleFile(file);
             }
             catch (Exception ex)
             {
@@ -218,9 +224,6 @@ public abstract class LocaleLoaderBase(
                 continue;
             }
 
-            // '_' 로 시작하는 키는 파일 안 주석용이라 게임에 넣지 않는다.
-            var payload = entries?.Where(kv => !kv.Key.StartsWith('_'))
-                                  .ToDictionary(kv => kv.Key, kv => kv.Value);
             if (payload is null or { Count: 0 }) continue;
 
             if (!locales.Global.TryGetValue(code, out var lazy))
@@ -238,6 +241,57 @@ public abstract class LocaleLoaderBase(
             loaded++;
         }
 
-        if (loaded > 0) logger.Info($"[{ModName}] 로케일 {loaded}개 언어 적용");
+        if (loaded > 0) logger.Info($"[{ModName}] 로케일 {loaded}개 언어 적용 ({Path.GetFileName(Path.GetDirectoryName(dir))}/{Path.GetFileName(dir)})");
+        return loaded;
+    }
+
+    /// <summary>
+    /// 로케일 파일을 "키 → 값" 으로 평탄화한다. 원본이 두 가지 형식을 쓰고 있어 둘 다 받는다.
+    ///
+    ///   (A) 평면형  { "&lt;ID&gt; Name": "...", "&lt;ID&gt; ShortName": "..." }
+    ///   (B) itemids { "itemids": { "&lt;ID&gt;": { "Name": "...", "ShortName": "..." } } }
+    ///
+    /// 게임이 실제로 쓰는 건 (A) 형식이라, (B) 는 읽으면서 (A) 로 펼친다.
+    /// </summary>
+    private static Dictionary<string, string>? ReadLocaleFile(string path)
+    {
+        var node = JsonNode.Parse(File.ReadAllText(path),
+            documentOptions: new JsonDocumentOptions
+            {
+                CommentHandling = JsonCommentHandling.Skip,
+                AllowTrailingCommas = true,
+            });
+
+        if (node is not JsonObject root) return null;
+
+        var result = new Dictionary<string, string>();
+
+        if (root["itemids"] is JsonObject itemids)
+        {
+            foreach (var (id, entry) in itemids)
+            {
+                if (entry is JsonObject fields)
+                {
+                    foreach (var (field, value) in fields)
+                    {
+                        if (value is not null) result[$"{id} {field}"] = value.ToString();
+                    }
+                }
+                else if (entry is not null)
+                {
+                    // 값이 문자열 하나면 이름으로 본다 (3.11 이 그렇게 처리했다).
+                    result[$"{id} Name"] = entry.ToString();
+                }
+            }
+        }
+
+        foreach (var (key, value) in root)
+        {
+            // '_' 로 시작하는 키는 파일 안 주석용이고, itemids 는 위에서 이미 처리했다.
+            if (key.StartsWith('_') || key == "itemids") continue;
+            if (value is not null) result[key] = value.ToString();
+        }
+
+        return result;
     }
 }

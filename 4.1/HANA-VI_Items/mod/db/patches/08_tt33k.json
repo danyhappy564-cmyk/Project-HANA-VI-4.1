@@ -1,0 +1,1619 @@
+{
+  "key": "tt33k",
+  "title": "TT-33 Khyber / Type-54 파츠·프리셋·숙련도",
+  "enabled": true,
+  "_note": [
+    "3.11 의 applyTT33KExtension(844줄)을 옮긴 것이다.",
+    "프리셋 ID: 원본은 서버가 켜질 때마다 랜덤 ID를 만들었다. 여기서는 프리셋 이름에서 고정 ID를 만들어 매번 같은 값이 되게 했다. 저장된 프로필이 프리셋을 참조할 때 안전하다.",
+    "원본의 pistolType54._props.RecoilCenter[1] = 0.3 은 옮기지 않았다. RecoilCenter 는 배열이 아니라 {x,y,z} 객체라서 자바스크립트에서도 아무 효과가 없던 코드다."
+  ],
+  "ops": [
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5bffd7ed0db834001d23ebf9",
+      "newId": "674ce37ed70d41fae3dca318",
+      "props": {
+        "Weight": 0.0233,
+        "Prefab": {
+          "path": "tt33mod1/muzzle_jp94_3.bundle",
+          "rcid": ""
+        },
+        "ConflictingItems": [
+          "5bffd7ed0db834001d23ebf9"
+        ]
+      }
+    },
+    {
+      "op": "adjustProps",
+      "stage": "preload",
+      "targets": [
+        "674ce37ed70d41fae3dca318"
+      ],
+      "props": {
+        "Accuracy": -1,
+        "Recoil": -2,
+        "Velocity": 0.3
+      },
+      "_note": "원본이 `-=` / `+=` 로 원본 값에 상대적으로 조정했다. 덮어쓰기가 아니다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5a9d6d21a2750c00137fa649",
+      "newId": "674ce394810fbfe3d7df0525",
+      "props": {
+        "Width": 1,
+        "Weight": 0.023,
+        "Prefab": {
+          "path": "tt33mod1/mount_tt_short.bundle",
+          "rcid": ""
+        },
+        "Slots": [
+          {
+            "_id": "5a9e5f18a2750c003215715c",
+            "_mergeSlotWithChildren": false,
+            "_name": "mod_tactical",
+            "_parent": "674ce394810fbfe3d7df0525",
+            "_props": {
+              "filters": [
+                {
+                  "Filter": [
+                    "5a800961159bd4315e3a1657",
+                    "57fd23e32459772d0805bcf1",
+                    "5cc9c20cd7f00c001336c65d",
+                    "5d2369418abbc306c62e0c80",
+                    "5b07dd285acfc4001754240d",
+                    "56def37dd2720bec348b456a",
+                    "5a7b483fe899ef0016170d15",
+                    "5a5f1ce64f39f90b401987bc",
+                    "560d657b4bdc2da74d8b4572",
+                    "5b3a337e5acfc4704b4a19a0",
+                    "6272370ee4013c5d7e31f418",
+                    "6272379924e29f06af4d5ecb",
+                    "644a3df63b0b6f03e101e065"
+                  ],
+                  "Shift": 0
+                }
+              ]
+            },
+            "_proto": "55d30c4c4bdc2db4468b457e",
+            "_required": false
+          }
+        ]
+      }
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5a9d6d34a2750c00141e07da",
+      "newId": "674ce3a2e3da127b0c18ff2b",
+      "props": {
+        "Ergonomics": 2,
+        "Recoil": -2,
+        "Weight": 0.034,
+        "Width": 2,
+        "Prefab": {
+          "path": "tt33mod1/mount_rail_tt_nl.bundle",
+          "rcid": ""
+        },
+        "Slots": [
+          {
+            "_id": "5a9d6d34a2750c00141e07dd",
+            "_mergeSlotWithChildren": false,
+            "_name": "mod_mount_000",
+            "_parent": "674ce3a2e3da127b0c18ff2b",
+            "_props": {
+              "filters": [
+                {
+                  "Filter": [
+                    "5a9d6d00a2750c5c985b5305",
+                    "59e0bdb186f774156f04ce82",
+                    "623c2f652febb22c2777d8d7"
+                  ],
+                  "Shift": 0
+                }
+              ]
+            },
+            "_proto": "55d30c4c4bdc2db4468b457e",
+            "_required": false
+          },
+          {
+            "_id": "5a9d6d34a2750c00141e07de",
+            "_mergeSlotWithChildren": false,
+            "_name": "mod_mount_001",
+            "_parent": "674ce3a2e3da127b0c18ff2b",
+            "_props": {
+              "filters": [
+                {
+                  "Filter": [
+                    "5a9d6d00a2750c5c985b5305",
+                    "59e0bdb186f774156f04ce82",
+                    "623c2f652febb22c2777d8d7"
+                  ],
+                  "Shift": 0
+                }
+              ]
+            },
+            "_proto": "55d30c4c4bdc2db4468b457e",
+            "_required": false
+          },
+          {
+            "_id": "5ab24ef9e5b5b00fe93c920b",
+            "_mergeSlotWithChildren": false,
+            "_name": "mod_scope",
+            "_parent": "674ce3a2e3da127b0c18ff2b",
+            "_props": {
+              "filters": [
+                {
+                  "Filter": [
+                    "57ae0171245977343c27bfcf",
+                    "609bab8b455afd752b2e6138",
+                    "58d39d3d86f77445bb794ae7",
+                    "616554fe50224f204c1da2aa",
+                    "615d8d878004cc50514c3233",
+                    "577d128124597739d65d0e56",
+                    "58d2664f86f7747fec5834f6",
+                    "5a33b2c9c4a282000c5a9511",
+                    "570fd721d2720bc5458b4596",
+                    "584984812459776a704a82a6"
+                  ],
+                  "Shift": 0
+                }
+              ]
+            },
+            "_proto": "55d30c4c4bdc2db4468b457e",
+            "_required": false
+          }
+        ]
+      }
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5a9d6d34a2750c00141e07da",
+      "newId": "674ce3b38a4ec0c33328b3e7",
+      "props": {
+        "Ergonomics": 3,
+        "Width": 1,
+        "Recoil": -0.5,
+        "Weight": 0.023,
+        "Prefab": {
+          "path": "tt33mod1/mount_deco_tt_nl.bundle",
+          "rcid": ""
+        },
+        "Slots": [
+          {
+            "_id": "5a9d6d34a2750c00141e07dd",
+            "_mergeSlotWithChildren": false,
+            "_name": "mod_mount_000",
+            "_parent": "674ce3b38a4ec0c33328b3e7",
+            "_props": {
+              "filters": [
+                {
+                  "Filter": [
+                    "5a9d6d00a2750c5c985b5305",
+                    "59e0bdb186f774156f04ce82",
+                    "623c2f652febb22c2777d8d7"
+                  ],
+                  "Shift": 0
+                }
+              ]
+            },
+            "_proto": "55d30c4c4bdc2db4468b457e",
+            "_required": false
+          },
+          {
+            "_id": "5a9d6d34a2750c00141e07de",
+            "_mergeSlotWithChildren": false,
+            "_name": "mod_mount_001",
+            "_parent": "674ce3b38a4ec0c33328b3e7",
+            "_props": {
+              "filters": [
+                {
+                  "Filter": [
+                    "5a9d6d00a2750c5c985b5305",
+                    "59e0bdb186f774156f04ce82",
+                    "623c2f652febb22c2777d8d7"
+                  ],
+                  "Shift": 0
+                }
+              ]
+            },
+            "_proto": "55d30c4c4bdc2db4468b457e",
+            "_required": false
+          }
+        ]
+      }
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5a9d6d21a2750c00137fa649",
+      "newId": "674ce3c2a388fc79ee06f7b7",
+      "props": {
+        "Ergonomics": -1,
+        "Width": 1,
+        "Weight": 0.05,
+        "Prefab": {
+          "path": "tt33mod1/mount_tt_nl.bundle",
+          "rcid": ""
+        },
+        "Slots": [
+          {
+            "_id": "5a9d6e86a2750c00171b3f7b",
+            "_mergeSlotWithChildren": false,
+            "_name": "mod_mount",
+            "_parent": "674ce3c2a388fc79ee06f7b7",
+            "_props": {
+              "filters": [
+                {
+                  "Filter": [
+                    "674ce3b38a4ec0c33328b3e7",
+                    "674ce3a2e3da127b0c18ff2b"
+                  ],
+                  "Shift": 0
+                }
+              ]
+            },
+            "_proto": "55d30c4c4bdc2db4468b457e",
+            "_required": false
+          },
+          {
+            "_id": "5c8a52462e2216000e69ecc1",
+            "_mergeSlotWithChildren": false,
+            "_name": "mod_tactical",
+            "_parent": "674ce3c2a388fc79ee06f7b7",
+            "_props": {
+              "filters": [
+                {
+                  "Filter": [
+                    "5a800961159bd4315e3a1657",
+                    "57fd23e32459772d0805bcf1",
+                    "544909bb4bdc2d6f028b4577",
+                    "5c06595c0db834001a66af6c",
+                    "5cc9c20cd7f00c001336c65d",
+                    "5d2369418abbc306c62e0c80",
+                    "5b07dd285acfc4001754240d",
+                    "56def37dd2720bec348b456a",
+                    "5a7b483fe899ef0016170d15",
+                    "5a5f1ce64f39f90b401987bc",
+                    "560d657b4bdc2da74d8b4572",
+                    "5b3a337e5acfc4704b4a19a0",
+                    "5c5952732e2216398b5abda2",
+                    "57d17e212459775a1179a0f5",
+                    "6267c6396b642f77f56f5c1c",
+                    "6272370ee4013c5d7e31f418",
+                    "6272379924e29f06af4d5ecb",
+                    "626becf9582c3e319310b837",
+                    "644a3df63b0b6f03e101e065"
+                  ],
+                  "Shift": 0
+                }
+              ]
+            },
+            "_proto": "55d30c4c4bdc2db4468b457e",
+            "_required": false
+          }
+        ]
+      }
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5bffd7ed0db834001d23ebf9",
+      "newId": "674ce3cf5200e755ee6fb23f",
+      "props": {
+        "Weight": 0.0233,
+        "CoolFactor": 1.03,
+        "Prefab": {
+          "path": "tt33mod1/muzzle_tt_mafia.bundle",
+          "rcid": ""
+        },
+        "ConflictingItems": [
+          "571a279b24597720b4066566"
+        ],
+        "Slots": [
+          {
+            "_id": "5bffd9000db83400232feb12",
+            "_mergeSlotWithChildren": false,
+            "_name": "mod_muzzle",
+            "_parent": "674ce3cf5200e755ee6fb23f",
+            "_props": {
+              "filters": [
+                {
+                  "Filter": [
+                    "5bffd7ed0db834001d23ebf9"
+                  ],
+                  "Shift": 0
+                }
+              ]
+            },
+            "_proto": "55d30c4c4bdc2db4468b457e",
+            "_required": false
+          }
+        ]
+      }
+    },
+    {
+      "op": "adjustProps",
+      "stage": "preload",
+      "targets": [
+        "674ce3cf5200e755ee6fb23f"
+      ],
+      "props": {
+        "Accuracy": 2,
+        "Recoil": -4
+      },
+      "_note": "원본이 `-=` / `+=` 로 원본 값에 상대적으로 조정했다. 덮어쓰기가 아니다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "571a279b24597720b4066566",
+      "newId": "674ce3dcb27759478174421e",
+      "props": {
+        "CoolFactor": 1.02,
+        "HeatFactor": 0.8,
+        "Loudness": 3,
+        "Prefab": {
+          "path": "tt33mod1/barrel_tt_165mm_mafia.bundle",
+          "rcid": ""
+        }
+      }
+    },
+    {
+      "op": "adjustProps",
+      "stage": "preload",
+      "targets": [
+        "674ce3dcb27759478174421e"
+      ],
+      "props": {
+        "Accuracy": 1,
+        "CenterOfImpact": -0.032,
+        "Ergonomics": -2,
+        "Weight": 0.003,
+        "Recoil": -2,
+        "Velocity": 0.01
+      },
+      "_note": "원본이 `-=` / `+=` 로 원본 값에 상대적으로 조정했다. 덮어쓰기가 아니다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5bffd7ed0db834001d23ebf9",
+      "newId": "674ce3e611029a8e3aa1757c",
+      "props": {
+        "Ergonomics": -14,
+        "HeatFactor": 1.01,
+        "CoolFactor": 1.08,
+        "DurabilityBurnModificator": 0.74,
+        "Weight": 0.23,
+        "Width": 2,
+        "RaidModdable": false,
+        "ExtraSizeLeft": 1,
+        "Prefab": {
+          "path": "tt33mod1/barrel_tt_ak.bundle",
+          "rcid": ""
+        },
+        "ConflictingItems": [
+          "674ce3dcb27759478174421e",
+          "674ce3cf5200e755ee6fb23f",
+          "5bffd7ed0db834001d23ebf9"
+        ],
+        "Slots": [
+          {
+            "_name": "mod_muzzle",
+            "_id": "571a29612459771fd90bb671",
+            "_parent": "674ce3e611029a8e3aa1757c",
+            "_props": {
+              "filters": [
+                {
+                  "Shift": 0,
+                  "Filter": [
+                    "571a28e524597720b4066567",
+                    "674ce37ed70d41fae3dca318"
+                  ]
+                }
+              ]
+            },
+            "_required": false,
+            "_mergeSlotWithChildren": false,
+            "_proto": "55d30c4c4bdc2db4468b457e"
+          }
+        ]
+      }
+    },
+    {
+      "op": "adjustProps",
+      "stage": "preload",
+      "targets": [
+        "674ce3e611029a8e3aa1757c"
+      ],
+      "props": {
+        "Recoil": -4,
+        "Accuracy": 3,
+        "Velocity": 1,
+        "DeviationMax": -0.3
+      },
+      "_note": "원본이 `-=` / `+=` 로 원본 값에 상대적으로 조정했다. 덮어쓰기가 아니다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "674ce394810fbfe3d7df0525",
+      "newId": "674ce3f3e40d8837dba8c0e5",
+      "props": {
+        "RaidModdable": false,
+        "Weight": 0.02,
+        "Width": 1,
+        "Prefab": {
+          "path": "tt33mod1/mount_tt_ak.bundle",
+          "rcid": ""
+        },
+        "ConflictingItems": [
+          "674ce3dcb27759478174421e"
+        ],
+        "Slots": [
+          {
+            "_name": "mod_handguard",
+            "_id": "59d64ec286f774171d1e0a43",
+            "_parent": "674ce3f3e40d8837dba8c0e5",
+            "_props": {
+              "filters": [
+                {
+                  "Shift": 0,
+                  "Filter": [
+                    "5cf4e3f3d7f00c06595bc7f0",
+                    "5648ae314bdc2d3d1c8b457f",
+                    "5d2c829448f0353a5c7d6674",
+                    "5cbda392ae92155f3c17c39f",
+                    "5cbda9f4ae9215000e5b9bfc",
+                    "5648b0744bdc2d363b8b4578",
+                    "5648b1504bdc2d9d488b4584",
+                    "59d64f2f86f77417193ef8b3",
+                    "57cff947245977638e6f2a19",
+                    "57cffd8224597763b03fc609",
+                    "57cffddc24597763133760c6",
+                    "57cffe0024597763b03fc60b",
+                    "57cffe20245977632f391a9d",
+                    "5c9a07572e221644f31c4b32",
+                    "5c9a1c3a2e2216000e69fb6a",
+                    "5c9a1c422e221600106f69f0",
+                    "59e6284f86f77440d569536f",
+                    "59e898ee86f77427614bd225",
+                    "5a9d56c8a2750c0032157146",
+                    "5d1b198cd7ad1a604869ad72",
+                    "5d4aaa73a4b9365392071175",
+                    "5d4aaa54a4b9365392071170",
+                    "5f6331e097199b7db2128dc2",
+                    "5c17664f2e2216398b5a7e3c",
+                    "5c617a5f2e2216000f1e81b3",
+                    "5648b4534bdc2d3d1c8b4580",
+                    "5efaf417aeb21837e749c7f2",
+                    "6389f1dfc879ce63f72fc43e",
+                    "647dba3142c479dde701b654",
+                    "647dd2b8a12ebf96c3031655"
+                  ]
+                }
+              ]
+            },
+            "_required": true,
+            "_mergeSlotWithChildren": false,
+            "_proto": "55d30c4c4bdc2db4468b457e"
+          }
+        ]
+      }
+    },
+    {
+      "op": "adjustProps",
+      "stage": "preload",
+      "targets": [
+        "674ce3f3e40d8837dba8c0e5"
+      ],
+      "props": {
+        "Ergonomics": -3
+      },
+      "_note": "원본이 `-=` / `+=` 로 원본 값에 상대적으로 조정했다. 덮어쓰기가 아니다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "573603562459776430731618",
+      "newId": "674ce40e311392052d86e59b",
+      "props": {
+        "ArmorDamage": 45,
+        "BallisticCoeficient": 0.181,
+        "BulletMassGram": 5.5,
+        "CanSellOnRagfair": false,
+        "Damage": 44,
+        "DurabilityBurnModificator": 1.7,
+        "FragmentationChance": 0.13,
+        "HeatFactor": 1.7,
+        "InitialSpeed": 609,
+        "PenetrationChance": 0.9,
+        "PenetrationPower": 60,
+        "PenetrationPowerDiviation": 0.3,
+        "Prefab": {
+          "path": "tt33mod1/ammo_tt_762x25mm_sabot.bundle",
+          "rcid": ""
+        }
+      }
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5a17fb9dfcdbcbcae6687291",
+      "newId": "674ce41ad19849345f3319dc",
+      "props": {
+        "Weight": 0.223,
+        "Width": 2,
+        "Prefab": {
+          "path": "tt33mod1/stock_type80.bundle",
+          "rcid": ""
+        },
+        "Slots": []
+      }
+    },
+    {
+      "op": "adjustProps",
+      "stage": "preload",
+      "targets": [
+        "674ce41ad19849345f3319dc"
+      ],
+      "props": {
+        "Recoil": -1
+      },
+      "_note": "원본이 `-=` / `+=` 로 원본 값에 상대적으로 조정했다. 덮어쓰기가 아니다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5649b2314bdc2d79388b4576",
+      "newId": "674ce4a4cf14c5613685459c",
+      "props": {
+        "Recoil": 0,
+        "Weight": 0.02,
+        "Prefab": {
+          "path": "tt33mod1/mout_type54_adapter.bundle",
+          "rcid": ""
+        },
+        "Slots": [
+          {
+            "_id": "5649db764bdc2d363b8b4583",
+            "_mergeSlotWithChildren": false,
+            "_name": "mod_stock",
+            "_parent": "674ce4a4cf14c5613685459c",
+            "_props": {
+              "filters": [
+                {
+                  "Filter": [
+                    "5a17fb9dfcdbcbcae6687291",
+                    "674ce41ad19849345f3319dc"
+                  ],
+                  "Shift": 0
+                }
+              ]
+            },
+            "_proto": "55d30c4c4bdc2db4468b457e",
+            "_required": true
+          }
+        ]
+      }
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "571a282c2459771fb2755a69",
+      "newId": "674ce4259e5873606176ce06",
+      "props": {
+        "Prefab": {
+          "path": "tt33mod1/pistolgrip_type_54.bundle",
+          "rcid": ""
+        },
+        "Slots": [
+          {
+            "_id": "5649db764bdc2d363b8b4583",
+            "_mergeSlotWithChildren": false,
+            "_name": "mod_tactical",
+            "_parent": "674ce4259e5873606176ce06",
+            "_props": {
+              "filters": [
+                {
+                  "Filter": [
+                    "674ce4a4cf14c5613685459c"
+                  ],
+                  "Shift": 0
+                }
+              ]
+            },
+            "_proto": "55d30c4c4bdc2db4468b457e",
+            "_required": false
+          }
+        ]
+      }
+    },
+    {
+      "op": "adjustProps",
+      "stage": "preload",
+      "targets": [
+        "674ce4259e5873606176ce06"
+      ],
+      "props": {
+        "Ergonomics": 1
+      },
+      "_note": "원본이 `-=` / `+=` 로 원본 값에 상대적으로 조정했다. 덮어쓰기가 아니다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "571a29dc2459771fb2755a6a",
+      "newId": "674ce42f4fd7d139a6e6bf81",
+      "props": {
+        "Weight": 0.16,
+        "Ergonomics": -3,
+        "LoadUnloadModifier": 23,
+        "CheckOverride": 0,
+        "CheckTimeModifier": 36,
+        "MalfunctionChance": 0.15,
+        "Height": 2,
+        "ExtraSizeDown": 1,
+        "Prefab": {
+          "path": "tt33mod1/magazine_long.bundle",
+          "rcid": ""
+        }
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "674ce42f4fd7d139a6e6bf81"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_max_count": 25
+      }
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "571a29dc2459771fb2755a6a",
+      "newId": "674ce43bdd5a0d056ddf96bd",
+      "props": {
+        "LoadUnloadModifier": -19,
+        "CheckOverride": 0,
+        "CheckTimeModifier": 36,
+        "MalfunctionChance": 0.02,
+        "Height": 1,
+        "VisibleAmmoRangesString": "1-3",
+        "Prefab": {
+          "path": "tt33mod1/magazine_tac.bundle",
+          "rcid": ""
+        }
+      }
+    },
+    {
+      "op": "adjustProps",
+      "stage": "preload",
+      "targets": [
+        "674ce43bdd5a0d056ddf96bd"
+      ],
+      "props": {
+        "Weight": 0.05,
+        "Ergonomics": -1
+      },
+      "_note": "원본이 `-=` / `+=` 로 원본 값에 상대적으로 조정했다. 덮어쓰기가 아니다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "674ce43bdd5a0d056ddf96bd"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_max_count": 12
+      }
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "571a29dc2459771fb2755a6a",
+      "newId": "674ce44854e98725ae76f004",
+      "props": {
+        "Weight": 1,
+        "CheckOverride": 0,
+        "CanSellOnRagfair": true,
+        "Ergonomics": -10,
+        "LoadUnloadModifier": 35,
+        "CheckTimeModifier": 48,
+        "MalfunctionChance": 0.213,
+        "Height": 2,
+        "Width": 2,
+        "ExtraSizeDown": 1,
+        "VisibleAmmoRangesString": "1-8",
+        "Prefab": {
+          "path": "tt33mod1/magazine_drum.bundle",
+          "rcid": ""
+        }
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "674ce44854e98725ae76f004"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_max_count": 75
+      }
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "571a12c42459771f627b58a0",
+      "newId": "674ce4782fd1f97fe1ed52fc",
+      "props": {
+        "bFirerate": 840,
+        "DurabilityBurnRatio": 1.5,
+        "CanSellOnRagfair": false,
+        "weapFireType": [
+          "fullauto",
+          "single"
+        ]
+      }
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5b3b713c5acfc4330140bd8d",
+      "newId": "674ce46fd84094117cefbcbf",
+      "props": {
+        "bFirerate": 850,
+        "DurabilityBurnRatio": 1.47,
+        "CanSellOnRagfair": false,
+        "weapFireType": [
+          "fullauto",
+          "single"
+        ]
+      }
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "571a12c42459771f627b58a0",
+      "newId": "674ce4b50de9c530bb8403d4",
+      "props": {
+        "SingleFireRate": 800,
+        "CanSellOnRagfair": false,
+        "Prefab": {
+          "path": "tt33mod1/weapon_toz_tt_762x25tt_container.bundle",
+          "rcid": ""
+        }
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "571a279b24597720b4066566"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        0
+      ],
+      "add": [
+        "674ce37ed70d41fae3dca318"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "571a12c42459771f627b58a0"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        4
+      ],
+      "add": [
+        "674ce394810fbfe3d7df0525"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5b3b713c5acfc4330140bd8d"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        4
+      ],
+      "add": [
+        "674ce394810fbfe3d7df0525"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "571a12c42459771f627b58a0"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        4
+      ],
+      "add": [
+        "674ce3c2a388fc79ee06f7b7"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5b3b713c5acfc4330140bd8d"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        4
+      ],
+      "add": [
+        "674ce3c2a388fc79ee06f7b7"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "571a12c42459771f627b58a0"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        3
+      ],
+      "add": [
+        "674ce3cf5200e755ee6fb23f"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "571a279b24597720b4066566"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        0
+      ],
+      "add": [
+        "674ce3e611029a8e3aa1757c"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "571a12c42459771f627b58a0"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        4
+      ],
+      "add": [
+        "674ce3f3e40d8837dba8c0e5"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "571a29dc2459771fb2755a6a"
+      ],
+      "into": "cartridge",
+      "slotIndexes": [
+        0
+      ],
+      "add": [
+        "674ce40e311392052d86e59b"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "571a12c42459771f627b58a0"
+      ],
+      "into": "chamber",
+      "slotIndexes": [
+        0
+      ],
+      "add": [
+        "674ce40e311392052d86e59b"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5b3b713c5acfc4330140bd8d"
+      ],
+      "into": "chamber",
+      "slotIndexes": [
+        0
+      ],
+      "add": [
+        "674ce40e311392052d86e59b"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5ea034eb5aad6446a939737b"
+      ],
+      "into": "cartridge",
+      "slotIndexes": [
+        0
+      ],
+      "add": [
+        "674ce40e311392052d86e59b"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5ea034f65aad6446a939737e"
+      ],
+      "into": "cartridge",
+      "slotIndexes": [
+        0
+      ],
+      "add": [
+        "674ce40e311392052d86e59b"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "571a12c42459771f627b58a0"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        2
+      ],
+      "add": [
+        "674ce42f4fd7d139a6e6bf81"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5b3b713c5acfc4330140bd8d"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        2
+      ],
+      "add": [
+        "674ce42f4fd7d139a6e6bf81"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "571a12c42459771f627b58a0"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        2
+      ],
+      "add": [
+        "674ce43bdd5a0d056ddf96bd"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5b3b713c5acfc4330140bd8d"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        2
+      ],
+      "add": [
+        "674ce43bdd5a0d056ddf96bd"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "571a12c42459771f627b58a0"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        2
+      ],
+      "add": [
+        "674ce44854e98725ae76f004"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5b3b713c5acfc4330140bd8d"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        2
+      ],
+      "add": [
+        "674ce44854e98725ae76f004"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "571a12c42459771f627b58a0"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        1
+      ],
+      "add": [
+        "674ce4259e5873606176ce06"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "571a12c42459771f627b58a0"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        0
+      ],
+      "add": [
+        "674ce3dcb27759478174421e"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "571a12c42459771f627b58a0"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        3
+      ],
+      "add": [
+        "674ce3cf5200e755ee6fb23f"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5b3b713c5acfc4330140bd8d"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        1
+      ],
+      "add": [
+        "674ce4259e5873606176ce06"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5b3b713c5acfc4330140bd8d"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        0
+      ],
+      "add": [
+        "674ce3dcb27759478174421e"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5b3b713c5acfc4330140bd8d"
+      ],
+      "into": "slot",
+      "slotIndexes": [
+        3
+      ],
+      "add": [
+        "674ce3cf5200e755ee6fb23f"
+      ],
+      "_note": "원본이 슬롯을 이름이 아니라 번호로 지정했다. 다른 모드가 순서를 바꾸면 어긋날 수 있다."
+    },
+    {
+      "op": "addPreset",
+      "stage": "preload",
+      "id": "84bb34962efd897c2d70817a",
+      "preset": {
+        "_id": "84bb34962efd897c2d70817a",
+        "_type": "Preset",
+        "_changeWeaponName": false,
+        "_name": "TT Kv Default",
+        "_parent": "de5e07193778784fb3dc003e",
+        "_encyclopedia": "674ce4782fd1f97fe1ed52fc",
+        "_items": [
+          {
+            "_id": "de5e07193778784fb3dc003e",
+            "_tpl": "674ce4782fd1f97fe1ed52fc"
+          },
+          {
+            "_id": "6d11a5413ef74c80b855e5be",
+            "_tpl": "571a26d524597720680fbe8a",
+            "parentId": "de5e07193778784fb3dc003e",
+            "slotId": "mod_barrel"
+          },
+          {
+            "_id": "60bc63e1a8588793df99de56",
+            "_tpl": "571a282c2459771fb2755a69",
+            "parentId": "de5e07193778784fb3dc003e",
+            "slotId": "mod_pistol_grip"
+          },
+          {
+            "_id": "925741aa6f5066331e2dc087",
+            "_tpl": "571a29dc2459771fb2755a6a",
+            "parentId": "de5e07193778784fb3dc003e",
+            "slotId": "mod_magazine"
+          }
+        ]
+      }
+    },
+    {
+      "op": "addPreset",
+      "stage": "preload",
+      "id": "48d30e97ae0f25636eb41037",
+      "preset": {
+        "_id": "48d30e97ae0f25636eb41037",
+        "_type": "Preset",
+        "_changeWeaponName": false,
+        "_name": "Gold TT Kv Default",
+        "_parent": "66ed33435343c294af104474",
+        "_encyclopedia": "674ce46fd84094117cefbcbf",
+        "_items": [
+          {
+            "_id": "66ed33435343c294af104474",
+            "_tpl": "674ce46fd84094117cefbcbf"
+          },
+          {
+            "_id": "6b875d3935ec20af7c76a203",
+            "_tpl": "5b3baf8f5acfc40dc5296692",
+            "parentId": "66ed33435343c294af104474",
+            "slotId": "mod_barrel"
+          },
+          {
+            "_id": "ae1257402148f54e27280cef",
+            "_tpl": "5b3cadf35acfc400194776a0",
+            "parentId": "66ed33435343c294af104474",
+            "slotId": "mod_pistol_grip"
+          },
+          {
+            "_id": "a8c31b413c97da915997c5b6",
+            "_tpl": "571a29dc2459771fb2755a6a",
+            "parentId": "66ed33435343c294af104474",
+            "slotId": "mod_magazine"
+          }
+        ]
+      }
+    },
+    {
+      "op": "addPreset",
+      "stage": "preload",
+      "id": "61fa8dfbbdc4cd4ded5bc7a7",
+      "preset": {
+        "_id": "61fa8dfbbdc4cd4ded5bc7a7",
+        "_type": "Preset",
+        "_changeWeaponName": false,
+        "_name": "Type 54 Default",
+        "_parent": "3d04830247cddb1cbee50af4",
+        "_encyclopedia": "674ce4b50de9c530bb8403d4",
+        "_items": [
+          {
+            "_id": "3d04830247cddb1cbee50af4",
+            "_tpl": "674ce4b50de9c530bb8403d4"
+          },
+          {
+            "_id": "b279d16579d63f52e91df07f",
+            "_tpl": "571a26d524597720680fbe8a",
+            "parentId": "3d04830247cddb1cbee50af4",
+            "slotId": "mod_barrel"
+          },
+          {
+            "_id": "80684a096455df8f810473ca",
+            "_tpl": "674ce4259e5873606176ce06",
+            "parentId": "3d04830247cddb1cbee50af4",
+            "slotId": "mod_pistol_grip"
+          },
+          {
+            "_id": "2e7fc901bf71b9c7fc68c9c8",
+            "_tpl": "571a29dc2459771fb2755a6a",
+            "parentId": "3d04830247cddb1cbee50af4",
+            "slotId": "mod_magazine"
+          }
+        ]
+      }
+    },
+    {
+      "op": "questWeapons",
+      "questId": "596b455186f77457cb50eccb",
+      "add": [
+        "674ce4782fd1f97fe1ed52fc",
+        "674ce46fd84094117cefbcbf",
+        "674ce4b50de9c530bb8403d4"
+      ],
+      "_note": "TT 관련 퀘스트의 \"이 무기로 처치\" 조건에 새 권총 3종을 더한다."
+    },
+    {
+      "op": "masteryTemplates",
+      "masteryName": "TT",
+      "level2": 100,
+      "level3": 125,
+      "add": [
+        "674ce4782fd1f97fe1ed52fc",
+        "674ce46fd84094117cefbcbf",
+        "674ce4b50de9c530bb8403d4"
+      ]
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "674ce40e311392052d86e59b",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 1920,
+      "canSellOnRagfair": false
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "674ce40e311392052d86e59b",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 500,
+      "price": 1500,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "674ce4a4cf14c5613685459c",
+      "parentId": "5b5f755f86f77447ec5d770e",
+      "price": 23731,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "674ce4a4cf14c5613685459c",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 2,
+      "price": 18540,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "674ce4259e5873606176ce06",
+      "parentId": "5b5f761f86f774094242f1a1",
+      "price": 6374,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "674ce4259e5873606176ce06",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 4,
+      "price": 4980,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "674ce41ad19849345f3319dc",
+      "parentId": "5b5f757486f774093e6cb507",
+      "price": 15360,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "674ce41ad19849345f3319dc",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 3,
+      "price": 12000,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 3
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "674ce37ed70d41fae3dca318",
+      "parentId": "5b5f724186f77447ed5636ad",
+      "price": 11392,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "674ce37ed70d41fae3dca318",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 2,
+      "price": 8900,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "674ce3cf5200e755ee6fb23f",
+      "parentId": "5b5f72f786f77447ec5d7702",
+      "price": 26800,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "674ce3cf5200e755ee6fb23f",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 3,
+      "price": 21000,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 3
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "674ce3dcb27759478174421e",
+      "parentId": "5b5f75c686f774094242f19f",
+      "price": 15360,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "674ce3dcb27759478174421e",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 3,
+      "price": 12000,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "674ce394810fbfe3d7df0525",
+      "parentId": "5b5f755f86f77447ec5d770e",
+      "price": 4352,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "674ce394810fbfe3d7df0525",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 3,
+      "price": 3400,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "674ce3c2a388fc79ee06f7b7",
+      "parentId": "5b5f755f86f77447ec5d770e",
+      "price": 2560,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "674ce3c2a388fc79ee06f7b7",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 3,
+      "price": 2000,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "674ce3a2e3da127b0c18ff2b",
+      "parentId": "5b5f755f86f77447ec5d770e",
+      "price": 10240,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "674ce3a2e3da127b0c18ff2b",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 2,
+      "price": 8000,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "674ce3b38a4ec0c33328b3e7",
+      "parentId": "5b5f755f86f77447ec5d770e",
+      "price": 5888,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "674ce3b38a4ec0c33328b3e7",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 2,
+      "price": 4600,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "674ce4782fd1f97fe1ed52fc",
+      "parentId": "5b5f792486f77447ed5636b3",
+      "price": 10880,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "674ce4782fd1f97fe1ed52fc",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 3,
+      "price": 8500,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "674ce46fd84094117cefbcbf",
+      "parentId": "5b5f792486f77447ed5636b3",
+      "price": 110000,
+      "canSellOnRagfair": false
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "674ce46fd84094117cefbcbf",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 3,
+      "price": 1,
+      "currency": "5b3b713c5acfc4330140bd8d",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "674ce4b50de9c530bb8403d4",
+      "parentId": "5b5f792486f77447ed5636b3",
+      "price": 40000,
+      "canSellOnRagfair": false
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "674ce4b50de9c530bb8403d4",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 3,
+      "price": 5,
+      "currency": "571a12c42459771f627b58a0",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "674ce42f4fd7d139a6e6bf81",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 3046,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "674ce42f4fd7d139a6e6bf81",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 10,
+      "price": 2380,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "674ce43bdd5a0d056ddf96bd",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 4326,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "674ce43bdd5a0d056ddf96bd",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 10,
+      "price": 3380,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "674ce44854e98725ae76f004",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 35260,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "674ce44854e98725ae76f004",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 3,
+      "price": 23000,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "674ce3e611029a8e3aa1757c",
+      "parentId": "5b5f75c686f774094242f19f",
+      "price": 15360,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "674ce3e611029a8e3aa1757c",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 3,
+      "price": 12000,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "674ce3f3e40d8837dba8c0e5",
+      "parentId": "5b5f75c686f774094242f19f",
+      "price": 2560,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "674ce3f3e40d8837dba8c0e5",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 3,
+      "price": 2000,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 1
+    }
+  ]
+}
