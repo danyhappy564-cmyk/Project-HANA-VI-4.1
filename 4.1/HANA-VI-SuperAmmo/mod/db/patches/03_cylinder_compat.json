@@ -1,0 +1,76 @@
+{
+  "key": "cylinder_compat",
+  "title": "리볼버 실린더 호환",
+  "enabled": true,
+  "_note": "실린더는 약실이 Slots 에 여러 칸으로 나뉘어 있어 모든 슬롯을 훑는다.",
+  "ops": [
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "610720f290b75a49ff2e5e25"
+      ],
+      "into": "slot",
+      "slots": [
+        "*"
+      ],
+      "whenFilterContains": [
+        "5cadf6ddae9215051e1c23b2"
+      ],
+      "add": [
+        "66fb34873370c7729baed341"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "610720f290b75a49ff2e5e25"
+      ],
+      "into": "slot",
+      "slots": [
+        "*"
+      ],
+      "whenFilterContains": [
+        "5d6e6772a4b936088465b17c"
+      ],
+      "add": [
+        "36c2c851e64b4074b6AC319c",
+        "66f5b68962fe6c1f25af9936",
+        "66f5b68962fe6c1f25af9681"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "610720f290b75a49ff2e5e25"
+      ],
+      "into": "slot",
+      "slots": [
+        "*"
+      ],
+      "whenFilterContains": [
+        "62330b3ed4dc74626d570b95"
+      ],
+      "add": [
+        "670547827c51eb084de1bd17",
+        "670547827c51eb084de1bdAA"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "610720f290b75a49ff2e5e25"
+      ],
+      "into": "slot",
+      "slots": [
+        "*"
+      ],
+      "whenFilterContains": [
+        "64b7bbb74b75259c590fa897"
+      ],
+      "add": [
+        "66fb917da189607ce317ffef",
+        "66fb917da189607ce317ffAA"
+      ]
+    }
+  ]
+}

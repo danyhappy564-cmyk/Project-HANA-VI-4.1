@@ -6,7 +6,7 @@ using SPTarkov.Server.Core.Models.Eft.Common.Tables;
 using SPTarkov.Server.Core.Models.Spt.Tables;
 using SPTarkov.Server.Core.Utils.Cloners;
 
-namespace HanaVi.Aio.Patching;
+namespace HanaVi.Shared.Patching;
 
 /// <summary>
 /// 패치 JSON 을 실제 DB 변경으로 옮기는 엔진.
@@ -41,7 +41,7 @@ public class PatchEngine(ISptLogger<PatchEngine> logger, PatchLoader loader, ICl
             }
             catch (Exception ex)
             {
-                logger.Error($"[HANA-VI AIO] {doc.SourceFile} 의 '{op.Op}' 적용 중 오류: {ex.Message}");
+                logger.Error($"[{doc.ModName}] {doc.SourceFile} 의 '{op.Op}' 적용 중 오류: {ex.Message}");
             }
         }
 
@@ -53,7 +53,7 @@ public class PatchEngine(ISptLogger<PatchEngine> logger, PatchLoader loader, ICl
         // traderOffer 는 AioTraderLoader 가 따로 처리하므로 여기서는 조용히 넘긴다.
         if (op.Op == "traderOffer") return false;
 
-        logger.Error($"[HANA-VI AIO] {doc.SourceFile}: 모르는 op '{op.Op}'");
+        logger.Error($"[{doc.ModName}] {doc.SourceFile}: 모르는 op '{op.Op}'");
         return false;
     }
 
@@ -61,12 +61,27 @@ public class PatchEngine(ISptLogger<PatchEngine> logger, PatchLoader loader, ICl
 
     private IEnumerable<TemplateItem> Targets(PatchDocument doc, PatchOp op,
                                               Dictionary<MongoId, TemplateItem> items)
+        => Narrow(op, RawTargets(doc, op, items));
+
+    private IEnumerable<TemplateItem> RawTargets(PatchDocument doc, PatchOp op,
+                                                 Dictionary<MongoId, TemplateItem> items)
     {
         if (op.TargetsAll)
         {
             foreach (var item in items.Values)
             {
                 if (item.Properties is not null) yield return item;
+            }
+
+            yield break;
+        }
+
+        if (op.TargetsByBaseClass is { Count: > 0 })
+        {
+            var bases = op.TargetsByBaseClass.Select(p => new MongoId(p)).ToHashSet();
+            foreach (var item in items.Values)
+            {
+                if (item.Properties is not null && IsOfBaseClass(item, bases, items)) yield return item;
             }
 
             yield break;
@@ -88,12 +103,55 @@ public class PatchEngine(ISptLogger<PatchEngine> logger, PatchLoader loader, ICl
             if (!items.TryGetValue(new MongoId(id), out var item) || item.Properties is null)
             {
                 // 다른 모드가 제공하는 아이템일 수 있다. 서버를 죽이지 않고 기록만 남긴다.
-                logger.Warning($"[HANA-VI AIO] {doc.SourceFile}: 아이템 {id} 를 DB 에서 찾을 수 없어 건너뛴다");
+                logger.Warning($"[{doc.ModName}] {doc.SourceFile}: 아이템 {id} 를 DB 에서 찾을 수 없어 건너뛴다");
                 continue;
             }
 
             yield return item;
         }
+    }
+
+    /// <summary>whenPropEquals 로 대상을 더 좁힌다 (예: 9x39 구경 총기만).</summary>
+    private static IEnumerable<TemplateItem> Narrow(PatchOp op, IEnumerable<TemplateItem> source)
+    {
+        if (op.WhenPropEquals is null or { Count: 0 }) return source;
+
+        return source.Where(item =>
+            op.WhenPropEquals.All(kv =>
+            {
+                var prop = PropertyMap.Find(item.Properties!.GetType(), kv.Key);
+                if (prop is null) return false;
+
+                var actual = prop.GetValue(item.Properties);
+                if (actual is null) return kv.Value.ValueKind == JsonValueKind.Null;
+
+                // 열거형/숫자/문자열을 한 방식으로 비교하려고 문자열로 맞춘다.
+                var expected = kv.Value.ValueKind == JsonValueKind.String
+                    ? kv.Value.GetString()
+                    : kv.Value.GetRawText();
+
+                return string.Equals(actual.ToString(), expected, StringComparison.OrdinalIgnoreCase);
+            }));
+    }
+
+    /// <summary>
+    /// _parent 사슬을 거슬러 올라가며 baseClass 에 속하는지 본다.
+    /// 3.11 의 ItemHelper.isOfBaseclass 에 대응한다. 순환 참조로 무한 루프에 빠지지
+    /// 않도록 깊이를 제한한다.
+    /// </summary>
+    private static bool IsOfBaseClass(TemplateItem item, HashSet<MongoId> bases,
+                                      Dictionary<MongoId, TemplateItem> items)
+    {
+        var current = item.Parent;
+        for (var depth = 0; depth < 16; depth++)
+        {
+            if (bases.Contains(current)) return true;
+            if (!items.TryGetValue(current, out var parent)) return false;
+            if (parent.Parent == current) return false;
+            current = parent.Parent;
+        }
+
+        return false;
     }
 
     // ---------------------------------------------------------------- op 구현
@@ -107,8 +165,9 @@ public class PatchEngine(ISptLogger<PatchEngine> logger, PatchLoader loader, ICl
         {
             foreach (var (name, value) in op.Props)
             {
-                if (PropertyMap.TrySet(item.Properties!, name, value, out var error)) touched = true;
-                else logger.Error($"[HANA-VI AIO] {doc.SourceFile} ({item.Id}): {error}");
+                var resolved = loader.ResolveValue(value, doc);
+                if (PropertyMap.TrySet(item.Properties!, name, resolved, out var error)) touched = true;
+                else logger.Error($"[{doc.ModName}] {doc.SourceFile} ({item.Id}): {error}");
             }
         }
 
@@ -126,12 +185,12 @@ public class PatchEngine(ISptLogger<PatchEngine> logger, PatchLoader loader, ICl
             {
                 if (value.ValueKind != JsonValueKind.Array)
                 {
-                    logger.Error($"[HANA-VI AIO] {doc.SourceFile}: appendProps 의 '{name}' 은 배열이어야 한다");
+                    logger.Error($"[{doc.ModName}] {doc.SourceFile}: appendProps 의 '{name}' 은 배열이어야 한다");
                     continue;
                 }
 
                 if (PropertyMap.TryAppend(item.Properties!, name, value, out var error)) touched = true;
-                else logger.Error($"[HANA-VI AIO] {doc.SourceFile} ({item.Id}): {error}");
+                else logger.Error($"[{doc.ModName}] {doc.SourceFile} ({item.Id}): {error}");
             }
         }
 
@@ -214,26 +273,32 @@ public class PatchEngine(ISptLogger<PatchEngine> logger, PatchLoader loader, ICl
 
         if (!items.TryGetValue(new MongoId(op.From), out var source))
         {
-            logger.Error($"[HANA-VI AIO] {doc.SourceFile}: 복제할 원본 {op.From} 이 DB 에 없다");
+            logger.Error($"[{doc.ModName}] {doc.SourceFile}: 복제할 원본 {op.From} 이 DB 에 없다");
             return false;
         }
 
         // 반드시 '깊은' 복사여야 한다. record 의 with 식은 얕은 복사라서 Slots 리스트가
         // 원본과 공유되고, 복제본 슬롯에 스코프를 추가하면 원본 마운트까지 같이 바뀐다.
         // 3.11 원본이 jsonUtil.clone() 을 쓴 것과 같은 이유다.
-        var clone = cloner.Clone(source) with { Id = newId };
+        var clone = cloner.Clone(source) with
+        {
+            Id = newId,
+            Name = op.NewName ?? op.NewId,
+            Parent = op.NewParentId is null ? source.Parent : new MongoId(op.NewParentId),
+        };
 
         if (op.Props is not null)
         {
             foreach (var (name, value) in op.Props)
             {
-                if (!PropertyMap.TrySet(clone.Properties!, name, value, out var error))
-                    logger.Error($"[HANA-VI AIO] {doc.SourceFile} (복제본 {newId}): {error}");
+                var resolved = loader.ResolveValue(value, doc);
+                if (!PropertyMap.TrySet(clone.Properties!, name, resolved, out var error))
+                    logger.Error($"[{doc.ModName}] {doc.SourceFile} (복제본 {newId}): {error}");
             }
         }
 
         items[newId] = clone;
-        logger.Info($"[HANA-VI AIO] 새 아이템 등록: {newId} ({op.From} 복제)");
+        logger.Info($"[{doc.ModName}] 새 아이템 등록: {newId} ({op.From} 복제)");
         return true;
     }
 

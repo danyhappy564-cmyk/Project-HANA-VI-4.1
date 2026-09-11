@@ -4,7 +4,7 @@ using SPTarkov.Common.Models.Logging;
 using SPTarkov.DI.Annotations;
 using SPTarkov.Server.Core.Helpers.Server;
 
-namespace HanaVi.Aio.Patching;
+namespace HanaVi.Shared.Patching;
 
 /// <summary>
 /// mod/db/ammo.json 과 mod/db/patches/*.json 을 읽어서 메모리에 올린다.
@@ -13,6 +13,12 @@ namespace HanaVi.Aio.Patching;
 [Injectable(InjectionType.Singleton)]
 public class PatchLoader(ModHelper modHelper)
 {
+    /// <summary>
+    /// 로그 접두사로 쓰는 모드 이름. 각 모드의 첫 번째 로더가 한 번 지정한다.
+    /// 하나의 모드 DLL 안에서만 쓰이므로(공용 소스가 모드별로 각각 컴파일된다) 충돌하지 않는다.
+    /// </summary>
+    public string ModName { get; set; } = "HANA-VI";
+
     private static readonly JsonSerializerOptions Options = new()
     {
         PropertyNameCaseInsensitive = true,
@@ -23,13 +29,14 @@ public class PatchLoader(ModHelper modHelper)
     private readonly object _lock = new();
     private List<PatchDocument>? _patches;
     private Dictionary<string, List<string>>? _ammo;
-    private AioConfig? _config;
+    private Dictionary<string, JsonElement>? _values;
+    private ModConfig? _config;
 
     // 모드 폴더 = 이 DLL 이 놓인 user/mods/HANA_VI-AIO/ 폴더. payload(config.json, db/**)가 여기 있다.
     private string ModFolder => modHelper.GetAbsolutePathToModFolder(Assembly.GetExecutingAssembly());
     private string DbFolder => Path.Combine(ModFolder, "db");
 
-    public AioConfig Config
+    public ModConfig Config
     {
         get
         {
@@ -45,6 +52,19 @@ public class PatchLoader(ModHelper modHelper)
         {
             EnsureLoaded(null);
             return _ammo!;
+        }
+    }
+
+    /// <summary>
+    /// db/values.json 의 "이름 → 값" 표. 패치의 props 에서 "$이름" 으로 참조한다.
+    /// 여러 패치가 같은 수치를 공유할 때 쓴다 (예: 12게이지 탄 적재량을 한 번에 조정).
+    /// </summary>
+    public Dictionary<string, JsonElement> Values
+    {
+        get
+        {
+            EnsureLoaded(null);
+            return _values!;
         }
     }
 
@@ -65,7 +85,7 @@ public class PatchLoader(ModHelper modHelper)
         {
             if (_patches is not null) return;
 
-            _config = ReadJson<AioConfig>(Path.Combine(ModFolder, "config.json")) ?? new AioConfig();
+            _config = ReadJson<ModConfig>(Path.Combine(ModFolder, "config.json")) ?? new ModConfig();
 
             var ammoPath = Path.Combine(DbFolder, "ammo.json");
             _ammo = ReadJson<Dictionary<string, JsonElement>>(ammoPath)?
@@ -75,11 +95,14 @@ public class PatchLoader(ModHelper modHelper)
                             kv => kv.Value.EnumerateArray().Select(e => e.GetString() ?? "").ToList())
                     ?? new Dictionary<string, List<string>>();
 
+            _values = ReadJson<Dictionary<string, JsonElement>>(Path.Combine(DbFolder, "values.json"))
+                      ?? new Dictionary<string, JsonElement>();
+
             _patches = [];
             var patchDir = Path.Combine(DbFolder, "patches");
             if (!Directory.Exists(patchDir))
             {
-                logger?.Error($"[HANA-VI AIO] 패치 폴더가 없다: {patchDir}");
+                logger?.Error($"[{ModName}] 패치 폴더가 없다: {patchDir}");
                 return;
             }
 
@@ -91,19 +114,35 @@ public class PatchLoader(ModHelper modHelper)
                     var doc = ReadJson<PatchDocument>(file);
                     if (doc is null || string.IsNullOrEmpty(doc.Key))
                     {
-                        logger?.Warning($"[HANA-VI AIO] key 가 없는 패치 파일은 건너뛴다: {Path.GetFileName(file)}");
+                        logger?.Warning($"[{ModName}] key 가 없는 패치 파일은 건너뛴다: {Path.GetFileName(file)}");
                         continue;
                     }
 
                     doc.SourceFile = Path.GetFileName(file);
+                    doc.ModName = ModName;
                     _patches.Add(doc);
                 }
                 catch (Exception ex)
                 {
-                    logger?.Error($"[HANA-VI AIO] 패치 파일을 읽지 못했다 {Path.GetFileName(file)}: {ex.Message}");
+                    logger?.Error($"[{ModName}] 패치 파일을 읽지 못했다 {Path.GetFileName(file)}: {ex.Message}");
                 }
             }
         }
+    }
+
+    /// <summary>"$이름" 이면 values.json 의 값으로 바꿔서 돌려준다. 아니면 그대로.</summary>
+    public JsonElement ResolveValue(JsonElement value, PatchDocument doc, ISptLogger<PatchLoader>? logger = null)
+    {
+        if (value.ValueKind != JsonValueKind.String) return value;
+
+        var text = value.GetString();
+        if (string.IsNullOrEmpty(text) || text[0] != '$') return value;
+
+        var name = text[1..];
+        if (Values.TryGetValue(name, out var resolved)) return resolved;
+
+        logger?.Error($"[{doc.ModName}] {doc.SourceFile}: '${name}' 을(를) db/values.json 에서 찾을 수 없다");
+        return value;
     }
 
     private static T? ReadJson<T>(string path)
@@ -149,7 +188,7 @@ public class PatchLoader(ModHelper modHelper)
         if (doc.Sets.TryGetValue(name, out var local)) { into.AddRange(local); return; }
         if (AmmoSets.TryGetValue(name, out var shared)) { into.AddRange(shared); return; }
 
-        logger?.Error($"[HANA-VI AIO] {doc.SourceFile}: '@{name}' 세트를 찾을 수 없다 " +
+        logger?.Error($"[{doc.ModName}] {doc.SourceFile}: '@{name}' 세트를 찾을 수 없다 " +
                       $"(패치 파일의 sets 나 db/ammo.json 에 정의돼 있어야 한다)");
     }
 }

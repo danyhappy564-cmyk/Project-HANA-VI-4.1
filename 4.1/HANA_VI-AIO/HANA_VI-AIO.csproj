@@ -4,4 +4,11 @@
     <RootNamespace>HanaVi.Aio</RootNamespace>
     <Version>4.1.0</Version>
   </PropertyGroup>
+
+  <!-- 공용 패치 엔진을 별도 DLL 이 아니라 '소스 링크'로 가져온다.
+       SPT 는 user/mods 폴더의 모든 DLL 을 모드로 읽으려 하므로, 공용 DLL 을 두면
+       모드가 아닌 파일을 모드로 착각한다. 소스를 각 모드 DLL 안에 컴파일해 넣는다. -->
+  <ItemGroup>
+    <Compile Include="..\Shared\**\*.cs" LinkBase="Shared" />
+  </ItemGroup>
 </Project>

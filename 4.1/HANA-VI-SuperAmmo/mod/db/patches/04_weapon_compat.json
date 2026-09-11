@@ -1,0 +1,492 @@
+{
+  "key": "weapon_compat",
+  "title": "총기 약실 호환 (구경별)",
+  "enabled": true,
+  "_note": "총기 종류(베이스클래스) + ammoCaliber 가 맞는 총기의 약실에 특수탄을 추가한다. 더블배럴 산탄총은 약실이 2개인데, into=chamber 가 모든 약실을 훑으므로 3.11 처럼 Chambers[0]/[1] 을 따로 쓸 필요가 없다.",
+  "ops": [
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5f14bdc2d61278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber127x55"
+      },
+      "into": "chamber",
+      "add": [
+        "66fb34873370c7729baed341"
+      ],
+      "_weapon": "돌격소총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5f14bdc2d61278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber68x51"
+      },
+      "into": "chamber",
+      "add": [
+        "67056974e4697fa86c4d5eAA",
+        "67056974e4697fa86c4d5eAB"
+      ],
+      "_weapon": "돌격소총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5f14bdc2d61278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber366TKM"
+      },
+      "into": "chamber",
+      "add": [
+        "67056974e4697fa86c4d5eAc",
+        "67056974e4697fa86c4d5eAD"
+      ],
+      "_weapon": "돌격소총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5f14bdc2d61278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber762x35"
+      },
+      "into": "chamber",
+      "add": [
+        "67056974e4697fa86c4d5eAE",
+        "67056974e4697fa86c4d5eAF"
+      ],
+      "_weapon": "돌격소총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5f14bdc2d61278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber9x39"
+      },
+      "into": "chamber",
+      "add": [
+        "67056974e4697fa86c4d5ecf"
+      ],
+      "_weapon": "돌격소총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5f14bdc2d61278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber9x19PARA"
+      },
+      "into": "chamber",
+      "add": [
+        "66fb917da189607ce317ffef",
+        "66fb917da189607ce317ffAA"
+      ],
+      "_weapon": "돌격소총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5f14bdc2d61278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber545x39"
+      },
+      "into": "chamber",
+      "add": [
+        "696211d570c512d3c6158b76"
+      ],
+      "_weapon": "돌격소총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5fc4bdc2d87278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber68x51"
+      },
+      "into": "chamber",
+      "add": [
+        "67056974e4697fa86c4d5eAA",
+        "67056974e4697fa86c4d5eAB"
+      ],
+      "_weapon": "기병총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5fc4bdc2d87278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber762x35"
+      },
+      "into": "chamber",
+      "add": [
+        "67056974e4697fa86c4d5eAE",
+        "67056974e4697fa86c4d5eAF"
+      ],
+      "_weapon": "기병총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5fc4bdc2d87278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber9x39"
+      },
+      "into": "chamber",
+      "add": [
+        "67056974e4697fa86c4d5ecf"
+      ],
+      "_weapon": "기병총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5fc4bdc2d87278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber366TKM"
+      },
+      "into": "chamber",
+      "add": [
+        "67056974e4697fa86c4d5eAc",
+        "67056974e4697fa86c4d5eAD"
+      ],
+      "_weapon": "기병총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5fc4bdc2d87278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber545x39"
+      },
+      "into": "chamber",
+      "add": [
+        "696211d570c512d3c6158b76"
+      ],
+      "_weapon": "기병총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b6254bdc2dc3278b4568"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber366TKM"
+      },
+      "into": "chamber",
+      "add": [
+        "67056974e4697fa86c4d5eAc",
+        "67056974e4697fa86c4d5eAD"
+      ],
+      "_weapon": "저격소총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b6194bdc2d67278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber9x39"
+      },
+      "into": "chamber",
+      "add": [
+        "67056974e4697fa86c4d5ecf"
+      ],
+      "_weapon": "지정사수소총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5cf4bdc2d65278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber9x19PARA"
+      },
+      "into": "chamber",
+      "add": [
+        "66fb917da189607ce317ffef",
+        "66fb917da189607ce317ffAA"
+      ],
+      "_weapon": "권총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5cf4bdc2d65278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber1143x23ACP"
+      },
+      "into": "chamber",
+      "add": [
+        "66fb98a14d1456cf00a13500",
+        "66fb98a14d1456cf00a135AA"
+      ],
+      "_weapon": "권총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5cf4bdc2d65278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber127x55"
+      },
+      "into": "chamber",
+      "add": [
+        "66fb34873370c7729baed341"
+      ],
+      "_weapon": "권총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5cf4bdc2d65278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber9x33R"
+      },
+      "into": "chamber",
+      "add": [
+        "670547827c51eb084de1bd17",
+        "670547827c51eb084de1bdAA"
+      ],
+      "_weapon": "권총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5cf4bdc2d65278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber57x28"
+      },
+      "into": "chamber",
+      "add": [
+        "67055c41ebc73eaa35ba547e",
+        "67055c41ebc73eaa35ba54AA"
+      ],
+      "_weapon": "권총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5cf4bdc2d65278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber9x21"
+      },
+      "into": "chamber",
+      "add": [
+        "6705dba9e4697fa86c4d5e43",
+        "6705dba9e4697fa86c4d5eAA"
+      ],
+      "_weapon": "권총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5cf4bdc2d65278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber762x25TT"
+      },
+      "into": "chamber",
+      "add": [
+        "6646a939a189607ce317ffAA"
+      ],
+      "_weapon": "권총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5cf4bdc2d65278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber9x18PM"
+      },
+      "into": "chamber",
+      "add": [
+        "6646a939a189607ce3174649"
+      ],
+      "_weapon": "권총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5e04bdc2d62278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber9x19PARA"
+      },
+      "into": "chamber",
+      "add": [
+        "66fb917da189607ce317ffef",
+        "66fb917da189607ce317ffAA"
+      ],
+      "_weapon": "기관단총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5e04bdc2d62278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber1143x23ACP"
+      },
+      "into": "chamber",
+      "add": [
+        "66fb98a14d1456cf00a13500",
+        "66fb98a14d1456cf00a135AA"
+      ],
+      "_weapon": "기관단총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5e04bdc2d62278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber127x55"
+      },
+      "into": "chamber",
+      "add": [
+        "66fb34873370c7729baed341"
+      ],
+      "_weapon": "기관단총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5e04bdc2d62278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber9x33R"
+      },
+      "into": "chamber",
+      "add": [
+        "670547827c51eb084de1bd17",
+        "670547827c51eb084de1bdAA"
+      ],
+      "_weapon": "기관단총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5e04bdc2d62278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber57x28"
+      },
+      "into": "chamber",
+      "add": [
+        "67055c41ebc73eaa35ba547e",
+        "67055c41ebc73eaa35ba54AA"
+      ],
+      "_weapon": "기관단총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5e04bdc2d62278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber9x21"
+      },
+      "into": "chamber",
+      "add": [
+        "6705dba9e4697fa86c4d5e43",
+        "6705dba9e4697fa86c4d5eAA"
+      ],
+      "_weapon": "기관단총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5e04bdc2d62278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber762x25TT"
+      },
+      "into": "chamber",
+      "add": [
+        "6646a939a189607ce317ffAA"
+      ],
+      "_weapon": "기관단총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b5e04bdc2d62278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber9x18PM"
+      },
+      "into": "chamber",
+      "add": [
+        "6646a939a189607ce3174649"
+      ],
+      "_weapon": "기관단총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b6094bdc2dc3278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber12g"
+      },
+      "into": "chamber",
+      "add": [
+        "36c2c851e64b4074b6AC319c",
+        "66f5b68962fe6c1f25af9936",
+        "66f5b68962fe6c1f25af9681"
+      ],
+      "_weapon": "산탄총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b6094bdc2dc3278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber20g"
+      },
+      "into": "chamber",
+      "add": [
+        "6962052d842fa461cfca30c5",
+        "6962080a0ac7b0e58556c481"
+      ],
+      "_weapon": "산탄총"
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5447b6094bdc2dc3278b4567"
+      ],
+      "whenPropEquals": {
+        "ammoCaliber": "Caliber23x75"
+      },
+      "into": "chamber",
+      "add": [
+        "6962068b45b57405fed4068b",
+        "69620cb818fa2048f4b56c5f"
+      ],
+      "_weapon": "산탄총"
+    }
+  ]
+}

@@ -19,7 +19,10 @@ JSON_ALIASES = {'bfirerate', 'weapfiretype', 'durability', 'maxdurability'}
 
 MOD = sys.argv[1]
 patchdir = os.path.join(MOD, 'db', 'patches')
-ammo = json.load(open(os.path.join(MOD, 'db', 'ammo.json'), encoding='utf-8'))
+def load_opt(path, default):
+    return json.load(open(path, encoding='utf-8')) if os.path.exists(path) else default
+ammo   = load_opt(os.path.join(MOD, 'db', 'ammo.json'), {})
+values = load_opt(os.path.join(MOD, 'db', 'values.json'), {})
 config = json.load(open(os.path.join(MOD, 'config.json'), encoding='utf-8'))
 
 OPS = {'setProps', 'appendProps', 'addFilter', 'cloneItem', 'handbookEntry', 'traderOffer'}
@@ -69,9 +72,16 @@ for fn in sorted(os.listdir(patchdir)):
         if 'stage' in op and op['stage'] not in STAGES:
             where(f"{tag}: 모르는 stage '{op['stage']}'")
 
-        targeting = sum([bool(op.get('targets')), bool(op.get('targetsByParent')), bool(op.get('targetsAll'))])
+        targeting = sum([bool(op.get('targets')), bool(op.get('targetsByParent')),
+                         bool(op.get('targetsAll')), bool(op.get('targetsByBaseClass'))])
         if kind in ('setProps', 'appendProps', 'addFilter') and targeting != 1:
-            where(f"{tag}: 대상 지정이 정확히 하나여야 한다 (targets / targetsByParent / targetsAll)")
+            where(f"{tag}: 대상 지정이 정확히 하나여야 한다 "
+                  f"(targets / targetsByParent / targetsByBaseClass / targetsAll)")
+
+        for f in ('targetsByParent', 'targetsByBaseClass', 'whenFilterContains'):
+            for v in (op.get(f) or []):
+                n_ids += 1
+                if not ID.match(v): where(f"{tag}.{f} 의 '{v}' 는 24자 ID 형식이 아니다")
 
         for f in ('targets', 'add'):
             if f in op:
@@ -83,6 +93,8 @@ for fn in sorted(os.listdir(patchdir)):
             for name, val in (op.get('props') or {}).items():
                 if props and name.lower() not in props and name.lower() not in JSON_ALIASES:
                     where(f"{tag}: TemplateItemProperties 에 '{name}' 프로퍼티가 없다")
+                if isinstance(val, str) and val.startswith('$') and val[1:] not in values:
+                    where(f"{tag}: '{val}' 을(를) db/values.json 에서 찾을 수 없다")
                 if kind == 'appendProps' and not isinstance(val, list):
                     where(f"{tag}: appendProps 의 '{name}' 값은 배열이어야 한다")
 
@@ -93,11 +105,25 @@ for fn in sorted(os.listdir(patchdir)):
                 warns.append(f"{fn} {tag}: slots 도 slotIndexes 도 없어 모든 슬롯에 적용된다")
 
         if kind == 'cloneItem':
+            for name, val in (op.get('props') or {}).items():
+                if props and name.lower() not in props and name.lower() not in JSON_ALIASES:
+                    where(f"{tag}: TemplateItemProperties 에 '{name}' 프로퍼티가 없다")
+                if isinstance(val, str) and val.startswith('$') and val[1:] not in values:
+                    where(f"{tag}: '{val}' 을(를) db/values.json 에서 찾을 수 없다")
+            for f in ('newParentId',):
+                if op.get(f) and not ID.match(op[f]):
+                    where(f"{tag}: {f} 가 24자 ID 형식이 아니다")
             if op.get('stage') != 'preload':
                 where(f"{tag}: cloneItem 은 반드시 stage=preload 여야 한다 "
                       f"(아니면 DatabaseModifiedAfterCutoffException 으로 서버가 죽는다)")
             for f in ('from', 'newId'):
                 if not ID.match(op.get(f, '')): where(f"{tag}: {f} 가 24자 ID 형식이 아니다")
+        if kind in ('handbookEntry', 'traderOffer'):
+            for f in ('id', 'parentId', 'traderId', 'currency'):
+                if op.get(f):
+                    n_ids += 1
+                    if not ID.match(op[f]): where(f"{tag}.{f} 의 '{op[f]}' 는 24자 ID 형식이 아니다")
+
         if kind == 'handbookEntry' and op.get('stage') != 'preload':
             where(f"{tag}: handbookEntry 는 stage=preload 여야 한다")
         if kind == 'traderOffer' and op.get('stage') != 'trader':

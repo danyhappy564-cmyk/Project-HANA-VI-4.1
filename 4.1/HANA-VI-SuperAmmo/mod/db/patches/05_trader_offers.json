@@ -1,0 +1,280 @@
+{
+  "key": "trader_offers",
+  "title": "스키어 판매 등록 (충성도 4)",
+  "enabled": true,
+  "_note": "상인 어사트 등록은 stage=trader 여야 한다. preload 에 넣으면 상인이 아직 준비되지 않아 예외 없이 조용히 실패한다.",
+  "_traderName": "Skier",
+  "_currencyName": "Roubles",
+  "ops": [
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "36c2c851e64b4074b6AC319c",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "66f5b68962fe6c1f25af9936",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "66f5b68962fe6c1f25af9681",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "66fb34873370c7729baed341",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "670547827c51eb084de1bd17",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "670547827c51eb084de1bdAA",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "66fb98a14d1456cf00a13500",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "66fb98a14d1456cf00a135AA",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67055c41ebc73eaa35ba547e",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67055c41ebc73eaa35ba54AA",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "66fb917da189607ce317ffef",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "66fb917da189607ce317ffAA",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "6705dba9e4697fa86c4d5e43",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "6705dba9e4697fa86c4d5eAA",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67056974e4697fa86c4d5eAA",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67056974e4697fa86c4d5eAB",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67056974e4697fa86c4d5eAc",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67056974e4697fa86c4d5eAD",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67056974e4697fa86c4d5eAE",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67056974e4697fa86c4d5eAF",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67056974e4697fa86c4d5ecf",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "6646a939a189607ce317ffAA",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "6646a939a189607ce3174649",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 469,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "696211d570c512d3c6158b76",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 1100,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "6962052d842fa461cfca30c5",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 600,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "6962080a0ac7b0e58556c481",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 600,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "69620cb818fa2048f4b56c5f",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 1200,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 4
+    }
+  ]
+}

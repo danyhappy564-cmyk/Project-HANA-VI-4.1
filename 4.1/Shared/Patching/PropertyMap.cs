@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace HanaVi.Aio.Patching;
+namespace HanaVi.Shared.Patching;
 
 /// <summary>
 /// 게임 JSON 의 프로퍼티 이름("bFirerate", "durability", "ArmorType" …)을

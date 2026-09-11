@@ -1,14 +1,15 @@
 using System.Text.Json.Serialization;
 
-namespace HanaVi.Aio;
+namespace HanaVi.Shared.Patching;
 
 /// <summary>
-/// config.json 매핑.
+/// 모드 공통 config.json 매핑.
 /// 3.11 때는 토글 하나하나가 C# 프로퍼티여야 했지만, 4.1 포팅본은 패치 파일이 스스로
 /// 자기 key 를 들고 있으므로 여기서는 "이름 → on/off" 딕셔너리 하나면 충분하다.
-/// 즉 패치를 새로 추가해도 이 클래스는 건드릴 필요가 없다.
+/// 즉 패치를 새로 추가해도 이 클래스는 건드릴 필요가 없다. AIO / SuperAmmo / Items
+/// 가 전부 같은 형식을 쓴다.
 /// </summary>
-public class AioConfig
+public class ModConfig
 {
     /// <summary>전체 모드 on/off. false 면 패치를 하나도 적용하지 않는다.</summary>
     [JsonPropertyName("enabled")]

@@ -1,0 +1,228 @@
+{
+  "key": "magazine_compat",
+  "title": "탄창 호환 (같은 구경 탄창에 특수탄 허용)",
+  "enabled": true,
+  "_note": "기존 탄창 허용목록에 마커 탄약(whenFilterContains)이 들어있으면 같은 구경으로 보고 특수탄을 추가한다. 3.11 의 ItemHelper.isOfBaseclass(MAGAZINE) 루프와 같은 동작이다.",
+  "ops": [
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5448bc234bdc2d3c308b4569"
+      ],
+      "into": "cartridge",
+      "whenFilterContains": [
+        "64b7bbb74b75259c590fa897"
+      ],
+      "add": [
+        "66fb917da189607ce317ffef",
+        "66fb917da189607ce317ffAA"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5448bc234bdc2d3c308b4569"
+      ],
+      "into": "cartridge",
+      "whenFilterContains": [
+        "5efb0d4f4bc50b58e81710f3"
+      ],
+      "add": [
+        "66fb98a14d1456cf00a13500",
+        "66fb98a14d1456cf00a135AA"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5448bc234bdc2d3c308b4569"
+      ],
+      "into": "cartridge",
+      "whenFilterContains": [
+        "5cadf6ddae9215051e1c23b2"
+      ],
+      "add": [
+        "66fb34873370c7729baed341"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5448bc234bdc2d3c308b4569"
+      ],
+      "into": "cartridge",
+      "whenFilterContains": [
+        "560d5e524bdc2d25448b4571"
+      ],
+      "add": [
+        "36c2c851e64b4074b6AC319c",
+        "66f5b68962fe6c1f25af9936",
+        "66f5b68962fe6c1f25af9681"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5448bc234bdc2d3c308b4569"
+      ],
+      "into": "cartridge",
+      "whenFilterContains": [
+        "62330b3ed4dc74626d570b95"
+      ],
+      "add": [
+        "670547827c51eb084de1bd17",
+        "670547827c51eb084de1bdAA"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5448bc234bdc2d3c308b4569"
+      ],
+      "into": "cartridge",
+      "whenFilterContains": [
+        "5cc86832d7f00c000d3a6e6c"
+      ],
+      "add": [
+        "67055c41ebc73eaa35ba547e",
+        "67055c41ebc73eaa35ba54AA"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5448bc234bdc2d3c308b4569"
+      ],
+      "into": "cartridge",
+      "whenFilterContains": [
+        "5a269f97c4a282000b151807"
+      ],
+      "add": [
+        "6705dba9e4697fa86c4d5e43",
+        "6705dba9e4697fa86c4d5eAA"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5448bc234bdc2d3c308b4569"
+      ],
+      "into": "cartridge",
+      "whenFilterContains": [
+        "6529243824cbe3c74a05e5c1"
+      ],
+      "add": [
+        "67056974e4697fa86c4d5eAA",
+        "67056974e4697fa86c4d5eAB"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5448bc234bdc2d3c308b4569"
+      ],
+      "into": "cartridge",
+      "whenFilterContains": [
+        "5f0596629e22f464da6bbdd9"
+      ],
+      "add": [
+        "67056974e4697fa86c4d5eAc",
+        "67056974e4697fa86c4d5eAD"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5448bc234bdc2d3c308b4569"
+      ],
+      "into": "cartridge",
+      "whenFilterContains": [
+        "5fd20ff893a8961fc660a954"
+      ],
+      "add": [
+        "67056974e4697fa86c4d5eAE",
+        "67056974e4697fa86c4d5eAF"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5448bc234bdc2d3c308b4569"
+      ],
+      "into": "cartridge",
+      "whenFilterContains": [
+        "5c0d688c86f77413ae3407b2"
+      ],
+      "add": [
+        "67056974e4697fa86c4d5ecf"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5448bc234bdc2d3c308b4569"
+      ],
+      "into": "cartridge",
+      "whenFilterContains": [
+        "5735ff5c245977640e39ba7e"
+      ],
+      "add": [
+        "6646a939a189607ce317ffAA"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5448bc234bdc2d3c308b4569"
+      ],
+      "into": "cartridge",
+      "whenFilterContains": [
+        "573719762459775a626ccbc1"
+      ],
+      "add": [
+        "6646a939a189607ce3174649"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5448bc234bdc2d3c308b4569"
+      ],
+      "into": "cartridge",
+      "whenFilterContains": [
+        "56dff3afd2720bba668b4567"
+      ],
+      "add": [
+        "696211d570c512d3c6158b76"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5448bc234bdc2d3c308b4569"
+      ],
+      "into": "cartridge",
+      "whenFilterContains": [
+        "5a38ebd9c4a282000d722a5b"
+      ],
+      "add": [
+        "6962052d842fa461cfca30c5",
+        "6962080a0ac7b0e58556c481"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targetsByBaseClass": [
+        "5448bc234bdc2d3c308b4569"
+      ],
+      "into": "cartridge",
+      "whenFilterContains": [
+        "5e85a9a6eacf8c039e4e2ac1"
+      ],
+      "add": [
+        "6962068b45b57405fed4068b",
+        "69620cb818fa2048f4b56c5f"
+      ]
+    }
+  ]
+}

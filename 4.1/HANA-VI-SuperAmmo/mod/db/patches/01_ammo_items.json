@@ -1,0 +1,827 @@
+{
+  "key": "ammo_items",
+  "title": "특수탄 28종 추가",
+  "enabled": true,
+  "_note": "아이템을 새로 만드는 작업이라 stage 는 반드시 preload 다. StackMaxSize / BackgroundColor 의 \"$...\" 는 db/values.json 을 참조한다.",
+  "ops": [
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5d6e6911a4b9361bd5780d52",
+      "newId": "36c2c851e64b4074b6AC319c",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "hanavi/12x70_flechette.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 25,
+        "PenetrationPower": 56,
+        "Damage": 23,
+        "InitialSpeed": 365,
+        "StackMaxSize": "$12gStack",
+        "BackgroundColor": "$color6"
+      },
+      "_name": "HANA'VI Tactical 12/70 Harvester"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "36c2c851e64b4074b6AC319c",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "64b8ee384b75259c590fa89b",
+      "newId": "66f5b68962fe6c1f25af9936",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "hanavi/12x70_flechette.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 23,
+        "PenetrationPower": 44,
+        "Damage": 20,
+        "InitialSpeed": 342,
+        "StackMaxSize": "$12gStack",
+        "BackgroundColor": "$color4"
+      },
+      "_name": "HANA'VI Tactical 12/70 Shredder"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "66f5b68962fe6c1f25af9936",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5d6e68e6a4b9361c140bcfe0",
+      "newId": "66f5b68962fe6c1f25af9681",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "hanavi/12x70_piranha.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 55,
+        "PenetrationPower": 65,
+        "Damage": 100,
+        "InitialSpeed": 485,
+        "StackMaxSize": "$12gStack",
+        "ammoAccr": 900,
+        "BackgroundColor": "$color6"
+      },
+      "_name": "HANA'VI Tactical 12/70 Obelisk Slug"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "66f5b68962fe6c1f25af9681",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "660137d8481cc6907a0c5cda",
+      "newId": "6962052d842fa461cfca30c5",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "assets/content/items/ammo/patrons/patron_20x70_slug_ap.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 55,
+        "PenetrationPower": 65,
+        "Damage": 80,
+        "InitialSpeed": 488,
+        "StackMaxSize": "$20gStack",
+        "ammoAccr": 900,
+        "BackgroundColor": "$color6"
+      },
+      "_name": "HANA'VI Tactical 20/70 Stiletto Slug"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "6962052d842fa461cfca30c5",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "6601380580e77cfd080e3418",
+      "newId": "6962080a0ac7b0e58556c481",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "assets/content/items/ammo/patrons/patron_20x70_flechette.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 25,
+        "PenetrationPower": 56,
+        "Damage": 26,
+        "InitialSpeed": 488,
+        "StackMaxSize": "$20gStack",
+        "ammoAccr": 20,
+        "buckshotBullets": 6,
+        "BackgroundColor": "$color6"
+      },
+      "_name": "HANA'VI Tactical 20/70 Sickle"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "6962080a0ac7b0e58556c481",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5e85aa1a988a8701445df1f5",
+      "newId": "6962068b45b57405fed4068b",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "assets/content/items/ammo/patrons/patron_23x75_barricade.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 55,
+        "PenetrationPower": 65,
+        "Damage": 120,
+        "InitialSpeed": 483,
+        "StackMaxSize": "$23Stack",
+        "ammoAccr": 900,
+        "BackgroundColor": "$color6"
+      },
+      "_name": "HANA'VI Tactical 23x75mm Leviathan Slug"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "6962068b45b57405fed4068b",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5f647f31b6238e5dd066e196",
+      "newId": "69620cb818fa2048f4b56c5f",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "assets/content/items/ammo/patrons/patron_23x75_shrapnel_25.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 25,
+        "PenetrationPower": 56,
+        "Damage": 28,
+        "InitialSpeed": 483,
+        "StackMaxSize": "$23Stack",
+        "ammoAccr": 10,
+        "buckshotBullets": 10,
+        "BackgroundColor": "$color6"
+      },
+      "_name": "HANA'VI Tactical 23x75mm Reaper"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "69620cb818fa2048f4b56c5f",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5cadf6ddae9215051e1c23b2",
+      "newId": "66fb34873370c7729baed341",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "assets/content/items/ammo/patrons/patron_12,7x55_ps12b.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 55,
+        "PenetrationPower": 57,
+        "Damage": 90,
+        "InitialSpeed": 650,
+        "StackMaxSize": "$12_7Stack",
+        "BackgroundColor": "$color6"
+      },
+      "_name": "HANA'VI Tactical 12.7x55mm 7N56 'Sledge'"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "66fb34873370c7729baed341",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "62330c18744e5e31df12f516",
+      "newId": "670547827c51eb084de1bd17",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "hanavi/9x33r_jhp.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 40,
+        "PenetrationPower": 42,
+        "Damage": 62,
+        "InitialSpeed": 412,
+        "StackMaxSize": "$357Stack",
+        "BackgroundColor": "$color4"
+      },
+      "_name": "HANA'VI Tactical .357 HCP 'Enforcer'"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "670547827c51eb084de1bd17",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "62330c18744e5e31df12f516",
+      "newId": "670547827c51eb084de1bdAA",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "hanavi/9x33r_fmj.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 38,
+        "PenetrationPower": 54,
+        "Damage": 60,
+        "InitialSpeed": 439,
+        "StackMaxSize": "$357Stack",
+        "BackgroundColor": "$color5"
+      },
+      "_name": "HANA'VI Tactical .357 XM1035 EPR 'Gungnir'"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "670547827c51eb084de1bdAA",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5e81f423763d9f754677bf2e",
+      "newId": "66fb98a14d1456cf00a13500",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "hanavi/1143x23_acp.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 52,
+        "PenetrationPower": 44,
+        "Damage": 62,
+        "InitialSpeed": 300,
+        "StackMaxSize": "$45ACPStack",
+        "BackgroundColor": "$color4"
+      },
+      "_name": "HANA'VI Tactical .45 ACP XM1162 EPR"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "66fb98a14d1456cf00a13500",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5e81f423763d9f754677bf2e",
+      "newId": "66fb98a14d1456cf00a135AA",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "hanavi/1143x23_acp_ap.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 50,
+        "PenetrationPower": 55,
+        "Damage": 60,
+        "InitialSpeed": 319,
+        "StackMaxSize": "$45ACPStack",
+        "BackgroundColor": "$color5"
+      },
+      "_name": "HANA'VI Tactical .45 ACP XM1165 ADVAP"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "66fb98a14d1456cf00a135AA",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5cc80f53e4a949000e1ea4f8",
+      "newId": "67055c41ebc73eaa35ba547e",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "assets/content/items/ammo/patrons/patron_57x28_l191.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 42,
+        "PenetrationPower": 42,
+        "Damage": 42,
+        "InitialSpeed": 770,
+        "StackMaxSize": "$57Stack",
+        "BackgroundColor": "$color4"
+      },
+      "_name": "HANA'VI Tactical 5.7x28mm R39.F 'Viper'"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67055c41ebc73eaa35ba547e",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5cc80f53e4a949000e1ea4f8",
+      "newId": "67055c41ebc73eaa35ba54AA",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "assets/content/items/ammo/patrons/patron_57x28_l191.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 45,
+        "PenetrationPower": 54,
+        "Damage": 40,
+        "InitialSpeed": 821,
+        "StackMaxSize": "$57Stack",
+        "BackgroundColor": "$color5"
+      },
+      "_name": "HANA'VI Tactical 5.7x28mm R39.X 'Stinger'"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67055c41ebc73eaa35ba54AA",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5c925fa22e221601da359b7b",
+      "newId": "66fb917da189607ce317ffef",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "hanavi/9x19_ap_63.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 57,
+        "PenetrationPower": 44,
+        "Damage": 41,
+        "InitialSpeed": 489,
+        "StackMaxSize": "$919Stack",
+        "BackgroundColor": "$color4"
+      },
+      "_name": "HANA'VI Tactical 9x19mm 7N51 'Stilet'"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "66fb917da189607ce317ffef",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5c925fa22e221601da359b7b",
+      "newId": "66fb917da189607ce317ffAA",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "hanavi/9x19_7n31.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 52,
+        "PenetrationPower": 54,
+        "Damage": 40,
+        "InitialSpeed": 521,
+        "StackMaxSize": "$919Stack",
+        "BackgroundColor": "$color5"
+      },
+      "_name": "HANA'VI Tactical 9x19mm 7N52 'Klyuch'"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "66fb917da189607ce317ffAA",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5a26ac0ec4a28200741e1e18",
+      "newId": "6705dba9e4697fa86c4d5e43",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "hanavi/9x21_sp13.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 50,
+        "PenetrationPower": 44,
+        "Damage": 47,
+        "InitialSpeed": 444,
+        "StackMaxSize": "$921Stack",
+        "BackgroundColor": "$color4"
+      },
+      "_name": "HANA'VI Tactical 9x21mm SP-14 'Grom'"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "6705dba9e4697fa86c4d5e43",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5a26ac0ec4a28200741e1e18",
+      "newId": "6705dba9e4697fa86c4d5eAA",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "hanavi/9x21_7n42.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 44,
+        "PenetrationPower": 55,
+        "Damage": 44,
+        "InitialSpeed": 473,
+        "StackMaxSize": "$921Stack",
+        "BackgroundColor": "$color5"
+      },
+      "_name": "HANA'VI Tactical 9x21mm SP-15 'Shtil'"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "6705dba9e4697fa86c4d5eAA",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 1230,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 1400
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "6529243824cbe3c74a05e5c1",
+      "newId": "67056974e4697fa86c4d5eAA",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "assets/content/items/ammo/patrons/patron_68x51.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 55,
+        "PenetrationPower": 55,
+        "Damage": 70,
+        "InitialSpeed": 959,
+        "StackMaxSize": "$277Stack",
+        "BackgroundColor": "$color5"
+      },
+      "_name": "HANA'VI Tactical 6.8x51mm XM1184 ADVAP"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67056974e4697fa86c4d5eAA",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "6529243824cbe3c74a05e5c1",
+      "newId": "67056974e4697fa86c4d5eAB",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "assets/content/items/ammo/patrons/patron_68x51.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 50,
+        "PenetrationPower": 60,
+        "Damage": 68,
+        "InitialSpeed": 1021,
+        "StackMaxSize": "$277Stack",
+        "BackgroundColor": "$color6"
+      },
+      "_name": "HANA'VI Tactical 6.8x51mm XM1186 ADVAP"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67056974e4697fa86c4d5eAB",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 1080,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 1100
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5f0596629e22f464da6bbdd9",
+      "newId": "67056974e4697fa86c4d5eAc",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "assets/content/items/ammo/patrons/patron_366tkm_geksa.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 55,
+        "PenetrationPower": 53,
+        "Damage": 86,
+        "InitialSpeed": 589,
+        "StackMaxSize": "$366Stack",
+        "BackgroundColor": "$color5"
+      },
+      "_name": "HANA'VI Tactical .366 TKM Shilo"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67056974e4697fa86c4d5eAc",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 870,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 900
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5f0596629e22f464da6bbdd9",
+      "newId": "67056974e4697fa86c4d5eAD",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "assets/content/items/ammo/patrons/patron_366tkm_fmj.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 50,
+        "PenetrationPower": 61,
+        "Damage": 78,
+        "InitialSpeed": 627,
+        "StackMaxSize": "$366Stack",
+        "BackgroundColor": "$color6"
+      },
+      "_name": "HANA'VI Tactical .366 TKM Vanguard"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67056974e4697fa86c4d5eAD",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 870,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 900
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5fd20ff893a8961fc660a954",
+      "newId": "67056974e4697fa86c4d5eAE",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "assets/content/items/ammo/patrons/patron_762x35_vmax.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 60,
+        "PenetrationPower": 54,
+        "Damage": 47,
+        "InitialSpeed": 810,
+        "StackMaxSize": "$300Stack",
+        "BackgroundColor": "$color5"
+      },
+      "_name": "HANA'VI Tactical .300 BLK EPR"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67056974e4697fa86c4d5eAE",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 770,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 800
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5fd20ff893a8961fc660a954",
+      "newId": "67056974e4697fa86c4d5eAF",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "assets/content/items/ammo/patrons/patron_762x35_ap.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 54,
+        "PenetrationPower": 62,
+        "Damage": 45,
+        "InitialSpeed": 866,
+        "StackMaxSize": "$300Stack",
+        "BackgroundColor": "$color6"
+      },
+      "_name": "HANA'VI Tactical .300 BLK XM1163 ADVAP"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67056974e4697fa86c4d5eAF",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 900,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 990
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5c0d688c86f77413ae3407b2",
+      "newId": "67056974e4697fa86c4d5ecf",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "assets/content/items/ammo/patrons/patron_9x39_bp.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 64,
+        "PenetrationPower": 62,
+        "Damage": 52,
+        "InitialSpeed": 331,
+        "StackMaxSize": "$939Stack",
+        "BackgroundColor": "$color6"
+      },
+      "_name": "HANA'VI Tactical 9x39mm 7N32 'Failnaught'"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67056974e4697fa86c4d5ecf",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 1100,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 1200
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "61962b617c6c7b169525f168",
+      "newId": "696211d570c512d3c6158b76",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "assets/content/items/ammo/patrons/patron_545x39_7n40.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 61,
+        "PenetrationPower": 58,
+        "Damage": 43,
+        "InitialSpeed": 1040,
+        "StackMaxSize": "$545Stack",
+        "BackgroundColor": "$color6"
+      },
+      "_name": "HANA'VI Tactical 5.45x39mm 7N44 'Fragarach'"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "696211d570c512d3c6158b76",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 1100,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 1200
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "573602322459776445391df1",
+      "newId": "6646a939a189607ce317ffAA",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "assets/content/items/ammo/patrons/patron_762x25tt_lrnpc.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 30,
+        "PenetrationPower": 54,
+        "Damage": 40,
+        "InitialSpeed": 490,
+        "StackMaxSize": "$762_25Stack",
+        "BackgroundColor": "$color5"
+      },
+      "_name": "HANA'VI Tactical 7.62x25mm SP-18 'Zhal'"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "6646a939a189607ce317ffAA",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5737201124597760fc4431f1",
+      "newId": "6646a939a189607ce3174649",
+      "newParentId": "5485a8684bdc2da71d8b4567",
+      "props": {
+        "Prefab": {
+          "path": "assets/content/items/ammo/patrons/patron_9x18pm_pst_gzh.bundle",
+          "rcid": ""
+        },
+        "ArmorDamage": 30,
+        "PenetrationPower": 54,
+        "Damage": 38,
+        "InitialSpeed": 340,
+        "StackMaxSize": "$918Stack",
+        "BackgroundColor": "$color5"
+      },
+      "_name": "HANA'VI Tactical 9x18mm 7N38 'Gvozd'"
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "6646a939a189607ce3174649",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true,
+      "_fleaPriceRoubles": 600
+    }
+  ]
+}

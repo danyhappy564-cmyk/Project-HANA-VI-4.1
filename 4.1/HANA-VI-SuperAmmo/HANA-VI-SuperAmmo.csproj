@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>HANA-VI-SuperAmmo</AssemblyName>
+    <RootNamespace>HanaVi.SuperAmmo</RootNamespace>
+    <Version>4.1.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Shared\**\*.cs" LinkBase="Shared" />
+  </ItemGroup>
+
+  <!-- 번들(에셋)은 3.x-original 에서 그대로 가져다 쓴다. 파일이 커서 복사본을 두지 않는다.
+       4.1 은 bundles.json 이 있으면 자동으로 번들 모드로 인식한다(3.x 의 isBundleMod 는 없어졌다). -->
+  <ItemGroup>
+    <None Include="..\..\3.x-original\HANA-VI-SuperAmmo\bundles.json"
+          CopyToOutputDirectory="PreserveNewest" Link="bundles.json" />
+    <None Include="..\..\3.x-original\HANA-VI-SuperAmmo\bundles\**\*"
+          CopyToOutputDirectory="PreserveNewest" LinkBase="bundles" />
+  </ItemGroup>
+</Project>

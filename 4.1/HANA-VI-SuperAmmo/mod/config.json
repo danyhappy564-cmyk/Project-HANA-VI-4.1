@@ -1,0 +1,19 @@
+{
+  "_comment": [
+    "HANA-VI SuperAmmo — SPT 4.1 포팅본 설정",
+    "enabled        : 전체 on/off",
+    "verboseLogging : 적용한 패치를 서버 로그에 한 줄씩 출력",
+    "patches        : 패치 key -> true/false",
+    "탄 적재량과 배경색은 db/values.json 에서 고친다 (3.11 의 config/config.json 에 해당).",
+    "탄약 성능(관통력/데미지 등)은 db/patches/01_ammo_items.json 에서 고친다."
+  ],
+  "enabled": true,
+  "verboseLogging": true,
+  "patches": {
+    "ammo_items": true,
+    "magazine_compat": true,
+    "cylinder_compat": true,
+    "weapon_compat": true,
+    "trader_offers": true
+  }
+}

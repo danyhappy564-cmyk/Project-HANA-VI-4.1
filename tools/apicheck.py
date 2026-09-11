@@ -44,7 +44,7 @@ MEMBERS = {
  'Injectable': ['TypePriority','InjectionType'],
  'TemplateTable': ['Items','Handbook'],
  'LocaleTable': ['Global'],
- 'TemplateItem': ['Id','Parent','Properties'],
+ 'TemplateItem': ['Id','Name','Parent','Properties'],
  'TemplateItemProperties': ['Slots','Chambers','Cartridges','Grids','ExaminedByDefault',
                             'CanSellOnRagfair','ConflictingItems','WeapFireType','BFirerate',
                             'MaskSize','ArmorMaterial','ArmorType','Durability','MaxDurability',
