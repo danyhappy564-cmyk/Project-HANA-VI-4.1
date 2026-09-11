@@ -1,0 +1,121 @@
+{
+    "overwriteProperties": {
+        "itemTplToClone": "6231654c71b5bc3baa1078e5",
+        "overrideProperties": {
+            "Ergonomics": 9,
+            "CoolFactor": 1.233,
+            "ConflictingItems": [
+                "622b379bf9cfc87d675d2de5",
+                "622b3858034a3e17ad0b81f5"
+            ],
+            "Prefab": {
+                "path": "g36_mod_0/handguard_g36_hk_export.bundle",
+                "rcid": ""
+            },
+            "HeatFactor": 1,
+            "Weight": 0.39,
+            "Recoil": -3,
+            "Slots": [
+                {
+                    "_id": "623167968c43374ca1567197",
+                    "_mergeSlotWithChildren": false,
+                    "_name": "mod_bipod",
+                    "_parent": "31916545E1b5bc3baa1078e5",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Filter": [
+                                    "622b397c9a3d4327e41843b6"
+                                ],
+                                "Shift": 0
+                            }
+                        ]
+                    },
+                    "_proto": "55d30c4c4bdc2db4468b457e",
+                    "_required": false
+                },
+                {
+                    "_id": "62444e8e4b411719ea425cbb",
+                    "_mergeSlotWithChildren": false,
+                    "_name": "mod_mount_000",
+                    "_parent": "31916545E1b5bc3baa1078e5",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Filter": [
+                                    "62444cb99f47004c781903eb"
+                                ],
+                                "Shift": 0
+                            }
+                        ]
+                    },
+                    "_proto": "55d30c4c4bdc2db4468b457e",
+                    "_required": false
+                },
+                {
+                    "_id": "62444e9f674028188b05279d",
+                    "_mergeSlotWithChildren": false,
+                    "_name": "mod_mount_001",
+                    "_parent": "31916545E1b5bc3baa1078e5",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Filter": [
+                                    "62444cd3674028188b052799"
+                                ],
+                                "Shift": 0
+                            }
+                        ]
+                    },
+                    "_proto": "55d30c4c4bdc2db4468b457e",
+                    "_required": false
+                },
+                {
+                    "_id": "62444eaf4b411719ea425cbc",
+                    "_mergeSlotWithChildren": false,
+                    "_name": "mod_mount_002",
+                    "_parent": "31916545E1b5bc3baa1078e5",
+                    "_props": {
+                        "filters": [
+                            {
+                                "Filter": [
+                                    "62444cd3674028188b052799"
+                                ],
+                                "Shift": 0
+                            }
+                        ]
+                    },
+                    "_proto": "55d30c4c4bdc2db4468b457e",
+                    "_required": false
+                }
+            ]
+        },
+        "parentId": "55818a104bdc2db9688b4569",
+        "newId": "31916545E1b5bc3baa1078e5",
+        "fleaPriceRoubles": 21000,
+        "handbookPriceRoubles": 14000,
+        "handbookParentId": "5b5f75e486f77447ec5d7712",
+        "locales": {
+            "en": {
+                "Name": "HK G36 Extended handguard",
+                "ShortName": "G36 Ex",
+                "Description": "New latest production HK G36, SL8 & HK243 handguard, was designed for the German special forces and elite units, has the ability to accept G36/SL8 full size picatinney rails to the left and right side as well as the bottom."
+            }
+        }
+    },
+    "slotsToAdd": {
+        "targetID": [
+            "623063e994fc3f7b302a9696"
+        ],
+        "slotName": [
+            "mod_handguard"
+        ]
+    },
+    "traderToAdd": {
+        "traderID": "58330581ace78e27b8b10cee",
+        "loyal_level_items": 1,
+        "barter_scheme": "ROUBLES",
+        "barter_scheme_value": 16300,
+        "BuyRestrictionMax": 2
+    }
+}

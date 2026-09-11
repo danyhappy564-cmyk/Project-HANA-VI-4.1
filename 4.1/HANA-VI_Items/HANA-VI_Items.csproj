@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>HANA-VI_Items</AssemblyName>
+    <RootNamespace>HanaVi.Items</RootNamespace>
+    <Version>4.1.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Shared\**\*.cs" LinkBase="Shared" />
+  </ItemGroup>
+
+  <!-- 번들(에셋)은 3.x-original 에서 링크로 가져온다. 용량이 커서 복사본을 두지 않는다. -->
+  <ItemGroup>
+    <None Include="..\..\3.x-original\HANA-VI_Items\bundles.json"
+          CopyToOutputDirectory="PreserveNewest" Link="bundles.json" />
+    <None Include="..\..\3.x-original\HANA-VI_Items\bundles\**\*"
+          CopyToOutputDirectory="PreserveNewest" LinkBase="bundles" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,79 @@
+[
+  {
+    "_comment": [
+      "아이템 팩 목록. 이 파일에서 enabled 를 false 로 바꾸면 그 팩만 통째로 꺼진다.",
+      "folder 는 db/packs/ 기준 상대 경로다. 팩 데이터(JSON)는 3.11 원본 그대로라",
+      "아이템 스탯이나 가격을 바꾸려면 해당 팩 폴더의 *_items.json 을 고치면 된다."
+    ]
+  },
+  {
+    "key": "atlas_gear",
+    "name": "A T L A S Custom Weapons & Equipment",
+    "enabled": true,
+    "folder": "ATLAS-GEAR/database",
+    "itemFiles": [
+      "custom_items"
+    ],
+    "clothesFiles": [
+      "custom_clothes"
+    ],
+    "useGlobals": true,
+    "useTraders": true
+  },
+  {
+    "key": "carl_qhb",
+    "name": "Carl-QHB",
+    "enabled": true,
+    "folder": "Carl-QHB/database",
+    "itemFiles": [
+      "GW_items"
+    ],
+    "clothesFiles": [
+      "GW_clothes"
+    ],
+    "useGlobals": true,
+    "useTraders": true
+  },
+  {
+    "key": "sig_mcx_virtus",
+    "name": "SIG MCX VIRTUS",
+    "enabled": true,
+    "folder": "SIG_MCX_VIRTUS/database",
+    "itemFiles": [
+      "VIR_items"
+    ],
+    "clothesFiles": [
+      "VIR_clothes"
+    ],
+    "useGlobals": true,
+    "useTraders": true
+  },
+  {
+    "key": "sdtac_kits",
+    "name": "SDTAC KITS",
+    "enabled": true,
+    "folder": "SDTAC_KITS/database",
+    "itemFiles": [
+      "SDtac_items"
+    ],
+    "clothesFiles": [
+      "SDtac_clothes"
+    ],
+    "useGlobals": true,
+    "useTraders": true
+  },
+  {
+    "key": "qbz191",
+    "name": "NW-QBZ191",
+    "enabled": true,
+    "folder": "qbz191/database",
+    "itemFiles": [
+      "items"
+    ],
+    "clothesFiles": [
+      "clothes"
+    ],
+    "useGlobals": true,
+    "useTraders": true
+  }
+]

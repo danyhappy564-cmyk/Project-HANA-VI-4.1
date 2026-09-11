@@ -1,0 +1,48 @@
+{
+    "overwriteProperties": {
+        "itemTplToClone": "67069d8dad91f3a63c0bc2b4",
+        "overrideProperties": {
+            "Ergonomics": 13,
+            "CoolFactor": 1.233,
+            "ConflictingItems": [
+                "622b379bf9cfc87d675d2de5",
+                "622b3858034a3e17ad0b81f5"
+            ],
+            "Prefab": {
+                "path": "g36_mod_0/handguard_g36_slimline_e.bundle",
+                "rcid": ""
+            },
+            "HeatFactor": 1,
+            "Weight": 0.5,
+            "Width": 3,
+            "Recoil": -5
+        },
+        "parentId": "55818a104bdc2db9688b4569",
+        "newId": "31986b7153757417e92b4e9f",
+        "fleaPriceRoubles": 84989,
+        "handbookPriceRoubles": 44399,
+        "handbookParentId": "5b5f75e486f77447ec5d7712",
+        "locales": {
+            "en": {
+                "Name": "HK G36 Slim Line HKey Handguard/E",
+                "ShortName": "G36 Slim Line E",
+                "Description": "A low-profile handguard with an HKey mounting interface for the G36K assault rifle. Manufactured by Heckler & Koch."
+            }
+        }
+    },
+    "slotsToAdd": {
+        "targetID": [
+            "623063e994fc3f7b302a9696"
+        ],
+        "slotName": [
+            "mod_handguard"
+        ]
+    },
+    "traderToAdd": {
+        "traderID": "58330581ace78e27b8b10cee",
+        "loyal_level_items": 4,
+        "barter_scheme": "ROUBLES",
+        "barter_scheme_value": 23800,
+        "BuyRestrictionMax": 3
+    }
+}

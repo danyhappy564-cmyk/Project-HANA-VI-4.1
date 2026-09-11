@@ -1,0 +1,17 @@
+{
+  "ItemPresets": {
+    "ItemPresets": {
+    }
+  },
+  "config": {
+    "Mastering": [
+    ],
+    "Health": {
+      "Effects": {
+        "Stimulator": {
+          "Buffs": {}
+        }
+      }
+    }
+  }
+}

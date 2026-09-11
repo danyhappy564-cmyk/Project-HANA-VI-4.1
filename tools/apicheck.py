@@ -70,6 +70,20 @@ MEMBERS = {
  'ISptLogger`1': ['Info','Warning','Error','Success'],
  'LazyLoad`1': ['AddTransformer'],
  'GlobalLocaleDictionary': [],
+ 'GlobalTable': ['ItemPresets','Configuration'],
+ 'GlobalConfig': ['Mastering'],
+ 'Mastering': ['Name','Templates'],
+ 'Preset': ['Id','Name','Parent','Items'],
+ 'CustomizationItem': ['Id','Name','Parent','Properties'],
+ 'Suit': ['Id','Tid','SuiteId'],
+ 'TraderBase': ['CustomizationSeller'],
+ 'Trader': ['Assort','Base','Suits'],
+ 'JsonUtil': ['Serialize','Deserialize'],
+ 'TemplateItemProperties': ['Slots','Chambers','Cartridges','Grids','ExaminedByDefault',
+                            'CanSellOnRagfair','ConflictingItems','WeapFireType','BFirerate',
+                            'MaskSize','ArmorMaterial','ArmorType','Durability','MaxDurability',
+                            'ExtraSizeLeft','ExtraSizeRight','ExtraSizeUp','ExtraSizeDown','Prefab',
+                            'StackMaxSize','BackgroundColor','AmmoCaliber'],
 }
 for tname, members in MEMBERS.items():
     checked_ty += 1

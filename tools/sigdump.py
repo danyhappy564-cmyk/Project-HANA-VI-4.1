@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Decode property signatures for named types (removes guesswork about collection types)."""
-import sys, struct, re
-sys.path.insert(0, '/tmp/claude-0/-home-user-Project-HANA-VI-4-1/19fb2458-09f8-5d75-87e6-b14887fd9ede/scratchpad')
+import sys, struct, re, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from mdump import Meta, u16, u32
 
 PRIM = {0x01:'void',0x02:'bool',0x03:'char',0x04:'sbyte',0x05:'byte',0x06:'short',0x07:'ushort',

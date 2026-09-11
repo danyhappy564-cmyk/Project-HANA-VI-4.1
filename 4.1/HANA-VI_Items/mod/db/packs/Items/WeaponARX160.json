@@ -1,0 +1,3091 @@
+{
+	"66945f346fd04c33d4f9bc35": {
+		"itemTplToClone": "5447a9cd4bdc2dbd208b4567",
+		"parentId": "5447b5f14bdc2d61278b4567",
+		"handbookParentId": "5b5f78fc86f77409407a7f90",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Width": 3,
+			"Height": 1,
+			"Weight": 3,
+			"Recoil": -4,
+			"Ergonomics": 47,
+			"HeatFactor": 0.993,
+			"CoolFactor": 1,
+			"DurabilityBurnModificator": 0.95,
+			"Prefab": {
+				"path": "160container.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_id": "6668de67ef71669504563d28",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_magazine",
+					"_parent": "66945f346fd04c33d4f9bc35",
+					"_props": {
+						"filters": [
+							{
+								"AnimationIndex": -1,
+								"Filter": [
+									"55d4887d4bdc2d962f8b4570",
+									"61840bedd92c473c77021635",
+									"61840d85568c120fdd2962a5",
+									"5c05413a0db834001c390617",
+									"5c6d450c2e221600114c997d",
+									"5c6d42cb2e2216000e69d7d1",
+									"59c1383d86f774290a37e0ca",
+									"5aaa5dfee5b5b000140293d3",
+									"5d1340b3d7ad1a0b52682ed7",
+									"544a378f4bdc2d30388b4567",
+									"5d1340bdd7ad1a0e8d245aab",
+									"55802d5f4bdc2dac148b458e",
+									"5d1340cad7ad1a0b0b249869",
+									"6241c2c2117ad530666a5108",
+									"5c6592372e221600133e47d7",
+									"544a37c44bdc2d25388b4567",
+									"5c6d46132e221601da357d56"
+								]
+							}
+						]
+					},
+					"_proto": "55d30c394bdc2dae468b4577",
+					"_required": false
+				},
+				{
+					"_id": "66945f4ab70518c106e2469c",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_stock",
+					"_parent": "66945f346fd04c33d4f9bc35",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"66945f6221aaf2b87072fe55"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_proto": "55d30c4c4bdc2db4468b457e",
+					"_required": true
+				},
+				{
+					"_id": "66945f4130f8ab43f88b1286",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_scope",
+					"_parent": "66945f346fd04c33d4f9bc35",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"57ac965c24597706be5f975c",
+									"57aca93d2459771f2c7e26db",
+									"544a3f024bdc2d1d388b4568",
+									"544a3a774bdc2d3a388b4567",
+									"5d2dc3e548f035404a1a4798",
+									"57adff4f24597737f373b6e6",
+									"5c0517910db83400232ffee5",
+									"591c4efa86f7741030027726",
+									"570fd79bd2720bc7458b4583",
+									"570fd6c2d2720bc6458b457f",
+									"558022b54bdc2dac148b458d",
+									"5c07dd120db834001c39092d",
+									"5c0a2cec0db834001b7ce47d",
+									"58491f3324597764bc48fa02",
+									"584924ec24597768f12ae244",
+									"5b30b0dc5acfc400153b7124",
+									"6165ac8c290d254f5e6b2f6c",
+									"60a23797a37c940de7062d02",
+									"5d2da1e948f035477b1ce2ba",
+									"5c0505e00db834001b735073",
+									"609a63b6e2ff132951242d09",
+									"584984812459776a704a82a6",
+									"59f9d81586f7744c7506ee62",
+									"570fd721d2720bc5458b4596",
+									"57ae0171245977343c27bfcf",
+									"5dfe6104585a0c3e995c7b82",
+									"544a3d0a4bdc2d1b388b4567",
+									"5d1b5e94d7ad1a2b865a96b0",
+									"609bab8b455afd752b2e6138",
+									"58d39d3d86f77445bb794ae7",
+									"616554fe50224f204c1da2aa",
+									"5c7d55f52e221644f31bff6a",
+									"616584766ef05c2ce828ef57",
+									"5b3b6dc75acfc47a8773fb1e",
+									"615d8d878004cc50514c3233",
+									"5b2389515acfc4771e1be0c0",
+									"577d128124597739d65d0e56",
+									"618b9643526131765025ab35",
+									"618bab21526131765025ab3f",
+									"5c86592b2e2216000e69e77c",
+									"5a37ca54c4a282000d72296a",
+									"5d0a29fed7ad1a002769ad08",
+									"5c064c400db834001d23f468",
+									"58d2664f86f7747fec5834f6",
+									"57c69dd424597774c03b7bbc",
+									"5b3b99265acfc4704b4a1afb",
+									"5aa66a9be5b5b0214e506e89",
+									"5aa66c72e5b5b00016327c93",
+									"5c1cdd302e221602b3137250",
+									"61714b2467085e45ef140b2c",
+									"6171407e50224f204c1da3c5",
+									"61713cc4d8e3106d9806c109",
+									"5b31163c5acfc400153b71cb",
+									"5a33b652c4a28232996e407c",
+									"5a33b2c9c4a282000c5a9511",
+									"59db7eed86f77461f8380365",
+									"5a1ead28fcdbcb001912fa9f",
+									"5dff77c759400025ea5150cf",
+									"626bb8532c923541184624b4",
+									"62811f461d5df4475f46a332",
+									"63fc449f5bd61c6cf3784a88",
+									"6477772ea8a38bb2050ed4db",
+									"6478641c19d732620e045e17",
+									"64785e7c19d732620e045e15",
+									"66489a0f8b2d733829c2a848",
+									"664aa07d00fc82b15f32c52b",
+									"877f002b7dadc7ae31d1fda1",
+									"c26f2af872656829feb27c08",
+									"de53b0fd978f0eaad71c5528",
+									"d3e07e32dc01693c226878dc",
+									"befd7a2bbc07793f73133f2c",
+									"b2d57758abe9bb9345c58e4a",
+									"67ea8b32e0d7701fc6bfc5bf",
+									"6655df2d0169bf45a18535c8",
+									"794a8aea9ca78d01fc24a4f8"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_proto": "55d30c4c4bdc2db4468b457e",
+					"_required": false
+				},
+				{
+					"_id": "66945f39b83b1309574a3f3f",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_barrel",
+					"_parent": "66945f346fd04c33d4f9bc35",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"669484086ae62382b4284663",
+									"669485336b1b93b1026b8649",
+									"669484ce0693559026606fc0"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_proto": "55d30c4c4bdc2db4468b457e",
+					"_required": true
+				},
+				{
+					"_id": "66945f47f664bc207ca202f0",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_sight_rear",
+					"_parent": "66945f346fd04c33d4f9bc35",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"5bb20e49d4351e3bac1212de",
+									"5ba26b17d4351e00367f9bdd",
+									"5dfa3d7ac41b2312ea33362a",
+									"5c1780312e221602b66cc189",
+									"5fb6564947ce63734e3fa1da",
+									"5bc09a18d4351e003562b68e",
+									"5c18b9192e2216398b5a8104",
+									"5fc0fa957283c4046c58147e",
+									"5894a81786f77427140b8347",
+									"55d5f46a4bdc2d1b198b4567",
+									"5ae30bad5acfc400185c2dc4",
+									"664535a147ce00a35e8c8359",
+									"66945f69e2030f6b0e84d540"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_proto": "55d30c4c4bdc2db4468b457e",
+					"_required": false
+				},
+				{
+					"_name": "mod_sight_front",
+					"_id": "66945f447452fa16ef984ea9",
+					"_parent": "66945f346fd04c33d4f9bc35",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"5ba26b01d4351e0085325a51",
+									"5dfa3d950dee1b22f862eae0",
+									"5c17804b2e2216152006c02f",
+									"5fb6567747ce63734e3fa1dc",
+									"5bc09a30d4351e00367fb7c8",
+									"5c18b90d2e2216152142466b",
+									"5fc0fa362770a0045c59c677",
+									"5894a73486f77426d259076c",
+									"55d4af3a4bdc2d972f8b456f",
+									"664535982ca10073970ebd9a",
+									"66945f66e3d59d24380efd24"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_000",
+					"_id": "66945f4d16768946cab3ed0d",
+					"_parent": "66945f346fd04c33d4f9bc35",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"57fd23e32459772d0805bcf1",
+									"544909bb4bdc2d6f028b4577",
+									"5d10b49bd7ad1a1a560708b0",
+									"5c06595c0db834001a66af6c",
+									"5a7b483fe899ef0016170d15",
+									"5c5952732e2216398b5abda2",
+									"644a3df63b0b6f03e101e065"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_001",
+					"_id": "66945f502f5e3300d6027ff0",
+					"_parent": "66945f346fd04c33d4f9bc35",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"5a800961159bd4315e3a1657",
+									"57fd23e32459772d0805bcf1",
+									"544909bb4bdc2d6f028b4577",
+									"5c06595c0db834001a66af6c",
+									"5cc9c20cd7f00c001336c65d",
+									"5d2369418abbc306c62e0c80",
+									"5b07dd285acfc4001754240d",
+									"56def37dd2720bec348b456a",
+									"5a7b483fe899ef0016170d15",
+									"61605d88ffa6e502ac5e7eeb",
+									"5a5f1ce64f39f90b401987bc",
+									"560d657b4bdc2da74d8b4572",
+									"5b3a337e5acfc4704b4a19a0",
+									"5c5952732e2216398b5abda2",
+									"57d17e212459775a1179a0f5",
+									"6267c6396b642f77f56f5c1c",
+									"6272370ee4013c5d7e31f418",
+									"6272379924e29f06af4d5ecb",
+									"626becf9582c3e319310b837",
+									"644a3df63b0b6f03e101e065",
+									"646f6322f43d0c5d62063715"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_002",
+					"_id": "66945f538c351f2e3ed61ebe",
+					"_parent": "66945f346fd04c33d4f9bc35",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"5a800961159bd4315e3a1657",
+									"57fd23e32459772d0805bcf1",
+									"544909bb4bdc2d6f028b4577",
+									"5c06595c0db834001a66af6c",
+									"5cc9c20cd7f00c001336c65d",
+									"5d2369418abbc306c62e0c80",
+									"5b07dd285acfc4001754240d",
+									"56def37dd2720bec348b456a",
+									"5a7b483fe899ef0016170d15",
+									"61605d88ffa6e502ac5e7eeb",
+									"5a5f1ce64f39f90b401987bc",
+									"560d657b4bdc2da74d8b4572",
+									"5b3a337e5acfc4704b4a19a0",
+									"5c5952732e2216398b5abda2",
+									"57d17e212459775a1179a0f5",
+									"6267c6396b642f77f56f5c1c",
+									"6272370ee4013c5d7e31f418",
+									"6272379924e29f06af4d5ecb",
+									"626becf9582c3e319310b837",
+									"644a3df63b0b6f03e101e065",
+									"646f6322f43d0c5d62063715"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_003",
+					"_id": "66945f56e06bc85434fdf99c",
+					"_parent": "66945f346fd04c33d4f9bc35",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"5a800961159bd4315e3a1657",
+									"57fd23e32459772d0805bcf1",
+									"544909bb4bdc2d6f028b4577",
+									"5c06595c0db834001a66af6c",
+									"5cc9c20cd7f00c001336c65d",
+									"5d2369418abbc306c62e0c80",
+									"5b07dd285acfc4001754240d",
+									"56def37dd2720bec348b456a",
+									"5a7b483fe899ef0016170d15",
+									"61605d88ffa6e502ac5e7eeb",
+									"5a5f1ce64f39f90b401987bc",
+									"560d657b4bdc2da74d8b4572",
+									"5b3a337e5acfc4704b4a19a0",
+									"5c5952732e2216398b5abda2",
+									"57d17e212459775a1179a0f5",
+									"6267c6396b642f77f56f5c1c",
+									"6272370ee4013c5d7e31f418",
+									"6272379924e29f06af4d5ecb",
+									"626becf9582c3e319310b837",
+									"644a3df63b0b6f03e101e065",
+									"646f6322f43d0c5d62063715"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Beretta ARX 160 Platform",
+				"shortName": "ARX160",
+				"description": "The Beretta ARX160 is an Italian modular assault rifle manufactured by Beretta. Developed for the Italian Armed Forces as part of the 'Future Soldier' program."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 39600,
+		"handbookPriceRoubles": 32000,
+		"addtoTraders": false,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 1,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtoStaticLootContainers": false,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 250
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_DEAD_SCAV",
+				"Probability": 150
+			}
+		],
+		"masteries": true,
+		"masterySections": [
+			{
+				"Level2": 800,
+				"Level3": 1200,
+				"Name": "M4",
+				"Templates": [
+					"66945f346fd04c33d4f9bc35"
+				]
+			}
+		],
+		"addweaponpreset": true,
+		"weaponpresets": [
+			{
+				"_changeWeaponName": false,
+				"_encyclopedia": "66945f346fd04c33d4f9bc35",
+				"_id": "669573b1bedf204e8d4be9a5",
+				"_items": [
+					{
+						"_id": "c2c63012426394d1058b4c22",
+						"_tpl": "66945f346fd04c33d4f9bc35",
+						"upd": {
+							"Repairable": {
+								"MaxDurability": 100,
+								"Durability": 100
+							},
+							"FireMode": {
+								"FireMode": "single"
+							}
+						}
+					},
+					{
+						"_id": "341903472e9d19789abd7768",
+						"_tpl": "61840bedd92c473c77021635",
+						"parentId": "c2c63012426394d1058b4c22",
+						"slotId": "mod_magazine"
+					},
+					{
+						"_id": "91ebf7463d6440b2db11ce82",
+						"_tpl": "66945f6221aaf2b87072fe55",
+						"parentId": "c2c63012426394d1058b4c22",
+						"slotId": "mod_stock"
+					},
+					{
+						"_id": "f5db9d74e8639d34c8034d97",
+						"_tpl": "669485336b1b93b1026b8649",
+						"parentId": "c2c63012426394d1058b4c22",
+						"slotId": "mod_barrel"
+					},
+					{
+						"_id": "b7f908b18e11deaddd05b86a",
+						"_tpl": "66945f69e2030f6b0e84d540",
+						"parentId": "c2c63012426394d1058b4c22",
+						"slotId": "mod_sight_rear",
+						"upd": {
+							"Sight": {
+								"ScopesCurrentCalibPointIndexes": [
+									0
+								],
+								"ScopesSelectedModes": [
+									0
+								],
+								"SelectedScope": 0
+							}
+						}
+					},
+					{
+						"_id": "1a32b939183cb78f6c7006ba",
+						"_tpl": "66945f66e3d59d24380efd24",
+						"parentId": "c2c63012426394d1058b4c22",
+						"slotId": "mod_sight_front",
+						"upd": {
+							"Sight": {
+								"ScopesCurrentCalibPointIndexes": [
+									0
+								],
+								"ScopesSelectedModes": [
+									0
+								],
+								"SelectedScope": 0
+							}
+						}
+					},
+					{
+						"_id": "af547d86da335d93b46272f8",
+						"_tpl": "56ea8180d2720bf2698b456a",
+						"parentId": "f5db9d74e8639d34c8034d97",
+						"slotId": "mod_muzzle"
+					}
+				],
+				"_name": "ARX160Black",
+				"_parent": "c2c63012426394d1058b4c22",
+				"_type": "Preset"
+			}
+		]
+	},
+	"66945f6221aaf2b87072fe55": {
+		"itemTplToClone": "5b39f8db5acfc40016387a1b",
+		"parentId": "55818a594bdc2db9688b456a",
+		"handbookParentId": "5b5f757486f774093e6cb507",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"ExtraSizeRight": 1,
+			"Prefab": {
+				"path": "160standardstock.bundle",
+				"rcid": ""
+			},
+			"BackgroundColor": "blue",
+			"Weight": 1.428,
+			"Ergonomics": 7,
+			"Recoil": -38
+		},
+		"locales": {
+			"en": {
+				"name": "Black ARX 160 Stock",
+				"shortName": "160 STK",
+				"description": "This is a heavily modified version of the Magpul UBR stock. It is stuck in its most open position. Has an upholstered comb for a more comfortable cheek-weld."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_stock_000"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 21890,
+		"handbookPriceRoubles": 15440,
+		"addtoTraders": false,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 1,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtoStaticLootContainers": false,
+		"StaticLootContainer": "LOOTCONTAINER_WEAPON_BOX_4X4",
+		"Probability": 250
+	},
+	"66945f66e3d59d24380efd24": {
+		"itemTplToClone": "5bc09a30d4351e00367fb7c8",
+		"parentId": "55818ac54bdc2d5b648b456e",
+		"handbookParentId": "5448fe7a4bdc2d6f028b456b",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "160front.bundle",
+				"rcid": ""
+			},
+			"BackgroundColor": "blue",
+			"Slots": [],
+			"ExaminedByDefault": true,
+			"Ergonomics": 1,
+			"Weight": 0.100
+		},
+		"locales": {
+			"en": {
+				"name": "RexTac Black Front Sight",
+				"shortName": "F BUS",
+				"description": "A heavily modified Magpul MBUS Front Sight with proprietary fiber optic inlays."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_sight_front"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 6000,
+		"handbookPriceRoubles": 5500,
+		"addtoTraders": false,
+		"traderId": "58330581ace78e27b8b10cee",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 5,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtoStaticLootContainers": false,
+		"StaticLootContainer": "LOOTCONTAINER_WEAPON_BOX_4X4",
+		"Probability": 250
+	},
+	"66945f69e2030f6b0e84d540": {
+		"itemTplToClone": "5bc09a18d4351e003562b68e",
+		"parentId": "55818ac54bdc2d5b648b456e",
+		"handbookParentId": "5448fe7a4bdc2d6f028b456b",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "160rear.bundle",
+				"rcid": ""
+			},
+			"BackgroundColor": "blue",
+			"Slots": [],
+			"ExaminedByDefault": true,
+			"Ergonomics": 2,
+			"Weight": 0.100
+		},
+		"locales": {
+			"en": {
+				"name": "RexTac Black Rear Sight",
+				"shortName": "R BUS",
+				"description": "A heavily modified Magpul MBUS Front Sight with proprietary fiber optic inlays."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_sight_rear"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 6000,
+		"handbookPriceRoubles": 5500,
+		"addtoTraders": false,
+		"traderId": "58330581ace78e27b8b10cee",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 5,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtoStaticLootContainers": false,
+		"StaticLootContainer": "LOOTCONTAINER_WEAPON_BOX_4X4",
+		"Probability": 250
+	},
+	"669484086ae62382b4284663": {
+		"itemTplToClone": "5c48a2852e221602b21d5923",
+		"parentId": "555ef6e44bdc2de9068b457e",
+		"handbookParentId": "5b5f75c686f774094242f19f",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "assets/content/items/mods/barrels/barrel_ar15_ba_hanson_carbine_pro_406mm.bundle",
+				"rcid": ""
+			},
+			"ExaminedByDefault": true,
+			"ExtraSizeLeft": 2,
+			"Slots": [
+				{
+				  "_name": "mod_muzzle",
+				  "_id": "6694840d22272c8dc461951c",
+				  "_parent": "669484086ae62382b4284663",
+				  "_props": {
+					"filters": [
+					  {
+						"Shift": 0,
+						"Filter": [
+						  "5b3a16655acfc40016387a2a",
+						  "5c7e5f112e221600106f4ede",
+						  "5c0fafb6d174af02a96260ba",
+						  "612e0cfc8004cc50514c2d9e",
+						  "5cf6937cd7f00c056c53fb39",
+						  "544a38634bdc2d58388b4568",
+						  "5cff9e5ed7ad1a09407397d4",
+						  "5c48a2a42e221602b66d1e07",
+						  "5f6372e2865db925d54f3869",
+						  "615d8e2f1cb55961fa0fd9a4",
+						  "56ea8180d2720bf2698b456a",
+						  "5d02676dd7ad1a049e54f6dc",
+						  "56ea6fafd2720b844b8b4593",
+						  "5943ee5a86f77413872d25ec",
+						  "609269c3b0e443224b421cc1",
+						  "5c7fb51d2e2216001219ce11",
+						  "5ea172e498dacb342978818e",
+						  "5c6d710d2e22165df16b81e7",
+						  "612e0e55a112697a4b3a66e7",
+						  "5d440625a4b9361eec4ae6c5",
+						  "5cc9b815d7f00c000e2579d6",
+						  "5a7c147ce899ef00150bd8b8",
+						  "5c7954d52e221600106f4cc7",
+						  "59bffc1f86f77435b128b872",
+						  "5a9fbb84a2750c00137fa685",
+						  "626667e87379c44d557b7550",
+						  "62669bccdb9ebb4daa44cd14",
+						  "626a74340be03179a165e30c",
+						  "6386120cd6baa055ad1e201c",
+						  "63ac5c9658d0485fc039f0b8",
+						  "6405ff6bd4578826ec3e377a",
+						  "64943b74e9998d641b0412ed"
+						]
+					  }
+					]
+				  },
+				  "_required": false,
+				  "_mergeSlotWithChildren": false,
+				  "_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			  ]
+		},
+		"locales": {
+			"en": {
+				"name": "460mm ARX Barrel",
+				"shortName": "Long",
+				"description": "Custom cut barrel for the ARX160"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_barrel"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 25700,
+		"handbookPriceRoubles": 20100,
+		"addtoTraders": false,
+		"traderId": "58330581ace78e27b8b10cee",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 5,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtoStaticLootContainers": false,
+		"StaticLootContainer": "LOOTCONTAINER_WEAPON_BOX_4X4",
+		"Probability": 250
+	},
+	"669484ce0693559026606fc0": {
+		"itemTplToClone": "55d3632e4bdc2d972f8b4569",
+		"parentId": "555ef6e44bdc2de9068b457e",
+		"handbookParentId": "5b5f75c686f774094242f19f",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "assets/content/items/mods/barrels/barrel_ar15_370mm.bundle",
+				"rcid": ""
+			},
+			"ExaminedByDefault": true,
+			"ExtraSizeLeft": 2,
+			"Slots": [
+				{
+				  "_name": "mod_muzzle",
+				  "_id": "669484dd3346a03ffdc40327",
+				  "_parent": "669484ce0693559026606fc0",
+				  "_props": {
+					"filters": [
+					  {
+						"Shift": 0,
+						"Filter": [
+						  "5b3a16655acfc40016387a2a",
+						  "5c7e5f112e221600106f4ede",
+						  "5c0fafb6d174af02a96260ba",
+						  "612e0cfc8004cc50514c2d9e",
+						  "5cf6937cd7f00c056c53fb39",
+						  "544a38634bdc2d58388b4568",
+						  "5cff9e5ed7ad1a09407397d4",
+						  "5c48a2a42e221602b66d1e07",
+						  "5f6372e2865db925d54f3869",
+						  "615d8e2f1cb55961fa0fd9a4",
+						  "56ea8180d2720bf2698b456a",
+						  "5d02676dd7ad1a049e54f6dc",
+						  "56ea6fafd2720b844b8b4593",
+						  "5943ee5a86f77413872d25ec",
+						  "609269c3b0e443224b421cc1",
+						  "5c7fb51d2e2216001219ce11",
+						  "5ea172e498dacb342978818e",
+						  "5c6d710d2e22165df16b81e7",
+						  "612e0e55a112697a4b3a66e7",
+						  "5d440625a4b9361eec4ae6c5",
+						  "5cc9b815d7f00c000e2579d6",
+						  "5a7c147ce899ef00150bd8b8",
+						  "5c7954d52e221600106f4cc7",
+						  "59bffc1f86f77435b128b872",
+						  "5a9fbb84a2750c00137fa685",
+						  "626667e87379c44d557b7550",
+						  "62669bccdb9ebb4daa44cd14",
+						  "626a74340be03179a165e30c",
+						  "6386120cd6baa055ad1e201c",
+						  "63ac5c9658d0485fc039f0b8",
+						  "6405ff6bd4578826ec3e377a",
+						  "64943b74e9998d641b0412ed"
+						]
+					  }
+					]
+				  },
+				  "_required": false,
+				  "_mergeSlotWithChildren": false,
+				  "_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			  ]
+		},
+		"locales": {
+			"en": {
+				"name": "370mm ARX Barrel",
+				"shortName": "Medium",
+				"description": "Custom cut barrel for the ARX160"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_barrel"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 25700,
+		"handbookPriceRoubles": 20100,
+		"addtoTraders": false,
+		"traderId": "58330581ace78e27b8b10cee",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 5,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtoStaticLootContainers": false,
+		"StaticLootContainer": "LOOTCONTAINER_WEAPON_BOX_4X4",
+		"Probability": 250
+	},
+	"669485336b1b93b1026b8649": {
+		"itemTplToClone": "63d3ce0446bd475bcb50f55f",
+		"parentId": "555ef6e44bdc2de9068b457e",
+		"handbookParentId": "5b5f75c686f774094242f19f",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "assets/content/items/mods/barrels/barrel_ar15_ba_hanson_carbine_pro_348mm.bundle",
+				"rcid": ""
+			},
+			"ExaminedByDefault": true,
+			"ExtraSizeLeft": 1,
+			"Slots": [
+				{
+				  "_name": "mod_muzzle",
+				  "_id": "669485403f652fbb03807cdd",
+				  "_parent": "669485336b1b93b1026b8649",
+				  "_props": {
+					"filters": [
+					  {
+						"Shift": 0,
+						"Filter": [
+						  "5b3a16655acfc40016387a2a",
+						  "5c7e5f112e221600106f4ede",
+						  "5c0fafb6d174af02a96260ba",
+						  "612e0cfc8004cc50514c2d9e",
+						  "5cf6937cd7f00c056c53fb39",
+						  "544a38634bdc2d58388b4568",
+						  "5cff9e5ed7ad1a09407397d4",
+						  "5c48a2a42e221602b66d1e07",
+						  "5f6372e2865db925d54f3869",
+						  "615d8e2f1cb55961fa0fd9a4",
+						  "56ea8180d2720bf2698b456a",
+						  "5d02676dd7ad1a049e54f6dc",
+						  "56ea6fafd2720b844b8b4593",
+						  "5943ee5a86f77413872d25ec",
+						  "609269c3b0e443224b421cc1",
+						  "5c7fb51d2e2216001219ce11",
+						  "5ea172e498dacb342978818e",
+						  "5c6d710d2e22165df16b81e7",
+						  "612e0e55a112697a4b3a66e7",
+						  "5d440625a4b9361eec4ae6c5",
+						  "5cc9b815d7f00c000e2579d6",
+						  "5a7c147ce899ef00150bd8b8",
+						  "5c7954d52e221600106f4cc7",
+						  "59bffc1f86f77435b128b872",
+						  "5a9fbb84a2750c00137fa685",
+						  "626667e87379c44d557b7550",
+						  "62669bccdb9ebb4daa44cd14",
+						  "626a74340be03179a165e30c",
+						  "6386120cd6baa055ad1e201c",
+						  "63ac5c9658d0485fc039f0b8",
+						  "6405ff6bd4578826ec3e377a",
+						  "64943b74e9998d641b0412ed"
+						]
+					  }
+					]
+				  },
+				  "_required": false,
+				  "_mergeSlotWithChildren": false,
+				  "_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			  ]
+		},
+		"locales": {
+			"en": {
+				"name": "348mm ARX Barrel",
+				"shortName": "Sshort",
+				"description": "Custom cut barrel for the ARX160"
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_barrel"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 25700,
+		"handbookPriceRoubles": 20100,
+		"addtoTraders": false,
+		"traderId": "58330581ace78e27b8b10cee",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 5,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtoStaticLootContainers": false,
+		"StaticLootContainer": "LOOTCONTAINER_WEAPON_BOX_4X4",
+		"Probability": 250
+	},
+	"6696b5e6ed3ac659cc619eff": {
+		"itemTplToClone": "5447a9cd4bdc2dbd208b4567",
+		"parentId": "5447b5f14bdc2d61278b4567",
+		"handbookParentId": "5b5f78fc86f77409407a7f90",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Width": 3,
+			"Height": 1,
+			"Weight": 3,
+			"Recoil": -4,
+			"Ergonomics": 47,
+			"HeatFactor": 0.993,
+			"CoolFactor": 1,
+			"DurabilityBurnModificator": 0.95,
+			"Prefab": {
+				"path": "160containerfde.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_id": "6696bf62a06eceeb32b89b3a",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_magazine",
+					"_parent": "6696b5e6ed3ac659cc619eff",
+					"_props": {
+						"filters": [
+							{
+								"AnimationIndex": -1,
+								"Filter": [
+									"55d4887d4bdc2d962f8b4570",
+									"61840bedd92c473c77021635",
+									"61840d85568c120fdd2962a5",
+									"5c05413a0db834001c390617",
+									"5c6d450c2e221600114c997d",
+									"5c6d42cb2e2216000e69d7d1",
+									"59c1383d86f774290a37e0ca",
+									"5aaa5dfee5b5b000140293d3",
+									"5d1340b3d7ad1a0b52682ed7",
+									"544a378f4bdc2d30388b4567",
+									"5d1340bdd7ad1a0e8d245aab",
+									"55802d5f4bdc2dac148b458e",
+									"5d1340cad7ad1a0b0b249869",
+									"6241c2c2117ad530666a5108",
+									"5c6592372e221600133e47d7",
+									"544a37c44bdc2d25388b4567",
+									"5c6d46132e221601da357d56"
+								]
+							}
+						]
+					},
+					"_proto": "55d30c394bdc2dae468b4577",
+					"_required": false
+				},
+				{
+					"_id": "6696bf68ca03522cbdedc041",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_stock",
+					"_parent": "6696b5e6ed3ac659cc619eff",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"6696b5eace2121911a970573"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_proto": "55d30c4c4bdc2db4468b457e",
+					"_required": true
+				},
+				{
+					"_id": "6696bf6b86f83d179c11b0e9",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_scope",
+					"_parent": "6696b5e6ed3ac659cc619eff",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"57ac965c24597706be5f975c",
+									"57aca93d2459771f2c7e26db",
+									"544a3f024bdc2d1d388b4568",
+									"544a3a774bdc2d3a388b4567",
+									"5d2dc3e548f035404a1a4798",
+									"57adff4f24597737f373b6e6",
+									"5c0517910db83400232ffee5",
+									"591c4efa86f7741030027726",
+									"570fd79bd2720bc7458b4583",
+									"570fd6c2d2720bc6458b457f",
+									"558022b54bdc2dac148b458d",
+									"5c07dd120db834001c39092d",
+									"5c0a2cec0db834001b7ce47d",
+									"58491f3324597764bc48fa02",
+									"584924ec24597768f12ae244",
+									"5b30b0dc5acfc400153b7124",
+									"6165ac8c290d254f5e6b2f6c",
+									"60a23797a37c940de7062d02",
+									"5d2da1e948f035477b1ce2ba",
+									"5c0505e00db834001b735073",
+									"609a63b6e2ff132951242d09",
+									"584984812459776a704a82a6",
+									"59f9d81586f7744c7506ee62",
+									"570fd721d2720bc5458b4596",
+									"57ae0171245977343c27bfcf",
+									"5dfe6104585a0c3e995c7b82",
+									"544a3d0a4bdc2d1b388b4567",
+									"5d1b5e94d7ad1a2b865a96b0",
+									"609bab8b455afd752b2e6138",
+									"58d39d3d86f77445bb794ae7",
+									"616554fe50224f204c1da2aa",
+									"5c7d55f52e221644f31bff6a",
+									"616584766ef05c2ce828ef57",
+									"5b3b6dc75acfc47a8773fb1e",
+									"615d8d878004cc50514c3233",
+									"5b2389515acfc4771e1be0c0",
+									"577d128124597739d65d0e56",
+									"618b9643526131765025ab35",
+									"618bab21526131765025ab3f",
+									"5c86592b2e2216000e69e77c",
+									"5a37ca54c4a282000d72296a",
+									"5d0a29fed7ad1a002769ad08",
+									"5c064c400db834001d23f468",
+									"58d2664f86f7747fec5834f6",
+									"57c69dd424597774c03b7bbc",
+									"5b3b99265acfc4704b4a1afb",
+									"5aa66a9be5b5b0214e506e89",
+									"5aa66c72e5b5b00016327c93",
+									"5c1cdd302e221602b3137250",
+									"61714b2467085e45ef140b2c",
+									"6171407e50224f204c1da3c5",
+									"61713cc4d8e3106d9806c109",
+									"5b31163c5acfc400153b71cb",
+									"5a33b652c4a28232996e407c",
+									"5a33b2c9c4a282000c5a9511",
+									"59db7eed86f77461f8380365",
+									"5a1ead28fcdbcb001912fa9f",
+									"5dff77c759400025ea5150cf",
+									"626bb8532c923541184624b4",
+									"62811f461d5df4475f46a332",
+									"63fc449f5bd61c6cf3784a88",
+									"6477772ea8a38bb2050ed4db",
+									"6478641c19d732620e045e17",
+									"64785e7c19d732620e045e15",
+									"66489a0f8b2d733829c2a848",
+									"664aa07d00fc82b15f32c52b",
+									"877f002b7dadc7ae31d1fda1",
+									"c26f2af872656829feb27c08",
+									"de53b0fd978f0eaad71c5528",
+									"d3e07e32dc01693c226878dc",
+									"befd7a2bbc07793f73133f2c",
+									"b2d57758abe9bb9345c58e4a",
+									"67ea8b32e0d7701fc6bfc5bf",
+									"6655df2d0169bf45a18535c8",
+									"794a8aea9ca78d01fc24a4f8"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_proto": "55d30c4c4bdc2db4468b457e",
+					"_required": false
+				},
+				{
+					"_id": "6696bf7c65fad23bff2d7260",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_barrel",
+					"_parent": "6696b5e6ed3ac659cc619eff",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"669484086ae62382b4284663",
+									"669485336b1b93b1026b8649",
+									"669484ce0693559026606fc0"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_proto": "55d30c4c4bdc2db4468b457e",
+					"_required": true
+				},
+				{
+					"_id": "6696bf7f67b679b7aacc7bc0",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_sight_rear",
+					"_parent": "6696b5e6ed3ac659cc619eff",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"5bb20e49d4351e3bac1212de",
+									"5ba26b17d4351e00367f9bdd",
+									"5dfa3d7ac41b2312ea33362a",
+									"5c1780312e221602b66cc189",
+									"5fb6564947ce63734e3fa1da",
+									"5bc09a18d4351e003562b68e",
+									"5c18b9192e2216398b5a8104",
+									"5fc0fa957283c4046c58147e",
+									"5894a81786f77427140b8347",
+									"55d5f46a4bdc2d1b198b4567",
+									"5ae30bad5acfc400185c2dc4",
+									"664535a147ce00a35e8c8359",
+									"6696b5f2bbdfc4c65bb76aed"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_proto": "55d30c4c4bdc2db4468b457e",
+					"_required": false
+				},
+				{
+					"_name": "mod_sight_front",
+					"_id": "6696bf8376411a026ca63412",
+					"_parent": "6696b5e6ed3ac659cc619eff",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"5ba26b01d4351e0085325a51",
+									"5dfa3d950dee1b22f862eae0",
+									"5c17804b2e2216152006c02f",
+									"5fb6567747ce63734e3fa1dc",
+									"5bc09a30d4351e00367fb7c8",
+									"5c18b90d2e2216152142466b",
+									"5fc0fa362770a0045c59c677",
+									"5894a73486f77426d259076c",
+									"55d4af3a4bdc2d972f8b456f",
+									"664535982ca10073970ebd9a",
+									"6696b5ee0767b890fbff10f6"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_000",
+					"_id": "6696bf8a1b677cbc388a3e3a",
+					"_parent": "6696b5e6ed3ac659cc619eff",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"57fd23e32459772d0805bcf1",
+									"544909bb4bdc2d6f028b4577",
+									"5d10b49bd7ad1a1a560708b0",
+									"5c06595c0db834001a66af6c",
+									"5a7b483fe899ef0016170d15",
+									"5c5952732e2216398b5abda2",
+									"644a3df63b0b6f03e101e065"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_001",
+					"_id": "6696bf969d140301ccb25349",
+					"_parent": "6696b5e6ed3ac659cc619eff",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"5a800961159bd4315e3a1657",
+									"57fd23e32459772d0805bcf1",
+									"544909bb4bdc2d6f028b4577",
+									"5c06595c0db834001a66af6c",
+									"5cc9c20cd7f00c001336c65d",
+									"5d2369418abbc306c62e0c80",
+									"5b07dd285acfc4001754240d",
+									"56def37dd2720bec348b456a",
+									"5a7b483fe899ef0016170d15",
+									"61605d88ffa6e502ac5e7eeb",
+									"5a5f1ce64f39f90b401987bc",
+									"560d657b4bdc2da74d8b4572",
+									"5b3a337e5acfc4704b4a19a0",
+									"5c5952732e2216398b5abda2",
+									"57d17e212459775a1179a0f5",
+									"6267c6396b642f77f56f5c1c",
+									"6272370ee4013c5d7e31f418",
+									"6272379924e29f06af4d5ecb",
+									"626becf9582c3e319310b837",
+									"644a3df63b0b6f03e101e065",
+									"646f6322f43d0c5d62063715"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_002",
+					"_id": "6696bf9ac186ee560d1880b1",
+					"_parent": "6696b5e6ed3ac659cc619eff",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"5a800961159bd4315e3a1657",
+									"57fd23e32459772d0805bcf1",
+									"544909bb4bdc2d6f028b4577",
+									"5c06595c0db834001a66af6c",
+									"5cc9c20cd7f00c001336c65d",
+									"5d2369418abbc306c62e0c80",
+									"5b07dd285acfc4001754240d",
+									"56def37dd2720bec348b456a",
+									"5a7b483fe899ef0016170d15",
+									"61605d88ffa6e502ac5e7eeb",
+									"5a5f1ce64f39f90b401987bc",
+									"560d657b4bdc2da74d8b4572",
+									"5b3a337e5acfc4704b4a19a0",
+									"5c5952732e2216398b5abda2",
+									"57d17e212459775a1179a0f5",
+									"6267c6396b642f77f56f5c1c",
+									"6272370ee4013c5d7e31f418",
+									"6272379924e29f06af4d5ecb",
+									"626becf9582c3e319310b837",
+									"644a3df63b0b6f03e101e065",
+									"646f6322f43d0c5d62063715"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_003",
+					"_id": "6696bf9da1ac7d22dcefb08f",
+					"_parent": "6696b5e6ed3ac659cc619eff",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"5a800961159bd4315e3a1657",
+									"57fd23e32459772d0805bcf1",
+									"544909bb4bdc2d6f028b4577",
+									"5c06595c0db834001a66af6c",
+									"5cc9c20cd7f00c001336c65d",
+									"5d2369418abbc306c62e0c80",
+									"5b07dd285acfc4001754240d",
+									"56def37dd2720bec348b456a",
+									"5a7b483fe899ef0016170d15",
+									"61605d88ffa6e502ac5e7eeb",
+									"5a5f1ce64f39f90b401987bc",
+									"560d657b4bdc2da74d8b4572",
+									"5b3a337e5acfc4704b4a19a0",
+									"5c5952732e2216398b5abda2",
+									"57d17e212459775a1179a0f5",
+									"6267c6396b642f77f56f5c1c",
+									"6272370ee4013c5d7e31f418",
+									"6272379924e29f06af4d5ecb",
+									"626becf9582c3e319310b837",
+									"644a3df63b0b6f03e101e065",
+									"646f6322f43d0c5d62063715"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Beretta ARX 160 Platform FDE",
+				"shortName": "ARX160",
+				"description": "The Beretta ARX160 is an Italian modular assault rifle manufactured by Beretta. Developed for the Italian Armed Forces as part of the 'Future Soldier' program. This version is for those that enjoy building sandcastles."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 39600,
+		"handbookPriceRoubles": 32000,
+		"addtoTraders": false,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 1,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtoStaticLootContainers": false,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 250
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_DEAD_SCAV",
+				"Probability": 150
+			}
+		],
+		"masteries": true,
+		"masterySections": [
+			{
+				"Level2": 800,
+				"Level3": 1200,
+				"Name": "M4",
+				"Templates": [
+					"6696b5e6ed3ac659cc619eff"
+				]
+			}
+		],
+		"addweaponpreset": true,
+		"weaponpresets": [
+			{
+				"_changeWeaponName": false,
+				"_encyclopedia": "6696b5e6ed3ac659cc619eff",
+				"_id": "6696bfafeeb6b016ac46dcdf",
+				"_items": [
+					{
+						"_id": "6696bfdab21e0fe78a72c469",
+						"_tpl": "6696b5e6ed3ac659cc619eff",
+						"upd": {
+							"Repairable": {
+								"MaxDurability": 100,
+								"Durability": 100
+							},
+							"FireMode": {
+								"FireMode": "single"
+							}
+						}
+					},
+					{
+						"_id": "6696bffb7ca27cbeb5a9aa62",
+						"_tpl": "61840bedd92c473c77021635",
+						"parentId": "6696bfdab21e0fe78a72c469",
+						"slotId": "mod_magazine"
+					},
+					{
+						"_id": "6696bff7a08329115c13d48d",
+						"_tpl": "6696b5eace2121911a970573",
+						"parentId": "6696bfdab21e0fe78a72c469",
+						"slotId": "mod_stock"
+					},
+					{
+						"_id": "6696bff191099bc19cc29bd4",
+						"_tpl": "669485336b1b93b1026b8649",
+						"parentId": "6696bfdab21e0fe78a72c469",
+						"slotId": "mod_barrel"
+					},
+					{
+						"_id": "6696bfee75dc3fb7da8f4b70",
+						"_tpl": "6696b5f2bbdfc4c65bb76aed",
+						"parentId": "6696bfdab21e0fe78a72c469",
+						"slotId": "mod_sight_rear",
+						"upd": {
+							"Sight": {
+								"ScopesCurrentCalibPointIndexes": [
+									0
+								],
+								"ScopesSelectedModes": [
+									0
+								],
+								"SelectedScope": 0
+							}
+						}
+					},
+					{
+						"_id": "6696bfeb96fab97d022d8b71",
+						"_tpl": "6696b5ee0767b890fbff10f6",
+						"parentId": "6696bfdab21e0fe78a72c469",
+						"slotId": "mod_sight_front",
+						"upd": {
+							"Sight": {
+								"ScopesCurrentCalibPointIndexes": [
+									0
+								],
+								"ScopesSelectedModes": [
+									0
+								],
+								"SelectedScope": 0
+							}
+						}
+					},
+					{
+						"_id": "6696bfe8bcaae01583aeeb9c",
+						"_tpl": "56ea8180d2720bf2698b456a",
+						"parentId": "6696bff191099bc19cc29bd4",
+						"slotId": "mod_muzzle"
+					}
+				],
+				"_name": "ARX160FDE",
+				"_parent": "6696bfdab21e0fe78a72c469",
+				"_type": "Preset"
+			}
+		]
+	},
+	"6696b5eace2121911a970573": {
+		"itemTplToClone": "5b39f8db5acfc40016387a1b",
+		"parentId": "55818a594bdc2db9688b456a",
+		"handbookParentId": "5b5f757486f774093e6cb507",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"ExtraSizeRight": 1,
+			"Prefab": {
+				"path": "160standardstockfde.bundle",
+				"rcid": ""
+			},
+			"BackgroundColor": "blue",
+			"Weight": 1.428,
+			"Ergonomics": 7,
+			"Recoil": -38
+		},
+		"locales": {
+			"en": {
+				"name": "FDE ARX 160 Stock",
+				"shortName": "160 STK FDE",
+				"description": "This is a heavily modified version of the Magpul UBR stock. It is stuck in its most open position. Has an upholstered comb for a more comfortable cheek-weld. This version is for those that enjoy building sandcastles."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_stock_000"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 21890,
+		"handbookPriceRoubles": 15440,
+		"addtoTraders": false,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 1,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtoStaticLootContainers": false,
+		"StaticLootContainer": "LOOTCONTAINER_WEAPON_BOX_4X4",
+		"Probability": 250
+	},
+	"6696b5ee0767b890fbff10f6": {
+		"itemTplToClone": "5bc09a30d4351e00367fb7c8",
+		"parentId": "55818ac54bdc2d5b648b456e",
+		"handbookParentId": "5448fe7a4bdc2d6f028b456b",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "160frontfde.bundle",
+				"rcid": ""
+			},
+			"BackgroundColor": "blue",
+			"Slots": [],
+			"ExaminedByDefault": true,
+			"Ergonomics": 1,
+			"Weight": 0.100
+		},
+		"locales": {
+			"en": {
+				"name": "RexTac FDE Front Sight",
+				"shortName": "F BUS",
+				"description": "A heavily modified Magpul MBUS Front Sight with proprietary fiber optic inlays. This version is for those that enjoy building sandcastles."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_sight_front"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 6000,
+		"handbookPriceRoubles": 5500,
+		"addtoTraders": false,
+		"traderId": "58330581ace78e27b8b10cee",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 5,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtoStaticLootContainers": false,
+		"StaticLootContainer": "LOOTCONTAINER_WEAPON_BOX_4X4",
+		"Probability": 250
+	},
+	"6696b5f2bbdfc4c65bb76aed": {
+		"itemTplToClone": "5bc09a18d4351e003562b68e",
+		"parentId": "55818ac54bdc2d5b648b456e",
+		"handbookParentId": "5448fe7a4bdc2d6f028b456b",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "160rearfde.bundle",
+				"rcid": ""
+			},
+			"BackgroundColor": "blue",
+			"Slots": [],
+			"ExaminedByDefault": true,
+			"Ergonomics": 2,
+			"Weight": 0.100
+		},
+		"locales": {
+			"en": {
+				"name": "RexTac FDE Rear Sight",
+				"shortName": "R BUS",
+				"description": "A heavily modified Magpul MBUS Rear Sight with proprietary fiber optic inlays. This version is for those that enjoy building sandcastles."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": true,
+		"modSlot": [
+			"mod_sight_rear"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 6000,
+		"handbookPriceRoubles": 5500,
+		"addtoTraders": false,
+		"traderId": "58330581ace78e27b8b10cee",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 5,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtoStaticLootContainers": false,
+		"StaticLootContainer": "LOOTCONTAINER_WEAPON_BOX_4X4",
+		"Probability": 250
+	},
+	"6696b5f5520265c38b644920": {
+		"itemTplToClone": "5447a9cd4bdc2dbd208b4567",
+		"parentId": "5447b5f14bdc2d61278b4567",
+		"handbookParentId": "5b5f78fc86f77409407a7f90",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Width": 3,
+			"Height": 1,
+			"Weight": 3,
+			"Recoil": -4,
+			"Ergonomics": 47,
+			"HeatFactor": 0.993,
+			"CoolFactor": 1,
+			"DurabilityBurnModificator": 0.95,
+			"Prefab": {
+				"path": "160containerod.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_id": "6696c02fd09929ceb6a744a3",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_magazine",
+					"_parent": "6696b5f5520265c38b644920",
+					"_props": {
+						"filters": [
+							{
+								"AnimationIndex": -1,
+								"Filter": [
+									"55d4887d4bdc2d962f8b4570",
+									"61840bedd92c473c77021635",
+									"61840d85568c120fdd2962a5",
+									"5c05413a0db834001c390617",
+									"5c6d450c2e221600114c997d",
+									"5c6d42cb2e2216000e69d7d1",
+									"59c1383d86f774290a37e0ca",
+									"5aaa5dfee5b5b000140293d3",
+									"5d1340b3d7ad1a0b52682ed7",
+									"544a378f4bdc2d30388b4567",
+									"5d1340bdd7ad1a0e8d245aab",
+									"55802d5f4bdc2dac148b458e",
+									"5d1340cad7ad1a0b0b249869",
+									"6241c2c2117ad530666a5108",
+									"5c6592372e221600133e47d7",
+									"544a37c44bdc2d25388b4567",
+									"5c6d46132e221601da357d56"
+								]
+							}
+						]
+					},
+					"_proto": "55d30c394bdc2dae468b4577",
+					"_required": false
+				},
+				{
+					"_id": "6696c03627f109f83ac5537e",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_stock",
+					"_parent": "6696b5f5520265c38b644920",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"6696b5f9ed1d427e4ad86b17"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_proto": "55d30c4c4bdc2db4468b457e",
+					"_required": true
+				},
+				{
+					"_id": "6696c038080e841641d35793",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_scope",
+					"_parent": "6696b5f5520265c38b644920",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"57ac965c24597706be5f975c",
+									"57aca93d2459771f2c7e26db",
+									"544a3f024bdc2d1d388b4568",
+									"544a3a774bdc2d3a388b4567",
+									"5d2dc3e548f035404a1a4798",
+									"57adff4f24597737f373b6e6",
+									"5c0517910db83400232ffee5",
+									"591c4efa86f7741030027726",
+									"570fd79bd2720bc7458b4583",
+									"570fd6c2d2720bc6458b457f",
+									"558022b54bdc2dac148b458d",
+									"5c07dd120db834001c39092d",
+									"5c0a2cec0db834001b7ce47d",
+									"58491f3324597764bc48fa02",
+									"584924ec24597768f12ae244",
+									"5b30b0dc5acfc400153b7124",
+									"6165ac8c290d254f5e6b2f6c",
+									"60a23797a37c940de7062d02",
+									"5d2da1e948f035477b1ce2ba",
+									"5c0505e00db834001b735073",
+									"609a63b6e2ff132951242d09",
+									"584984812459776a704a82a6",
+									"59f9d81586f7744c7506ee62",
+									"570fd721d2720bc5458b4596",
+									"57ae0171245977343c27bfcf",
+									"5dfe6104585a0c3e995c7b82",
+									"544a3d0a4bdc2d1b388b4567",
+									"5d1b5e94d7ad1a2b865a96b0",
+									"609bab8b455afd752b2e6138",
+									"58d39d3d86f77445bb794ae7",
+									"616554fe50224f204c1da2aa",
+									"5c7d55f52e221644f31bff6a",
+									"616584766ef05c2ce828ef57",
+									"5b3b6dc75acfc47a8773fb1e",
+									"615d8d878004cc50514c3233",
+									"5b2389515acfc4771e1be0c0",
+									"577d128124597739d65d0e56",
+									"618b9643526131765025ab35",
+									"618bab21526131765025ab3f",
+									"5c86592b2e2216000e69e77c",
+									"5a37ca54c4a282000d72296a",
+									"5d0a29fed7ad1a002769ad08",
+									"5c064c400db834001d23f468",
+									"58d2664f86f7747fec5834f6",
+									"57c69dd424597774c03b7bbc",
+									"5b3b99265acfc4704b4a1afb",
+									"5aa66a9be5b5b0214e506e89",
+									"5aa66c72e5b5b00016327c93",
+									"5c1cdd302e221602b3137250",
+									"61714b2467085e45ef140b2c",
+									"6171407e50224f204c1da3c5",
+									"61713cc4d8e3106d9806c109",
+									"5b31163c5acfc400153b71cb",
+									"5a33b652c4a28232996e407c",
+									"5a33b2c9c4a282000c5a9511",
+									"59db7eed86f77461f8380365",
+									"5a1ead28fcdbcb001912fa9f",
+									"5dff77c759400025ea5150cf",
+									"626bb8532c923541184624b4",
+									"62811f461d5df4475f46a332",
+									"63fc449f5bd61c6cf3784a88",
+									"6477772ea8a38bb2050ed4db",
+									"6478641c19d732620e045e17",
+									"64785e7c19d732620e045e15",
+									"66489a0f8b2d733829c2a848",
+									"664aa07d00fc82b15f32c52b",
+									"877f002b7dadc7ae31d1fda1",
+									"c26f2af872656829feb27c08",
+									"de53b0fd978f0eaad71c5528",
+									"d3e07e32dc01693c226878dc",
+									"befd7a2bbc07793f73133f2c",
+									"b2d57758abe9bb9345c58e4a",
+									"67ea8b32e0d7701fc6bfc5bf",
+									"6655df2d0169bf45a18535c8",
+									"794a8aea9ca78d01fc24a4f8"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_proto": "55d30c4c4bdc2db4468b457e",
+					"_required": false
+				},
+				{
+					"_id": "6696c03ba4bf54a551007b82",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_barrel",
+					"_parent": "6696b5f5520265c38b644920",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"669484086ae62382b4284663",
+									"669485336b1b93b1026b8649",
+									"669484ce0693559026606fc0"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_proto": "55d30c4c4bdc2db4468b457e",
+					"_required": true
+				},
+				{
+					"_id": "6696c0404b5b228ae8a3bbe6",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_sight_rear",
+					"_parent": "6696b5f5520265c38b644920",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"5bb20e49d4351e3bac1212de",
+									"5ba26b17d4351e00367f9bdd",
+									"5dfa3d7ac41b2312ea33362a",
+									"5c1780312e221602b66cc189",
+									"5fb6564947ce63734e3fa1da",
+									"5bc09a18d4351e003562b68e",
+									"5c18b9192e2216398b5a8104",
+									"5fc0fa957283c4046c58147e",
+									"5894a81786f77427140b8347",
+									"55d5f46a4bdc2d1b198b4567",
+									"5ae30bad5acfc400185c2dc4",
+									"664535a147ce00a35e8c8359",
+									"6696b605a21701289f235656"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_proto": "55d30c4c4bdc2db4468b457e",
+					"_required": false
+				},
+				{
+					"_name": "mod_sight_front",
+					"_id": "6696c04383c79526922b32f3",
+					"_parent": "6696b5f5520265c38b644920",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"5ba26b01d4351e0085325a51",
+									"5dfa3d950dee1b22f862eae0",
+									"5c17804b2e2216152006c02f",
+									"5fb6567747ce63734e3fa1dc",
+									"5bc09a30d4351e00367fb7c8",
+									"5c18b90d2e2216152142466b",
+									"5fc0fa362770a0045c59c677",
+									"5894a73486f77426d259076c",
+									"55d4af3a4bdc2d972f8b456f",
+									"664535982ca10073970ebd9a",
+									"6696b5fc30289c750896e29c"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_000",
+					"_id": "6696c04721e6ec23aef4a4c2",
+					"_parent": "6696b5f5520265c38b644920",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"57fd23e32459772d0805bcf1",
+									"544909bb4bdc2d6f028b4577",
+									"5d10b49bd7ad1a1a560708b0",
+									"5c06595c0db834001a66af6c",
+									"5a7b483fe899ef0016170d15",
+									"5c5952732e2216398b5abda2",
+									"644a3df63b0b6f03e101e065"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_001",
+					"_id": "6696c04b25da7ad807afc798",
+					"_parent": "6696b5f5520265c38b644920",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"5a800961159bd4315e3a1657",
+									"57fd23e32459772d0805bcf1",
+									"544909bb4bdc2d6f028b4577",
+									"5c06595c0db834001a66af6c",
+									"5cc9c20cd7f00c001336c65d",
+									"5d2369418abbc306c62e0c80",
+									"5b07dd285acfc4001754240d",
+									"56def37dd2720bec348b456a",
+									"5a7b483fe899ef0016170d15",
+									"61605d88ffa6e502ac5e7eeb",
+									"5a5f1ce64f39f90b401987bc",
+									"560d657b4bdc2da74d8b4572",
+									"5b3a337e5acfc4704b4a19a0",
+									"5c5952732e2216398b5abda2",
+									"57d17e212459775a1179a0f5",
+									"6267c6396b642f77f56f5c1c",
+									"6272370ee4013c5d7e31f418",
+									"6272379924e29f06af4d5ecb",
+									"626becf9582c3e319310b837",
+									"644a3df63b0b6f03e101e065",
+									"646f6322f43d0c5d62063715"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_002",
+					"_id": "6696c04f36c74c7b7ce8de83",
+					"_parent": "6696b5f5520265c38b644920",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"5a800961159bd4315e3a1657",
+									"57fd23e32459772d0805bcf1",
+									"544909bb4bdc2d6f028b4577",
+									"5c06595c0db834001a66af6c",
+									"5cc9c20cd7f00c001336c65d",
+									"5d2369418abbc306c62e0c80",
+									"5b07dd285acfc4001754240d",
+									"56def37dd2720bec348b456a",
+									"5a7b483fe899ef0016170d15",
+									"61605d88ffa6e502ac5e7eeb",
+									"5a5f1ce64f39f90b401987bc",
+									"560d657b4bdc2da74d8b4572",
+									"5b3a337e5acfc4704b4a19a0",
+									"5c5952732e2216398b5abda2",
+									"57d17e212459775a1179a0f5",
+									"6267c6396b642f77f56f5c1c",
+									"6272370ee4013c5d7e31f418",
+									"6272379924e29f06af4d5ecb",
+									"626becf9582c3e319310b837",
+									"644a3df63b0b6f03e101e065",
+									"646f6322f43d0c5d62063715"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_003",
+					"_id": "6696c05233230d684e706ef1",
+					"_parent": "6696b5f5520265c38b644920",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"5a800961159bd4315e3a1657",
+									"57fd23e32459772d0805bcf1",
+									"544909bb4bdc2d6f028b4577",
+									"5c06595c0db834001a66af6c",
+									"5cc9c20cd7f00c001336c65d",
+									"5d2369418abbc306c62e0c80",
+									"5b07dd285acfc4001754240d",
+									"56def37dd2720bec348b456a",
+									"5a7b483fe899ef0016170d15",
+									"61605d88ffa6e502ac5e7eeb",
+									"5a5f1ce64f39f90b401987bc",
+									"560d657b4bdc2da74d8b4572",
+									"5b3a337e5acfc4704b4a19a0",
+									"5c5952732e2216398b5abda2",
+									"57d17e212459775a1179a0f5",
+									"6267c6396b642f77f56f5c1c",
+									"6272370ee4013c5d7e31f418",
+									"6272379924e29f06af4d5ecb",
+									"626becf9582c3e319310b837",
+									"644a3df63b0b6f03e101e065",
+									"646f6322f43d0c5d62063715"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Beretta ARX 160 Platform OD",
+				"shortName": "ARX160 OD",
+				"description": "The Beretta ARX160 is an Italian modular assault rifle manufactured by Beretta. Developed for the Italian Armed Forces as part of the 'Future Soldier' program. This version is for those that like to get lost in the woods."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 39600,
+		"handbookPriceRoubles": 32000,
+		"addtoTraders": false,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 1,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtoStaticLootContainers": false,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 250
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_DEAD_SCAV",
+				"Probability": 150
+			}
+		],
+		"masteries": true,
+		"masterySections": [
+			{
+				"Level2": 800,
+				"Level3": 1200,
+				"Name": "M4",
+				"Templates": [
+					"6696b5f5520265c38b644920"
+				]
+			}
+		],
+		"addweaponpreset": true,
+		"weaponpresets": [
+			{
+				"_changeWeaponName": false,
+				"_encyclopedia": "6696b5f5520265c38b644920",
+				"_id": "6696c05cda8349046f93a5ec",
+				"_items": [
+					{
+						"_id": "6696c05f7ce1ec6020388fe6",
+						"_tpl": "6696b5f5520265c38b644920",
+						"upd": {
+							"Repairable": {
+								"MaxDurability": 100,
+								"Durability": 100
+							},
+							"FireMode": {
+								"FireMode": "single"
+							}
+						}
+					},
+					{
+						"_id": "6696c07f0cf321c47598f728",
+						"_tpl": "61840bedd92c473c77021635",
+						"parentId": "6696c05f7ce1ec6020388fe6",
+						"slotId": "mod_magazine"
+					},
+					{
+						"_id": "6696c07c43f54a8a55abba33",
+						"_tpl": "6696b5f9ed1d427e4ad86b17",
+						"parentId": "6696c05f7ce1ec6020388fe6",
+						"slotId": "mod_stock"
+					},
+					{
+						"_id": "6696c0776761a69a788fbc1a",
+						"_tpl": "669485336b1b93b1026b8649",
+						"parentId": "6696c05f7ce1ec6020388fe6",
+						"slotId": "mod_barrel"
+					},
+					{
+						"_id": "6696c07351e073f09d1164bd",
+						"_tpl": "6696b605a21701289f235656",
+						"parentId": "6696c05f7ce1ec6020388fe6",
+						"slotId": "mod_sight_rear",
+						"upd": {
+							"Sight": {
+								"ScopesCurrentCalibPointIndexes": [
+									0
+								],
+								"ScopesSelectedModes": [
+									0
+								],
+								"SelectedScope": 0
+							}
+						}
+					},
+					{
+						"_id": "6696c07058d9f87abc9ecff1",
+						"_tpl": "6696b5fc30289c750896e29c",
+						"parentId": "6696c05f7ce1ec6020388fe6",
+						"slotId": "mod_sight_front",
+						"upd": {
+							"Sight": {
+								"ScopesCurrentCalibPointIndexes": [
+									0
+								],
+								"ScopesSelectedModes": [
+									0
+								],
+								"SelectedScope": 0
+							}
+						}
+					},
+					{
+						"_id": "6696c06da4d06a258bdc54b0",
+						"_tpl": "56ea8180d2720bf2698b456a",
+						"parentId": "6696c0776761a69a788fbc1a",
+						"slotId": "mod_muzzle"
+					}
+				],
+				"_name": "ARX160OD",
+				"_parent": "6696c05f7ce1ec6020388fe6",
+				"_type": "Preset"
+			}
+		]
+	},
+	"6696b5f9ed1d427e4ad86b17": {
+		"itemTplToClone": "5b39f8db5acfc40016387a1b",
+		"parentId": "55818a594bdc2db9688b456a",
+		"handbookParentId": "5b5f757486f774093e6cb507",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"ExtraSizeRight": 1,
+			"Prefab": {
+				"path": "160standardstockod.bundle",
+				"rcid": ""
+			},
+			"BackgroundColor": "blue",
+			"Weight": 1.428,
+			"Ergonomics": 7,
+			"Recoil": -38
+		},
+		"locales": {
+			"en": {
+				"name": "OD ARX 160 Stock",
+				"shortName": "160 STK",
+				"description": "This is a heavily modified version of the Magpul UBR stock. It is stuck in its most open position. Has an upholstered comb for a more comfortable cheek-weld. This version is for those that like to get lost in the woods."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_stock_000"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 21890,
+		"handbookPriceRoubles": 15440,
+		"addtoTraders": false,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 1,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtoStaticLootContainers": false,
+		"StaticLootContainer": "LOOTCONTAINER_WEAPON_BOX_4X4",
+		"Probability": 250
+	},
+	"6696b5fc30289c750896e29c": {
+		"itemTplToClone": "5bc09a30d4351e00367fb7c8",
+		"parentId": "55818ac54bdc2d5b648b456e",
+		"handbookParentId": "5448fe7a4bdc2d6f028b456b",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "160frontod.bundle",
+				"rcid": ""
+			},
+			"BackgroundColor": "blue",
+			"Slots": [],
+			"ExaminedByDefault": true,
+			"Ergonomics": 1,
+			"Weight": 0.100
+		},
+		"locales": {
+			"en": {
+				"name": "RexTac OD Front Sight",
+				"shortName": "F BUS",
+				"description": "A heavily modified Magpul MBUS Front Sight with proprietary fiber optic inlays. This version is for those that like to get lost in the woods."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_sight_front"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 6000,
+		"handbookPriceRoubles": 5500,
+		"addtoTraders": false,
+		"traderId": "58330581ace78e27b8b10cee",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 5,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtoStaticLootContainers": false,
+		"StaticLootContainer": "LOOTCONTAINER_WEAPON_BOX_4X4",
+		"Probability": 250
+	},
+	"6696b605a21701289f235656": {
+		"itemTplToClone": "5bc09a18d4351e003562b68e",
+		"parentId": "55818ac54bdc2d5b648b456e",
+		"handbookParentId": "5448fe7a4bdc2d6f028b456b",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "160rearod.bundle",
+				"rcid": ""
+			},
+			"BackgroundColor": "blue",
+			"Slots": [],
+			"ExaminedByDefault": true,
+			"Ergonomics": 2,
+			"Weight": 0.100
+		},
+		"locales": {
+			"en": {
+				"name": "RexTac OD Rear Sight",
+				"shortName": "R BUS",
+				"description": "A heavily modified Magpul MBUS Rear Sight with proprietary fiber optic inlays. This version is for those that like to get lost in the woods."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_sight_rear"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 6000,
+		"handbookPriceRoubles": 5500,
+		"addtoTraders": false,
+		"traderId": "58330581ace78e27b8b10cee",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 5,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtoStaticLootContainers": false,
+		"StaticLootContainer": "LOOTCONTAINER_WEAPON_BOX_4X4",
+		"Probability": 250
+	},
+	"6696b60855a9454cbc033d4e": {
+		"itemTplToClone": "5447a9cd4bdc2dbd208b4567",
+		"parentId": "5447b5f14bdc2d61278b4567",
+		"handbookParentId": "5b5f78fc86f77409407a7f90",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"Width": 3,
+			"Height": 1,
+			"Weight": 2.5,
+			"Recoil": -7,
+			"Ergonomics": 55,
+			"HeatFactor": 0.777,
+			"CoolFactor": 2,
+			"DurabilityBurnModificator": 0.95,
+			"Prefab": {
+				"path": "160containerspc.bundle",
+				"rcid": ""
+			},
+			"Slots": [
+				{
+					"_id": "6696c0928f6b99a6043ff640",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_magazine",
+					"_parent": "6696b60855a9454cbc033d4e",
+					"_props": {
+						"filters": [
+							{
+								"AnimationIndex": -1,
+								"Filter": [
+									"55d4887d4bdc2d962f8b4570",
+									"61840bedd92c473c77021635",
+									"61840d85568c120fdd2962a5",
+									"5c05413a0db834001c390617",
+									"5c6d450c2e221600114c997d",
+									"5c6d42cb2e2216000e69d7d1",
+									"59c1383d86f774290a37e0ca",
+									"5aaa5dfee5b5b000140293d3",
+									"5d1340b3d7ad1a0b52682ed7",
+									"544a378f4bdc2d30388b4567",
+									"5d1340bdd7ad1a0e8d245aab",
+									"55802d5f4bdc2dac148b458e",
+									"5d1340cad7ad1a0b0b249869",
+									"6241c2c2117ad530666a5108",
+									"5c6592372e221600133e47d7",
+									"544a37c44bdc2d25388b4567",
+									"5c6d46132e221601da357d56",
+									"6696a9eb3eb5c637b0c14e33"
+								]
+							}
+						]
+					},
+					"_proto": "55d30c394bdc2dae468b4577",
+					"_required": false
+				},
+				{
+					"_id": "6696c096dd2ae5ea0f3640bb",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_stock",
+					"_parent": "6696b60855a9454cbc033d4e",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"6696b60c0a25b741bec76b31"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_proto": "55d30c4c4bdc2db4468b457e",
+					"_required": true
+				},
+				{
+					"_id": "6696c099cd2bead25124e5f6",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_scope",
+					"_parent": "6696b60855a9454cbc033d4e",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"57ac965c24597706be5f975c",
+									"57aca93d2459771f2c7e26db",
+									"544a3f024bdc2d1d388b4568",
+									"544a3a774bdc2d3a388b4567",
+									"5d2dc3e548f035404a1a4798",
+									"57adff4f24597737f373b6e6",
+									"5c0517910db83400232ffee5",
+									"591c4efa86f7741030027726",
+									"570fd79bd2720bc7458b4583",
+									"570fd6c2d2720bc6458b457f",
+									"558022b54bdc2dac148b458d",
+									"5c07dd120db834001c39092d",
+									"5c0a2cec0db834001b7ce47d",
+									"58491f3324597764bc48fa02",
+									"584924ec24597768f12ae244",
+									"5b30b0dc5acfc400153b7124",
+									"6165ac8c290d254f5e6b2f6c",
+									"60a23797a37c940de7062d02",
+									"5d2da1e948f035477b1ce2ba",
+									"5c0505e00db834001b735073",
+									"609a63b6e2ff132951242d09",
+									"584984812459776a704a82a6",
+									"59f9d81586f7744c7506ee62",
+									"570fd721d2720bc5458b4596",
+									"57ae0171245977343c27bfcf",
+									"5dfe6104585a0c3e995c7b82",
+									"544a3d0a4bdc2d1b388b4567",
+									"5d1b5e94d7ad1a2b865a96b0",
+									"609bab8b455afd752b2e6138",
+									"58d39d3d86f77445bb794ae7",
+									"616554fe50224f204c1da2aa",
+									"5c7d55f52e221644f31bff6a",
+									"616584766ef05c2ce828ef57",
+									"5b3b6dc75acfc47a8773fb1e",
+									"615d8d878004cc50514c3233",
+									"5b2389515acfc4771e1be0c0",
+									"577d128124597739d65d0e56",
+									"618b9643526131765025ab35",
+									"618bab21526131765025ab3f",
+									"5c86592b2e2216000e69e77c",
+									"5a37ca54c4a282000d72296a",
+									"5d0a29fed7ad1a002769ad08",
+									"5c064c400db834001d23f468",
+									"58d2664f86f7747fec5834f6",
+									"57c69dd424597774c03b7bbc",
+									"5b3b99265acfc4704b4a1afb",
+									"5aa66a9be5b5b0214e506e89",
+									"5aa66c72e5b5b00016327c93",
+									"5c1cdd302e221602b3137250",
+									"61714b2467085e45ef140b2c",
+									"6171407e50224f204c1da3c5",
+									"61713cc4d8e3106d9806c109",
+									"5b31163c5acfc400153b71cb",
+									"5a33b652c4a28232996e407c",
+									"5a33b2c9c4a282000c5a9511",
+									"59db7eed86f77461f8380365",
+									"5a1ead28fcdbcb001912fa9f",
+									"5dff77c759400025ea5150cf",
+									"626bb8532c923541184624b4",
+									"62811f461d5df4475f46a332",
+									"63fc449f5bd61c6cf3784a88",
+									"6477772ea8a38bb2050ed4db",
+									"6478641c19d732620e045e17",
+									"64785e7c19d732620e045e15",
+									"66489a0f8b2d733829c2a848",
+									"664aa07d00fc82b15f32c52b",
+									"877f002b7dadc7ae31d1fda1",
+									"c26f2af872656829feb27c08",
+									"de53b0fd978f0eaad71c5528",
+									"d3e07e32dc01693c226878dc",
+									"befd7a2bbc07793f73133f2c",
+									"b2d57758abe9bb9345c58e4a",
+									"67ea8b32e0d7701fc6bfc5bf",
+									"6655df2d0169bf45a18535c8",
+									"794a8aea9ca78d01fc24a4f8"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_proto": "55d30c4c4bdc2db4468b457e",
+					"_required": false
+				},
+				{
+					"_id": "6696c09de99c3d79ed043984",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_barrel",
+					"_parent": "6696b60855a9454cbc033d4e",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"669484086ae62382b4284663",
+									"669485336b1b93b1026b8649",
+									"669484ce0693559026606fc0"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_proto": "55d30c4c4bdc2db4468b457e",
+					"_required": true
+				},
+				{
+					"_id": "6696c0a1bee498c1af80254d",
+					"_mergeSlotWithChildren": false,
+					"_name": "mod_sight_rear",
+					"_parent": "6696b60855a9454cbc033d4e",
+					"_props": {
+						"filters": [
+							{
+								"Filter": [
+									"5bb20e49d4351e3bac1212de",
+									"5ba26b17d4351e00367f9bdd",
+									"5dfa3d7ac41b2312ea33362a",
+									"5c1780312e221602b66cc189",
+									"5fb6564947ce63734e3fa1da",
+									"5bc09a18d4351e003562b68e",
+									"5c18b9192e2216398b5a8104",
+									"5fc0fa957283c4046c58147e",
+									"5894a81786f77427140b8347",
+									"55d5f46a4bdc2d1b198b4567",
+									"5ae30bad5acfc400185c2dc4",
+									"664535a147ce00a35e8c8359",
+									"6696b613e8b0de3177315daa"
+								],
+								"Shift": 0
+							}
+						]
+					},
+					"_proto": "55d30c4c4bdc2db4468b457e",
+					"_required": false
+				},
+				{
+					"_name": "mod_sight_front",
+					"_id": "6696c0a421f9f1e279d501c5",
+					"_parent": "6696b60855a9454cbc033d4e",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"5ba26b01d4351e0085325a51",
+									"5dfa3d950dee1b22f862eae0",
+									"5c17804b2e2216152006c02f",
+									"5fb6567747ce63734e3fa1dc",
+									"5bc09a30d4351e00367fb7c8",
+									"5c18b90d2e2216152142466b",
+									"5fc0fa362770a0045c59c677",
+									"5894a73486f77426d259076c",
+									"55d4af3a4bdc2d972f8b456f",
+									"664535982ca10073970ebd9a",
+									"6696b60f166ec948ad62102d"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_000",
+					"_id": "6696c0a9169c09a29f6666e1",
+					"_parent": "6696b60855a9454cbc033d4e",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"57fd23e32459772d0805bcf1",
+									"544909bb4bdc2d6f028b4577",
+									"5d10b49bd7ad1a1a560708b0",
+									"5c06595c0db834001a66af6c",
+									"5a7b483fe899ef0016170d15",
+									"5c5952732e2216398b5abda2",
+									"644a3df63b0b6f03e101e065"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_001",
+					"_id": "6696c0ac9a7de4261526ccbf",
+					"_parent": "6696b60855a9454cbc033d4e",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"5a800961159bd4315e3a1657",
+									"57fd23e32459772d0805bcf1",
+									"544909bb4bdc2d6f028b4577",
+									"5c06595c0db834001a66af6c",
+									"5cc9c20cd7f00c001336c65d",
+									"5d2369418abbc306c62e0c80",
+									"5b07dd285acfc4001754240d",
+									"56def37dd2720bec348b456a",
+									"5a7b483fe899ef0016170d15",
+									"61605d88ffa6e502ac5e7eeb",
+									"5a5f1ce64f39f90b401987bc",
+									"560d657b4bdc2da74d8b4572",
+									"5b3a337e5acfc4704b4a19a0",
+									"5c5952732e2216398b5abda2",
+									"57d17e212459775a1179a0f5",
+									"6267c6396b642f77f56f5c1c",
+									"6272370ee4013c5d7e31f418",
+									"6272379924e29f06af4d5ecb",
+									"626becf9582c3e319310b837",
+									"644a3df63b0b6f03e101e065",
+									"646f6322f43d0c5d62063715"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_002",
+					"_id": "6696c0afdf1667bda173dd36",
+					"_parent": "6696b60855a9454cbc033d4e",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"5a800961159bd4315e3a1657",
+									"57fd23e32459772d0805bcf1",
+									"544909bb4bdc2d6f028b4577",
+									"5c06595c0db834001a66af6c",
+									"5cc9c20cd7f00c001336c65d",
+									"5d2369418abbc306c62e0c80",
+									"5b07dd285acfc4001754240d",
+									"56def37dd2720bec348b456a",
+									"5a7b483fe899ef0016170d15",
+									"61605d88ffa6e502ac5e7eeb",
+									"5a5f1ce64f39f90b401987bc",
+									"560d657b4bdc2da74d8b4572",
+									"5b3a337e5acfc4704b4a19a0",
+									"5c5952732e2216398b5abda2",
+									"57d17e212459775a1179a0f5",
+									"6267c6396b642f77f56f5c1c",
+									"6272370ee4013c5d7e31f418",
+									"6272379924e29f06af4d5ecb",
+									"626becf9582c3e319310b837",
+									"644a3df63b0b6f03e101e065",
+									"646f6322f43d0c5d62063715"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				},
+				{
+					"_name": "mod_tactical_003",
+					"_id": "6696c0b3838b7fcd36db5b74",
+					"_parent": "6696b60855a9454cbc033d4e",
+					"_props": {
+						"filters": [
+							{
+								"Shift": 0,
+								"Filter": [
+									"5a800961159bd4315e3a1657",
+									"57fd23e32459772d0805bcf1",
+									"544909bb4bdc2d6f028b4577",
+									"5c06595c0db834001a66af6c",
+									"5cc9c20cd7f00c001336c65d",
+									"5d2369418abbc306c62e0c80",
+									"5b07dd285acfc4001754240d",
+									"56def37dd2720bec348b456a",
+									"5a7b483fe899ef0016170d15",
+									"61605d88ffa6e502ac5e7eeb",
+									"5a5f1ce64f39f90b401987bc",
+									"560d657b4bdc2da74d8b4572",
+									"5b3a337e5acfc4704b4a19a0",
+									"5c5952732e2216398b5abda2",
+									"57d17e212459775a1179a0f5",
+									"6267c6396b642f77f56f5c1c",
+									"6272370ee4013c5d7e31f418",
+									"6272379924e29f06af4d5ecb",
+									"626becf9582c3e319310b837",
+									"644a3df63b0b6f03e101e065",
+									"646f6322f43d0c5d62063715"
+								]
+							}
+						]
+					},
+					"_required": false,
+					"_mergeSlotWithChildren": false,
+					"_proto": "55d30c4c4bdc2db4468b457e"
+				}
+			]
+		},
+		"locales": {
+			"en": {
+				"name": "Beretta ARX 160 Space Platform",
+				"shortName": "ARX160",
+				"description": "The Beretta ARX160 is an Italian modular assault rifle manufactured by Beretta. Developed for the Italian Armed Forces as part of the 'Future Soldier' program. This one in is fabricated in a custom white colour so as to not be lost in the blackness of space. This version is for literal Astronauts."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 39600,
+		"handbookPriceRoubles": 32000,
+		"addtoTraders": false,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 1,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtoStaticLootContainers": false,
+		"StaticLootContainers": [
+			{
+				"ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+				"Probability": 250
+			},
+			{
+				"ContainerName": "LOOTCONTAINER_DEAD_SCAV",
+				"Probability": 150
+			}
+		],
+		"masteries": true,
+		"masterySections": [
+			{
+				"Level2": 800,
+				"Level3": 1200,
+				"Name": "M4",
+				"Templates": [
+					"6696b60855a9454cbc033d4e"
+				]
+			}
+		],
+		"addweaponpreset": true,
+		"weaponpresets": [
+			{
+				"_changeWeaponName": false,
+				"_encyclopedia": "6696b60855a9454cbc033d4e",
+				"_id": "6696c0b87de222d2b016ce0c",
+				"_items": [
+					{
+						"_id": "6696c0bc950a5c4ed289c42e",
+						"_tpl": "6696b60855a9454cbc033d4e",
+						"upd": {
+							"Repairable": {
+								"MaxDurability": 100,
+								"Durability": 100
+							},
+							"FireMode": {
+								"FireMode": "single"
+							}
+						}
+					},
+					{
+						"_id": "6696c0edbd6e578b99165d91",
+						"_tpl": "61840bedd92c473c77021635",
+						"parentId": "6696c0bc950a5c4ed289c42e",
+						"slotId": "mod_magazine"
+					},
+					{
+						"_id": "6696c0ea3542503cabd906ff",
+						"_tpl": "6696b60c0a25b741bec76b31",
+						"parentId": "6696c0bc950a5c4ed289c42e",
+						"slotId": "mod_stock"
+					},
+					{
+						"_id": "6696c0e4c39fb0d5ad2f425f",
+						"_tpl": "669485336b1b93b1026b8649",
+						"parentId": "6696c0bc950a5c4ed289c42e",
+						"slotId": "mod_barrel"
+					},
+					{
+						"_id": "6696c0e1ff6b33c16ab7900d",
+						"_tpl": "6696b613e8b0de3177315daa",
+						"parentId": "6696c0bc950a5c4ed289c42e",
+						"slotId": "mod_sight_rear",
+						"upd": {
+							"Sight": {
+								"ScopesCurrentCalibPointIndexes": [
+									0
+								],
+								"ScopesSelectedModes": [
+									0
+								],
+								"SelectedScope": 0
+							}
+						}
+					},
+					{
+						"_id": "6696c0dfed04ef7e36d5ce53",
+						"_tpl": "6696b60f166ec948ad62102d",
+						"parentId": "6696c0bc950a5c4ed289c42e",
+						"slotId": "mod_sight_front",
+						"upd": {
+							"Sight": {
+								"ScopesCurrentCalibPointIndexes": [
+									0
+								],
+								"ScopesSelectedModes": [
+									0
+								],
+								"SelectedScope": 0
+							}
+						}
+					},
+					{
+						"_id": "6696c0da0153b356e40324bd",
+						"_tpl": "56ea8180d2720bf2698b456a",
+						"parentId": "6696c0e4c39fb0d5ad2f425f",
+						"slotId": "mod_muzzle"
+					}
+				],
+				"_name": "ARX160Spc",
+				"_parent": "6696c0bc950a5c4ed289c42e",
+				"_type": "Preset"
+			}
+		]
+	},
+	"6696b60c0a25b741bec76b31": {
+		"itemTplToClone": "5b39f8db5acfc40016387a1b",
+		"parentId": "55818a594bdc2db9688b456a",
+		"handbookParentId": "5b5f757486f774093e6cb507",
+		"overrideProperties": {
+			"ExaminedByDefault": true,
+			"ExtraSizeRight": 1,
+			"Prefab": {
+				"path": "160standardstockspc.bundle",
+				"rcid": ""
+			},
+			"BackgroundColor": "violet",
+			"Weight": 1.428,
+			"Ergonomics": 7,
+			"Recoil": -43
+		},
+		"locales": {
+			"en": {
+				"name": "ARX 160 Space Stock",
+				"shortName": "160 STK",
+				"description": "This is a heavily modified version of the Magpul UBR stock. It is stuck in its most open position. Has an upholstered comb for a more comfortable cheek-weld, and a maker's mark from Rex. This one in is fabricated in a custom white colour so as to not be lost in the blackness of space. This version is for literal Astronauts."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_stock_000"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 21890,
+		"handbookPriceRoubles": 15440,
+		"addtoTraders": false,
+		"traderId": "SKIER",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 1,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtoStaticLootContainers": false,
+		"StaticLootContainer": "LOOTCONTAINER_WEAPON_BOX_4X4",
+		"Probability": 250
+	},
+	"6696b60f166ec948ad62102d": {
+		"itemTplToClone": "5bc09a30d4351e00367fb7c8",
+		"parentId": "55818ac54bdc2d5b648b456e",
+		"handbookParentId": "5448fe7a4bdc2d6f028b456b",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "160frontspc.bundle",
+				"rcid": ""
+			},
+			"BackgroundColor": "violet",
+			"Slots": [],
+			"ExaminedByDefault": true,
+			"Ergonomics": 2,
+			"Weight": 0.100
+		},
+		"locales": {
+			"en": {
+				"name": "RexTac Space Front Sight",
+				"shortName": "F BUS",
+				"description": "A heavily modified Magpul MBUS Front Sight with proprietary fiber optic inlays. This one in is fabricated in a custom white colour so as to not be lost in the blackness of space. This version is for literal Astronauts."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_sight_front"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 6000,
+		"handbookPriceRoubles": 5500,
+		"addtoTraders": false,
+		"traderId": "58330581ace78e27b8b10cee",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 5,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtoStaticLootContainers": false,
+		"StaticLootContainer": "LOOTCONTAINER_WEAPON_BOX_4X4",
+		"Probability": 250
+	},
+	"6696b613e8b0de3177315daa": {
+		"itemTplToClone": "5bc09a18d4351e003562b68e",
+		"parentId": "55818ac54bdc2d5b648b456e",
+		"handbookParentId": "5448fe7a4bdc2d6f028b456b",
+		"overrideProperties": {
+			"Prefab": {
+				"path": "160rearspc.bundle",
+				"rcid": ""
+			},
+			"BackgroundColor": "violet",
+			"Slots": [],
+			"ExaminedByDefault": true,
+			"Ergonomics": 3,
+			"Weight": 0.100
+		},
+		"locales": {
+			"en": {
+				"name": "RexTac Space Rear Sight",
+				"shortName": "R BUS",
+				"description": "A heavily modified Magpul MBUS Front Sight with proprietary fiber optic inlays. This one in is fabricated in a custom white colour so as to not be lost in the blackness of space. This version is for literal Astronauts."
+			}
+		},
+		"clearClonedProps": false,
+		"addtoInventorySlots": [],
+		"addtoModSlots": false,
+		"modSlot": [
+			"mod_sight_rear"
+		],
+		"ModdableItemWhitelist": [],
+		"ModdableItemBlacklist": [],
+		"fleaPriceRoubles": 6000,
+		"handbookPriceRoubles": 5500,
+		"addtoTraders": false,
+		"traderId": "58330581ace78e27b8b10cee",
+		"traderItems": [
+			{
+				"unlimitedCount": true,
+				"stackObjectsCount": 99
+			}
+		],
+		"barterScheme": [
+			{
+				"count": 5,
+				"_tpl": "ROUBLES"
+			}
+		],
+		"loyallevelitems": 1,
+		"addtoBots": false,
+		"addtoStaticLootContainers": false,
+		"StaticLootContainer": "LOOTCONTAINER_WEAPON_BOX_4X4",
+		"Probability": 250
+	},
+	"6696a9eb3eb5c637b0c14e33": {
+        "itemTplToClone": "5aaa5dfee5b5b000140293d3",
+        "parentId": "5448bc234bdc2d3c308b4569",
+        "handbookParentId": "5b5f754a86f774094242f19b",
+        "overrideProperties": {
+            "ExaminedByDefault": true,
+			"BackgroundColor": "violet",
+            "Prefab": {
+                "path": "l30_wht.bundle",
+                "rcid": ""
+            }
+        },
+        "locales": {
+            "en": {
+                "name": "5.56x45 Lancer L5-AWM 30-round Magazine (WHT)",
+                "shortName": "L5-AWM 30",
+                "description": "Lancer set out to design a better 5.56 magazine; one with the reliability of steel and the durability and weight of polymer. The L5 Advanced Warfighter Magazine (AWM) is that magazine. This one in is fabricated in a custom white colour so as to not be lost in the blackness of space. This version is for literal Astronauts."
+            }
+        },
+        "clearClonedProps": false,
+        "addtoInventorySlots": [],
+        "addtoModSlots": false,
+        "modSlot": [
+            "mod_magazine"
+        ],
+        "ModdableItemWhitelist": [],
+        "ModdableItemBlacklist": [],
+        "fleaPriceRoubles": 14200,
+        "handbookPriceRoubles": 4000,
+        "addtoTraders": false,
+        "traderId": "MECHANIC",
+        "traderItems": [
+            {
+                "unlimitedCount": true,
+                "stackObjectsCount": 99
+            }
+        ],
+        "barterScheme": [
+            {
+                "count": 5460,
+                "_tpl": "ROUBLES"
+            }
+        ],
+        "loyallevelitems": 3,
+        "addtoBots": false,
+        "addtostaticlootcontainer": false,
+        "StaticLootContainers": [
+            {
+                "ContainerName": "LOOTCONTAINER_AIRDROP_WEAPON_CRATE",
+                "Probability": 2600
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+                "Probability": 2600
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+                "Probability": 2600
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_5X5",
+                "Probability": 2600
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WEAPON_BOX_6X3",
+                "Probability": 2600
+            },
+            {
+                "ContainerName": "LOOTCONTAINER_WOODEN_CRATE",
+                "Probability": 2600
+            }
+        ],
+        "masteries": false,
+        "masterySections": [
+            {
+                "Name": "M4",
+                "Templates": [
+                    "4b81488c78c8a8ac7d37f9b9"
+                ]
+            }
+        ],
+        "addweaponpreset": false,
+        "weaponpresets": []
+    }
+}
