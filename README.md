@@ -15,8 +15,11 @@
 ### ⚠️ IMPORTANT NOTICE / DISCLAIMER
 
 **Original Author:** HANA_VI (https://arca.live/u/@HANA_VI)
+
 **Original Repository:** Project-HANA-VI
+
 **Original Link:** https://github.com/danyhappy564-cmyk/Project-HANA-VI-4.1
+
 **License notation:** MIT
 
 1. **Reflection & Take-Downs:** I deeply reflect on the ECOT incident. As an AI-assisted "vibe coder," I will immediately delete files if the original authors ask.
