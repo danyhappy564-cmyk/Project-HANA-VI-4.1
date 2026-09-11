@@ -18,12 +18,6 @@
 
 **License notation:** MIT
 
-1. **Reflection & Take-Downs:** I deeply reflect on the ECOT incident. As an AI-assisted "vibe coder," I will immediately delete files if the original authors ask.
-2. **No Re-Distribution:** These ported builds are unverified, temporary fixes. Please do NOT re-upload or share them anywhere else.
-3. **Do Not Pester Original Authors:** Never report bugs or pester original modders regarding issues from my unofficial ports.
-4. **Full Credit & Respect:** I will always credit original creators on GitHub and prioritize their decisions above all else.
-5. **Support Original Creators:** Instead of using my ports, please visit the original authors' Forge pages to leave kind words or tips.
-
 > `HANA-VI-SuperAmmo` 는 Rising Star (ElacoLR) 님의 `zz_RS-Exploster` 를 원본으로 하며,
 > HANA_VI 님이 수정하고 GoRani 님이 번들을 제작한 것입니다. 해당 모드의 크레딧은 원 저작자들께 있습니다.
 
