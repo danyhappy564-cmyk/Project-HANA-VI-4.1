@@ -1,9 +1,13 @@
 # Project HANA-VI 4.1
 
 **제작자 (Original Author):** HANA_VI — https://arca.live/u/@HANA_VI
+
 **포팅 (Porting):** R_F — https://arca.live/u/@R_F/89477337
+
 **원본 저장소 (Original Repository):** Project-HANA-VI
+
 **원본 링크 (Original Link):** https://github.com/danyhappy564-cmyk/Project-HANA-VI-4.1
+
 **License:** MIT
 
 ---
