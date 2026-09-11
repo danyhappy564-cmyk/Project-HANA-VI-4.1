@@ -1,0 +1,9 @@
+{
+  "name": "HANA-VI's All In One",
+  "version": "3.6.0",
+  "main": "src/mod.js",
+  "isBundleMod": false,
+  "license": "MIT",
+  "author": "HANA-VI",
+  "sptVersion": "3.11.x"
+}

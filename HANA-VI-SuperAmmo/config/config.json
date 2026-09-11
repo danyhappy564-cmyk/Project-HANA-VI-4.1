@@ -1,0 +1,41 @@
+{
+    "12gStack": 50,
+    "20gStack": 50,
+    "23Stack": 50,
+    "12_7Stack": 250,
+    "357Stack": 300,
+    "45ACPStack": 300,
+    "57Stack": 300,
+    "919Stack": 300,
+    "921Stack": 300,
+    "277Stack": 250,
+    "366Stack": 250,
+    "300Stack": 250,
+    "939Stack": 250,
+    "545Stack": 250,
+    "762_25Stack": 300,
+    "918Stack": 300,
+
+    "backgroundColors": {
+        "0": "red",
+        "1": "red",
+        "2": "orange",
+        "3": "yellow",
+        "4": "green",
+        "5": "blue",
+        "6": "violet"
+    },
+    "enableExtendedBackgroundColors": true,
+    "ColorProfile": "Rainbow",
+    "ColorProfiles": {
+        "Rainbow": {
+            "0": "#A10000",
+            "1": "#A10000",
+            "2": "#A15000",
+            "3": "#A1A100",
+            "4": "#416600",
+            "5": "#008282",
+            "6": "#6A006A"
+        }
+    }
+}

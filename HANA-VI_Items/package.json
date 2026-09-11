@@ -1,0 +1,9 @@
+{
+  "name": "HANA-VI's Items",
+  "version": "1.0.0",
+  "main": "src/mod.js",
+  "isBundleMod": true,
+  "license": "MIT",
+  "author": "HANA-VI",
+  "sptVersion": "3.11.x"
+}

@@ -1,0 +1,92 @@
+{
+    "manifest": [
+        {
+            "key": "hanavi/12x70_flechette.bundle",
+            "dependencyKeys": [
+                "cubemaps",
+                "shaders",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "hanavi/12x70_piranha.bundle",
+            "dependencyKeys": [
+                "cubemaps",
+                "shaders",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "hanavi/9x33r_jhp.bundle",
+            "dependencyKeys": [
+                "cubemaps",
+                "shaders",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "hanavi/9x33r_fmj.bundle",
+            "dependencyKeys": [
+                "cubemaps",
+                "shaders",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "hanavi/1143x23_acp.bundle",
+            "dependencyKeys": [
+                "cubemaps",
+                "shaders",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "hanavi/1143x23_acp_ap.bundle",
+            "dependencyKeys": [
+                "cubemaps",
+                "shaders",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "hanavi/57x28_l191.bundle",
+            "dependencyKeys": [
+                "cubemaps",
+                "shaders",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "hanavi/9x19_ap_63.bundle",
+            "dependencyKeys": [
+                "cubemaps",
+                "shaders",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "hanavi/9x19_7n31.bundle",
+            "dependencyKeys": [
+                "cubemaps",
+                "shaders",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "hanavi/9x21_sp13.bundle",
+            "dependencyKeys": [
+                "cubemaps",
+                "shaders",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        },
+        {
+            "key": "hanavi/9x21_7n42.bundle",
+            "dependencyKeys": [
+                "cubemaps",
+                "shaders",
+                "assets/commonassets/physics/physicsmaterials.bundle"
+            ]
+        }
+    ]
+}
