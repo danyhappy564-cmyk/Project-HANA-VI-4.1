@@ -5,15 +5,14 @@
     <Version>4.1.0</Version>
   </PropertyGroup>
 
+  <!-- 공용 패치 엔진을 별도 DLL 이 아니라 '소스 링크'로 가져온다.
+       SPT 는 user/mods 폴더의 모든 DLL 을 모드로 읽으려 하므로, 공용 DLL 을 두면
+       모드가 아닌 파일을 모드로 착각한다. 소스를 각 모드 DLL 안에 컴파일해 넣는다. -->
   <ItemGroup>
     <Compile Include="..\Shared\**\*.cs" LinkBase="Shared" />
   </ItemGroup>
 
-  <!-- 번들(에셋)은 3.x-original 에서 링크로 가져온다. 용량이 커서 복사본을 두지 않는다. -->
-  <ItemGroup>
-    <None Include="..\..\3.x-original\HANA-VI_Items\bundles.json"
-          CopyToOutputDirectory="PreserveNewest" Link="bundles.json" />
-    <None Include="..\..\3.x-original\HANA-VI_Items\bundles\**\*"
-          CopyToOutputDirectory="PreserveNewest" LinkBase="bundles" />
-  </ItemGroup>
+  <!-- 번들(에셋)과 bundles.json 은 mod/ 아래에 있어서
+       Directory.Build.props 의 <None Include="mod\**\*" /> 가 알아서 출력 폴더로 복사한다.
+       4.1 은 bundles.json 이 있으면 자동으로 번들 모드로 인식한다(3.x 의 isBundleMod 는 없어졌다). -->
 </Project>

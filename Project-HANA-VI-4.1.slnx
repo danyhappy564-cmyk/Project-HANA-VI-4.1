@@ -1,0 +1,59 @@
+<Solution>
+
+  <!--
+    SPT 4.1 포팅본 솔루션.
+
+    .slnx 는 .NET 9 SDK(9.0.200) 부터 들어간 XML 솔루션 형식이다. 이 프로젝트는
+    net10.0 이라 SDK 가 이미 지원하므로 별도 설정이 필요 없다.
+    Visual Studio / Rider 에서 이 파일 하나만 열면 프로젝트 4개가 모두 붙는다.
+
+    명령줄에서는 아래 둘 다 동작한다.
+      dotnet build Project-HANA-VI-4.1.slnx -c Release
+      dotnet build 4.1 -c Release
+  -->
+
+  <Configurations>
+    <Platform Name="Any CPU" />
+  </Configurations>
+
+  <Folder Name="/서버 모드/">
+    <Project Path="4.1/HANA_VI-AIO/HANA_VI-AIO.csproj" />
+    <Project Path="4.1/HANA-VI-SuperAmmo/HANA-VI-SuperAmmo.csproj" />
+    <Project Path="4.1/HANA-VI_Items/HANA-VI_Items.csproj" />
+    <Project Path="4.1/HANA-VI-AllExamined/HANA-VI-AllExamined.csproj" />
+  </Folder>
+
+  <!--
+    Shared/ 는 csproj 가 없다. 별도 DLL 로 만들지 않고 각 모드 프로젝트가
+    <Compile Include="..\Shared\**\*.cs" /> 로 소스를 링크해 가져간다.
+    SPT 가 user/mods 의 모든 DLL 을 모드로 읽으려 하기 때문이다.
+    그래서 솔루션에는 편집용으로 파일만 걸어 둔다.
+  -->
+  <Folder Name="/공용 엔진 (Shared)/">
+    <File Path="4.1/Shared/Patching/PatchDocument.cs" />
+    <File Path="4.1/Shared/Patching/PatchEngine.cs" />
+    <File Path="4.1/Shared/Patching/PatchLoader.cs" />
+    <File Path="4.1/Shared/Patching/PropertyMap.cs" />
+    <File Path="4.1/Shared/Patching/MongoIds.cs" />
+    <File Path="4.1/Shared/Patching/ModConfig.cs" />
+    <File Path="4.1/Shared/Packs/PackModels.cs" />
+    <File Path="4.1/Shared/Packs/PackReader.cs" />
+    <File Path="4.1/Shared/Packs/PackInjector.cs" />
+    <File Path="4.1/Shared/Packs/ExtraPackInjector.cs" />
+    <File Path="4.1/Shared/Loaders/LoaderBases.cs" />
+  </Folder>
+
+  <Folder Name="/문서/">
+    <File Path="README.md" />
+    <File Path="CLAUDE.md" />
+    <File Path="docs/HANA_VI-MAINTENANCE.md" />
+    <File Path="docs/PORTING-NOTES.md" />
+    <File Path="tools/README.md" />
+  </Folder>
+
+  <Folder Name="/빌드 설정/">
+    <File Path="4.1/Directory.Build.props" />
+    <File Path=".gitignore" />
+  </Folder>
+
+</Solution>

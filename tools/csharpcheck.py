@@ -5,6 +5,7 @@
 - 생성자 주입 타입이 SPT 어셈블리에 있는가
 - [Injectable] 이 붙은 IOnLoad 구현이 로드 단계 규칙을 지키는가
 - 엔진이 아는 op 이름과 패치 데이터의 op 이름이 일치하는가
+- .slnx 솔루션이 실재하는 경로만 가리키고, 빠진 csproj 가 없는가
 """
 import json, os, re, sys
 
@@ -91,6 +92,22 @@ if os.path.exists(engine):
         errs.append(f"패치 데이터가 쓰는 op '{op}' 을(를) PatchEngine 이 모른다")
     for op in sorted(known - used):
         warns.append(f"PatchEngine 의 op '{op}' 은 지금 쓰이는 데이터가 없다")
+
+# 5) .slnx 솔루션 점검 (저장소 루트에 있다)
+repo = os.path.dirname(os.path.abspath(ROOT.rstrip(os.sep))) or '.'
+for slnx in [os.path.join(repo, f) for f in os.listdir(repo) if f.endswith('.slnx')]:
+    body = re.sub(r'<!--.*?-->', '', open(slnx, encoding='utf-8').read(), flags=re.S)
+    listed = re.findall(r'Path="([^"]+)"', body)
+    for rel in listed:
+        if not os.path.exists(os.path.join(repo, rel)):
+            errs.append(f"{os.path.basename(slnx)}: 경로가 없다 — {rel}")
+    for root_, _, files_ in os.walk(ROOT):
+        if any(x in root_ for x in ('obj', 'bin')): continue
+        for fn in files_:
+            if not fn.endswith('.csproj'): continue
+            rel = os.path.relpath(os.path.join(root_, fn), repo).replace(os.sep, '/')
+            if rel not in [p.replace('\\', '/') for p in listed]:
+                errs.append(f"{os.path.basename(slnx)}: csproj 가 빠졌다 — {rel}")
 
 print(f"C# 파일 {len(sources)}개 점검")
 for w in warns: print("  경고:", w)

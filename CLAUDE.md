@@ -31,7 +31,7 @@ HANA_VI 님의 요청은 기본적으로 **JSON 데이터 수정**으로 해결�
 ## 1. 이 저장소의 구조
 
 ```
-3.x-original/        SPT 3.11 원본 (읽기 전용, 대조용으로만 본다. 절대 수정하지 않는다)
+3.x-original/        SPT 3.11 원본 mod.ts 4개 (476KB, 대조 기준. 절대 수정하지 않는다)
 4.1/                 SPT 4.1 포팅본 — 여기가 실제 작업 대상
   Directory.Build.props   공통 빌드 설정 (net10.0, SPTushonka 4.1.5, 배포/패키징)
   Shared/                 모드 4개 공용 (R_F 담당)
@@ -40,7 +40,9 @@ HANA_VI 님의 요청은 기본적으로 **JSON 데이터 수정**으로 해결�
     Loaders/              로드 단계별 로더 뼈대
   HANA_VI-AIO/          mod/db/patches/*.json 42개              ← HANA_VI
   HANA-VI-SuperAmmo/    mod/db/values.json + patches 5개        ← HANA_VI
+                        mod/bundles/ + mod/bundles.json (에셋)
   HANA-VI_Items/        mod/db/packs.json + packs/ + patches 8개 ← HANA_VI
+                        mod/bundles/ + mod/bundles.json (에셋 579MB)
   HANA-VI-AllExamined/  mod/config.json                        ← HANA_VI
 docs/                설명 문서
 tools/               검증 스크립트
@@ -48,6 +50,12 @@ tools/               검증 스크립트
 
 **`3.x-original/` 은 절대 수정하지 마십시오.** 포팅이 원본과 같게 동작하는지 대조하는
 기준점이며, 검증 스크립트가 이 폴더를 원본으로 삼습니다.
+번들·팩 데이터·구버전 빌드 파일은 전부 `4.1/` 로 옮겼거나 지웠고,
+이 폴더에는 대조에 필요한 `mod.ts` 4개만 남겨 뒀습니다.
+
+**번들은 `4.1/<모드>/mod/bundles/` 에 있습니다.** `mod/` 아래 파일은
+`Directory.Build.props` 의 `<None Include="mod\**\*" />` 가 출력 폴더로 자동 복사하므로,
+csproj 에 따로 적을 필요가 없습니다.
 
 ---
 
@@ -211,11 +219,18 @@ python3 tools/apicheck.py 4.1        # .cs 를 고쳤을 때
 
 ```bash
 # 전체 빌드 + E:\SPT 4.1\SPT_Runtime\user\mods 로 자동 배포 + release/*.zip 생성
-dotnet build 4.1 -c Release
+dotnet build Project-HANA-VI-4.1.slnx -c Release
 
 # SPT 를 다른 곳에 설치했다면
-dotnet build 4.1 -c Release -p:SptRoot="D:\SPT 4.1"
+dotnet build Project-HANA-VI-4.1.slnx -c Release -p:SptRoot="D:\SPT 4.1"
+
+# 솔루션 없이 폴더째로 빌드해도 결과는 같다
+dotnet build 4.1 -c Release
 ```
+
+솔루션 파일은 저장소 루트의 `Project-HANA-VI-4.1.slnx` 다.
+프로젝트를 새로 만들면 이 파일에도 `<Project Path="..." />` 를 추가해야 한다
+(`tools/csharpcheck.py` 가 빠진 csproj 를 잡아낸다).
 
 **JSON 만 고쳤다면 빌드가 필요 없습니다.** `user/mods/<모드폴더>/` 안의 JSON 을
 직접 고치고 서버만 재시작하면 반영됩니다. 이게 데이터 주도형 구조의 핵심 이점입니다.

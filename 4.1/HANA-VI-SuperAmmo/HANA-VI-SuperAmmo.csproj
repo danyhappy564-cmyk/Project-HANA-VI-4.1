@@ -9,12 +9,6 @@
     <Compile Include="..\Shared\**\*.cs" LinkBase="Shared" />
   </ItemGroup>
 
-  <!-- 번들(에셋)은 3.x-original 에서 그대로 가져다 쓴다. 파일이 커서 복사본을 두지 않는다.
-       4.1 은 bundles.json 이 있으면 자동으로 번들 모드로 인식한다(3.x 의 isBundleMod 는 없어졌다). -->
-  <ItemGroup>
-    <None Include="..\..\3.x-original\HANA-VI-SuperAmmo\bundles.json"
-          CopyToOutputDirectory="PreserveNewest" Link="bundles.json" />
-    <None Include="..\..\3.x-original\HANA-VI-SuperAmmo\bundles\**\*"
-          CopyToOutputDirectory="PreserveNewest" LinkBase="bundles" />
-  </ItemGroup>
+  <!-- 번들(에셋)과 bundles.json 은 mod/ 아래에 있어서
+       Directory.Build.props 의 <None Include="mod\**\*" /> 가 알아서 출력 폴더로 복사한다. -->
 </Project>

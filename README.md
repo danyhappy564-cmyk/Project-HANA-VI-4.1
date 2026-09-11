@@ -76,7 +76,7 @@ TypeScript 약 10,100줄을 C# 패치 엔진 + JSON 데이터로 재작성했습
 ## 폴더 구조
 
 ```
-3.x-original/        SPT 3.11 원본 (읽기 전용, 대조 기준)
+3.x-original/        SPT 3.11 원본 mod.ts 4개 (476KB, 대조 기준)
 4.1/                 SPT 4.1 포팅본
   Directory.Build.props     공통 빌드 설정
   Shared/                   모드 4개가 공유하는 엔진 (소스 링크로 각 DLL 에 컴파일)
@@ -91,10 +91,12 @@ TypeScript 약 10,100줄을 C# 패치 엔진 + JSON 데이터로 재작성했습
   HANA-VI-SuperAmmo/
     mod/db/values.json      탄 적재량·배경색     ← HANA_VI
     mod/db/patches/*.json   패치 5개            ← HANA_VI
+    mod/bundles/            에셋 번들
   HANA-VI_Items/
     mod/db/packs.json       아이템 팩 목록       ← HANA_VI
     mod/db/packs/           팩 데이터 (3.11 원본 그대로)  ← HANA_VI
     mod/db/patches/*.json   패치 8개            ← HANA_VI
+    mod/bundles/            에셋 번들 (579MB)
   HANA-VI-AllExamined/
 docs/                설명 문서
 tools/               검증 스크립트
@@ -109,11 +111,18 @@ CLAUDE.md            AI 어시스턴트 지침서
 
 ```bash
 # 빌드 + E:\SPT 4.1\SPT_Runtime\user\mods 로 자동 배포 + release/*.zip 생성
-dotnet build 4.1 -c Release
+dotnet build Project-HANA-VI-4.1.slnx -c Release
 
 # SPT 설치 경로가 다르면
-dotnet build 4.1 -c Release -p:SptRoot="D:\SPT 4.1"
+dotnet build Project-HANA-VI-4.1.slnx -c Release -p:SptRoot="D:\SPT 4.1"
+
+# 솔루션 없이 폴더째로 빌드해도 동일합니다
+dotnet build 4.1 -c Release
 ```
+
+`Project-HANA-VI-4.1.slnx` 를 Visual Studio 나 Rider 로 열면 프로젝트 4개가 한 번에 붙습니다.
+`.slnx` 는 .NET 9 SDK(9.0.200)부터 들어간 XML 솔루션 형식이라, net10.0 을 쓰는 이 프로젝트는
+별도 설정 없이 바로 열립니다.
 
 **JSON 만 고쳤다면 빌드는 필요 없습니다.** `user/mods/<모드폴더>/` 의 JSON 을
 직접 고치고 서버만 재시작하십시오.
