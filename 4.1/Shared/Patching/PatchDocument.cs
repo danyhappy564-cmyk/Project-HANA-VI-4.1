@@ -86,6 +86,15 @@ public class PatchOp
     /// <summary>필터에 추가할 ID 목록.</summary>
     [JsonPropertyName("add")] public JsonElement? Add { get; set; }
 
+    /// <summary>true 면 기존 허용 목록을 지우고 add 로 '교체'한다. 기본값은 추가.</summary>
+    [JsonPropertyName("replace")] public bool Replace { get; set; }
+
+    /// <summary>
+    /// 찾아낸 슬롯 자체의 값을 바꾼다. 게임 JSON 이름을 쓴다.
+    /// 예: {"_max_count": 40, "_parent": "$self"} — "$self" 는 대상 아이템 자신의 ID.
+    /// </summary>
+    [JsonPropertyName("slotProps")] public Dictionary<string, JsonElement>? SlotProps { get; set; }
+
     // ----- cloneItem -----
     [JsonPropertyName("from")] public string? From { get; set; }
     [JsonPropertyName("newId")] public string? NewId { get; set; }

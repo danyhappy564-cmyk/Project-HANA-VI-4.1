@@ -1,0 +1,6102 @@
+{
+  "key": "Extended_mags",
+  "title": "확장 탄창 74종 추가",
+  "enabled": true,
+  "ops": [
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "544a37c44bdc2d25388b4567",
+      "newId": "67932708c270d2b12d050355",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/CHOPPED60.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 2,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.09,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050355"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 40
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5d2f213448f0355009199284",
+      "newId": "67932708c270d2b12d050356",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/mp540.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 2,
+        "ExtraSizeDown": 1,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.14,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050356"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 40
+      },
+      "replace": true,
+      "add": [
+        "5efb0da7a29a85116f6ea05f",
+        "5c3df7d588a4501f290594e5",
+        "58864a4f2459770fcc257101",
+        "56d59d3ad2720bdb418b4577",
+        "5c925fa22e221601da359b7b",
+        "5a3c16fe86f77452b62de32a",
+        "5efb0e16aeb21837e749c7ff",
+        "5c0d56a986f774449d5de529",
+        "64b7bbb74b75259c590fa897"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5e81c4ca763d9f754677befa",
+      "newId": "67932708c270d2b12d050357",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/extended1911.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 1,
+        "Width": 1,
+        "Height": 1,
+        "Weight": 0.16,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050357"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 10
+      },
+      "replace": true,
+      "add": [
+        "5e81f423763d9f754677bf2e",
+        "5efb0cabfb3e451d70735af5",
+        "5efb0fc6aeb21837e749c801",
+        "5efb0d4f4bc50b58e81710f3",
+        "5ea2a8e200685063ec28c05a"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5f647d9f8499b57dc40ddb93",
+      "newId": "67932708c270d2b12d050358",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/ks23stendo.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 1,
+        "Width": 1,
+        "Height": 1,
+        "Weight": 0.16,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "",
+        "MalfunctionChance": 0.05
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050358"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 7
+      },
+      "replace": true,
+      "add": [
+        "5e85aa1a988a8701445df1f5",
+        "5e85aac65505fa48730d8af2",
+        "5e85a9a6eacf8c039e4e2ac1",
+        "5f647f31b6238e5dd066e196",
+        "5e85a9f4add9fe03027d9bf1",
+        "5f647fd3f6e4ab66c82faed6"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5ce69cbad7f00c00b61c5098",
+      "newId": "67932708c270d2b12d050359",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/aics5plusblk.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 1,
+        "Width": 1,
+        "Height": 1,
+        "Weight": 0.1,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 5
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050359"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 10
+      },
+      "replace": true,
+      "add": [
+        "5a6086ea4f39f99cd479502f",
+        "5a608bf24f39f98ffc77720e",
+        "58dd3ad986f77403051cba8f",
+        "5e023e53d4353e3302577c4c",
+        "5efb0c1bd79ff02a1f5e68d9",
+        "5e023e6e34d52a55c3304f71",
+        "5e023e88277cce2b522ff2b1"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5ce69cbad7f00c00b61c5098",
+      "newId": "67932708c270d2b12d05035a",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/aics5plusgrn.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 1,
+        "Width": 1,
+        "Height": 1,
+        "Weight": 0.1,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 5
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05035a"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 10
+      },
+      "replace": true,
+      "add": [
+        "5a6086ea4f39f99cd479502f",
+        "5a608bf24f39f98ffc77720e",
+        "58dd3ad986f77403051cba8f",
+        "5e023e53d4353e3302577c4c",
+        "5efb0c1bd79ff02a1f5e68d9",
+        "5e023e6e34d52a55c3304f71",
+        "5e023e88277cce2b522ff2b1"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5ce69cbad7f00c00b61c5098",
+      "newId": "67932708c270d2b12d05035b",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/aics5plusred.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 2,
+        "Recoil": -5,
+        "Width": 1,
+        "Height": 1,
+        "Weight": 0.1,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 5
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05035b"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 10
+      },
+      "replace": true,
+      "add": [
+        "5a6086ea4f39f99cd479502f",
+        "5a608bf24f39f98ffc77720e",
+        "58dd3ad986f77403051cba8f",
+        "5e023e53d4353e3302577c4c",
+        "5efb0c1bd79ff02a1f5e68d9",
+        "5e023e6e34d52a55c3304f71",
+        "5e023e88277cce2b522ff2b1"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5ce69cbad7f00c00b61c5098",
+      "newId": "67932708c270d2b12d05035c",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/aics5plustan.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 1,
+        "Width": 1,
+        "Height": 1,
+        "Weight": 0.1,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 5
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05035c"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 10
+      },
+      "replace": true,
+      "add": [
+        "5a6086ea4f39f99cd479502f",
+        "5a608bf24f39f98ffc77720e",
+        "58dd3ad986f77403051cba8f",
+        "5e023e53d4353e3302577c4c",
+        "5efb0c1bd79ff02a1f5e68d9",
+        "5e023e6e34d52a55c3304f71",
+        "5e023e88277cce2b522ff2b1"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5ce69cbad7f00c00b61c5098",
+      "newId": "67932708c270d2b12d05035d",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/aics10plusblk.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 1,
+        "Width": 1,
+        "Height": 1,
+        "Weight": 0.1,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 5
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05035d"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 15
+      },
+      "replace": true,
+      "add": [
+        "5a6086ea4f39f99cd479502f",
+        "5a608bf24f39f98ffc77720e",
+        "58dd3ad986f77403051cba8f",
+        "5e023e53d4353e3302577c4c",
+        "5efb0c1bd79ff02a1f5e68d9",
+        "5e023e6e34d52a55c3304f71",
+        "5e023e88277cce2b522ff2b1"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5ce69cbad7f00c00b61c5098",
+      "newId": "67932708c270d2b12d05035e",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/aics10plusgrn.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 1,
+        "Width": 1,
+        "Height": 1,
+        "Weight": 0.1,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 5
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05035e"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 15
+      },
+      "replace": true,
+      "add": [
+        "5a6086ea4f39f99cd479502f",
+        "5a608bf24f39f98ffc77720e",
+        "58dd3ad986f77403051cba8f",
+        "5e023e53d4353e3302577c4c",
+        "5efb0c1bd79ff02a1f5e68d9",
+        "5e023e6e34d52a55c3304f71",
+        "5e023e88277cce2b522ff2b1"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5ce69cbad7f00c00b61c5098",
+      "newId": "67932708c270d2b12d05035f",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/aics10plusred.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 2,
+        "Recoil": -5,
+        "Width": 1,
+        "Height": 1,
+        "Weight": 0.1,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 5
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05035f"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 15
+      },
+      "replace": true,
+      "add": [
+        "5a6086ea4f39f99cd479502f",
+        "5a608bf24f39f98ffc77720e",
+        "58dd3ad986f77403051cba8f",
+        "5e023e53d4353e3302577c4c",
+        "5efb0c1bd79ff02a1f5e68d9",
+        "5e023e6e34d52a55c3304f71",
+        "5e023e88277cce2b522ff2b1"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5ce69cbad7f00c00b61c5098",
+      "newId": "67932708c270d2b12d050360",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/aics10plustan.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 1,
+        "Width": 1,
+        "Height": 1,
+        "Weight": 0.1,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 5
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050360"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 15
+      },
+      "replace": true,
+      "add": [
+        "5a6086ea4f39f99cd479502f",
+        "5a608bf24f39f98ffc77720e",
+        "58dd3ad986f77403051cba8f",
+        "5e023e53d4353e3302577c4c",
+        "5efb0c1bd79ff02a1f5e68d9",
+        "5e023e6e34d52a55c3304f71",
+        "5e023e88277cce2b522ff2b1"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5df8f541c41b2312ea3335e3",
+      "newId": "67932708c270d2b12d050361",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/sr25plusblk.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 1,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.53,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 2
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050361"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 25
+      },
+      "replace": true,
+      "add": [
+        "5a6086ea4f39f99cd479502f",
+        "5a608bf24f39f98ffc77720e",
+        "58dd3ad986f77403051cba8f",
+        "5e023e53d4353e3302577c4c",
+        "5efb0c1bd79ff02a1f5e68d9",
+        "5e023e6e34d52a55c3304f71",
+        "5e023e88277cce2b522ff2b1",
+        "6529243824cbe3c74a05e5c1",
+        "6529302b8c26af6326029fb7"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5df8f541c41b2312ea3335e3",
+      "newId": "67932708c270d2b12d050362",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/sr25plusgrn.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 1,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.53,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 2
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050362"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 25
+      },
+      "replace": true,
+      "add": [
+        "5a6086ea4f39f99cd479502f",
+        "5a608bf24f39f98ffc77720e",
+        "58dd3ad986f77403051cba8f",
+        "5e023e53d4353e3302577c4c",
+        "5efb0c1bd79ff02a1f5e68d9",
+        "5e023e6e34d52a55c3304f71",
+        "5e023e88277cce2b522ff2b1",
+        "6529243824cbe3c74a05e5c1",
+        "6529302b8c26af6326029fb7"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5df8f541c41b2312ea3335e3",
+      "newId": "67932708c270d2b12d050363",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/sr25plusred.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 6,
+        "Recoil": -5,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.53,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 2
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050363"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 25
+      },
+      "replace": true,
+      "add": [
+        "5a6086ea4f39f99cd479502f",
+        "5a608bf24f39f98ffc77720e",
+        "58dd3ad986f77403051cba8f",
+        "5e023e53d4353e3302577c4c",
+        "5efb0c1bd79ff02a1f5e68d9",
+        "5e023e6e34d52a55c3304f71",
+        "5e023e88277cce2b522ff2b1",
+        "6529243824cbe3c74a05e5c1",
+        "6529302b8c26af6326029fb7"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5df8f541c41b2312ea3335e3",
+      "newId": "67932708c270d2b12d050364",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/sr25plustan.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 1,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.53,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 2
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050364"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 25
+      },
+      "replace": true,
+      "add": [
+        "5a6086ea4f39f99cd479502f",
+        "5a608bf24f39f98ffc77720e",
+        "58dd3ad986f77403051cba8f",
+        "5e023e53d4353e3302577c4c",
+        "5efb0c1bd79ff02a1f5e68d9",
+        "5e023e6e34d52a55c3304f71",
+        "5e023e88277cce2b522ff2b1",
+        "6529243824cbe3c74a05e5c1",
+        "6529302b8c26af6326029fb7"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5a718b548dc32e000d46d262",
+      "newId": "67932708c270d2b12d050365",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/mbx140mmred.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 1,
+        "Width": 1,
+        "Height": 1,
+        "Weight": 0.1,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050365"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 24
+      },
+      "replace": true,
+      "add": [
+        "5efb0da7a29a85116f6ea05f",
+        "5c3df7d588a4501f290594e5",
+        "58864a4f2459770fcc257101",
+        "56d59d3ad2720bdb418b4577",
+        "5c925fa22e221601da359b7b",
+        "5a3c16fe86f77452b62de32a",
+        "5efb0e16aeb21837e749c7ff",
+        "5c0d56a986f774449d5de529",
+        "64b7bbb74b75259c590fa897"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5a718b548dc32e000d46d262",
+      "newId": "67932708c270d2b12d050366",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/mbx170mmred.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 5,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.12,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050366"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 30
+      },
+      "replace": true,
+      "add": [
+        "5efb0da7a29a85116f6ea05f",
+        "5c3df7d588a4501f290594e5",
+        "58864a4f2459770fcc257101",
+        "56d59d3ad2720bdb418b4577",
+        "5c925fa22e221601da359b7b",
+        "5a3c16fe86f77452b62de32a",
+        "5efb0e16aeb21837e749c7ff",
+        "5c0d56a986f774449d5de529",
+        "64b7bbb74b75259c590fa897"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5aaa5e60e5b5b000140293d6",
+      "newId": "67932708c270d2b12d050368",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/15pmagblk.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 5,
+        "Width": 1,
+        "Height": 1,
+        "Weight": 0.1,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 6
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050368"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 15
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5aaa5e60e5b5b000140293d6",
+      "newId": "67932708c270d2b12d050369",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/15pmagred.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 6,
+        "Recoil": -5,
+        "Width": 1,
+        "Height": 1,
+        "Weight": 0.1,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 6
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050369"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 15
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5aaa5e60e5b5b000140293d6",
+      "newId": "67932708c270d2b12d05036a",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/15pmaggrn.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 5,
+        "Width": 1,
+        "Height": 1,
+        "Weight": 0.1,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 6
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05036a"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 15
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5aaa5e60e5b5b000140293d6",
+      "newId": "67932708c270d2b12d05036b",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/15pmagtan.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 5,
+        "Width": 1,
+        "Height": 1,
+        "Weight": 0.1,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 6
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05036b"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 15
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5df8f541c41b2312ea3335e3",
+      "newId": "67932708c270d2b12d05036c",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/sr25drum.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.58,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 5
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05036c"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 50
+      },
+      "replace": true,
+      "add": [
+        "5a6086ea4f39f99cd479502f",
+        "5a608bf24f39f98ffc77720e",
+        "58dd3ad986f77403051cba8f",
+        "5e023e53d4353e3302577c4c",
+        "5efb0c1bd79ff02a1f5e68d9",
+        "5e023e6e34d52a55c3304f71",
+        "5e023e88277cce2b522ff2b1",
+        "6529243824cbe3c74a05e5c1",
+        "6529302b8c26af6326029fb7"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5448c1d04bdc2dff2f8b4569",
+      "newId": "67932708c270d2b12d05036d",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/25pmagblk.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 4,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.126,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 2
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05036d"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 25
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5448c1d04bdc2dff2f8b4569",
+      "newId": "67932708c270d2b12d05036e",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/25pmaggrn.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 4,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.126,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 2
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05036e"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 25
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5448c1d04bdc2dff2f8b4569",
+      "newId": "67932708c270d2b12d05036f",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/25pmagred.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 5,
+        "Recoil": -5,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.126,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 2
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05036f"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 25
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5448c1d04bdc2dff2f8b4569",
+      "newId": "67932708c270d2b12d050370",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/25pmagtan.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 4,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.126,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 2
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050370"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 25
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5aaa5dfee5b5b000140293d3",
+      "newId": "67932708c270d2b12d050371",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/35pmagblk.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.139,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050371"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 35
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5aaa5dfee5b5b000140293d3",
+      "newId": "67932708c270d2b12d050372",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/35pmaggrn.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.139,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050372"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 35
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5aaa5dfee5b5b000140293d3",
+      "newId": "67932708c270d2b12d050373",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/35pmagred.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 4,
+        "Recoil": -5,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.139,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050373"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 35
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5aaa5dfee5b5b000140293d3",
+      "newId": "67932708c270d2b12d050374",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/35pmagtan.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.139,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050374"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 35
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "544a378f4bdc2d30388b4567",
+      "newId": "67932708c270d2b12d050375",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/45pmagblk.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 3,
+        "Weight": 0.21,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 3
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050375"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 45
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "544a378f4bdc2d30388b4567",
+      "newId": "67932708c270d2b12d050376",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/45pmaggrn.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 3,
+        "Weight": 0.21,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 3
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050376"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 45
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "544a378f4bdc2d30388b4567",
+      "newId": "67932708c270d2b12d050377",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/45pmagred.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 4,
+        "Recoil": -5,
+        "Width": 1,
+        "Height": 3,
+        "Weight": 0.21,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 3
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050377"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 45
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "544a378f4bdc2d30388b4567",
+      "newId": "67932708c270d2b12d050378",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/45pmagtan.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 4,
+        "Width": 1,
+        "Height": 3,
+        "Weight": 0.21,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 3
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050378"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 45
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "64b9cf0ac12b9c38db26923a",
+      "newId": "67932708c270d2b12d050379",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/25ak7blk.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 4,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.145,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050379"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 25
+      },
+      "replace": true,
+      "add": [
+        "59e655cb86f77411dc52a77b",
+        "59e6542b86f77411dc52a77a",
+        "59e6658b86f77411d949b250",
+        "5f0596629e22f464da6bbdd9",
+        "59e0d99486f7744a32234762",
+        "59e4d3d286f774176a36250a",
+        "5656d7c34bdc2d9d198b4587",
+        "59e4cf5286f7741778269d8a",
+        "59e4d24686f7741776641ac7",
+        "601aa3d2b2bcb34913271e6d",
+        "64b7af434b75259c590fa893",
+        "64b7af734b75259c590fa895",
+        "64b7af5a8532cf95ee0a0dbd"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "64b9cf0ac12b9c38db26923a",
+      "newId": "67932708c270d2b12d05037a",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/25ak7grn.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 4,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.145,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05037a"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 25
+      },
+      "replace": true,
+      "add": [
+        "59e655cb86f77411dc52a77b",
+        "59e6542b86f77411dc52a77a",
+        "59e6658b86f77411d949b250",
+        "5f0596629e22f464da6bbdd9",
+        "59e0d99486f7744a32234762",
+        "59e4d3d286f774176a36250a",
+        "5656d7c34bdc2d9d198b4587",
+        "59e4cf5286f7741778269d8a",
+        "59e4d24686f7741776641ac7",
+        "601aa3d2b2bcb34913271e6d",
+        "64b7af434b75259c590fa893",
+        "64b7af734b75259c590fa895",
+        "64b7af5a8532cf95ee0a0dbd"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "64b9cf0ac12b9c38db26923a",
+      "newId": "67932708c270d2b12d05037b",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/25ak7red.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 4,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.145,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05037b"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 25
+      },
+      "replace": true,
+      "add": [
+        "59e655cb86f77411dc52a77b",
+        "59e6542b86f77411dc52a77a",
+        "59e6658b86f77411d949b250",
+        "5f0596629e22f464da6bbdd9",
+        "59e0d99486f7744a32234762",
+        "59e4d3d286f774176a36250a",
+        "5656d7c34bdc2d9d198b4587",
+        "59e4cf5286f7741778269d8a",
+        "59e4d24686f7741776641ac7",
+        "601aa3d2b2bcb34913271e6d",
+        "64b7af434b75259c590fa893",
+        "64b7af734b75259c590fa895",
+        "64b7af5a8532cf95ee0a0dbd"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "64b9cf0ac12b9c38db26923a",
+      "newId": "67932708c270d2b12d05037c",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/25ak7tan.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 4,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.145,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05037c"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 25
+      },
+      "replace": true,
+      "add": [
+        "59e655cb86f77411dc52a77b",
+        "59e6542b86f77411dc52a77a",
+        "59e6658b86f77411d949b250",
+        "5f0596629e22f464da6bbdd9",
+        "59e0d99486f7744a32234762",
+        "59e4d3d286f774176a36250a",
+        "5656d7c34bdc2d9d198b4587",
+        "59e4cf5286f7741778269d8a",
+        "59e4d24686f7741776641ac7",
+        "601aa3d2b2bcb34913271e6d",
+        "64b7af434b75259c590fa893",
+        "64b7af734b75259c590fa895",
+        "64b7af5a8532cf95ee0a0dbd"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "59d6272486f77466146386ff",
+      "newId": "67932708c270d2b12d05037d",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/35ak7blkblk.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.21,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05037d"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 35
+      },
+      "replace": true,
+      "add": [
+        "59e655cb86f77411dc52a77b",
+        "59e6542b86f77411dc52a77a",
+        "59e6658b86f77411d949b250",
+        "5f0596629e22f464da6bbdd9",
+        "59e0d99486f7744a32234762",
+        "59e4d3d286f774176a36250a",
+        "5656d7c34bdc2d9d198b4587",
+        "59e4cf5286f7741778269d8a",
+        "59e4d24686f7741776641ac7",
+        "601aa3d2b2bcb34913271e6d",
+        "64b7af434b75259c590fa893",
+        "64b7af734b75259c590fa895",
+        "64b7af5a8532cf95ee0a0dbd"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "59d6272486f77466146386ff",
+      "newId": "67932708c270d2b12d05037e",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/35ak7blkgrn.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.21,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05037e"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 35
+      },
+      "replace": true,
+      "add": [
+        "59e655cb86f77411dc52a77b",
+        "59e6542b86f77411dc52a77a",
+        "59e6658b86f77411d949b250",
+        "5f0596629e22f464da6bbdd9",
+        "59e0d99486f7744a32234762",
+        "59e4d3d286f774176a36250a",
+        "5656d7c34bdc2d9d198b4587",
+        "59e4cf5286f7741778269d8a",
+        "59e4d24686f7741776641ac7",
+        "601aa3d2b2bcb34913271e6d",
+        "64b7af434b75259c590fa893",
+        "64b7af734b75259c590fa895",
+        "64b7af5a8532cf95ee0a0dbd"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "59d6272486f77466146386ff",
+      "newId": "67932708c270d2b12d05037f",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/35ak7blkred.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 4,
+        "Recoil": -5,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.21,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05037f"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 35
+      },
+      "replace": true,
+      "add": [
+        "59e655cb86f77411dc52a77b",
+        "59e6542b86f77411dc52a77a",
+        "59e6658b86f77411d949b250",
+        "5f0596629e22f464da6bbdd9",
+        "59e0d99486f7744a32234762",
+        "59e4d3d286f774176a36250a",
+        "5656d7c34bdc2d9d198b4587",
+        "59e4cf5286f7741778269d8a",
+        "59e4d24686f7741776641ac7",
+        "601aa3d2b2bcb34913271e6d",
+        "64b7af434b75259c590fa893",
+        "64b7af734b75259c590fa895",
+        "64b7af5a8532cf95ee0a0dbd"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "59d6272486f77466146386ff",
+      "newId": "67932708c270d2b12d050380",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/35ak7blktan.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.21,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050380"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 35
+      },
+      "replace": true,
+      "add": [
+        "59e655cb86f77411dc52a77b",
+        "59e6542b86f77411dc52a77a",
+        "59e6658b86f77411d949b250",
+        "5f0596629e22f464da6bbdd9",
+        "59e0d99486f7744a32234762",
+        "59e4d3d286f774176a36250a",
+        "5656d7c34bdc2d9d198b4587",
+        "59e4cf5286f7741778269d8a",
+        "59e4d24686f7741776641ac7",
+        "601aa3d2b2bcb34913271e6d",
+        "64b7af434b75259c590fa893",
+        "64b7af734b75259c590fa895",
+        "64b7af5a8532cf95ee0a0dbd"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "59d6272486f77466146386ff",
+      "newId": "67932708c270d2b12d050381",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/35ak7fdeblk.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.21,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050381"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 35
+      },
+      "replace": true,
+      "add": [
+        "59e655cb86f77411dc52a77b",
+        "59e6542b86f77411dc52a77a",
+        "59e6658b86f77411d949b250",
+        "5f0596629e22f464da6bbdd9",
+        "59e0d99486f7744a32234762",
+        "59e4d3d286f774176a36250a",
+        "5656d7c34bdc2d9d198b4587",
+        "59e4cf5286f7741778269d8a",
+        "59e4d24686f7741776641ac7",
+        "601aa3d2b2bcb34913271e6d",
+        "64b7af434b75259c590fa893",
+        "64b7af734b75259c590fa895",
+        "64b7af5a8532cf95ee0a0dbd"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "59d6272486f77466146386ff",
+      "newId": "67932708c270d2b12d050382",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/35ak7fdegrn.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.21,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050382"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 35
+      },
+      "replace": true,
+      "add": [
+        "59e655cb86f77411dc52a77b",
+        "59e6542b86f77411dc52a77a",
+        "59e6658b86f77411d949b250",
+        "5f0596629e22f464da6bbdd9",
+        "59e0d99486f7744a32234762",
+        "59e4d3d286f774176a36250a",
+        "5656d7c34bdc2d9d198b4587",
+        "59e4cf5286f7741778269d8a",
+        "59e4d24686f7741776641ac7",
+        "601aa3d2b2bcb34913271e6d",
+        "64b7af434b75259c590fa893",
+        "64b7af734b75259c590fa895",
+        "64b7af5a8532cf95ee0a0dbd"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "59d6272486f77466146386ff",
+      "newId": "67932708c270d2b12d050383",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/35ak7fdered.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 4,
+        "Recoil": -5,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.21,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050383"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 35
+      },
+      "replace": true,
+      "add": [
+        "59e655cb86f77411dc52a77b",
+        "59e6542b86f77411dc52a77a",
+        "59e6658b86f77411d949b250",
+        "5f0596629e22f464da6bbdd9",
+        "59e0d99486f7744a32234762",
+        "59e4d3d286f774176a36250a",
+        "5656d7c34bdc2d9d198b4587",
+        "59e4cf5286f7741778269d8a",
+        "59e4d24686f7741776641ac7",
+        "601aa3d2b2bcb34913271e6d",
+        "64b7af434b75259c590fa893",
+        "64b7af734b75259c590fa895",
+        "64b7af5a8532cf95ee0a0dbd"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "59d6272486f77466146386ff",
+      "newId": "67932708c270d2b12d050384",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/35ak7fdetan.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.21,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050384"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 35
+      },
+      "replace": true,
+      "add": [
+        "59e655cb86f77411dc52a77b",
+        "59e6542b86f77411dc52a77a",
+        "59e6658b86f77411d949b250",
+        "5f0596629e22f464da6bbdd9",
+        "59e0d99486f7744a32234762",
+        "59e4d3d286f774176a36250a",
+        "5656d7c34bdc2d9d198b4587",
+        "59e4cf5286f7741778269d8a",
+        "59e4d24686f7741776641ac7",
+        "601aa3d2b2bcb34913271e6d",
+        "64b7af434b75259c590fa893",
+        "64b7af734b75259c590fa895",
+        "64b7af5a8532cf95ee0a0dbd"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5a7ad2e851dfba0016153692",
+      "newId": "67932708c270d2b12d050385",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/63blk.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.25,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 2
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050385"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 63
+      },
+      "replace": true,
+      "add": [
+        "5efb0da7a29a85116f6ea05f",
+        "5c3df7d588a4501f290594e5",
+        "58864a4f2459770fcc257101",
+        "56d59d3ad2720bdb418b4577",
+        "5c925fa22e221601da359b7b",
+        "5a3c16fe86f77452b62de32a",
+        "5efb0e16aeb21837e749c7ff",
+        "5c0d56a986f774449d5de529",
+        "64b7bbb74b75259c590fa897"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5a7ad2e851dfba0016153692",
+      "newId": "67932708c270d2b12d050386",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/63grn.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.25,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 2
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050386"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 63
+      },
+      "replace": true,
+      "add": [
+        "5efb0da7a29a85116f6ea05f",
+        "5c3df7d588a4501f290594e5",
+        "58864a4f2459770fcc257101",
+        "56d59d3ad2720bdb418b4577",
+        "5c925fa22e221601da359b7b",
+        "5a3c16fe86f77452b62de32a",
+        "5efb0e16aeb21837e749c7ff",
+        "5c0d56a986f774449d5de529",
+        "64b7bbb74b75259c590fa897"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5a7ad2e851dfba0016153692",
+      "newId": "67932708c270d2b12d050387",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/63red.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 4,
+        "Recoil": -5,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.25,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 2
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050387"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 63
+      },
+      "replace": true,
+      "add": [
+        "5efb0da7a29a85116f6ea05f",
+        "5c3df7d588a4501f290594e5",
+        "58864a4f2459770fcc257101",
+        "56d59d3ad2720bdb418b4577",
+        "5c925fa22e221601da359b7b",
+        "5a3c16fe86f77452b62de32a",
+        "5efb0e16aeb21837e749c7ff",
+        "5c0d56a986f774449d5de529",
+        "64b7bbb74b75259c590fa897"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5a7ad2e851dfba0016153692",
+      "newId": "67932708c270d2b12d050388",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/63tan.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.25,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 2
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050388"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 63
+      },
+      "replace": true,
+      "add": [
+        "5efb0da7a29a85116f6ea05f",
+        "5c3df7d588a4501f290594e5",
+        "58864a4f2459770fcc257101",
+        "56d59d3ad2720bdb418b4577",
+        "5c925fa22e221601da359b7b",
+        "5a3c16fe86f77452b62de32a",
+        "5efb0e16aeb21837e749c7ff",
+        "5c0d56a986f774449d5de529",
+        "64b7bbb74b75259c590fa897"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5a966f51a2750c00156aacf6",
+      "newId": "67932708c270d2b12d050389",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/saigabuddy.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 3,
+        "Weight": 0.25,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 1
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050389"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 20
+      },
+      "replace": true,
+      "add": [
+        "560d5e524bdc2d25448b4571",
+        "5d6e6772a4b936088465b17c",
+        "5d6e67fba4b9361bc73bc779",
+        "5d6e6806a4b936088465b17e",
+        "5d6e68dea4b9361bcc29e659",
+        "5d6e6911a4b9361bd5780d52",
+        "5c0d591486f7744c505b416f",
+        "58820d1224597753c90aeb13",
+        "5d6e68c4a4b9361b93413f79",
+        "5d6e68a8a4b9360b6c0d54e2",
+        "5d6e68e6a4b9361c140bcfe0",
+        "5d6e6869a4b9361c140bcfde",
+        "5d6e68b3a4b9361bca7e50b5",
+        "5d6e6891a4b9361bd473feea",
+        "5d6e689ca4b9361bc8618956",
+        "5d6e68d1a4b93622fe60e845",
+        "64b8ee384b75259c590fa89b"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "6450ec2e7da7133e5a09ca96",
+      "newId": "67932708c270d2b12d05038a",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/9a9130.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.32,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "magAnimationIndex": 1
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05038a"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 30
+      },
+      "replace": true,
+      "add": [
+        "5c0d688c86f77413ae3407b2",
+        "61962d879bb3d20b0946d385",
+        "57a0dfb82459774d3078b56c",
+        "57a0e5022459774d1673f889",
+        "5c0d668f86f7747ccb7f13b2",
+        "6576f96220d53a5b8f3e395e"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5a17fb03fcdbcbcae668728f",
+      "newId": "67932708c270d2b12d05038b",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/aps35.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.049,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05038b"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 35
+      },
+      "replace": true,
+      "add": [
+        "573718ba2459775a75491131",
+        "573719df2459775a626ccbc2",
+        "57371aab2459775a77142f22",
+        "57371b192459775a9f58a5e0",
+        "57371e4124597760ff7b25f1",
+        "57371eb62459776125652ac1",
+        "57371f8d24597761006c6a81",
+        "5737201124597760fc4431f1",
+        "5737207f24597760ff7b25f2",
+        "57371f2b24597761224311f1",
+        "573719762459775a626ccbc1",
+        "573720e02459776143012541",
+        "57372140245977611f70ee91",
+        "5737218f245977612125ba51"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5a17fb03fcdbcbcae668728f",
+      "newId": "67932708c270d2b12d05038c",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/aps50.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.051,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05038c"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 50
+      },
+      "replace": true,
+      "add": [
+        "573718ba2459775a75491131",
+        "573719df2459775a626ccbc2",
+        "57371aab2459775a77142f22",
+        "57371b192459775a9f58a5e0",
+        "57371e4124597760ff7b25f1",
+        "57371eb62459776125652ac1",
+        "57371f8d24597761006c6a81",
+        "5737201124597760fc4431f1",
+        "5737207f24597760ff7b25f2",
+        "57371f2b24597761224311f1",
+        "573719762459775a626ccbc1",
+        "573720e02459776143012541",
+        "57372140245977611f70ee91",
+        "5737218f245977612125ba51"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5caf1109ae9215753c44119f",
+      "newId": "67932708c270d2b12d05038d",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/ash25.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 2,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.051,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05038d"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 25
+      },
+      "replace": true,
+      "add": [
+        "5cadf6ddae9215051e1c23b2",
+        "5cadf6e5ae921500113bb973",
+        "5cadf6eeae921500134b2799"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5888988e24597752fe43a6fa",
+      "newId": "67932708c270d2b12d05038e",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/dvl15.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.6,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05038e"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 15
+      },
+      "replace": true,
+      "add": [
+        "5a6086ea4f39f99cd479502f",
+        "5a608bf24f39f98ffc77720e",
+        "58dd3ad986f77403051cba8f",
+        "5e023e53d4353e3302577c4c",
+        "5efb0c1bd79ff02a1f5e68d9",
+        "5e023e6e34d52a55c3304f71",
+        "5e023e88277cce2b522ff2b1"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5888988e24597752fe43a6fa",
+      "newId": "67932708c270d2b12d05038f",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/dvl20.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.65,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d05038f"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 20
+      },
+      "replace": true,
+      "add": [
+        "5a6086ea4f39f99cd479502f",
+        "5a608bf24f39f98ffc77720e",
+        "58dd3ad986f77403051cba8f",
+        "5e023e53d4353e3302577c4c",
+        "5efb0c1bd79ff02a1f5e68d9",
+        "5e023e6e34d52a55c3304f71",
+        "5e023e88277cce2b522ff2b1"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5cadc2e0ae9215051e1c21e7",
+      "newId": "67932708c270d2b12d050390",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/m9a3plus.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 1,
+        "Weight": 0.089,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050390"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 23
+      },
+      "replace": true,
+      "add": [
+        "5efb0da7a29a85116f6ea05f",
+        "5c3df7d588a4501f290594e5",
+        "58864a4f2459770fcc257101",
+        "56d59d3ad2720bdb418b4577",
+        "5c925fa22e221601da359b7b",
+        "5a3c16fe86f77452b62de32a",
+        "5efb0e16aeb21837e749c7ff",
+        "5c0d56a986f774449d5de529",
+        "64b7bbb74b75259c590fa897"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5df25b6c0b92095fd441e4cf",
+      "newId": "67932708c270d2b12d050391",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/orsis10.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 1,
+        "Width": 1,
+        "Height": 1,
+        "Weight": 0.39,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050391"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 10
+      },
+      "replace": true,
+      "add": [
+        "5a6086ea4f39f99cd479502f",
+        "5a608bf24f39f98ffc77720e",
+        "58dd3ad986f77403051cba8f",
+        "5e023e53d4353e3302577c4c",
+        "5efb0c1bd79ff02a1f5e68d9",
+        "5e023e6e34d52a55c3304f71",
+        "5e023e88277cce2b522ff2b1"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "599860ac86f77436b225ed1a",
+      "newId": "67932708c270d2b12d050392",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/pp1940.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 4,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.18,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050392"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 40
+      },
+      "replace": true,
+      "add": [
+        "5efb0da7a29a85116f6ea05f",
+        "5c3df7d588a4501f290594e5",
+        "58864a4f2459770fcc257101",
+        "56d59d3ad2720bdb418b4577",
+        "5c925fa22e221601da359b7b",
+        "5a3c16fe86f77452b62de32a",
+        "5efb0e16aeb21837e749c7ff",
+        "5c0d56a986f774449d5de529",
+        "64b7bbb74b75259c590fa897"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "599860ac86f77436b225ed1a",
+      "newId": "67932708c270d2b12d050393",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/pp1940red.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 8,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.18,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050393"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 40
+      },
+      "replace": true,
+      "add": [
+        "5efb0da7a29a85116f6ea05f",
+        "5c3df7d588a4501f290594e5",
+        "58864a4f2459770fcc257101",
+        "56d59d3ad2720bdb418b4577",
+        "5c925fa22e221601da359b7b",
+        "5a3c16fe86f77452b62de32a",
+        "5efb0e16aeb21837e749c7ff",
+        "5c0d56a986f774449d5de529",
+        "64b7bbb74b75259c590fa897"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "57d1519e24597714373db79d",
+      "newId": "67932708c270d2b12d050394",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/pp9140.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 4,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.13,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050394"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 40
+      },
+      "replace": true,
+      "add": [
+        "573718ba2459775a75491131",
+        "573719df2459775a626ccbc2",
+        "57371aab2459775a77142f22",
+        "57371b192459775a9f58a5e0",
+        "57371e4124597760ff7b25f1",
+        "57371eb62459776125652ac1",
+        "57371f8d24597761006c6a81",
+        "5737201124597760fc4431f1",
+        "5737207f24597760ff7b25f2",
+        "57371f2b24597761224311f1",
+        "573719762459775a626ccbc1",
+        "573720e02459776143012541",
+        "57372140245977611f70ee91",
+        "5737218f245977612125ba51"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "57d1519e24597714373db79d",
+      "newId": "67932708c270d2b12d050395",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/pp9160.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.19,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050395"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 60
+      },
+      "replace": true,
+      "add": [
+        "573718ba2459775a75491131",
+        "573719df2459775a626ccbc2",
+        "57371aab2459775a77142f22",
+        "57371b192459775a9f58a5e0",
+        "57371e4124597760ff7b25f1",
+        "57371eb62459776125652ac1",
+        "57371f8d24597761006c6a81",
+        "5737201124597760fc4431f1",
+        "5737207f24597760ff7b25f2",
+        "57371f2b24597761224311f1",
+        "573719762459775a626ccbc1",
+        "573720e02459776143012541",
+        "57372140245977611f70ee91",
+        "5737218f245977612125ba51"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5a9e81fba2750c00164f6b11",
+      "newId": "67932708c270d2b12d050396",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/sr3m35.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.48,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 1
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050396"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 35
+      },
+      "replace": true,
+      "add": [
+        "5c0d688c86f77413ae3407b2",
+        "61962d879bb3d20b0946d385",
+        "57a0dfb82459774d3078b56c",
+        "57a0e5022459774d1673f889",
+        "5c0d668f86f7747ccb7f13b2",
+        "6576f96220d53a5b8f3e395e"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5a9e81fba2750c00164f6b11",
+      "newId": "67932708c270d2b12d050397",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/sr3m40.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 2,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.5,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 1
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050397"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 40
+      },
+      "replace": true,
+      "add": [
+        "5c0d688c86f77413ae3407b2",
+        "61962d879bb3d20b0946d385",
+        "57a0dfb82459774d3078b56c",
+        "57a0e5022459774d1673f889",
+        "5c0d668f86f7747ccb7f13b2",
+        "6576f96220d53a5b8f3e395e"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5a9e81fba2750c00164f6b11",
+      "newId": "67932708c270d2b12d050398",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/sr3m45.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 2,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.55,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 1
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050398"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 45
+      },
+      "replace": true,
+      "add": [
+        "5c0d688c86f77413ae3407b2",
+        "61962d879bb3d20b0946d385",
+        "57a0dfb82459774d3078b56c",
+        "57a0e5022459774d1673f889",
+        "5c0d668f86f7747ccb7f13b2",
+        "6576f96220d53a5b8f3e395e"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5c6161fb2e221600113fbde5",
+      "newId": "67932708c270d2b12d050399",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/toz10.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 1,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.21,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 2
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "67932708c270d2b12d050399"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "$self",
+        "_max_count": 10
+      },
+      "replace": true,
+      "add": [
+        "5a38ebd9c4a282000d722a5b",
+        "5d6e695fa4b936359b35d852",
+        "5d6e69b9a4b9361bc8618958",
+        "5d6e69c7a4b9360b6c0d54e4",
+        "5d6e6a5fa4b93614ec501745",
+        "5d6e6a53a4b9361bd473feec",
+        "5d6e6a42a4b9364f07165f52",
+        "5d6e6a05a4b93618084f58d0"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5c0548ae0db834001966a3c2",
+      "newId": "679edba49f79e7dd6e00abcd",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/arsenal35.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.47,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "679edba49f79e7dd6e00abcd"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "35ARSENAL",
+        "_max_count": 35
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5c0548ae0db834001966a3c2",
+      "newId": "679edba49f79e7dd6e00abce",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/arsenal40.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.5,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "679edba49f79e7dd6e00abce"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "35ARSENAL",
+        "_max_count": 40
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5c0548ae0db834001966a3c2",
+      "newId": "679edba49f79e7dd6e00abcf",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/arsenal45.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.53,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "679edba49f79e7dd6e00abcf"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "45ARSENAL",
+        "_max_count": 45
+      },
+      "replace": true,
+      "add": [
+        "59e6920f86f77411d82aa167",
+        "59e6927d86f77411da468256",
+        "54527a984bdc2d4e668b4567",
+        "54527ac44bdc2d36668b4567",
+        "59e68f6f86f7746c9f75e846",
+        "59e6906286f7746c9f75e847",
+        "59e690b686f7746c9f75e848",
+        "59e6918f86f7746c9f75e849",
+        "60194943740c5d77f6705eea",
+        "601949593ae8f707c4608daa",
+        "5c0d5ae286f7741e46554302",
+        "5fbe3ffdf8b6a877a729ea82",
+        "5fd20ff893a8961fc660a954",
+        "619636be6db0f2477964e710",
+        "6196364158ef8c428c287d9f",
+        "6196365d58ef8c428c287da1",
+        "64b8725c4b75259c590fa899"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5d3eb5eca4b9363b1f22f8e4",
+      "newId": "679edba49f79e7dd6e00abd0",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/57extendedblk.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 1,
+        "Weight": 0.09,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "679edba49f79e7dd6e00abd0"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "FN57BLACKEXTENDED",
+        "_max_count": 30
+      },
+      "replace": true,
+      "add": [
+        "5cc80f53e4a949000e1ea4f8",
+        "5cc86832d7f00c000d3a6e6c",
+        "5cc86840d7f00c002412c56c",
+        "5cc80f67e4a949035e43bbba",
+        "5cc80f38e4a949001152b560",
+        "5cc80f8fe4a949033b0224a2",
+        "5cc80f79e4a949033c7343b2"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "5d3eb5eca4b9363b1f22f8e4",
+      "newId": "679edba49f79e7dd6e00abd1",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/57extendedfde.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 3,
+        "Width": 1,
+        "Height": 1,
+        "Weight": 0.09,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 0
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "679edba49f79e7dd6e00abd1"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "FN57BLACKEXTENDED",
+        "_max_count": 30
+      },
+      "replace": true,
+      "add": [
+        "5cc80f53e4a949000e1ea4f8",
+        "5cc86832d7f00c000d3a6e6c",
+        "5cc86840d7f00c002412c56c",
+        "5cc80f67e4a949035e43bbba",
+        "5cc80f38e4a949001152b560",
+        "5cc80f8fe4a949033b0224a2",
+        "5cc80f79e4a949033c7343b2"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "618168dc8004cc50514c34fc",
+      "newId": "679edba49f79e7dd6e00abd2",
+      "newParentId": "5448bc234bdc2d3c308b4569",
+      "props": {
+        "Prefab": {
+          "path": "mags/falscar.bundle",
+          "rcid": ""
+        },
+        "ExaminedByDefault": true,
+        "Ergonomics": 1,
+        "Width": 1,
+        "Height": 2,
+        "Weight": 0.53,
+        "CheckOverride": 0,
+        "ReloadMagType": "ExternalMagazine",
+        "VisibleAmmoRangesString": "1-3",
+        "MalfunctionChance": 0.15,
+        "magAnimationIndex": 2
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "679edba49f79e7dd6e00abd2"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_parent": "SCARFAL",
+        "_max_count": 30
+      },
+      "replace": true,
+      "add": [
+        "5a6086ea4f39f99cd479502f",
+        "5a608bf24f39f98ffc77720e",
+        "58dd3ad986f77403051cba8f",
+        "5e023e53d4353e3302577c4c",
+        "5efb0c1bd79ff02a1f5e68d9",
+        "5e023e6e34d52a55c3304f71",
+        "5e023e88277cce2b522ff2b1",
+        "6529243824cbe3c74a05e5c1",
+        "6529302b8c26af6326029fb7"
+      ],
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "544a37c44bdc2d25388b4567"
+      ],
+      "add": [
+        "67932708c270d2b12d050355"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5d2f213448f0355009199284"
+      ],
+      "add": [
+        "67932708c270d2b12d050356"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5e81c4ca763d9f754677befa"
+      ],
+      "add": [
+        "67932708c270d2b12d050357"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5f647d9f8499b57dc40ddb93"
+      ],
+      "add": [
+        "67932708c270d2b12d050358"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5ce69cbad7f00c00b61c5098"
+      ],
+      "add": [
+        "67932708c270d2b12d050359"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5ce69cbad7f00c00b61c5098"
+      ],
+      "add": [
+        "67932708c270d2b12d05035a"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5ce69cbad7f00c00b61c5098"
+      ],
+      "add": [
+        "67932708c270d2b12d05035b"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5ce69cbad7f00c00b61c5098"
+      ],
+      "add": [
+        "67932708c270d2b12d05035c"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5ce69cbad7f00c00b61c5098"
+      ],
+      "add": [
+        "67932708c270d2b12d05035d"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5ce69cbad7f00c00b61c5098"
+      ],
+      "add": [
+        "67932708c270d2b12d05035e"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5ce69cbad7f00c00b61c5098"
+      ],
+      "add": [
+        "67932708c270d2b12d05035f"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5ce69cbad7f00c00b61c5098"
+      ],
+      "add": [
+        "67932708c270d2b12d050360"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5df8f541c41b2312ea3335e3"
+      ],
+      "add": [
+        "67932708c270d2b12d050361"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5df8f541c41b2312ea3335e3"
+      ],
+      "add": [
+        "67932708c270d2b12d050362"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5df8f541c41b2312ea3335e3"
+      ],
+      "add": [
+        "67932708c270d2b12d050363"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5df8f541c41b2312ea3335e3"
+      ],
+      "add": [
+        "67932708c270d2b12d050364"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5a718b548dc32e000d46d262"
+      ],
+      "add": [
+        "67932708c270d2b12d050365"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5a718b548dc32e000d46d262"
+      ],
+      "add": [
+        "67932708c270d2b12d050366"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5aaa5e60e5b5b000140293d6"
+      ],
+      "add": [
+        "67932708c270d2b12d050368"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5aaa5e60e5b5b000140293d6"
+      ],
+      "add": [
+        "67932708c270d2b12d050369"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5aaa5e60e5b5b000140293d6"
+      ],
+      "add": [
+        "67932708c270d2b12d05036a"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5aaa5e60e5b5b000140293d6"
+      ],
+      "add": [
+        "67932708c270d2b12d05036b"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5df8f541c41b2312ea3335e3"
+      ],
+      "add": [
+        "67932708c270d2b12d05036c"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5448c1d04bdc2dff2f8b4569"
+      ],
+      "add": [
+        "67932708c270d2b12d05036d"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5448c1d04bdc2dff2f8b4569"
+      ],
+      "add": [
+        "67932708c270d2b12d05036e"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5448c1d04bdc2dff2f8b4569"
+      ],
+      "add": [
+        "67932708c270d2b12d05036f"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5448c1d04bdc2dff2f8b4569"
+      ],
+      "add": [
+        "67932708c270d2b12d050370"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5aaa5dfee5b5b000140293d3"
+      ],
+      "add": [
+        "67932708c270d2b12d050371"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5aaa5dfee5b5b000140293d3"
+      ],
+      "add": [
+        "67932708c270d2b12d050372"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5aaa5dfee5b5b000140293d3"
+      ],
+      "add": [
+        "67932708c270d2b12d050373"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5aaa5dfee5b5b000140293d3"
+      ],
+      "add": [
+        "67932708c270d2b12d050374"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "544a378f4bdc2d30388b4567"
+      ],
+      "add": [
+        "67932708c270d2b12d050375"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "544a378f4bdc2d30388b4567"
+      ],
+      "add": [
+        "67932708c270d2b12d050376"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "544a378f4bdc2d30388b4567"
+      ],
+      "add": [
+        "67932708c270d2b12d050377"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "544a378f4bdc2d30388b4567"
+      ],
+      "add": [
+        "67932708c270d2b12d050378"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "64b9cf0ac12b9c38db26923a"
+      ],
+      "add": [
+        "67932708c270d2b12d050379"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "64b9cf0ac12b9c38db26923a"
+      ],
+      "add": [
+        "67932708c270d2b12d05037a"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "64b9cf0ac12b9c38db26923a"
+      ],
+      "add": [
+        "67932708c270d2b12d05037b"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "64b9cf0ac12b9c38db26923a"
+      ],
+      "add": [
+        "67932708c270d2b12d05037c"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "59d6272486f77466146386ff"
+      ],
+      "add": [
+        "67932708c270d2b12d05037d"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "59d6272486f77466146386ff"
+      ],
+      "add": [
+        "67932708c270d2b12d05037e"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "59d6272486f77466146386ff"
+      ],
+      "add": [
+        "67932708c270d2b12d05037f"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "59d6272486f77466146386ff"
+      ],
+      "add": [
+        "67932708c270d2b12d050380"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "59d6272486f77466146386ff"
+      ],
+      "add": [
+        "67932708c270d2b12d050381"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "59d6272486f77466146386ff"
+      ],
+      "add": [
+        "67932708c270d2b12d050382"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "59d6272486f77466146386ff"
+      ],
+      "add": [
+        "67932708c270d2b12d050383"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "59d6272486f77466146386ff"
+      ],
+      "add": [
+        "67932708c270d2b12d050384"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5a7ad2e851dfba0016153692"
+      ],
+      "add": [
+        "67932708c270d2b12d050385"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5a7ad2e851dfba0016153692"
+      ],
+      "add": [
+        "67932708c270d2b12d050386"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5a7ad2e851dfba0016153692"
+      ],
+      "add": [
+        "67932708c270d2b12d050387"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5a7ad2e851dfba0016153692"
+      ],
+      "add": [
+        "67932708c270d2b12d050388"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5a966f51a2750c00156aacf6"
+      ],
+      "add": [
+        "67932708c270d2b12d050389"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "6450ec2e7da7133e5a09ca96"
+      ],
+      "add": [
+        "67932708c270d2b12d05038a"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5a17fb03fcdbcbcae668728f"
+      ],
+      "add": [
+        "67932708c270d2b12d05038b"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5a17fb03fcdbcbcae668728f"
+      ],
+      "add": [
+        "67932708c270d2b12d05038c"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5caf1041ae92157c28402e3f"
+      ],
+      "add": [
+        "67932708c270d2b12d05038d"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5888988e24597752fe43a6fa"
+      ],
+      "add": [
+        "67932708c270d2b12d05038e"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5888988e24597752fe43a6fa"
+      ],
+      "add": [
+        "67932708c270d2b12d05038f"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5cadc2e0ae9215051e1c21e7"
+      ],
+      "add": [
+        "67932708c270d2b12d050390"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5df25b6c0b92095fd441e4cf"
+      ],
+      "add": [
+        "67932708c270d2b12d050391"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "599860ac86f77436b225ed1a"
+      ],
+      "add": [
+        "67932708c270d2b12d050392"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "599860ac86f77436b225ed1a"
+      ],
+      "add": [
+        "67932708c270d2b12d050393"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "57d1519e24597714373db79d"
+      ],
+      "add": [
+        "67932708c270d2b12d050394"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "57d1519e24597714373db79d"
+      ],
+      "add": [
+        "67932708c270d2b12d050395"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5a9e81fba2750c00164f6b11"
+      ],
+      "add": [
+        "67932708c270d2b12d050396"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5a9e81fba2750c00164f6b11"
+      ],
+      "add": [
+        "67932708c270d2b12d050397"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5a9e81fba2750c00164f6b11"
+      ],
+      "add": [
+        "67932708c270d2b12d050398"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5c6161fb2e221600113fbde5"
+      ],
+      "add": [
+        "67932708c270d2b12d050399"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5c0548ae0db834001966a3c2"
+      ],
+      "add": [
+        "679edba49f79e7dd6e00abcd"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5c0548ae0db834001966a3c2"
+      ],
+      "add": [
+        "679edba49f79e7dd6e00abce"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5c0548ae0db834001966a3c2"
+      ],
+      "add": [
+        "679edba49f79e7dd6e00abcf"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5d3eb5eca4b9363b1f22f8e4"
+      ],
+      "add": [
+        "679edba49f79e7dd6e00abd0"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "5d3eb5eca4b9363b1f22f8e4"
+      ],
+      "add": [
+        "679edba49f79e7dd6e00abd1"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "addFilter",
+      "targetsAll": true,
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "whenFilterContains": [
+        "618168dc8004cc50514c34fc"
+      ],
+      "add": [
+        "679edba49f79e7dd6e00abd2"
+      ],
+      "_note": "원본 탄창이 들어가는 총이면 이 확장 탄창도 들어가게 한다."
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050355",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050355",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050356",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050356",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050357",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050357",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050358",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 5054,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050358",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 99,
+      "price": 8054,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050359",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050359",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05035a",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05035a",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05035b",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05035b",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05035c",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05035c",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05035d",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05035d",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05035e",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05035e",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05035f",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05035f",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050360",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050360",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050361",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050361",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050362",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050362",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050363",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050363",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050364",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050364",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050365",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050365",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050366",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050366",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050368",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050368",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 25,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050369",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050369",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 25,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05036a",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05036a",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 25,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05036b",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05036b",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 25,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05036c",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05036c",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 28,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05036d",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05036d",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 28,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05036e",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05036e",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 28,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05036f",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05036f",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 28,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050370",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050370",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 28,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050371",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050371",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 28,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050372",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050372",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 28,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050373",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050373",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 28,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050374",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050374",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 28,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050375",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050375",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 38,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050376",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050376",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 38,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050377",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050377",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 38,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050378",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050378",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 38,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050379",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050379",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 38,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05037a",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05037a",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 38,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05037b",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05037b",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 38,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05037c",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05037c",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 38,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05037d",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05037d",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 38,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05037e",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05037e",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 38,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05037f",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05037f",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 38,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050380",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050380",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 38,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050381",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050381",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 38,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050382",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050382",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 38,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050383",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050383",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 38,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050384",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050384",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 38,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050385",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050385",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 48,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050386",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050386",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 48,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050387",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050387",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 48,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050388",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050388",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 48,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050389",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050389",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 48,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05038a",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05038a",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 65,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05038b",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05038b",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05038c",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05038c",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 65,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05038d",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05038d",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 115,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05038e",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05038e",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 75,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d05038f",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d05038f",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 75,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050390",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050390",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050391",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050391",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 95,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050392",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050392",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 65,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050393",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050393",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 65,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050394",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050394",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 35,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050395",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050395",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 65,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050396",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050396",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 45,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050397",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050397",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 55,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050398",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050398",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 75,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 3
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "67932708c270d2b12d050399",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "67932708c270d2b12d050399",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 15,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "679edba49f79e7dd6e00abcd",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "679edba49f79e7dd6e00abcd",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 48,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "679edba49f79e7dd6e00abce",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "679edba49f79e7dd6e00abce",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 48,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "679edba49f79e7dd6e00abcf",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "679edba49f79e7dd6e00abcf",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 48,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "679edba49f79e7dd6e00abd0",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "679edba49f79e7dd6e00abd0",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 48,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "679edba49f79e7dd6e00abd1",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "679edba49f79e7dd6e00abd1",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 48,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "679edba49f79e7dd6e00abd2",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 21615,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "679edba49f79e7dd6e00abd2",
+      "traderId": "5a7c2eca46aef81a7ca2145d",
+      "count": 99,
+      "price": 55,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 2
+    }
+  ]
+}

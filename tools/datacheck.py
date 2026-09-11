@@ -100,7 +100,14 @@ for fn in sorted(os.listdir(patchdir)):
 
         if kind == 'addFilter':
             if op.get('into', 'slot') not in INTO: where(f"{tag}: into 값이 잘못됐다")
-            if not op.get('add'): where(f"{tag}: add 가 비어 있다")
+            for name in (op.get('slotProps') or {}):
+                if name not in ('_max_count', '_parent', '_name', '_id', '_required',
+                                '_mergeSlotWithChildren', '_proto',
+                                'MaxCount', 'Parent', 'Name', 'Id', 'Required',
+                                'MergeSlotWithChildren', 'Prototype'):
+                    where(f"{tag}: Slot 에 '{name}' 프로퍼티가 없다")
+            if not op.get('add') and not op.get('slotProps') and not op.get('replace'):
+                where(f"{tag}: add 도 slotProps 도 replace 도 없어 아무 일도 하지 않는다")
             if op.get('into', 'slot') == 'slot' and not (op.get('slots') or op.get('slotIndexes')):
                 warns.append(f"{fn} {tag}: slots 도 slotIndexes 도 없어 모든 슬롯에 적용된다")
 

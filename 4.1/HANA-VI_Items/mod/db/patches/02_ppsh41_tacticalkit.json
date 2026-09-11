@@ -1,0 +1,92 @@
+{
+  "key": "ppsh41_tacticalkit",
+  "title": "PPSh-41 전술 키트",
+  "enabled": true,
+  "ops": [
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "560835c74bdc2dc8488b456f",
+      "newId": "5a01ad4786f77450561fAD69",
+      "props": {
+        "Accuracy": 75
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5ea03f7400685063ec28bfa8"
+      ],
+      "into": "slot",
+      "slots": [
+        "mod_barrel"
+      ],
+      "add": [
+        "5a01ad4786f77450561fAD69"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5ea03f7400685063ec28bfa8"
+      ],
+      "into": "slot",
+      "slots": [
+        "mod_stock"
+      ],
+      "add": [
+        "606eef46232e5a31c233d500"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5a01ad4786f77450561fAD69"
+      ],
+      "into": "slot",
+      "slots": [
+        "mod_muzzle"
+      ],
+      "add": [
+        "5b86a0e586f7745b600ccb23",
+        "58aeac1b86f77457c419f475",
+        "5addbb825acfc408fb139400",
+        "5f63407e1b231926f2329f15",
+        "5926d33d86f77410de68ebc0",
+        "56e05b06d2720bb2668b4586"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5a01ad4786f77450561fAD69"
+      ],
+      "into": "slot",
+      "slots": [
+        "mod_mount"
+      ],
+      "add": [
+        "5a966ec8a2750c00171b3f36",
+        "5addbffe5acfc4001714dfac"
+      ]
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "5a01ad4786f77450561fAD69",
+      "parentId": "5b5f75c686f774094242f19f",
+      "price": 45000,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "5a01ad4786f77450561fAD69",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 3,
+      "price": 40000,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 1
+    }
+  ]
+}

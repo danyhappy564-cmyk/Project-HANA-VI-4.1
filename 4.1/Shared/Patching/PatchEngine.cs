@@ -200,7 +200,8 @@ public class PatchEngine(ISptLogger<PatchEngine> logger, PatchLoader loader, ICl
     private bool AddFilter(PatchDocument doc, PatchOp op, Dictionary<MongoId, TemplateItem> items)
     {
         var add = loader.Resolve(op.Add, doc, null).Select(id => new MongoId(id)).ToList();
-        if (add.Count == 0) return false;
+        // add 가 비어 있어도 slotProps 나 replace 만 쓰는 경우가 있어 그냥 진행한다.
+        if (add.Count == 0 && op.SlotProps is null or { Count: 0 } && !op.Replace) return false;
 
         var guard = op.WhenFilterContains?.Select(id => new MongoId(id)).ToList();
         var touched = false;
@@ -218,6 +219,7 @@ public class PatchEngine(ISptLogger<PatchEngine> logger, PatchLoader loader, ICl
                     {
                         filter.Filter ??= new HashSet<MongoId>();
                         if (guard is not null && !guard.Any(filter.Filter.Contains)) continue;
+                        if (op.Replace) filter.Filter.Clear();
                         foreach (var id in add) filter.Filter.Add(id);
                         touched = true;
                     }
@@ -243,10 +245,13 @@ public class PatchEngine(ISptLogger<PatchEngine> logger, PatchLoader loader, ICl
 
                 if (into == "slot" && !SlotMatches(op, slot, index)) continue;
 
+                ApplySlotProps(doc, op, slot, item);
+
                 foreach (var filter in slot.Properties?.Filters ?? Array.Empty<SlotFilter>())
                 {
                     filter.Filter ??= new HashSet<MongoId>();
                     if (guard is not null && !guard.Any(filter.Filter.Contains)) continue;
+                    if (op.Replace) filter.Filter.Clear();
                     foreach (var id in add) filter.Filter.Add(id);
                     touched = true;
                 }
@@ -254,6 +259,30 @@ public class PatchEngine(ISptLogger<PatchEngine> logger, PatchLoader loader, ICl
         }
 
         return touched;
+    }
+
+    /// <summary>
+    /// 슬롯 자체의 값을 바꾼다 (_max_count, _parent 등).
+    /// "$self" 는 대상 아이템 자신의 ID 로 치환된다. 3.11 의
+    /// `mag._props.Cartridges[0]._parent = magId` 같은 코드에 대응한다.
+    /// </summary>
+    private void ApplySlotProps(PatchDocument doc, PatchOp op, Slot slot, TemplateItem item)
+    {
+        if (op.SlotProps is null or { Count: 0 }) return;
+
+        foreach (var (name, raw) in op.SlotProps)
+        {
+            var value = raw;
+            if (raw.ValueKind == JsonValueKind.String && raw.GetString() == "$self")
+            {
+                value = JsonSerializer.SerializeToElement(item.Id.ToString());
+            }
+
+            if (!PropertyMap.TrySet(slot, name, value, out var error))
+            {
+                logger.Error($"[{doc.ModName}] {doc.SourceFile} ({item.Id}) 슬롯 '{slot.Name}': {error}");
+            }
+        }
     }
 
     private static bool SlotMatches(PatchOp op, Slot slot, int index)

@@ -1,0 +1,112 @@
+{
+  "key": "vssm_receiver",
+  "title": "VSSM 리시버 추가",
+  "enabled": true,
+  "ops": [
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "578395402459774a256959b5",
+      "newId": "AA01ad46a9f774505619AD75",
+      "props": {
+        "Prefab": {
+          "path": "hanavi/receiver_vssm.bundle",
+          "rcid": ""
+        },
+        "Ergonomics": 5
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "AA01ad46a9f774505619AD75"
+      ],
+      "into": "slot",
+      "slots": [
+        "mod_scope"
+      ],
+      "add": [
+        "591c4efa86f7741030027726",
+        "570fd79bd2720bc7458b4583",
+        "570fd6c2d2720bc6458b457f",
+        "558022b54bdc2dac148b458d",
+        "58491f3324597764bc48fa02",
+        "584924ec24597768f12ae244",
+        "5b30b0dc5acfc400153b7124",
+        "6165ac8c290d254f5e6b2f6c",
+        "60a23797a37c940de7062d02",
+        "5d2da1e948f035477b1ce2ba",
+        "5c0505e00db834001b735073",
+        "609a63b6e2ff132951242d09",
+        "584984812459776a704a82a6",
+        "59f9d81586f7744c7506ee62",
+        "570fd721d2720bc5458b4596",
+        "57ae0171245977343c27bfcf",
+        "58d39d3d86f77445bb794ae7",
+        "616554fe50224f204c1da2aa",
+        "5c7d55f52e221644f31bff6a",
+        "616584766ef05c2ce828ef57",
+        "5b3b6dc75acfc47a8773fb1e",
+        "615d8d878004cc50514c3233",
+        "5b2389515acfc4771e1be0c0",
+        "577d128124597739d65d0e56",
+        "618b9643526131765025ab35",
+        "618bab21526131765025ab3f",
+        "5c86592b2e2216000e69e77c",
+        "5a37ca54c4a282000d72296a",
+        "5c064c400db834001d23f468",
+        "58d2664f86f7747fec5834f6",
+        "57c69dd424597774c03b7bbc",
+        "5b3b99265acfc4704b4a1afb",
+        "5aa66a9be5b5b0214e506e89",
+        "5aa66c72e5b5b00016327c93",
+        "5c1cdd302e221602b3137250",
+        "61714b2467085e45ef140b2c",
+        "6171407e50224f204c1da3c5",
+        "61713cc4d8e3106d9806c109",
+        "5b31163c5acfc400153b71cb",
+        "5a33b652c4a28232996e407c",
+        "5a33b2c9c4a282000c5a9511",
+        "59db7eed86f77461f8380365",
+        "5a1ead28fcdbcb001912fa9f",
+        "62811f461d5df4475f46a332",
+        "63fc449f5bd61c6cf3784a88",
+        "6477772ea8a38bb2050ed4db",
+        "64785e7c19d732620e045e15"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "57838ad32459774a17445cd2",
+        "57c44b372459772d2b39b8ce",
+        "651450ce0e00edc794068371"
+      ],
+      "into": "slot",
+      "slots": [
+        "mod_reciever"
+      ],
+      "add": [
+        "AA01ad46a9f774505619AD75"
+      ]
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "AA01ad46a9f774505619AD75",
+      "parentId": "5b5f764186f77447ec5d7714",
+      "price": 13250,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "AA01ad46a9f774505619AD75",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 5,
+      "price": 12460,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 2
+    }
+  ]
+}

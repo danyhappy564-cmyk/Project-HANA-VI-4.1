@@ -1,0 +1,21 @@
+{
+  "_comment": [
+    "HANA-VI's Items — SPT 4.1 포팅본 설정",
+    "enabled / verboseLogging / patches 는 다른 모드와 같은 형식이다.",
+    "itemPacks : 아이템 팩(무기·장비 묶음) on/off. 팩 데이터는 db/packs/ 아래에 원본 그대로 있다.",
+    "패치 내용(수치·아이템 ID)은 db/patches/*.json 에서 고친다."
+  ],
+  "enabled": true,
+  "verboseLogging": true,
+  "patches": {
+    "toygun_rework": true,
+    "ppsh41_tacticalkit": true,
+    "ks23m_tacticalkit": true,
+    "vssm_receiver": true,
+    "vssm_stock": true,
+    "Extended_mags": true,
+    "uwu": true
+  },
+  "oldLocales": false,
+  "lvl1Traders": false
+}

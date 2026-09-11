@@ -29,6 +29,17 @@ got_nums = set(re.findall(r':\s*(-?\d+(?:\.\d+)?)', blob))
 got_text = blob
 
 ts_ids = set(ID.findall(src))
+
+# 원본에 선언만 돼 있고 실제로는 쓰이지 않는 ID 를 걸러낸다.
+# HANA-VI_Items 는 AIO 소스를 복사해 오면서 쓰지 않는 별칭/탄약 목록이 그대로 남아 있다.
+# 판정 기준: 첫 번째 `this.cfg.` 패치 블록보다 앞(=선언부)에서만 등장하는 ID.
+first_block = src.find('this.cfg.')
+if first_block > 0:
+    body = src[first_block:]
+    declared_only = {i for i in ts_ids if i not in body}
+    if declared_only:
+        ts_ids -= declared_only
+        print(f"  (참고) 원본에서 선언만 되고 쓰이지 않는 ID {len(declared_only)}개는 대조에서 제외)\n")
 # _props.X = 123  /  "Key": 123  형태의 숫자
 ts_nums = set(re.findall(r'(?:_props\.\w+\s*=|^\s*\w+\s*:)\s*(-?\d+(?:\.\d+)?)\s*[,;]?\s*$', src, re.M))
 # 로케일 문자열

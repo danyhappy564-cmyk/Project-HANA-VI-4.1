@@ -1,0 +1,108 @@
+{
+  "key": "ks23m_tacticalkit",
+  "title": "KS-23M 전술 키트",
+  "enabled": true,
+  "ops": [
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "560835c74bdc2dc8488b456f",
+      "newId": "5a01ad4786f774505619AD75",
+      "props": {
+        "Accuracy": 60
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5e848cc2988a8701445df1e8"
+      ],
+      "into": "slot",
+      "slots": [
+        "mod_barrel"
+      ],
+      "add": [
+        "5a01ad4786f774505619AD75"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5a01ad4786f774505619AD75"
+      ],
+      "into": "slot",
+      "slots": [
+        "mod_muzzle"
+      ],
+      "add": [
+        "5b86a0e586f7745b600ccb23",
+        "58aeac1b86f77457c419f475",
+        "5addbb825acfc408fb139400",
+        "5f63407e1b231926f2329f15",
+        "5926d33d86f77410de68ebc0",
+        "56e05b06d2720bb2668b4586"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5a01ad4786f774505619AD75"
+      ],
+      "into": "slot",
+      "slots": [
+        "mod_mount"
+      ],
+      "add": [
+        "5a966ec8a2750c00171b3f36",
+        "5addbffe5acfc4001714dfac"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5e848cc2988a8701445df1e8"
+      ],
+      "into": "slot",
+      "slots": [
+        "mod_stock"
+      ],
+      "add": [
+        "5bfe86a20db834001d23e8f7",
+        "5ef1b9f0c64c5d0dfc0571a1",
+        "5addc7005acfc4001669f275"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "5e848cc2988a8701445df1e8"
+      ],
+      "into": "slot",
+      "slots": [
+        "mod_handguard"
+      ],
+      "add": [
+        "606ee5c81246154cad35d65e",
+        "55d45f484bdc2d972f8b456d"
+      ]
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "5a01ad4786f774505619AD75",
+      "parentId": "5b5f75c686f774094242f19f",
+      "price": 450,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "5a01ad4786f774505619AD75",
+      "traderId": "5935c25fb3acc3127c3d8cd9",
+      "count": 3,
+      "price": 400,
+      "currency": "5696686a4bdc2da3298b456a",
+      "loyaltyLevel": 1
+    }
+  ]
+}

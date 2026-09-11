@@ -1,0 +1,136 @@
+{
+  "key": "toygun_rework",
+  "title": "장난감 총(토이건) 실총화",
+  "enabled": true,
+  "ops": [
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "6601546f86889319850bd566",
+      "newId": "6a946d4865f77450561fAD69",
+      "props": {
+        "InitialSpeed": 500,
+        "PenetrationPower": 100,
+        "Damage": 5,
+        "ammoRec": -30
+      }
+    },
+    {
+      "op": "cloneItem",
+      "stage": "preload",
+      "from": "66015dc4aaad2f54cb04c56a",
+      "newId": "6a946d4786f77450561fAD69",
+      "props": {
+        "Recoil": -30
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "6a946d4786f77450561fAD69"
+      ],
+      "into": "cartridge",
+      "slotProps": {
+        "_max_count": 1000
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "66015072e9f84d5680039678"
+      ],
+      "props": {
+        "bFirerate": 3000
+      }
+    },
+    {
+      "op": "setProps",
+      "targets": [
+        "6601546f86889319850bd566"
+      ],
+      "props": {
+        "StackMaxSize": 1000
+      }
+    },
+    {
+      "op": "appendProps",
+      "targets": [
+        "66015072e9f84d5680039678"
+      ],
+      "props": {
+        "weapFireType": [
+          "fullauto"
+        ]
+      }
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "66015072e9f84d5680039678"
+      ],
+      "into": "chamber",
+      "add": [
+        "6a946d4865f77450561fAD69"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "66015dc4aaad2f54cb04c56a"
+      ],
+      "into": "cartridge",
+      "add": [
+        "6a946d4865f77450561fAD69"
+      ]
+    },
+    {
+      "op": "addFilter",
+      "targets": [
+        "66015072e9f84d5680039678"
+      ],
+      "into": "slot",
+      "slots": [
+        "mod_magazine"
+      ],
+      "add": [
+        "6a946d4786f77450561fAD69"
+      ]
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "6a946d4786f77450561fAD69",
+      "parentId": "5b5f754a86f774094242f19b",
+      "price": 8000,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "6a946d4786f77450561fAD69",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 5,
+      "price": 6974,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 1
+    },
+    {
+      "op": "handbookEntry",
+      "stage": "preload",
+      "id": "6a946d4865f77450561fAD69",
+      "parentId": "5b47574386f77428ca22b33b",
+      "price": 500,
+      "canSellOnRagfair": true
+    },
+    {
+      "op": "traderOffer",
+      "stage": "trader",
+      "id": "6a946d4865f77450561fAD69",
+      "traderId": "58330581ace78e27b8b10cee",
+      "count": 500000,
+      "price": 10,
+      "currency": "5449016a4bdc2d6f028b456f",
+      "loyaltyLevel": 1
+    }
+  ]
+}
