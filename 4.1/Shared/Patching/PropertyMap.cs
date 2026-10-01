@@ -19,11 +19,24 @@ internal static class PropertyMap
 {
     private static readonly Dictionary<Type, Dictionary<string, PropertyInfo>> Cache = new();
 
-    private static readonly JsonSerializerOptions ValueOptions = new()
+    // SPT 자체 직렬화 설정(JsonUtil)을 바탕으로 쓴다. 거기에 MongoId 등 SPT 타입 변환기가 들어 있어서,
+    // 기본 설정으로는 "_parent": "<ID>" 나 Slots/ConflictingItems 같은 값을 넣을 수 없었다 (2026-10-02 서버 기동 테스트에서 확인).
+    private static JsonSerializerOptions? _valueOptions;
+
+    private static JsonSerializerOptions ValueOptions
     {
-        PropertyNameCaseInsensitive = true,
-        Converters = { new JsonStringEnumConverter() },
-    };
+        get
+        {
+            if (_valueOptions is not null) return _valueOptions;
+            var spt = SPTarkov.Server.Core.Utils.JsonUtil.JsonSerializerOptionsNoIndent;
+            var options = spt is null ? new JsonSerializerOptions() : new JsonSerializerOptions(spt);
+            options.PropertyNameCaseInsensitive = true;
+            options.Converters.Add(new JsonStringEnumConverter());
+            // SPT 설정이 아직 준비 전이면(정상이라면 없는 일) 다음에 다시 만든다
+            if (spt is not null) _valueOptions = options;
+            return options;
+        }
+    }
 
     private static Dictionary<string, PropertyInfo> For(Type type)
     {

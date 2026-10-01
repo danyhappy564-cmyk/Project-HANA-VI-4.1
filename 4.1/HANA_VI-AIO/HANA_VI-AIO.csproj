@@ -5,10 +5,10 @@
     <Version>4.1.0</Version>
   </PropertyGroup>
 
-  <!-- 공용 패치 엔진을 별도 DLL 이 아니라 '소스 링크'로 가져온다.
-       SPT 는 user/mods 폴더의 모든 DLL 을 모드로 읽으려 하므로, 공용 DLL 을 두면
-       모드가 아닌 파일을 모드로 착각한다. 소스를 각 모드 DLL 안에 컴파일해 넣는다. -->
-  <ItemGroup>
-    <Compile Include="..\Shared\**\*.cs" LinkBase="Shared" />
-  </ItemGroup>
+  <!-- 공용 엔진(Shared/)을 이 모드 전용 이름공간(<RootNamespace>.Shared)으로 복사해 컴파일한다.
+       모드끼리 같은 클래스 이름이 겹치면 SPT DI 가 하나만 등록해서 서버가 죽기 때문이다.
+       자세한 이유는 ../Directory.Build.targets 맨 위 설명. -->
+  <PropertyGroup>
+    <HanaViUseShared>true</HanaViUseShared>
+  </PropertyGroup>
 </Project>

@@ -24,9 +24,10 @@
   </Folder>
 
   <!--
-    Shared/ 는 csproj 가 없다. 별도 DLL 로 만들지 않고 각 모드 프로젝트가
-    <Compile Include="..\Shared\**\*.cs" /> 로 소스를 링크해 가져간다.
-    SPT 가 user/mods 의 모든 DLL 을 모드로 읽으려 하기 때문이다.
+    Shared/ 는 csproj 가 없다. 별도 DLL 로 만들지 않고, 빌드할 때 각 모드 프로젝트가
+    소스를 obj/shared-src/ 로 복사하면서 이름공간을 "<모드>.Shared" 로 바꿔 컴파일한다
+    (4.1/Directory.Build.targets — 모드끼리 클래스 이름이 겹치면 SPT DI 가 하나만 등록해 서버가 죽는다).
+    별도 DLL 로 만들지 않는 이유는 SPT 가 user/mods 의 모든 DLL 을 모드로 읽으려 하기 때문이다.
     그래서 솔루션에는 편집용으로 파일만 걸어 둔다.
   -->
   <Folder Name="/공용 엔진 (Shared)/">
@@ -48,11 +49,13 @@
     <File Path="CLAUDE.md" />
     <File Path="docs/HANA_VI-MAINTENANCE.md" />
     <File Path="docs/PORTING-NOTES.md" />
+    <File Path="docs/missing-bundles.md" />
     <File Path="tools/README.md" />
   </Folder>
 
   <Folder Name="/빌드 설정/">
     <File Path="4.1/Directory.Build.props" />
+    <File Path="4.1/Directory.Build.targets" />
     <File Path=".gitignore" />
   </Folder>
 

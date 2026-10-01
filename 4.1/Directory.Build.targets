@@ -1,0 +1,78 @@
+<Project>
+
+  <!-- ==========================================================================
+       Shared/ 공용 엔진을 모드마다 "다른 이름공간"으로 컴파일한다.
+
+       왜 필요한가:
+         SPT 4.1 의 DependencyInjectionHandler 는 [Injectable] 클래스를 "이름공간.클래스이름" 으로만
+         구분해서 등록한다. Shared/ 를 그대로 4개 모드에 넣으면 HanaVi.Shared.Patching.PatchLoader 가
+         DLL 4개에 하나씩 생기는데, 그중 처음 읽힌 1개만 등록되고 나머지는 조용히 버려진다.
+         그러면 나머지 모드의 로더가 "자기" PatchLoader 를 찾지 못해 서버가 시작하자마자 죽는다:
+           Unable to resolve service for type 'HanaVi.Shared.Patching.PatchLoader'
+           while attempting to activate 'HanaVi.SuperAmmo.Loaders.SuperAmmoPreloadLoader'
+         (2026-10-02, 컨테이너에서 실제 SPT 4.1 서버를 띄워 확인)
+
+       어떻게 하나:
+         빌드 직전에 Shared/**/*.cs 를 obj/ 로 복사하면서 "HanaVi.Shared" 를
+         "<모드 RootNamespace>.Shared" (예: HanaVi.Items.Shared) 로 바꿔 컴파일한다.
+         원본 Shared/ 파일은 그대로이고, #line 지시문 덕분에 컴파일 오류는 원본 파일 위치로 표시된다.
+         모드 쪽 코드는 아래 전역 using 으로 자기 사본을 자동으로 본다 (using HanaVi.Shared.* 를 쓰지 않는다).
+
+       쓰는 법: 모드 csproj 에 <HanaViUseShared>true</HanaViUseShared>
+       ========================================================================== -->
+
+  <PropertyGroup Condition="'$(HanaViUseShared)' == 'true'">
+    <HanaViSharedRoot>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)Shared'))</HanaViSharedRoot>
+    <HanaViSharedNamespace>$(RootNamespace).Shared</HanaViSharedNamespace>
+    <HanaViSharedOut>$(BaseIntermediateOutputPath)shared-src\</HanaViSharedOut>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(HanaViUseShared)' == 'true'">
+    <HanaViSharedSource Include="$(HanaViSharedRoot)\**\*.cs" />
+    <Using Include="$(HanaViSharedNamespace).Patching" />
+    <Using Include="$(HanaViSharedNamespace).Packs" />
+    <Using Include="$(HanaViSharedNamespace).Loaders" />
+  </ItemGroup>
+
+  <UsingTask TaskName="HanaViRenameSharedNamespace" TaskFactory="RoslynCodeTaskFactory"
+             AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+    <ParameterGroup>
+      <Sources ParameterType="Microsoft.Build.Framework.ITaskItem[]" Required="true" />
+      <SharedRoot ParameterType="System.String" Required="true" />
+      <OutDir ParameterType="System.String" Required="true" />
+      <NewNamespace ParameterType="System.String" Required="true" />
+      <Generated ParameterType="Microsoft.Build.Framework.ITaskItem[]" Output="true" />
+    </ParameterGroup>
+    <Task>
+      <Using Namespace="System.IO" />
+      <Code Type="Fragment" Language="cs"><![CDATA[
+        var made = new List<ITaskItem>();
+        var root = SharedRoot.TrimEnd('\\', '/');
+        foreach (var src in Sources)
+        {
+            var full = src.GetMetadata("FullPath");
+            var rel = full.Substring(root.Length).TrimStart('\\', '/');
+            var dst = System.IO.Path.Combine(OutDir, rel);
+            Directory.CreateDirectory(System.IO.Path.GetDirectoryName(dst));
+            var text = "#line 1 \"" + full + "\"\n"
+                     + File.ReadAllText(full).Replace("HanaVi.Shared", NewNamespace);
+            // 내용이 같으면 다시 쓰지 않는다 (불필요한 재컴파일 방지)
+            if (!File.Exists(dst) || File.ReadAllText(dst) != text) File.WriteAllText(dst, text);
+            made.Add(new TaskItem(dst));
+        }
+        Generated = made.ToArray();
+      ]]></Code>
+    </Task>
+  </UsingTask>
+
+  <Target Name="HanaViGenerateSharedSources" BeforeTargets="CoreCompile" Condition="'$(HanaViUseShared)' == 'true'">
+    <HanaViRenameSharedNamespace Sources="@(HanaViSharedSource)" SharedRoot="$(HanaViSharedRoot)"
+                                 OutDir="$(HanaViSharedOut)" NewNamespace="$(HanaViSharedNamespace)">
+      <Output TaskParameter="Generated" ItemName="HanaViGeneratedShared" />
+    </HanaViRenameSharedNamespace>
+    <ItemGroup>
+      <Compile Include="@(HanaViGeneratedShared)" />
+    </ItemGroup>
+  </Target>
+
+</Project>

@@ -3384,7 +3384,7 @@
       ],
       "into": "cartridge",
       "slotProps": {
-        "_parent": "35ARSENAL",
+        "_parent": "$self",
         "_max_count": 35
       },
       "replace": true,
@@ -3407,7 +3407,7 @@
         "6196365d58ef8c428c287da1",
         "64b8725c4b75259c590fa899"
       ],
-      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다. 3.11 원본은 _parent 에 아이템 ID 가 아닌 \"35ARSENAL\" 를 넣었다. 4.1 은 ID 만 받으므로 다른 탄창들처럼 $self 로 바꿨다."
     },
     {
       "op": "cloneItem",
@@ -3439,7 +3439,7 @@
       ],
       "into": "cartridge",
       "slotProps": {
-        "_parent": "35ARSENAL",
+        "_parent": "$self",
         "_max_count": 40
       },
       "replace": true,
@@ -3462,7 +3462,7 @@
         "6196365d58ef8c428c287da1",
         "64b8725c4b75259c590fa899"
       ],
-      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다. 3.11 원본은 _parent 에 아이템 ID 가 아닌 \"35ARSENAL\" 를 넣었다. 4.1 은 ID 만 받으므로 다른 탄창들처럼 $self 로 바꿨다."
     },
     {
       "op": "cloneItem",
@@ -3494,7 +3494,7 @@
       ],
       "into": "cartridge",
       "slotProps": {
-        "_parent": "45ARSENAL",
+        "_parent": "$self",
         "_max_count": 45
       },
       "replace": true,
@@ -3517,7 +3517,7 @@
         "6196365d58ef8c428c287da1",
         "64b8725c4b75259c590fa899"
       ],
-      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다. 3.11 원본은 _parent 에 아이템 ID 가 아닌 \"45ARSENAL\" 를 넣었다. 4.1 은 ID 만 받으므로 다른 탄창들처럼 $self 로 바꿨다."
     },
     {
       "op": "cloneItem",
@@ -3549,7 +3549,7 @@
       ],
       "into": "cartridge",
       "slotProps": {
-        "_parent": "FN57BLACKEXTENDED",
+        "_parent": "$self",
         "_max_count": 30
       },
       "replace": true,
@@ -3562,7 +3562,7 @@
         "5cc80f8fe4a949033b0224a2",
         "5cc80f79e4a949033c7343b2"
       ],
-      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다. 3.11 원본은 _parent 에 아이템 ID 가 아닌 \"FN57BLACKEXTENDED\" 를 넣었다. 4.1 은 ID 만 받으므로 다른 탄창들처럼 $self 로 바꿨다."
     },
     {
       "op": "cloneItem",
@@ -3594,7 +3594,7 @@
       ],
       "into": "cartridge",
       "slotProps": {
-        "_parent": "FN57BLACKEXTENDED",
+        "_parent": "$self",
         "_max_count": 30
       },
       "replace": true,
@@ -3607,7 +3607,7 @@
         "5cc80f8fe4a949033b0224a2",
         "5cc80f79e4a949033c7343b2"
       ],
-      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다. 3.11 원본은 _parent 에 아이템 ID 가 아닌 \"FN57BLACKEXTENDED\" 를 넣었다. 4.1 은 ID 만 받으므로 다른 탄창들처럼 $self 로 바꿨다."
     },
     {
       "op": "cloneItem",
@@ -3639,7 +3639,7 @@
       ],
       "into": "cartridge",
       "slotProps": {
-        "_parent": "SCARFAL",
+        "_parent": "$self",
         "_max_count": 30
       },
       "replace": true,
@@ -3654,7 +3654,7 @@
         "6529243824cbe3c74a05e5c1",
         "6529302b8c26af6326029fb7"
       ],
-      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다."
+      "_note": "원본이 Filter 를 통째로 새 배열로 덮어썼으므로 replace 다. 3.11 원본은 _parent 에 아이템 ID 가 아닌 \"SCARFAL\" 를 넣었다. 4.1 은 ID 만 받으므로 다른 탄창들처럼 $self 로 바꿨다."
     },
     {
       "op": "addFilter",

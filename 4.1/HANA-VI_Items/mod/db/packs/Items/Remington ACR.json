@@ -1045,7 +1045,7 @@
 			},
 			"BackgroundColor": "blue",
 			"ExaminedByDefault": true,
-			"Ergonomics": "11"
+			"Ergonomics": 11
 		},
 		"locales": {
 			"en": {

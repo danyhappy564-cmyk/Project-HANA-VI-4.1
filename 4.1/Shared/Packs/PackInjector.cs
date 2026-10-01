@@ -360,12 +360,14 @@ public class PackInjector(
         {
             foreach (var (presetId, value) in presets)
             {
-                if (value is null) continue;
+                // 3.11 팩 데이터 중 {"ItemPresets": {"ItemPresets": {}}} 처럼 한 번 더 감싼 빈 묶음이 있다 (qbz191).
+                // 3.11 은 "ItemPresets" 라는 가짜 프리셋을 넣었을 뿐이라, ID 가 아닌 키는 조용히 건너뛴다.
+                if (value is null || !MongoIds.TryParse(presetId, out var presetMongoId)) continue;
 
                 try
                 {
                     var preset = jsonUtil.Deserialize<Preset>(value.ToJsonString());
-                    if (preset is not null) globals.ItemPresets[new MongoId(presetId)] = preset;
+                    if (preset is not null) globals.ItemPresets[presetMongoId] = preset;
                 }
                 catch (Exception ex)
                 {

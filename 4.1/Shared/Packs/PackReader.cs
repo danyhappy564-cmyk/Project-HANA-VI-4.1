@@ -35,7 +35,10 @@ public class PackReader(ISptLogger<PackReader> logger, ModHelper modHelper)
             if (_manifests is not null) return _manifests;
 
             var path = Path.Combine(ModFolder, "db", "packs.json");
-            _manifests = ReadJson<List<PackManifest>>(path) ?? new List<PackManifest>();
+            // packs.json 맨 앞의 {"_comment": [...]} 같은 설명용 항목은 팩이 아니므로 뺀다 (folder 가 없는 항목)
+            _manifests = (ReadJson<List<PackManifest>>(path) ?? new List<PackManifest>())
+                .Where(m => !string.IsNullOrEmpty(m.Folder))
+                .ToList();
             return _manifests;
         }
     }

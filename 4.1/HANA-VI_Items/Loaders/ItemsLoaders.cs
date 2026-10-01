@@ -1,6 +1,3 @@
-using HanaVi.Shared.Loaders;
-using HanaVi.Shared.Packs;
-using HanaVi.Shared.Patching;
 using SPTarkov.Common.Models.Logging;
 using SPTarkov.DI.Annotations;
 using SPTarkov.Server.Core.DI;
@@ -72,6 +69,19 @@ public class ItemsPackLoader(
         logger.Success($"[{ItemsMod.Name}] 팩 {packs}개 / 아이템 {items}개 / 의류 {clothes}개 등록");
         return Task.CompletedTask;
     }
+}
+
+/// <summary>
+/// 설정 패치 중 새 아이템을 만드는 작업 (stage: preload) — 확장 탄창 74종, TT-33K, 전술키트 부품 등.
+/// 팩(+50) 다음에 돌려서 팩 아이템을 복제 원본으로 써도 되게 한다.
+/// (이 로더가 빠져 있어서 preload 작업이 통째로 안 돌고, 상인 판매만 없는 아이템으로 등록되던 문제가 있었다)
+/// </summary>
+[Injectable(TypePriority = OnLoadOrder.Preload + 55)]
+public class ItemsPreloadLoader(
+    ISptLogger<PreloadLoaderBase> logger, PatchLoader loader, PatchEngine engine, TemplateTable templates
+) : PreloadLoaderBase(logger, loader, engine, templates)
+{
+    protected override string ModName => ItemsMod.Name;
 }
 
 /// <summary>팩 아이템의 이름·설명 + mod/db/locales/global/*.json.</summary>

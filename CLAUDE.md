@@ -53,6 +53,15 @@ tools/               검증 스크립트
 번들·팩 데이터·구버전 빌드 파일은 전부 `4.1/` 로 옮겼거나 지웠고,
 이 폴더에는 대조에 필요한 `mod.ts` 4개만 남겨 뒀습니다.
 
+**`Shared/` 는 모드마다 다른 이름공간으로 컴파일됩니다.** 빌드할 때 `4.1/Directory.Build.targets` 가
+`HanaVi.Shared.*` 를 `HanaVi.Aio.Shared.*` / `HanaVi.Items.Shared.*` … 로 바꾼 사본을 컴파일합니다.
+SPT 4.1 DI 는 `[Injectable]` 클래스를 "이름공간.이름" 으로만 구분해서, 같은 이름이 DLL 여러 개에 있으면
+하나만 등록하고 나머지 모드는 서버 시작 때 죽습니다. 그래서 **모드 코드에 `using HanaVi.Shared.*;` 를 쓰지 마십시오**
+(전역 using 으로 자기 사본이 자동으로 잡힙니다). 새 모드 csproj 에는 `<HanaViUseShared>true</HanaViUseShared>` 만 넣으면 됩니다.
+
+**패치에 `stage: "preload"` 작업이 있는 모드는 `PreloadLoaderBase` 를 상속한 로더가 반드시 있어야 합니다.**
+없으면 그 작업이 오류 없이 통째로 건너뛰어집니다 (Items 가 이랬다가 2026-10-02 서버 기동 테스트에서 발견).
+
 **번들은 `4.1/<모드>/mod/bundles/` 에 있습니다.** `mod/` 아래 파일은
 `Directory.Build.props` 의 `<None Include="mod\**\*" />` 가 출력 폴더로 자동 복사하므로,
 csproj 에 따로 적을 필요가 없습니다.
