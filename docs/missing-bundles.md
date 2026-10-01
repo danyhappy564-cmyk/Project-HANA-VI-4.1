@@ -1,12 +1,18 @@
-# HANA-VI_Items — 저장소에 없는 번들 파일 목록
+# HANA-VI_Items — GitHub 에 올리지 않은 번들 파일 목록
 
-`4.1/HANA-VI_Items/mod/bundles.json` 에는 적혀 있지만 `4.1/HANA-VI_Items/mod/bundles/` 에 **파일이 없는 번들 301개**와 **크기가 0바이트인(깨진) 번들 1개**입니다.
-2026-10-02 실제 SPT 4.1 서버를 띄워 확인했습니다 (`Could not find bundle ... for mod HANA-VI's Items`).
+`4.1/HANA-VI_Items/mod/bundles.json` 에는 적혀 있지만 **용량 때문에 GitHub 에 일부러 올리지 않은 번들 301개**와
+**크기가 0바이트인(깨진) 번들 1개**입니다. R_F 님이 따로 보관하고 있다가 직접 넣습니다 (2026-10-02 확인).
 
-이 번들을 쓰는 아이템은 서버에는 등록되지만, 게임에서 3D 모델을 못 불러와 **안 보이거나 클라이언트 오류**가 날 수 있습니다.
+번들이 없으면 그 아이템은 서버에는 등록되지만, 게임에서 3D 모델을 못 불러와 **안 보이거나 클라이언트 오류**가 납니다.
+서버 로그에는 `Could not find bundle ... for mod HANA-VI's Items` 로 뜹니다.
 
-**해결:** 3.11 때 쓰던 `HANA-VI_Items` 모드 폴더(또는 원본 팩 배포 파일)의 `bundles\` 에서 아래 파일들을 찾아
-`4.1/HANA-VI_Items/mod/bundles/` 의 같은 경로에 넣고 커밋하면 됩니다. 폴더 구조(예: `mags/63tan.bundle`)를 그대로 유지해야 합니다.
+**넣는 곳 (둘 중 하나):**
+- `4.1/HANA-VI_Items/mod/bundles/` 의 같은 경로 (예: `mags/63tan.bundle`) — 빌드할 때 SPT 로 같이 복사되고 zip 에도 들어갑니다.
+  이 경로들은 `.gitignore` 에 등록해 둬서 **넣어도 커밋되지 않습니다.**
+- 또는 설치된 `SPT_Runtime\user\mods\HANA-VI_Items\bundles\` 에 직접. (빌드·배포는 이미 있는 파일을 지우지 않습니다)
+
+`assets/virtus_hg_sur.bundle` 은 저장소에 0바이트로 올라가 있어서, 진짜 파일로 덮어쓰면 git 에 "수정됨" 으로 보입니다.
+올릴지 말지는 정하시면 됩니다.
 
 ## 0바이트(깨진) 파일
 

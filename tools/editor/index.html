@@ -9,12 +9,14 @@
   --bg: #f6f7f9; --panel: #ffffff; --text: #1d2330; --muted: #6b7385; --line: #dfe3ea;
   --accent: #2f6fdf; --accent-weak: #e7efff; --ok: #1f8a4c; --warn: #b7791f; --bad: #c53030;
   --note-bg: #fff8e6; --note-line: #f1d699; --input: #ffffff; --chip: #eef1f5;
+  --bad-bg: #fdecec; --warn-bg: #fff6e0;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #14171d; --panel: #1c2028; --text: #e6e9ef; --muted: #98a1b3; --line: #2e3440;
     --accent: #6c9cff; --accent-weak: #22304d; --ok: #4cc38a; --warn: #e0a84b; --bad: #ff6b6b;
     --note-bg: #2a2516; --note-line: #5a4a20; --input: #151920; --chip: #262c37;
+    --bad-bg: #3a1d1d; --warn-bg: #3a2e14;
   }
 }
 * { box-sizing: border-box; }
@@ -25,6 +27,8 @@ header .spacer { flex: 1; }
 button { font: inherit; border: 1px solid var(--line); background: var(--panel); color: var(--text); border-radius: 6px; padding: 5px 12px; cursor: pointer; }
 button:hover { border-color: var(--accent); }
 button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+button.danger:hover { border-color: var(--bad); color: var(--bad); }
+button.small { padding: 1px 8px; font-size: 12px; }
 button:disabled { opacity: .5; cursor: default; }
 input[type=text], textarea, select { font: inherit; color: var(--text); background: var(--input); border: 1px solid var(--line); border-radius: 5px; padding: 4px 7px; }
 input[type=text]:focus, textarea:focus { outline: 2px solid var(--accent-weak); border-color: var(--accent); }
@@ -38,9 +42,10 @@ nav .mod > summary { padding: 9px 14px; font-weight: 600; cursor: pointer; }
 nav a { display: flex; gap: 6px; align-items: center; padding: 4px 14px 4px 24px; color: var(--text); text-decoration: none; font-size: 13px; }
 nav a:hover { background: var(--accent-weak); }
 nav a.active { background: var(--accent-weak); color: var(--accent); font-weight: 600; }
+nav a.create { color: var(--accent); }
 nav a .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; background: var(--muted); }
 nav a .dot.on { background: var(--ok); }
-nav a .dirty { color: var(--warn); margin-left: auto; }
+nav a .dirty { color: var(--warn); margin-left: auto; white-space: nowrap; }
 nav .group { padding: 6px 14px 2px 24px; font-size: 11.5px; color: var(--muted); }
 main { flex: 1; padding: 18px 22px 80px; min-width: 0; max-width: 1100px; }
 h2 { margin: 0 0 4px; font-size: 19px; }
@@ -48,15 +53,19 @@ h2 { margin: 0 0 4px; font-size: 19px; }
 .note { background: var(--note-bg); border: 1px solid var(--note-line); border-radius: 6px; padding: 6px 10px; margin: 6px 0; font-size: 12.5px; white-space: pre-wrap; }
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; margin: 10px 0; }
 .card h3 { margin: 0 0 8px; font-size: 14px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.card h3 .grow { flex: 1; }
 .badge { font-size: 11px; padding: 1px 7px; border-radius: 10px; background: var(--chip); color: var(--muted); font-weight: 500; }
 .badge.stage-preload { background: #e8f4ff; color: #1c5fa8; }
 .badge.stage-trader { background: #f3e8ff; color: #6b2fa8; }
+.badge.new { background: var(--warn-bg); color: var(--warn); }
 @media (prefers-color-scheme: dark) { .badge.stage-preload { background: #1d3550; color: #9cc8ff; } .badge.stage-trader { background: #34224d; color: #d1b0ff; } }
-.field { display: grid; grid-template-columns: 210px 1fr; gap: 4px 12px; align-items: start; padding: 4px 0; border-top: 1px dashed var(--line); }
+.field { display: grid; grid-template-columns: 210px 1fr auto; gap: 4px 12px; align-items: start; padding: 4px 0; border-top: 1px dashed var(--line); }
 .field:first-child { border-top: 0; }
 .field > label { color: var(--muted); font-size: 12.5px; padding-top: 5px; word-break: break-all; }
 .field > label b { color: var(--text); font-weight: 600; display: block; }
+.field > .x { padding-top: 3px; }
 .nested { border-left: 3px solid var(--line); padding-left: 10px; }
+.addrow { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; padding: 6px 0 2px; border-top: 1px dashed var(--line); font-size: 12.5px; }
 .hint { font-size: 12px; color: var(--muted); margin-top: 2px; }
 .hint.bad { color: var(--bad); }
 .name { color: var(--ok); }
@@ -75,7 +84,7 @@ th { font-size: 12px; color: var(--muted); font-weight: 600; }
 .muted { color: var(--muted); }
 .savebar { position: fixed; bottom: 0; left: 0; right: 0; background: var(--panel); border-top: 1px solid var(--line); padding: 9px 16px; display: none; gap: 10px; align-items: center; z-index: 20; box-shadow: 0 -4px 14px rgba(0,0,0,.08); }
 .savebar.show { display: flex; }
-.toast { position: fixed; right: 16px; bottom: 64px; max-width: 520px; background: var(--text); color: var(--bg); padding: 9px 14px; border-radius: 8px; z-index: 30; white-space: pre-wrap; display: none; }
+.toast { position: fixed; right: 16px; bottom: 64px; max-width: 560px; background: var(--text); color: var(--bg); padding: 9px 14px; border-radius: 8px; z-index: 40; white-space: pre-wrap; display: none; }
 .toast.show { display: block; }
 pre.log { background: var(--input); border: 1px solid var(--line); border-radius: 6px; padding: 10px; max-height: 55vh; overflow: auto; font-size: 12px; white-space: pre-wrap; }
 .tools { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 8px 0 4px; }
@@ -83,9 +92,23 @@ details.ids summary { cursor: pointer; font-size: 12px; color: var(--muted); }
 details.ids div { font-size: 12px; }
 input.num { width: 140px; }
 input.wide { width: 100%; }
+.check { border-radius: 8px; padding: 8px 12px; margin: 8px 0; font-size: 12.5px; }
+.check.bad { background: var(--bad-bg); border: 1px solid var(--bad); }
+.check.warn { background: var(--warn-bg); border: 1px solid var(--warn); }
+.check.ok { background: var(--chip); color: var(--muted); }
+.check ul { margin: 4px 0 0; padding-left: 18px; }
+.modal-back { position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 30; display: flex; align-items: flex-start; justify-content: center; padding-top: 8vh; }
+.modal { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; width: min(720px, calc(100vw - 32px)); max-height: 80vh; display: flex; flex-direction: column; box-shadow: 0 10px 40px rgba(0,0,0,.25); }
+.modal header { position: static; border-radius: 10px 10px 0 0; }
+.modal .results { overflow-y: auto; padding: 4px 0; }
+.modal .results div { padding: 5px 16px; cursor: pointer; display: flex; gap: 10px; }
+.modal .results div:hover { background: var(--accent-weak); }
+.recipes { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 8px; }
+.recipes button { text-align: left; padding: 8px 10px; }
+.recipes button small { display: block; color: var(--muted); font-size: 11.5px; }
 @media (max-width: 820px) {
   .layout { display: block; } nav { width: auto; position: static; max-height: 40vh; }
-  .field { grid-template-columns: 1fr; }
+  .field { grid-template-columns: 1fr auto; } .field > label { grid-column: 1 / -1; }
 }
 </style>
 </head>
@@ -94,6 +117,7 @@ input.wide { width: 100%; }
   <h1>HANA-VI 설정 편집기</h1>
   <span class="muted" id="status">불러오는 중…</span>
   <span class="spacer"></span>
+  <button id="btnSearch">🔍 아이템 찾기</button>
   <button id="btnSettings">SPT 경로 / 적용 설정</button>
   <button id="btnBuild">빌드 + 배포</button>
   <button id="btnQuit">편집기 끄기</button>
@@ -110,10 +134,18 @@ input.wide { width: 100%; }
   <button class="primary" id="btnSaveAll">모두 저장</button>
 </div>
 <div class="toast" id="toast"></div>
+<datalist id="dl-props"></datalist>
+<datalist id="dl-slotprops"></datalist>
 
 <script>
 "use strict";
 const TOKEN = "__EDITOR_TOKEN__";
+
+// SPT 4.1 TemplateItemProperties 의 JSON 이름 → 값 종류 (n 숫자 / b 켜기끄기 / s 글자 / i 아이템ID / l 목록 / a 목록(객체) / o 묶음)
+// SPTushonka.Server.Core 4.1.5 어셈블리에서 리플렉션으로 뽑았다.
+const PROP_TYPES = {"Accuracy":"n","AdditionalAnimationLayer":"n","AdjustCollimatorsToTrajectory":"b","AdjustableOpticSensitivity":"n","AdjustableOpticSensitivityMax":"n","AimPlane":"n","AimSensitivity":"o","AllowFeed":"b","AllowJam":"b","AllowMisfire":"b","AllowOverheat":"b","AllowSlide":"b","AllowSpawnOnLocations":"l","AmbientCompressorSendLevel":"n","AmbientVolume":"n","AmmoLifeTimeSec":"n","AmmoTooltipClass":"s","AnimationVariantsNumber":"n","AppliedHeadRotation":"o","AppliedTrunkRotation":"o","ArmingTime":"n","ArmorDamage":"n","ArmorDistanceDistanceDamage":"o","ArmorMaterial":"s","ArmorType":"s","AvailableAsDefault":"b","BackBlastConeAngle":"n","BackblastDamage":"o","BackblastDistance":"n","BackgroundColor":"s","BallisticCoeficient":"n","BaseMalfunctionChance":"n","BeltMagazineRefreshCount":"n","BipodCameraSnapMultiplier":"n","BipodOutOfStaminaBreathMultiplier":"n","BipodRecoilMultiplier":"n","BipodReturnHandSpeedMultiplier":"n","Blindness":"o","BlindnessProtection":"n","BlocksArmorVest":"b","BlocksCollapsible":"b","BlocksEarpiece":"b","BlocksEyewear":"b","BlocksFaceCover":"b","BlocksFolding":"b","BlocksHeadwear":"b","BluntThroughput":"n","BodyPartPriority":"l","BoltAction":"b","BulletDiameterMilimeters":"n","BulletDiameterMillimeters":"n","BulletMassGram":"n","BurstShotsCount":"n","Caliber":"s","CalibrationDistances":"a","CameraSnap":"n","CameraToWeaponAngleSpeedRange":"o","CameraToWeaponAngleStep":"n","CanAdmin":"b","CanBeHiddenDuringThrow":"b","CanFast":"b","CanHit":"b","CanPlantOnGround":"b","CanPutIntoDuringTheRaid":"b","CanQueueSecondShot":"b","CanRequireOnRagfair":"b","CanSellOnRagfair":"b","CanUnloadAmmoByPlayer":"b","CantRemoveFromSlotsDuringRaid":"l","Cartridges":"a","CenterOfImpact":"n","Chambers":"a","ChangePriceCoef":"n","CheckOverride":"n","CheckTimeModifier":"n","ClientPlayerCompressorSendLevel":"n","ColdMax":"n","ColliderScaleMultiplier":"o","Color":"o","CompactHandling":"b","CompressorAttack":"n","CompressorGain":"n","CompressorRelease":"n","CompressorThreshold":"n","ComputableUnitDamage":"o","ComputableUnitSize":"n","ComputableUnitType":"s","ConfigPathStr":"s","ConflictingItems":"l","ContainerSpawnChanceModifier":"n","Contusion":"o","ContusionDistance":"n","CoolFactor":"n","CoolFactorGun":"n","CoolFactorGunMods":"n","CreditsPrice":"n","CustomAimPlane":"s","Damage":"n","DeafStrength":"s","DeflectionConsumption":"n","DepthFade":"n","Description":"s","Deterioration":"n","DeviationCurve":"n","DeviationMax":"n","DialogId":"i","DiffuseIntensity":"n","DiscardLimit":"n","DiscardingBlock":"b","DisplayOnModel":"b","Distortion":"n","DogTagQualities":"b","DoubleActionAccuracyPenalty":"n","DoubleActionAccuracyPenaltyMult":"n","DropSoundType":"s","DryVolume":"n","Durability":"n","DurabilityBurnModificator":"n","DurabilityBurnRatio":"n","EQBand1Frequency":"n","EQBand1Gain":"n","EQBand1Q":"n","EQBand2Frequency":"n","EQBand2Gain":"n","EQBand2Q":"n","EQBand3Frequency":"n","EQBand3Gain":"n","EQBand3Q":"n","EffectiveDistance":"n","EffectsReturnsCompressorSendLevel":"n","EffectsReturnsGroupVolume":"n","EmitTime":"n","EnvCommonCompressorSendLevel":"n","EnvNatureCompressorSendLevel":"n","EnvTechnicalCompressorSendLevel":"n","Ergonomics":"n","ExamineExperience":"n","ExamineTime":"n","ExaminedByDefault":"b","ExplDelay":"n","ExplosionEffectType":"s","ExplosionRadius":"n","ExplosionStrength":"n","ExplosionType":"s","ExtraSizeDown":"n","ExtraSizeForceAdd":"b","ExtraSizeLeft":"n","ExtraSizeRight":"n","ExtraSizeUp":"n","FaceShieldComponent":"b","FaceShieldMask":"s","FixedPrice":"b","FlareTypes":"l","Foldable":"b","FoldedSlot":"s","ForbidMissingVitalParts":"b","ForbidNonEmptyContainers":"b","FragmentType":"s","FragmentationChance":"n","FragmentsCount":"n","FuzeArmTimeSec":"n","GridLayoutName":"s","Grids":"a","GunsCompressorSendLevel":"n","HasGrenaderComponent":"b","HasHinge":"b","HasShoulderContact":"b","HeadphonesMixerVolume":"n","HeatFactor":"n","HeatFactorByShot":"n","HeatFactorGun":"n","HeatMin":"n","HeavyBleedingDelta":"n","Height":"n","HideEntrails":"b","HighpassFreq":"n","HighpassResonance":"n","HipAccuracyRestorationDelay":"n","HipAccuracyRestorationSpeed":"n","HipInnaccuracyGain":"n","Indestructibility":"n","InitialSpeed":"n","InsuranceDisabled":"b","Intensity":"n","IronSightRange":"n","IsAdjustableOptic":"b","IsAlwaysAvailableForInsurance":"b","IsAnimated":"b","IsBeltMachineGun":"b","IsEncoded":"b","IsFlareGun":"b","IsFpsStuck":"b","IsGlitch":"b","IsGrenadeLauncher":"b","IsLightAndSoundShot":"b","IsLockedafterEquip":"b","IsMagazineForStationaryWeapon":"b","IsMotionBlurred":"b","IsMountable":"b","IsNoisy":"b","IsOneoff":"b","IsPixelated":"b","IsRagfairCurrency":"b","IsSecretExitRequirement":"b","IsShoulderContact":"b","IsSilencer":"b","IsSpecialSlotOnly":"b","IsStationaryWeapon":"b","IsUnbuyable":"b","IsUndiscardable":"b","IsUngivable":"b","IsUnremovable":"b","IsUnsaleable":"b","ItemSound":"s","KeyIds":"l","LayoutName":"s","LeanWeaponAgainstBody":"b","LeftHandItem":"b","LightAndSoundShotAngle":"n","LightAndSoundShotSelfContusionStrength":"n","LightAndSoundShotSelfContusionTime":"n","LightBleedingDelta":"n","LinkedWeapon":"s","LoadUnloadModifier":"n","LootExperience":"n","Loudness":"n","Lower75Prefab":"o","LowpassFreq":"n","MagazineWithBelt":"b","MainTexColorCoef":"n","MalfFeedChance":"n","MalfMisfireChance":"n","MalfunctionChance":"n","ManualBoltCatch":"b","Mask":"s","MaskSize":"n","MaterialType":"s","MaxDurability":"n","MaxExplosionDistance":"n","MaxFragmentsCount":"n","MaxHpResource":"n","MaxMarkersCount":"n","MaxOpticZoom":"n","MaxRepairDegradation":"n","MaxRepairKitDegradation":"n","MaxRepairResource":"n","MaxResource":"n","MaxUsages":"n","MaximumNumberOfUsage":"n","MergesWithChildren":"b","MetascoreGroup":"s","MinExplosionDistance":"n","MinFragmentsCount":"n","MinMaxFov":"o","MinRepairDegradation":"n","MinRepairKitDegradation":"n","MinTimeToContactExplode":"n","MinimumTemperatureValue":"n","MisfireChance":"n","ModesCount":"o","MountCameraSnapMultiplier":"n","MountHorizontalRecoilMultiplier":"n","MountReturnSpeedHandMultiplier":"n","MountVerticalRecoilMultiplier":"n","MountingHorizontalOutOfBreathMultiplier":"n","MountingPosition":"o","MountingVerticalOutOfBreathMultiplier":"n","MustBoltBeOpennedForExternalReload":"b","MustBoltBeOpennedForInternalReload":"b","Name":"s","NoFiremodeOnBoltcatch":"b","NoiseIntensity":"n","NoiseScale":"n","NotShownInSlot":"b","NpcCompressorSendLevel":"n","ObservedPlayerCompressorSendLevel":"n","OperatingResource":"n","OpticCalibrationDistances":"l","ParticleCapacity":"n","ParticleDuration":"n","ParticleSize":"n","PenetrationChanceObstacle":"n","PenetrationDamageMod":"n","PenetrationPower":"n","PenetrationPowerDeviation":"n","PenetrationPowerDiviation":"n","PitchLimitProneBipod":"o","PixelationBlockCount":"n","PlayFuzeSound":"b","PostRecoilHorizontalRangeHandRotation":"o","PostRecoilVerticalRangeHandRotation":"o","Prefab":"o","PrimaryConsumption":"n","PrimaryDistance":"n","ProfileVersions":"l","ProgressRecoilAngleOnStable":"o","ProjectileCount":"n","PropagationSpeed":"n","QuestItem":"b","QuestStashMaxCount":"n","RagFairCommissionModifier":"n","RaidModdable":"b","RampPalette":"s","RampShift":"n","Rarity":"s","RarityPvE":"s","Recoil":"n","RecoilAngle":"n","RecoilCamera":"n","RecoilCategoryMultiplierHandRotation":"n","RecoilCenter":"o","RecoilDampingHandRotation":"n","RecoilForceBack":"n","RecoilForceUp":"n","RecoilPosZMult":"n","RecoilReturnPathDampingHandRotation":"n","RecoilReturnPathOffsetHandRotation":"n","RecoilReturnSpeedHandRotation":"n","RecoilStableAngleIncreaseStep":"n","RecoilStableIndexShot":"n","RecolDispersion":"n","ReloadMagType":"s","ReloadMode":"s","RemoveShellAfterFire":"b","RepairComplexity":"n","RepairCost":"n","RepairQuality":"n","RepairSpeed":"n","RepairStrategyTypes":"l","RepairType":"s","ResetAfterShot":"b","Resource":"n","Retractable":"b","RicochetChance":"n","RicochetParams":"o","RigLayoutName":"s","RolloffMultiplier":"n","RotationCenter":"o","RotationCenterNoStock":"o","RoughnessCoef":"n","ScavKillExpPenalty":"n","ScavKillExpPenaltyPVE":"n","ScavKillStandingPenalty":"n","ScavKillStandingPenaltyPVE":"n","ScopesCount":"n","SearchSound":"s","SecondryConsumption":"n","SecondryDistance":"n","SendToClient":"b","ShiftsAimCamera":"n","ShortName":"s","ShotgunDispersion":"n","ShotsGroupSettings":"a","ShowBullet":"b","ShowHitEffectOnExplode":"b","Side":"l","SightModesCount":"n","SightingRange":"n","SingleFireRate":"n","SizeReduceRight":"n","SlashPenetration":"n","Slots":"a","SpawnChance":"n","SpawnFilter":"a","SpecularCoef":"n","SpeedRetardation":"n","StabPenetration":"n","StackMaxRandom":"n","StackMaxSize":"n","StackMinRandom":"n","StackObjectsCount":"n","StackSlots":"a","StaminaBurnPerDamage":"n","StaminaBurnRate":"n","StimulatorBuffs":"s","Strength":"n","TacticalReloadFixation":"n","TacticalReloadStiffnes":"o","TagColor":"n","TagName":"s","TargetItemFilter":"l","ThrowType":"s","ToolModdable":"b","Tracer":"b","TracerColor":"s","TracerDistance":"n","TradersDiscount":"n","TradersDiscountPVE":"n","UniqueAnimationModID":"n","Unlootable":"b","UnlootableFromSide":"l","UnlootableFromSlot":"s","UseAltMountBone":"b","UseAmmoWithoutShell":"b","UsePrefab":"o","Velocity":"n","VisibleAmmoRangesString":"s","WeaponRecoilSettings":"o","Weight":"n","WeightMultipliers":"o","Width":"n","WithAnimatorAiming":"b","YawLimitProneBipod":"o","ZoomSensitivity":"n","Zooms":"a","airDropTemplateId":"s","ammoAccr":"n","ammoCaliber":"s","ammoDist":"n","ammoHear":"n","ammoRec":"n","ammoSfx":"s","ammoShiftChance":"n","ammoType":"s","apResource":"n","armorClass":"n","armorColliders":"l","armorPlateColliders":"l","armorZone":"l","bEffDist":"n","bFirerate":"n","bHearDist":"n","blockLeftStance":"b","bluntDamageReduceFromSoftArmor":"b","buckshotBullets":"n","casingEjectPower":"n","casingMass":"n","casingName":"s","casingSounds":"s","chamberAmmoCount":"n","containType":"a","defAmmo":"i","defMagType":"i","durabSpawnMax":"n","durabSpawnMin":"n","effects_damage":"o","effects_health":"o","eqMax":"n","eqMin":"n","explDelay":"n","foodEffectType":"s","foodUseTime":"n","hpResourceRate":"n","isBoltCatch":"b","isChamberLoad":"b","isFastReload":"b","isSecured":"b","knifeDurab":"n","knifeHitDelay":"n","knifeHitRadius":"n","knifeHitSlashDam":"n","knifeHitSlashRate":"n","knifeHitStabDam":"n","knifeHitStabRate":"n","krResource":"n","lootFilter":"a","magAnimationIndex":"n","maxCountSpawn":"n","medEffectType":"s","medUseTime":"n","minCountSpawn":"n","mousePenalty":"n","muzzleModType":"s","openedByKeyID":"l","rate":"n","scaleMax":"n","scaleMin":"n","shotgunDispersion":"n","sightModType":"s","sizeHeight":"n","sizeWidth":"n","spawnRarity":"s","spawnTypes":"s","speedPenaltyPercent":"n","throwDamMax":"n","type":"s","weapClass":"s","weapFireType":"l","weapUseType":"s","weaponErgonomicPenalty":"n"};
+const PROP_LOWER = Object.fromEntries(Object.keys(PROP_TYPES).map(k => [k.toLowerCase(), k]));
+const SLOT_PROPS = { _max_count: "n", _parent: "i", _name: "s", _required: "b", _mergeSlotWithChildren: "b", _proto: "s" };
 
 // ---------------------------------------------------------------------------
 // 사람이 읽는 이름표
@@ -124,13 +156,25 @@ const OP_NAMES = {
   addPreset: "무기 프리셋 등록", traderOffer: "상인 판매 등록", questWeapons: "퀘스트 무기 조건 추가",
   masteryTemplates: "무기 숙련도 묶음",
 };
+const OP_HELP = {
+  setProps: "대상 아이템의 값을 적은 값으로 바꿉니다. 예: 연사속도 700",
+  adjustProps: "원래 값에 더합니다. 줄이려면 음수. 예: 반동 -2",
+  appendProps: "목록형 값에 항목을 덧붙입니다. 예: 사격 모드에 fullauto",
+  addFilter: "슬롯·약실·탄창·가방 칸이 받아 주는 아이템 목록에 추가합니다",
+  cloneItem: "기존 아이템을 복사해 새 아이템을 만듭니다. 이름은 아래 '게임에 보일 이름' 에, 가격은 도감 등록 작업으로 넣습니다",
+  handbookEntry: "도감(핸드북)에 올리고 기준 가격을 정합니다. 새 아이템에는 꼭 필요합니다",
+  traderOffer: "상인 판매 목록에 올립니다",
+  addPreset: "무기 기본 조립 프리셋을 등록합니다 (고급 — 내용은 JSON 으로)",
+  questWeapons: "퀘스트의 '이 무기로 처치' 조건에 무기를 더합니다",
+  masteryTemplates: "무기 숙련도 묶음에 무기를 더하고 단계 요구치를 바꿉니다",
+};
 const KEY_LABELS = {
   key: "연결 키", title: "패치 이름", enabled: "사용", ops: "작업 목록", sets: "ID 묶음(@이름)",
   op: "작업 종류", stage: "적용 단계", targets: "대상 아이템", targetsByParent: "대상 분류(_parent)",
   targetsByBaseClass: "대상 베이스클래스", targetsAll: "DB 의 모든 아이템", whenPropEquals: "조건: 이 값일 때만",
   props: "바꿀 값", into: "어디에 추가", slots: "슬롯 이름", slotIndexes: "슬롯 순서(0부터)", add: "추가할 아이템",
   replace: "기존 목록을 지우고 교체", whenFilterContains: "조건: 이 ID 가 이미 허용된 곳만", slotProps: "슬롯 자체 값",
-  from: "복제 원본", newId: "새 아이템 ID", newParentId: "새 아이템 분류", id: "아이템 ID", parentId: "도감 분류",
+  from: "복제 원본", newId: "새 아이템 ID", newParentId: "새 아이템 분류", newName: "내부 이름(_name)", id: "아이템 ID", parentId: "도감 분류",
   price: "가격", canSellOnRagfair: "플리마켓 판매 가능", traderId: "상인", count: "재고 수량", currency: "화폐",
   loyaltyLevel: "필요 신뢰도 레벨", preset: "프리셋 내용", questId: "퀘스트 ID", masteryName: "숙련도 이름",
   level2: "숙련 2단계", level3: "숙련 3단계",
@@ -138,16 +182,16 @@ const KEY_LABELS = {
   lvl1Traders: "팩 상인 물품을 신뢰도 1부터 판매", excludeItemIds: "검사 완료에서 뺄 아이템", excludeParentIds: "검사 완료에서 뺄 분류",
   name: "이름", folder: "팩 폴더", format: "데이터 형식", itemFiles: "아이템 파일", clothesFiles: "의상 파일",
   useGlobals: "프리셋·숙련도(globals) 넣기", useTraders: "상인 판매 넣기",
-  // 자주 쓰는 아이템 속성
   bFirerate: "연사속도 (발/분)", SingleFireRate: "단발 연사속도", Recoil: "반동", Ergonomics: "인체공학",
   Weight: "무게(kg)", Width: "가로 칸 수", Height: "세로 칸 수", StackMaxSize: "최대 겹치기 수",
   Damage: "데미지", PenetrationPower: "관통력", ArmorDamage: "방탄 피해(%)", InitialSpeed: "초속(m/s)",
   BackgroundColor: "배경색", weapFireType: "사격 모드", MalfunctionChance: "고장 확률", Accuracy: "정확도",
   Prefab: "3D 모델(번들 경로)", ExaminedByDefault: "처음부터 검사됨", CheckOverride: "탄 확인 보정",
   ReloadMagType: "재장전 방식", VisibleAmmoRangesString: "탄 잔량 표시 구간", magAnimationIndex: "탄창 애니메이션 번호",
-  _max_count: "최대 개수", _parent: "부모(슬롯 소속)", CanSellOnRagfair: "플리마켓 판매 가능", Durability: "내구도",
+  _max_count: "최대 개수", _parent: "부모(슬롯 소속)", _required: "필수 슬롯", CanSellOnRagfair: "플리마켓 판매 가능", Durability: "내구도",
   MaxDurability: "최대 내구도", Velocity: "총구 속도 보정(%)", Loudness: "소음", ConflictingItems: "같이 못 끼우는 아이템",
   Slots: "슬롯", ExtraSizeLeft: "왼쪽 추가 칸", ExtraSizeRight: "오른쪽 추가 칸", ExtraSizeUp: "위 추가 칸", ExtraSizeDown: "아래 추가 칸",
+  ammoCaliber: "구경", RecoilForceUp: "수직 반동", RecoilForceBack: "수평 반동", CenterOfImpact: "탄착군",
 };
 const VALUE_HINTS = {
   into: { slot: "부품 슬롯", chamber: "약실", cartridge: "탄창 안", grid: "가방·조끼 칸" },
@@ -160,11 +204,57 @@ const TRADERS = {
   "6617beeaa9cfa777ca915b7c": "레프",
 };
 const CURRENCIES = { "5449016a4bdc2d6f028b456f": "루블", "5696686a4bdc2da3298b456a": "달러", "569668774bdc2da2298b4568": "유로" };
+const ROUBLES = "5449016a4bdc2d6f028b456f";
 // 바꾸면 모드가 깨지는 칸은 잠가 둔다 (정말 필요하면 "JSON 직접 편집" 으로)
 const READONLY_KEYS = new Set(["key", "op", "stage", "newId", "folder", "format", "itemFiles", "clothesFiles"]);
+const ID_SINGLE = new Set(["from", "newId", "newParentId", "id", "parentId", "traderId", "currency", "questId"]);
+const ID_LIST = new Set(["targets", "targetsByParent", "targetsByBaseClass", "whenFilterContains", "add"]);
 const ID_RE = /^[0-9a-f]{24}$/i;
 const COLOR_RE = /^#[0-9a-f]{6}$/i;
 const OPS_PER_PAGE = 40;
+
+// ---------------------------------------------------------------------------
+// 작업(op) 설계도 — 새로 만들 때의 기본 모양, 넣을 수 있는 선택 항목, 단계
+// (엔진: 4.1/Shared/Patching/PatchDocument.cs, 검사 규칙: tools/datacheck.py 와 같게)
+// ---------------------------------------------------------------------------
+const TARGET_KEYS = ["targets", "targetsByParent", "targetsByBaseClass", "targetsAll"];
+const TARGET_NAMES = { targets: "특정 아이템", targetsByParent: "분류(_parent) 전체", targetsByBaseClass: "베이스클래스 전체", targetsAll: "DB 의 모든 아이템" };
+const OP_SCHEMA = {
+  setProps:        { targets: true, make: () => ({ props: {} }), optional: { whenPropEquals: {} } },
+  adjustProps:     { targets: true, make: () => ({ props: {} }), optional: { whenPropEquals: {} } },
+  appendProps:     { targets: true, make: () => ({ props: {} }), optional: { whenPropEquals: {} } },
+  addFilter:       { targets: true, make: () => ({ into: "slot", slots: [], add: [] }),
+                     optional: { slots: [], slotIndexes: [], whenFilterContains: [], replace: false, slotProps: {}, whenPropEquals: {} } },
+  cloneItem:       { stage: "preload", make: () => ({ from: "", newId: newMongoId(), props: {} }), optional: { newParentId: "", newName: "" } },
+  handbookEntry:   { stage: "preload", make: () => ({ id: "", parentId: "", price: 10000 }), optional: { canSellOnRagfair: true } },
+  traderOffer:     { stage: "trader", make: () => ({ id: "", traderId: "5a7c2eca46aef81a7ca2145d", count: 99, price: 10000, currency: ROUBLES, loyaltyLevel: 1 }), optional: {} },
+  addPreset:       { stage: "preload", make: () => { const id = newMongoId(), root = newMongoId();
+                       return { id, preset: { _id: id, _type: "Preset", _changeWeaponName: false, _name: "", _parent: root, _items: [{ _id: root, _tpl: "" }] } }; }, optional: {} },
+  questWeapons:    { make: () => ({ questId: "", add: [] }), optional: {} },
+  masteryTemplates:{ make: () => ({ masteryName: "", add: [] }), optional: { level2: 100, level3: 125 } },
+};
+
+function makeOp(kind, extra) {
+  const s = OP_SCHEMA[kind];
+  const op = { op: kind };
+  if (s.stage) op.stage = s.stage;
+  if (s.targets) op.targets = [];
+  Object.assign(op, s.make(), extra || {});
+  return op;
+}
+
+// 자주 쓰는 작업 — 한 번에 여러 작업을 넣을 수도 있다
+const RECIPES = [
+  { title: "연사속도 바꾸기", desc: "총의 bFirerate 를 덮어씁니다", ops: () => [makeOp("setProps", { props: { bFirerate: 700 } })] },
+  { title: "연발(자동) 추가", desc: "사격 모드에 fullauto 를 덧붙입니다", ops: () => [makeOp("appendProps", { props: { weapFireType: ["fullauto"] } })] },
+  { title: "값 조금 올리기/내리기", desc: "예: 반동 -10, 인체공학 +5", ops: () => [makeOp("adjustProps", { props: { Ergonomics: 5 } })] },
+  { title: "부품 장착 허용", desc: "총·마운트의 슬롯에 부품을 더합니다", ops: () => [makeOp("addFilter", { into: "slot", slots: ["mod_scope"], add: [] })] },
+  { title: "약실에 탄 허용", desc: "총이 이 탄을 쏠 수 있게 합니다", ops: () => [makeOp("addFilter", { into: "chamber", add: [] })] },
+  { title: "탄창에 탄 허용", desc: "탄창이 이 탄을 담을 수 있게 합니다", ops: () => [makeOp("addFilter", { into: "cartridge", add: [] })] },
+  { title: "새 아이템 + 도감 + 상인 판매", desc: "복제 → 가격 등록 → 상인 판매를 같은 ID 로 한 번에", newItem: true, ops: () => {
+      const c = makeOp("cloneItem"); const id = c.newId;
+      return [c, makeOp("handbookEntry", { id }), makeOp("traderOffer", { id })]; } },
+];
 
 // ---------------------------------------------------------------------------
 // 상태
@@ -172,8 +262,8 @@ const OPS_PER_PAGE = 40;
 const state = {
   info: null,
   files: [],          // [{mod, path}]
-  docs: {},           // path -> {text, data, trailingNewline, dirty, error}
-  names: {},          // 아이템 ID -> 이름
+  docs: {},           // path -> {text, data, trailingNewline, dirty, error, isNew, kind}
+  names: {},          // 아이템 ID(소문자) -> 이름
   view: null,
 };
 
@@ -187,20 +277,25 @@ async function api(method, path, body) {
   return data;
 }
 
+const isLocalePath = p => p.includes("/locales/global/");
+
 async function loadDoc(path) {
   if (state.docs[path]) return state.docs[path];
   const text = await api("GET", "/api/file?path=" + encodeURIComponent(path));
-  const doc = { text, trailingNewline: text.endsWith("\n"), dirty: false, error: null, data: null };
+  const doc = { text, trailingNewline: text.endsWith("\n"), dirty: false, error: null, data: null, kind: isLocalePath(path) ? "locale" : "json", edits: {} };
   try { doc.data = JSON.parse(text); } catch (e) { doc.error = "JSON 문법 오류: " + e.message; }
   state.docs[path] = doc;
   return doc;
 }
 
-function serialize(doc) { return JSON.stringify(doc.data, null, 2) + (doc.trailingNewline ? "\n" : ""); }
+function serialize(doc) {
+  if (doc.kind === "locale") return applyLocaleEdits(doc);
+  return JSON.stringify(doc.data, null, 2) + (doc.trailingNewline ? "\n" : "");
+}
 
 function markDirty(path) {
   const doc = state.docs[path];
-  doc.dirty = serialize(doc) !== doc.text;
+  doc.dirty = doc.isNew || serialize(doc) !== doc.text;
   refreshSaveBar();
   refreshNavFlags();
 }
@@ -222,18 +317,34 @@ function toast(msg, ms = 3500) {
   clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove("show"), ms);
 }
 
+// 몽고 ID 와 같은 모양(앞 8자리 = 시각)의 새 24자리 ID. 이미 쓰인 ID 와 겹치면 다시 뽑는다.
+function newMongoId() {
+  for (;;) {
+    const t = Math.floor(Date.now() / 1000).toString(16).padStart(8, "0");
+    const r = Array.from(crypto.getRandomValues(new Uint8Array(8)), b => b.toString(16).padStart(2, "0")).join("");
+    const id = t + r;
+    if (!state.names[id] && !usedIds().has(id)) return id;
+  }
+}
+function usedIds() {
+  const s = new Set();
+  for (const d of Object.values(state.docs)) for (const op of d?.data?.ops || []) { if (op.newId) s.add(String(op.newId).toLowerCase()); }
+  return s;
+}
+
 // ---------------------------------------------------------------------------
 // 파일 경로 도우미
 // ---------------------------------------------------------------------------
 const modFiles = mod => state.files.filter(f => f.mod === mod).map(f => f.path);
 const fileOf = (mod, rel) => state.files.find(f => f.mod === mod && f.path.endsWith("/mod/" + rel))?.path;
-const patchFiles = mod => modFiles(mod).filter(p => p.includes("/db/patches/"));
+const patchFiles = mod => modFiles(mod).filter(p => p.includes("/db/patches/")).sort((a, b) => baseName(a).localeCompare(baseName(b)));
 const baseName = p => p.split("/").pop();
 const modOf = path => path.split("/")[1];
+const localePath = (mod, lang) => `4.1/${mod}/mod/db/locales/global/${lang}.json`;
 
 function nameOf(id) {
   if (typeof id !== "string") return null;
-  return TRADERS[id] || CURRENCIES[id] || state.names[id] || state.names[id.toLowerCase()] || null;
+  return TRADERS[id] || CURRENCIES[id] || state.names[id.toLowerCase()] || null;
 }
 
 // ---------------------------------------------------------------------------
@@ -242,11 +353,13 @@ function nameOf(id) {
 function absorbLocale(obj, overwrite) {
   if (!obj || typeof obj !== "object") return;
   for (const [k, v] of Object.entries(obj)) {
-    if (typeof v !== "string" || !k.endsWith(" Name")) continue;
-    const id = k.slice(0, -5);
-    if (!ID_RE.test(id)) continue;
+    if (typeof v !== "string") continue;
+    let id = null;
+    if (k.endsWith(" Name")) id = k.slice(0, -5);
+    else if (ID_RE.test(k)) id = k;           // 도감 분류 등은 "ID": "이름" 으로 들어 있다
+    if (!id || !ID_RE.test(id)) continue;
+    id = id.toLowerCase();
     if (overwrite || !state.names[id]) state.names[id] = v;
-    if (overwrite || !state.names[id.toLowerCase()]) state.names[id.toLowerCase()] = v;
   }
 }
 
@@ -254,20 +367,217 @@ async function loadNames() {
   if (state.info.gameLocale) {
     try { absorbLocale(await api("GET", "/api/gamelocale?lang=kr"), true); } catch { /* 없으면 ID 만 표시 */ }
   }
-  const locs = state.files.filter(f => f.path.includes("/locales/global/"));
-  // 한국어 먼저, 없는 것만 영어로 채운다
+  const locs = state.files.filter(f => isLocalePath(f.path));
   locs.sort((a, b) => (baseName(a.path) === "kr.json" ? -1 : 1) - (baseName(b.path) === "kr.json" ? -1 : 1));
   for (const f of locs) {
     try { const d = await loadDoc(f.path); absorbLocale(d.data, false); } catch { }
   }
-  // 패치 안의 _name 메모도 이름으로 쓴다
   for (const f of state.files.filter(f => f.path.includes("/db/patches/"))) {
     const d = state.docs[f.path]; if (!d || !d.data) continue;
     for (const op of d.data.ops || []) {
       const id = op.newId || op.id;
-      if (op._name && typeof id === "string" && !state.names[id]) state.names[id] = op._name;
+      if (op._name && typeof id === "string" && !state.names[id.toLowerCase()]) state.names[id.toLowerCase()] = op._name;
     }
   }
+}
+
+// ---------------------------------------------------------------------------
+// 로케일(아이템 이름표) — 파일마다 줄 모양이 달라서, 바꾼 줄만 고치고 새 줄은 끝에 붙인다
+// ---------------------------------------------------------------------------
+function findLocaleKey(doc, key) {
+  if (!doc.data) return key;
+  if (key in doc.data) return key;
+  const low = key.toLowerCase();
+  return Object.keys(doc.data).find(k => k.toLowerCase() === low) || key;
+}
+
+function getLocaleDoc(mod, lang, create) {
+  const path = localePath(mod, lang);
+  let doc = state.docs[path];
+  if (!doc && create) {
+    doc = state.docs[path] = { text: "", trailingNewline: true, dirty: false, error: null, data: {}, kind: "locale", edits: {}, isNew: true };
+    if (!state.files.some(f => f.path === path)) state.files.push({ mod, path });
+  }
+  return doc;
+}
+
+function setLocale(mod, lang, key, value) {
+  const doc = getLocaleDoc(mod, lang, true);
+  const real = findLocaleKey(doc, key);
+  doc.edits[real] = value;
+  doc.data[real] = value;
+  markDirty(localePath(mod, lang));
+}
+
+// 패치를 지울 때 그 패치가 만든 아이템의 이름 줄도 지운다. 바뀐 로케일 파일 경로 목록을 돌려준다.
+function removeLocaleFor(mod, ids) {
+  const changed = [];
+  for (const lang of ["kr", "en"]) {
+    const doc = getLocaleDoc(mod, lang, false);
+    if (!doc?.data) continue;
+    let hit = false;
+    for (const id of ids) for (const part of ["Name", "ShortName", "Description"]) {
+      const real = findLocaleKey(doc, `${id} ${part}`);
+      if (real in doc.data) { delete doc.data[real]; doc.edits[real] = null; hit = true; }
+    }
+    if (hit) { markDirty(localePath(mod, lang)); changed.push(localePath(mod, lang)); }
+  }
+  return changed;
+}
+
+function applyLocaleEdits(doc) {
+  const edits = Object.entries(doc.edits || {});
+  if (!edits.length) return doc.text;
+  const build = () => JSON.stringify(doc.data, null, 2) + "\n";
+  if (!doc.text.trim() && !Object.keys(doc.data).length) return "{}\n";
+  if (!doc.text.trim()) return build();
+  const nl = doc.text.includes("\r\n") ? "\r\n" : "\n";
+  const lines = doc.text.split(/\r?\n/);
+  const left = new Map(edits);
+  const re = /^(\s*)("(?:[^"\\]|\\.)*")(\s*:\s*)"(?:[^"\\]|\\.)*"(\s*,?\s*)$/;
+  for (let i = 0; i < lines.length; i++) {
+    const m = lines[i].match(re); if (!m) continue;
+    let k; try { k = JSON.parse(m[2]); } catch { continue; }
+    if (!left.has(k)) continue;
+    const v = left.get(k);
+    left.delete(k);
+    if (v === null) {
+      // 줄 삭제. 지운 줄이 마지막 항목이었으면 앞 항목의 쉼표를 뗀다
+      const hadComma = m[4].includes(",");
+      lines.splice(i, 1); i--;
+      if (!hadComma) { let j = i; while (j >= 0 && lines[j].trim() === "") j--; if (j >= 0) lines[j] = lines[j].replace(/,\s*$/, ""); }
+      continue;
+    }
+    lines[i] = m[1] + m[2] + m[3] + JSON.stringify(v) + m[4];
+  }
+  for (const [k, v] of left) if (v === null) left.delete(k);
+  if (edits.some(([, v]) => v === null)) {
+    // 지우고 남은 빈 줄 정리: 닫는 } 바로 앞의 빈 줄, 연달아 있는 빈 줄
+    for (let i = lines.length - 1; i > 0; i--) {
+      const next = lines.slice(i + 1).find(l => l.trim() !== "");
+      if (lines[i].trim() === "" && (lines[i - 1].trim() === "" || next?.trim() === "}")) lines.splice(i, 1);
+    }
+  }
+  if (left.size) {
+    let close = lines.length - 1;
+    while (close >= 0 && lines[close].trim() === "") close--;
+    let last = close - 1;
+    while (last >= 0 && lines[last].trim() === "") last--;
+    if (last >= 0 && lines[last].trim() !== "{" && !lines[last].trimEnd().endsWith(",")) lines[last] = lines[last].replace(/\s*$/, "") + ",";
+    const indent = (lines.find(l => /^\s*"/.test(l)) || "  ").match(/^\s*/)[0];
+    const add = [...left].map(([k, v], i, all) => indent + JSON.stringify(k) + ": " + JSON.stringify(v) + (i < all.length - 1 ? "," : ""));
+    lines.splice(close, 0, "", ...add);
+  }
+  const out = lines.join(nl);
+  try {
+    const parsed = JSON.parse(out);
+    const sorted = o => JSON.stringify(Object.keys(o).sort().map(k => [k, o[k]]));
+    if (sorted(parsed) === sorted(doc.data)) return out;
+  } catch { }
+  return build();   // 줄 단위로 못 고치는 모양이면 통째로 다시 쓴다
+}
+
+// ---------------------------------------------------------------------------
+// 검사 — tools/datacheck.py 와 같은 규칙 + 패처용 추가 확인
+// ---------------------------------------------------------------------------
+function checkPatch(path) {
+  const doc = state.docs[path];
+  const errs = [], warns = [];
+  if (!doc || doc.error || !doc.data) return { errs: [doc?.error || "읽지 못함"], warns };
+  const d = doc.data, mod = modOf(path);
+  const cfg = state.docs[fileOf(mod, "config.json")]?.data;
+  const ammo = state.docs[fileOf(mod, "db/ammo.json")]?.data || {};
+  const values = state.docs[fileOf(mod, "db/values.json")]?.data || {};
+  const sets = d.sets || {};
+  const E = m => errs.push(m), W = m => warns.push(m);
+
+  if (!d.key) E("key 가 없습니다");
+  else if (!/^[A-Za-z0-9_]+$/.test(d.key)) E(`key '${d.key}' 에는 영문·숫자·_ 만 쓸 수 있습니다`);
+  for (const p of patchFiles(mod)) if (p !== path && state.docs[p]?.data?.key === d.key) E(`key '${d.key}' 가 ${baseName(p)} 와 겹칩니다`);
+  if (cfg?.patches && d.key && !(d.key in cfg.patches)) E(`key '${d.key}' 가 config.json 의 patches 에 없습니다`);
+  for (const [n, vals] of Object.entries(sets)) for (const v of vals || []) if (!ID_RE.test(v)) E(`ID 묶음 ${n} 의 '${v}' 는 24자리 ID 가 아닙니다`);
+
+  const resolve = (val, tag) => {
+    const toks = typeof val === "string" ? [val] : Array.isArray(val) ? val : [];
+    const out = [];
+    for (const t of toks) {
+      if (typeof t !== "string") { E(`${tag} 에 글자가 아닌 값이 있습니다`); continue; }
+      if (t.startsWith("@")) { const s = sets[t.slice(1)] || ammo[t.slice(1)]; if (s) out.push(...s); else E(`${tag} 의 '${t}' 묶음을 찾을 수 없습니다`); }
+      else out.push(t);
+    }
+    return out;
+  };
+  const checkVals = (obj, tag) => { for (const [n, v] of Object.entries(obj || {})) if (typeof v === "string" && v.startsWith("$") && !(v.slice(1) in values)) E(`${tag}: '${v}' 를 values.json 에서 찾을 수 없습니다`); };
+  const checkPropNames = (obj, tag) => { for (const n of Object.keys(obj || {})) if (!PROP_LOWER[n.toLowerCase()]) W(`${tag}: '${n}' 은(는) SPT 아이템 속성에 없는 이름입니다 (오타가 아닌지 확인)`); };
+
+  const newIds = new Map();
+  (d.ops || []).forEach((op, i) => {
+    const tag = `#${i + 1} ${OP_NAMES[op.op] || op.op}`;
+    const kind = op.op;
+    if (!OP_SCHEMA[kind]) { E(`${tag}: 모르는 작업 종류 '${kind}'`); return; }
+    if (op.stage && !["preload", "postload", "trader"].includes(op.stage)) E(`${tag}: 모르는 stage '${op.stage}'`);
+    const tcount = [op.targets && (Array.isArray(op.targets) ? op.targets.length : true), op.targetsByParent?.length, op.targetsAll, op.targetsByBaseClass?.length].filter(Boolean).length;
+    if (OP_SCHEMA[kind].targets && tcount !== 1) E(`${tag}: 대상을 정확히 한 가지로 지정해야 합니다 (지금 ${tcount}가지)`);
+    for (const f of ["targetsByParent", "targetsByBaseClass", "whenFilterContains"]) for (const v of op[f] || []) if (!ID_RE.test(v)) E(`${tag}: ${KEY_LABELS[f]} 의 '${v}' 는 24자리 ID 가 아닙니다`);
+    for (const f of ["targets", "add"]) if (f in op) for (const v of resolve(op[f], `${tag} ${KEY_LABELS[f]}`)) if (!ID_RE.test(v)) E(`${tag}: ${KEY_LABELS[f]} 의 '${v}' 는 24자리 ID 가 아닙니다`);
+
+    if (["setProps", "adjustProps", "appendProps"].includes(kind)) {
+      if (!op.props || !Object.keys(op.props).length) E(`${tag}: 바꿀 값이 하나도 없습니다`);
+      checkPropNames(op.props, tag); checkVals(op.props, tag);
+      if (kind === "appendProps") for (const [n, v] of Object.entries(op.props || {})) if (!Array.isArray(v)) E(`${tag}: '${n}' 값은 목록이어야 합니다`);
+      if (kind === "adjustProps") for (const [n, v] of Object.entries(op.props || {})) if (typeof v !== "number" && !(typeof v === "string" && v.startsWith("$"))) E(`${tag}: '${n}' 는 더할 숫자여야 합니다`);
+    }
+    if (kind === "addFilter") {
+      if (!["slot", "chamber", "cartridge", "grid"].includes(op.into || "slot")) E(`${tag}: '어디에 추가' 값이 잘못됐습니다`);
+      for (const n of Object.keys(op.slotProps || {})) if (!(n in SLOT_PROPS)) E(`${tag}: 슬롯에 '${n}' 값이 없습니다`);
+      if (!(op.add?.length) && !(op.slotProps && Object.keys(op.slotProps).length) && !op.replace) E(`${tag}: 추가할 아이템이 비어 있어 아무 일도 하지 않습니다`);
+      if ((op.into || "slot") === "slot" && !(op.slots?.length || op.slotIndexes?.length)) W(`${tag}: 슬롯 이름이 비어 있어 그 아이템의 '모든 슬롯' 에 적용됩니다`);
+    }
+    if (kind === "cloneItem") {
+      checkPropNames(op.props, tag); checkVals(op.props, tag);
+      if (op.stage !== "preload") E(`${tag}: stage 가 preload 가 아니면 서버가 죽습니다`);
+      for (const f of ["from", "newId"]) if (!ID_RE.test(op[f] || "")) E(`${tag}: ${KEY_LABELS[f]} 가 24자리 ID 가 아닙니다`);
+      if (op.newParentId && !ID_RE.test(op.newParentId)) E(`${tag}: 새 아이템 분류가 24자리 ID 가 아닙니다`);
+      if (op.newId) {
+        const low = op.newId.toLowerCase();
+        if (newIds.has(low)) E(`${tag}: 새 아이템 ID 가 ${newIds.get(low)} 과 겹칩니다`); else newIds.set(low, tag);
+        const allOps = patchFiles(mod).flatMap(p => (state.docs[p]?.data?.ops || []).map(o => ({ o, p })));
+        if (!allOps.some(({ o }) => o.op === "handbookEntry" && String(o.id).toLowerCase() === low)) W(`${tag}: 이 새 아이템의 도감 등록(가격) 작업이 없습니다 — 상인·플리마켓 가격이 0 이 될 수 있습니다`);
+        if (!["kr", "en"].some(l => { const ld = state.docs[localePath(mod, l)]; return ld?.data && findLocaleKey(ld, op.newId + " Name") in ld.data; }))
+          W(`${tag}: 게임에 보일 이름이 없습니다 — 아래 '게임에 보일 이름' 칸을 채우세요`);
+      }
+    }
+    if (kind === "handbookEntry" || kind === "traderOffer") {
+      for (const f of ["id", "parentId", "traderId", "currency"]) if (f in op && !ID_RE.test(op[f] || "")) E(`${tag}: ${KEY_LABELS[f]} 가 24자리 ID 가 아닙니다`);
+      if (kind === "handbookEntry" && op.stage !== "preload") E(`${tag}: stage 는 preload 여야 합니다`);
+      if (kind === "traderOffer" && op.stage !== "trader") E(`${tag}: stage 는 trader 여야 합니다 (아니면 조용히 안 팔립니다)`);
+    }
+    if (kind === "questWeapons") { if (!ID_RE.test(op.questId || "")) E(`${tag}: 퀘스트 ID 가 24자리 ID 가 아닙니다`); if (!op.add?.length) E(`${tag}: 추가할 무기가 비어 있습니다`); }
+    if (kind === "masteryTemplates" && !op.masteryName) E(`${tag}: 숙련도 이름이 없습니다`);
+    if (kind === "addPreset") { if (op.stage !== "preload") E(`${tag}: stage 는 preload 여야 합니다`); if (!op.preset || !Object.keys(op.preset).length) E(`${tag}: 프리셋 내용이 비어 있습니다`); }
+  });
+  return { errs, warns };
+}
+
+function checkConfig(mod) {
+  const errs = [];
+  const cfg = state.docs[fileOf(mod, "config.json")]?.data;
+  if (!cfg?.patches) return errs;
+  const keys = new Set(patchFiles(mod).map(p => state.docs[p]?.data?.key));
+  for (const k of Object.keys(cfg.patches)) if (!keys.has(k)) errs.push(`config.json 의 '${k}' 에 해당하는 패치 파일이 없습니다`);
+  return errs;
+}
+
+function checkBox(path) {
+  const { errs, warns } = checkPatch(path);
+  if (!errs.length && !warns.length) return el("div", { class: "check ok" }, "✔ 검사 통과 — 문제 없음");
+  const box = el("div", { class: "check " + (errs.length ? "bad" : "warn") },
+    el("b", null, errs.length ? `✖ 오류 ${errs.length}건 — 이대로면 서버에서 안 되거나 죽습니다` : `⚠ 확인할 것 ${warns.length}건`));
+  const ul = el("ul");
+  for (const e of errs) ul.append(el("li", null, e));
+  for (const w of warns) ul.append(el("li", { class: "muted" }, w));
+  box.append(ul);
+  return box;
 }
 
 // ---------------------------------------------------------------------------
@@ -282,27 +592,30 @@ function effectivePatchOn(mod, patchDoc) {
 
 function buildNav() {
   const nav = document.getElementById("nav");
+  const openState = {};
+  for (const d of nav.querySelectorAll("details.mod")) openState[d.dataset.mod] = d.open;
   nav.innerHTML = "";
   const mods = [...new Set(state.files.map(f => f.mod))];
   for (const mod of mods) {
-    const det = el("details", { class: "mod", open: true }, el("summary", null, mod));
-    const add = (view, label, path, dot) => {
-      const a = el("a", { href: "#", "data-view": JSON.stringify(view), "data-path": path || "",
+    const det = el("details", { class: "mod", "data-mod": mod, open: openState[mod] ?? true }, el("summary", null, mod));
+    const add = (view, label, path, dot, cls) => {
+      det.append(el("a", { href: "#", class: cls || "", "data-view": JSON.stringify(view), "data-path": path || "",
         onclick: ev => { ev.preventDefault(); show(view); } },
-        dot === undefined ? null : el("span", { class: "dot" + (dot ? " on" : "") }), label, el("span", { class: "dirty" }));
-      det.append(a);
+        dot === undefined ? null : el("span", { class: "dot" + (dot ? " on" : "") }), label, el("span", { class: "dirty" })));
     };
     if (fileOf(mod, "config.json")) add({ kind: "config", mod }, "기본 설정 · 패치 켜기/끄기", fileOf(mod, "config.json"));
     if (fileOf(mod, "db/values.json")) add({ kind: "generic", path: fileOf(mod, "db/values.json") }, "공용 수치 (values.json)", fileOf(mod, "db/values.json"));
     if (fileOf(mod, "db/packs.json")) add({ kind: "packs", path: fileOf(mod, "db/packs.json") }, "아이템 팩 켜기/끄기", fileOf(mod, "db/packs.json"));
     if (fileOf(mod, "db/ammo.json")) add({ kind: "generic", path: fileOf(mod, "db/ammo.json") }, "공용 ID 묶음 (ammo.json)", fileOf(mod, "db/ammo.json"));
+    // 패치를 쓰는 모드(config.json 에 patches 가 있는 모드)만 패치 목록·새 패치 메뉴를 보여 준다
     const pf = patchFiles(mod);
-    if (pf.length) {
+    if (pf.length || state.docs[fileOf(mod, "config.json")]?.data?.patches) {
       det.append(el("div", { class: "group" }, `패치 파일 ${pf.length}개`));
       for (const p of pf) {
         const d = state.docs[p];
         add({ kind: "patch", path: p }, d?.data?.title || baseName(p), p, d?.data ? effectivePatchOn(mod, d) : false);
       }
+      add({ kind: "newpatch", mod }, "＋ 새 패치 만들기", "", undefined, "create");
     }
     nav.append(det);
   }
@@ -313,7 +626,8 @@ function refreshNavFlags() {
   for (const a of document.querySelectorAll("nav a")) {
     const p = a.dataset.path;
     const d = p && state.docs[p];
-    a.querySelector(".dirty").textContent = d && d.dirty ? "● 수정됨" : "";
+    const dirtyEl = a.querySelector(".dirty");
+    if (dirtyEl) dirtyEl.textContent = d && d.dirty ? (d.isNew ? "● 새 파일" : "● 수정됨") : "";
     const v = JSON.parse(a.dataset.view);
     a.classList.toggle("active", JSON.stringify(state.view) === a.dataset.view);
     if (v.kind === "patch" && d?.data) a.querySelector(".dot")?.classList.toggle("on", effectivePatchOn(modOf(p), d));
@@ -328,8 +642,40 @@ function refreshSaveBar() {
   document.getElementById("dirtyList").textContent = dirty.map(([p]) => modOf(p) + "/" + baseName(p)).join(", ");
 }
 
+// 구조가 바뀌었을 때(추가·삭제·이동) 같은 화면을 스크롤 위치 그대로 다시 그린다
+function rerender() { const y = window.scrollY; show(state.view, true).then(() => window.scrollTo(0, y)); }
+
 // ---------------------------------------------------------------------------
-// 값 편집 위젯 (JSON 의 어떤 모양이든 그려 준다)
+// 아이템 찾기 창
+// ---------------------------------------------------------------------------
+function openItemSearch(onPick, initial) {
+  const back = el("div", { class: "modal-back", onclick: e => { if (e.target === back) back.remove(); } });
+  const input = el("input", { type: "text", placeholder: "아이템 이름 또는 ID 일부 (예: 탄창, AK-74, 5448bc)", style: "flex:1", value: initial || "" });
+  const results = el("div", { class: "results" });
+  const unique = [...new Map(Object.entries(state.names)).entries()];
+  const info = state.info.gameLocale ? "" : "SPT 원본 아이템 이름 파일을 못 찾아서 모드가 추가한 아이템만 검색됩니다 (SPT 경로 설정 확인)";
+  const run = () => {
+    const q = input.value.trim().toLowerCase();
+    results.innerHTML = "";
+    if (!q) { results.append(el("div", { class: "muted" }, info || "검색어를 넣으세요")); return; }
+    const hits = [];
+    for (const [id, name] of unique) {
+      if (id.startsWith(q) || name.toLowerCase().includes(q)) hits.push([id, name]);
+      if (hits.length >= 150) break;
+    }
+    for (const [cid, cname] of [...Object.entries(TRADERS), ...Object.entries(CURRENCIES)]) if (cname.includes(q)) hits.unshift([cid, cname]);
+    if (!hits.length) results.append(el("div", { class: "muted" }, "찾은 것이 없습니다" + (info ? " — " + info : "")));
+    for (const [id, name] of hits) results.append(el("div", { onclick: () => { onPick(id, name); back.remove(); } }, el("span", { class: "mono muted" }, id), el("span", null, name)));
+  };
+  input.addEventListener("input", run);
+  input.addEventListener("keydown", e => { if (e.key === "Escape") back.remove(); });
+  back.append(el("div", { class: "modal" }, el("header", null, input, el("button", { onclick: () => back.remove() }, "닫기")), results));
+  document.body.append(back);
+  input.focus(); run();
+}
+
+// ---------------------------------------------------------------------------
+// 값 편집 위젯
 // ---------------------------------------------------------------------------
 function labelFor(key) {
   const k = String(key);
@@ -342,38 +688,54 @@ function refHint(path, value) {
   if (value.startsWith("$")) {
     const vals = state.docs[fileOf(mod, "db/values.json")]?.data;
     const v = vals ? vals[value.slice(1)] : undefined;
-    return el("div", { class: "hint" }, v === undefined ? "공용 수치 참조 — values.json 에 없음!" : `공용 수치 참조 → 현재 값 ${v} (공용 수치 메뉴에서 수정)`);
+    return el("div", { class: v === undefined ? "hint bad" : "hint" }, v === undefined ? "공용 수치 참조 — values.json 에 없음!" : `공용 수치 참조 → 현재 값 ${v} (공용 수치 메뉴에서 수정)`);
   }
   if (value.startsWith("@")) {
     const doc = state.docs[path]?.data;
     const own = doc?.sets?.[value.slice(1)];
-    const shared = state.docs[fileOf("HANA_VI-AIO", "db/ammo.json")]?.data?.[value.slice(1)]
-      || state.docs[fileOf(mod, "db/ammo.json")]?.data?.[value.slice(1)];
+    const shared = state.docs[fileOf(mod, "db/ammo.json")]?.data?.[value.slice(1)];
     const set = own || shared;
-    return el("div", { class: set ? "hint" : "hint bad" }, set ? `ID 묶음 참조 → ${set.length}개 (${own ? "이 파일의 sets" : "ammo.json"})` : "ID 묶음을 찾지 못함!");
+    return el("div", { class: set ? "hint" : "hint bad" }, set ? `ID 묶음 참조 → ${set.length}개 (${own ? "이 파일의 묶음" : "ammo.json"})` : "ID 묶음을 찾지 못함!");
   }
   if (ID_RE.test(value)) {
     const n = nameOf(value);
-    return n ? el("div", { class: "hint name" }, n) : null;
+    return n ? el("div", { class: "hint name" }, n) : el("div", { class: "hint" }, "(이름 모름 — 모드 아이템이거나 다른 모드의 아이템)");
   }
   return null;
 }
 
-function validId(orig, v) {
-  // 원래 ID 였던 칸은 ID(24자 16진수) 또는 @묶음 / $값 참조만 허용
-  if (typeof orig === "string" && ID_RE.test(orig)) return ID_RE.test(v) || v.startsWith("@") || v.startsWith("$");
+function validId(orig, v, forceId) {
+  if (forceId || (typeof orig === "string" && ID_RE.test(orig))) return ID_RE.test(v) || v.startsWith("@") || v.startsWith("$");
   return true;
 }
 
-function primitiveEditor(path, parent, key, readOnly) {
+function selectEditor(path, parent, key, options) {
+  const sel = el("select");
+  const cur = parent[key];
+  const entries = Object.entries(options);
+  if (!(cur in options)) entries.unshift([cur, `(직접 입력된 값) ${cur}`]);
+  for (const [v, label] of entries) { const o = el("option", { value: v }, label); if (v === cur) o.selected = true; sel.append(o); }
+  sel.addEventListener("change", () => { parent[key] = sel.value; markDirty(path); });
+  return sel;
+}
+
+function primitiveEditor(path, parent, key, opts = {}) {
   const value = parent[key];
+  const readOnly = opts.readOnly;
   const wrap = el("div");
+  if (key === "traderId" && !readOnly) { wrap.append(selectEditor(path, parent, key, TRADERS)); return wrap; }
+  if (key === "currency" && !readOnly) { wrap.append(selectEditor(path, parent, key, CURRENCIES)); return wrap; }
+  if (key === "into" && !readOnly) {
+    const sel = selectEditor(path, parent, key, Object.fromEntries(Object.entries(VALUE_HINTS.into).map(([k, v]) => [k, `${v} (${k})`])));
+    sel.addEventListener("change", () => rerender());
+    wrap.append(sel); return wrap;
+  }
   if (typeof value === "boolean") {
     const cb = el("input", { type: "checkbox", disabled: readOnly });
     cb.checked = value;
-    cb.addEventListener("change", () => { parent[key] = cb.checked; markDirty(path); });
-    wrap.append(el("div", { class: "row" }, el("label", { class: "switch" }, cb, el("span")), el("span", { class: "muted" }, value ? "켜짐" : "꺼짐")));
-    cb.addEventListener("change", () => wrap.querySelector(".muted").textContent = cb.checked ? "켜짐" : "꺼짐");
+    const txt = el("span", { class: "muted" }, value ? "켜짐" : "꺼짐");
+    cb.addEventListener("change", () => { parent[key] = cb.checked; txt.textContent = cb.checked ? "켜짐" : "꺼짐"; markDirty(path); });
+    wrap.append(el("div", { class: "row" }, el("label", { class: "switch" }, cb, el("span")), txt));
     return wrap;
   }
   if (value === null) { wrap.append(el("span", { class: "muted" }, "(비어 있음)")); return wrap; }
@@ -393,11 +755,13 @@ function primitiveEditor(path, parent, key, readOnly) {
   }
   // 문자열
   const orig = value;
+  const forceId = opts.idSingle;
   const isColor = COLOR_RE.test(value);
   const inp = el("input", { type: "text", class: isColor ? "" : "wide", value, disabled: readOnly, spellcheck: "false" });
   const hintBox = el("div");
   const setHint = v => {
     hintBox.innerHTML = "";
+    if (key === "newId" && !nameOf(v)) { hintBox.append(el("div", { class: "hint" }, "새로 만드는 아이템의 ID (자동으로 뽑음) — 이름은 아래 '게임에 보일 이름' 에서 정합니다")); return; }
     const h = refHint(path, v); if (h) hintBox.append(h);
     const vh = VALUE_HINTS[key]?.[v]; if (vh) hintBox.append(el("div", { class: "hint" }, vh));
   };
@@ -407,38 +771,43 @@ function primitiveEditor(path, parent, key, readOnly) {
     picker.addEventListener("input", () => { inp.value = picker.value.toUpperCase(); inp.dispatchEvent(new Event("input")); });
   }
   inp.addEventListener("input", () => {
-    const v = inp.value;
-    const ok = validId(orig, v.trim());
+    const v = inp.value.trim();
+    const ok = v === "" && forceId ? false : validId(orig, v, forceId);
     inp.classList.toggle("invalid", !ok);
-    if (!ok) { hintBox.innerHTML = ""; hintBox.append(el("div", { class: "hint bad" }, "아이템 ID 는 24자리 16진수여야 합니다 (이 칸은 저장되지 않음)")); return; }
-    parent[key] = v.trim() === v ? v : v.trim();
-    if (picker && COLOR_RE.test(v)) picker.value = v;
-    setHint(v);
+    if (!ok) { hintBox.innerHTML = ""; hintBox.append(el("div", { class: "hint bad" }, "아이템 ID 는 24자리 16진수여야 합니다 (🔍 로 찾을 수 있습니다)")); }
+    parent[key] = v;               // 빈칸·틀린 ID 도 일단 넣고, 저장 전 검사에서 막는다
+    if (ok) { if (picker && COLOR_RE.test(v)) picker.value = v; setHint(v); }
     markDirty(path);
+    opts.onChange?.(v);
   });
   setHint(value);
-  wrap.append(picker ? el("div", { class: "row" }, picker, inp) : inp, hintBox);
+  const row = el("div", { class: "row", style: "flex-wrap:nowrap" }, picker, inp);
+  if ((forceId || ID_RE.test(orig)) && !readOnly) {
+    row.append(el("button", { class: "small", title: "아이템 이름으로 찾기", onclick: () => openItemSearch(id => { inp.value = id; inp.dispatchEvent(new Event("input")); }) }, "🔍"));
+  }
+  wrap.append(row, hintBox);
+  if (forceId && value === "" && !readOnly) inp.classList.add("invalid");
   return wrap;
 }
 
-function listEditor(path, parent, key, readOnly) {
+function listEditor(path, parent, key, opts = {}) {
   const arr = parent[key];
-  const numeric = arr.length > 0 && arr.every(x => typeof x === "number");
+  const readOnly = opts.readOnly;
+  const numeric = opts.numeric || (arr.length > 0 && arr.every(x => typeof x === "number"));
+  const idMode = opts.idList || arr.some(x => typeof x === "string" && ID_RE.test(x));
   const ta = el("textarea", { rows: Math.min(Math.max(arr.length, 2), 12), disabled: readOnly, spellcheck: "false" });
   ta.value = arr.join("\n");
   const msg = el("div", { class: "hint bad" });
   const names = el("details", { class: "ids" });
-  const origIds = arr.some(x => typeof x === "string" && ID_RE.test(x));
   const renderNames = () => {
-    const cur = parent[key];
-    const ids = cur.filter(x => typeof x === "string" && (ID_RE.test(x) || x.startsWith("@") || x.startsWith("$")));
+    const ids = parent[key].filter(x => typeof x === "string" && (ID_RE.test(x) || x.startsWith("@") || x.startsWith("$")));
     names.innerHTML = "";
     if (!ids.length) return;
     names.append(el("summary", null, `이름 보기 (${ids.length}개)`));
     const box = el("div");
     for (const id of ids) {
       const h = refHint(path, id);
-      box.append(el("div", null, el("span", { class: "mono" }, id), " ", h ? h.textContent : el("span", { class: "muted" }, "(이름 모름)")));
+      box.append(el("div", null, el("span", { class: "mono" }, id), " ", h ? h.textContent : ""));
     }
     names.append(box);
   };
@@ -449,7 +818,7 @@ function listEditor(path, parent, key, readOnly) {
     if (numeric) {
       out = lines.map(Number);
       if (out.some(n => !Number.isFinite(n))) bad = "숫자만 한 줄에 하나씩 넣으세요";
-    } else if (origIds) {
+    } else if (idMode) {
       const wrong = lines.find(s => !(ID_RE.test(s) || s.startsWith("@") || s.startsWith("$")));
       if (wrong) bad = `아이템 ID 가 아닌 줄이 있습니다: "${wrong}"`;
     }
@@ -461,11 +830,14 @@ function listEditor(path, parent, key, readOnly) {
     markDirty(path);
   });
   renderNames();
-  return el("div", null, ta, el("div", { class: "hint" }, "한 줄에 하나씩"), msg, names);
+  const tools = el("div", { class: "row" }, el("span", { class: "hint" }, idMode ? "한 줄에 ID 하나 (@묶음이름 도 가능)" : "한 줄에 하나씩"));
+  if (idMode && !readOnly) tools.append(el("button", { class: "small", onclick: () => openItemSearch(id => {
+    ta.value = (ta.value.trim() ? ta.value.trim() + "\n" : "") + id; ta.dispatchEvent(new Event("input"));
+  }) }, "🔍 찾아서 추가"));
+  return el("div", null, ta, tools, msg, names);
 }
 
 function rawEditor(path, parent, key) {
-  // 모양이 섞인 목록 등 위젯으로 그리기 애매한 값은 JSON 그대로 고치게 한다
   const ta = el("textarea", { rows: 6, spellcheck: "false" });
   ta.value = JSON.stringify(parent[key], null, 2);
   const msg = el("div", { class: "hint bad" });
@@ -476,10 +848,11 @@ function rawEditor(path, parent, key) {
   return el("div", null, ta, el("div", { class: "hint" }, "JSON 형식 그대로 편집"), msg);
 }
 
-function valueEditor(path, parent, key, readOnly) {
+function valueEditor(path, parent, key, opts = {}) {
   const v = parent[key];
+  if (opts.raw) return rawEditor(path, parent, key);
   if (Array.isArray(v)) {
-    if (v.every(x => x === null || typeof x !== "object")) return listEditor(path, parent, key, readOnly);
+    if (v.every(x => x === null || typeof x !== "object")) return listEditor(path, parent, key, opts);
     if (v.every(x => x && typeof x === "object" && !Array.isArray(x))) {
       const box = el("div", { class: "nested" });
       v.forEach((_, i) => box.append(el("div", { class: "muted" }, `${i + 1}번째`), objectEditor(path, v, i)));
@@ -487,25 +860,73 @@ function valueEditor(path, parent, key, readOnly) {
     }
     return rawEditor(path, parent, key);
   }
-  if (v && typeof v === "object") return el("div", { class: "nested" }, objectEditor(path, parent, key));
-  return primitiveEditor(path, parent, key, readOnly);
+  if (v && typeof v === "object") return el("div", { class: "nested" }, objectEditor(path, parent, key, opts.childObj || {}));
+  return primitiveEditor(path, parent, key, opts);
 }
 
+// 값 종류 글자 → 새 값의 기본 모양
+function defaultFor(kind) {
+  return { n: 0, b: true, s: "", i: "", l: [], a: [], o: {} }[kind] ?? "";
+}
+
+/**
+ * 객체 하나를 칸들로 그린다.
+ * opts.skip: 안 그릴 키 / opts.readOnly: 잠글 키 / opts.removable(k): ✕ 를 붙일지
+ * opts.addKind: "props" | "slotProps" | "free" | "sets" — 맨 아래에 "값 추가" 줄을 붙인다
+ * opts.childOpts(k): 그 키의 편집기 옵션
+ */
 function objectEditor(path, parent, key, opts = {}) {
   const obj = parent[key];
   const box = el("div");
   const skip = opts.skip || new Set();
   for (const k of Object.keys(obj)) {
     if (skip.has(k)) continue;
-    if (k.startsWith("_") && k !== "_max_count" && k !== "_parent" && k !== "_id") {
+    // "_" 로 시작하는 키는 메모(_note, _comment …)라 글로만 보여 준다. 슬롯 값(_max_count, _parent)은 예외.
+    if (k.startsWith("_") && !(opts.underscoreFields && k in SLOT_PROPS) && !(k in SLOT_PROPS && typeof obj[k] !== "string") && k !== "_max_count" && k !== "_parent") {
       const val = obj[k];
       box.append(el("div", { class: "note" }, (Array.isArray(val) ? val.join("\n") : typeof val === "object" ? JSON.stringify(val) : String(val))));
       continue;
     }
     const ro = READONLY_KEYS.has(k) || (opts.readOnly && opts.readOnly.has(k));
-    box.append(el("div", { class: "field" }, labelFor(k), valueEditor(path, obj, k, ro)));
+    const child = { readOnly: ro, idSingle: ID_SINGLE.has(k), idList: ID_LIST.has(k) || opts.addKind === "sets", ...(opts.childOpts?.(k) || {}) };
+    const x = opts.removable?.(k)
+      ? el("button", { class: "small danger x", title: "이 항목 지우기", onclick: () => { delete obj[k]; markDirty(path); rerender(); } }, "✕")
+      : el("span");
+    box.append(el("div", { class: "field" }, labelFor(k), valueEditor(path, obj, k, child), x));
   }
+  if (opts.addKind) box.append(addRow(path, obj, opts.addKind));
   return box;
+}
+
+function addRow(path, obj, kind) {
+  const name = el("input", { type: "text", placeholder: kind === "sets" ? "묶음 이름 (영문)" : kind === "slotProps" ? "슬롯 값 이름" : "속성 이름 (예: Weight)", style: "width:240px",
+    list: kind === "slotProps" ? "dl-slotprops" : kind === "sets" ? null : "dl-props", spellcheck: "false" });
+  const type = el("select", null, ...Object.entries({ n: "숫자", s: "글자", b: "켜기/끄기", i: "아이템 ID", l: "목록", o: "묶음(JSON)" }).map(([v, l]) => el("option", { value: v }, l)));
+  const hint = el("span", { class: "muted" });
+  const known = () => {
+    const n = name.value.trim();
+    if (kind === "slotProps") return SLOT_PROPS[n];
+    if (kind === "sets") return "l";
+    const real = PROP_LOWER[n.toLowerCase()];
+    return real ? PROP_TYPES[real] : null;
+  };
+  name.addEventListener("input", () => {
+    const k = known();
+    if (k) type.value = k === "a" ? "o" : k;
+    const real = kind === "props" || kind === "free" ? PROP_LOWER[name.value.trim().toLowerCase()] : null;
+    hint.textContent = name.value.trim() && kind !== "sets" && kind !== "slotProps" && !real ? "SPT 속성 목록에 없는 이름 (오타 확인)" : (real && KEY_LABELS[real] ? KEY_LABELS[real] : "");
+  });
+  if (kind === "sets") type.style.display = "none";
+  const btn = el("button", { class: "small", onclick: () => {
+    let n = name.value.trim();
+    if (!n) { name.classList.add("invalid"); return; }
+    if (kind === "sets" && !/^[A-Za-z0-9_]+$/.test(n)) { toast("묶음 이름은 영문·숫자·_ 만 쓸 수 있습니다"); return; }
+    if (kind !== "sets" && kind !== "slotProps") n = PROP_LOWER[n.toLowerCase()] || n;
+    if (n in obj) { toast(`'${n}' 은(는) 이미 있습니다`); return; }
+    obj[n] = kind === "sets" ? [] : defaultFor(type.value === "o" && known() === "a" ? "a" : type.value);
+    markDirty(path); rerender();
+  } }, "＋ 추가");
+  return el("div", { class: "addrow" }, el("b", null, kind === "sets" ? "묶음 추가" : "값 추가"), name, type, btn, hint);
 }
 
 // ---------------------------------------------------------------------------
@@ -514,16 +935,16 @@ function objectEditor(path, parent, key, opts = {}) {
 function fileHeader(title, path, extra) {
   const doc = state.docs[path];
   const head = el("div", null,
-    el("h2", null, title),
+    el("h2", null, title, doc?.isNew ? el("span", { class: "badge new", style: "margin-left:8px" }, "아직 저장 안 된 새 파일") : null),
     el("div", { class: "sub" }, path.replace(/\//g, "\\")),
   );
   const rawBtn = el("button", { onclick: () => show({ kind: "raw", path, back: state.view }) }, "JSON 직접 편집");
   head.append(el("div", { class: "tools" }, extra || null, rawBtn));
-  if (doc.error) head.append(el("div", { class: "note" }, doc.error + "\n→ 'JSON 직접 편집' 으로 고치세요."));
+  if (doc?.error) head.append(el("div", { class: "note" }, doc.error + "\n→ 'JSON 직접 편집' 으로 고치세요."));
   return head;
 }
 
-async function show(view) {
+async function show(view, keepScroll) {
   state.view = view;
   const main = document.getElementById("main");
   main.innerHTML = "";
@@ -531,6 +952,7 @@ async function show(view) {
   try {
     if (view.kind === "config") await showConfig(main, view.mod);
     else if (view.kind === "patch") await showPatch(main, view.path, view.page || 1, view.filter || "");
+    else if (view.kind === "newpatch") showNewPatch(main, view.mod);
     else if (view.kind === "packs") await showPacks(main, view.path);
     else if (view.kind === "generic") await showGeneric(main, view.path);
     else if (view.kind === "raw") await showRaw(main, view.path, view.back);
@@ -538,8 +960,9 @@ async function show(view) {
     else if (view.kind === "settings") showSettings(main);
   } catch (e) {
     main.append(el("div", { class: "note" }, "화면을 그리지 못했습니다: " + e.message));
+    console.error(e);
   }
-  window.scrollTo(0, 0);
+  if (!keepScroll) window.scrollTo(0, 0);
 }
 
 async function showConfig(main, mod) {
@@ -548,17 +971,15 @@ async function showConfig(main, mod) {
   main.append(fileHeader(`${mod} — 기본 설정`, path));
   if (doc.error) return;
   const cfg = doc.data;
-  const card = el("div", { class: "card" });
-  const skip = new Set(["patches"]);
-  card.append(objectEditor(path, doc, "data", { skip }));
-  main.append(card);
+  main.append(el("div", { class: "card" }, objectEditor(path, doc, "data", { skip: new Set(["patches"]) })));
+  for (const e of checkConfig(mod)) main.append(el("div", { class: "check bad" }, e));
 
   if (cfg.patches && typeof cfg.patches === "object") {
     const pf = patchFiles(mod);
     const table = el("table", null, el("tr", null, el("th", null, "켜기"), el("th", null, "패치"), el("th", null, "키"), el("th")));
     const known = new Set();
     for (const p of pf) {
-      const pd = await loadDoc(p);
+      const pd = state.docs[p] || await loadDoc(p);
       const key = pd.data?.key;
       if (!key) continue;
       known.add(key);
@@ -568,29 +989,78 @@ async function showConfig(main, mod) {
       cb.addEventListener("change", () => { cfg.patches[key] = cb.checked; markDirty(path); });
       table.append(el("tr", null,
         el("td", null, el("label", { class: "switch" }, cb, el("span"))),
-        el("td", null, pd.data.title || key, inCfg ? null : el("span", { class: "badge" }, "config 에 없음 · 파일 기본값")),
+        el("td", null, pd.data.title || key, pd.isNew ? el("span", { class: "badge new" }, "새 패치") : null, inCfg ? null : el("span", { class: "badge" }, "config 에 없음 · 파일 기본값")),
         el("td", { class: "mono muted" }, key),
         el("td", null, el("button", { onclick: () => show({ kind: "patch", path: p }) }, "내용 보기"))));
     }
     for (const key of Object.keys(cfg.patches).filter(k => !known.has(k))) {
-      table.append(el("tr", null, el("td"), el("td", { class: "hint bad" }, "이 키에 해당하는 패치 파일이 없습니다"), el("td", { class: "mono" }, key), el("td")));
+      table.append(el("tr", null, el("td"), el("td", { class: "hint bad" }, "이 키에 해당하는 패치 파일이 없습니다"), el("td", { class: "mono" }, key),
+        el("td", null, el("button", { class: "small danger", onclick: () => { delete cfg.patches[key]; markDirty(path); rerender(); } }, "목록에서 빼기"))));
     }
-    const allOn = el("button", { onclick: () => { for (const k of known) cfg.patches[k] = true; markDirty(path); show(state.view); } }, "전부 켜기");
-    const allOff = el("button", { onclick: () => { for (const k of known) cfg.patches[k] = false; markDirty(path); show(state.view); } }, "전부 끄기");
-    main.append(el("div", { class: "card" }, el("h3", null, "패치 켜기/끄기", allOn, allOff), table));
+    const allOn = el("button", { onclick: () => { for (const k of known) cfg.patches[k] = true; markDirty(path); rerender(); } }, "전부 켜기");
+    const allOff = el("button", { onclick: () => { for (const k of known) cfg.patches[k] = false; markDirty(path); rerender(); } }, "전부 끄기");
+    const create = el("button", { onclick: () => show({ kind: "newpatch", mod }) }, "＋ 새 패치 만들기");
+    main.append(el("div", { class: "card" }, el("h3", null, "패치 켜기/끄기", allOn, allOff, create), table));
   }
 }
 
+// ----- 새 패치 만들기 -----
+function showNewPatch(main, mod) {
+  const cfgPath = fileOf(mod, "config.json");
+  const pf = patchFiles(mod);
+  const nextNo = String(Math.max(0, ...pf.map(p => parseInt(baseName(p), 10) || 0)) + 1).padStart(2, "0");
+  const key = el("input", { type: "text", placeholder: "예: m4_firerate_up", style: "width:320px", spellcheck: "false" });
+  const title = el("input", { type: "text", placeholder: "예: M4A1 연사속도 상향", style: "width:420px" });
+  const fileName = el("span", { class: "mono" });
+  const msg = el("div", { class: "hint bad" });
+  const validate = () => {
+    const k = key.value.trim();
+    fileName.textContent = `${nextNo}_${k || "키"}.json`;
+    let err = "";
+    if (!k) err = "연결 키를 넣으세요";
+    else if (!/^[A-Za-z0-9_]+$/.test(k)) err = "연결 키에는 영문·숫자·_ 만 쓸 수 있습니다";
+    else if (pf.some(p => state.docs[p]?.data?.key === k) || (state.docs[cfgPath]?.data?.patches && k in state.docs[cfgPath].data.patches)) err = "이미 있는 키입니다";
+    else if (!title.value.trim()) err = "패치 이름을 넣으세요";
+    msg.textContent = err; return !err;
+  };
+  key.addEventListener("input", validate); title.addEventListener("input", validate);
+  const create = el("button", { class: "primary", onclick: () => {
+    if (!validate()) return;
+    const k = key.value.trim();
+    const path = `4.1/${mod}/mod/db/patches/${nextNo}_${k}.json`;
+    state.docs[path] = { text: "", trailingNewline: true, dirty: true, isNew: true, error: null, kind: "json", edits: {},
+      data: { key: k, title: title.value.trim(), enabled: true, ops: [] } };
+    state.files.push({ mod, path });
+    const cfg = state.docs[cfgPath]?.data;
+    if (cfg) { cfg.patches = cfg.patches || {}; cfg.patches[k] = true; markDirty(cfgPath); }
+    markDirty(path);
+    buildNav();
+    show({ kind: "patch", path });
+    toast("새 패치를 만들었습니다. 작업을 추가한 뒤 [모두 저장] 하세요.");
+  } }, "만들기");
+  validate();
+  main.append(el("h2", null, `${mod} — 새 패치 만들기`),
+    el("div", { class: "note" }, "패치 파일 하나 = 켜고 끌 수 있는 기능 하나입니다.\n만들면 config.json 의 패치 목록에도 자동으로 등록됩니다(켜짐). 작업은 다음 화면에서 추가합니다."),
+    el("div", { class: "card" },
+      el("div", { class: "field" }, el("label", null, el("b", null, "연결 키"), "영문·숫자·_ — config.json 과 연결하는 이름, 나중에 못 바꿈"), el("div", null, key), el("span")),
+      el("div", { class: "field" }, el("label", null, el("b", null, "패치 이름"), "로그·편집기에 보이는 이름, 한글 가능"), el("div", null, title), el("span")),
+      el("div", { class: "field" }, el("label", null, el("b", null, "파일 이름")), el("div", null, fileName), el("span")),
+      msg, el("div", { class: "tools" }, create)));
+  key.focus();
+}
+
+// ----- 패치 화면 -----
 async function showPatch(main, path, page, filter) {
-  const doc = await loadDoc(path);
+  const doc = state.docs[path] || await loadDoc(path);
   const mod = modOf(path);
   const d = doc.data;
-  main.append(fileHeader(d?.title || baseName(path), path));
+  const delBtn = el("button", { class: "danger", onclick: () => deletePatch(path) }, "이 패치 삭제");
+  main.append(fileHeader(d?.title || baseName(path), path, delBtn));
   if (doc.error) return;
+  main.append(checkBox(path));
 
-  // 이 패치를 켜고 끄는 건 config.json 쪽 값이 이긴다 → 여기서 바꾸면 config.json 을 고친다
   const cfgPath = fileOf(mod, "config.json");
-  const cfgDoc = cfgPath ? await loadDoc(cfgPath) : null;
+  const cfgDoc = cfgPath ? (state.docs[cfgPath] || await loadDoc(cfgPath)) : null;
   const head = el("div", { class: "card" });
   if (cfgDoc?.data?.patches) {
     const cb = el("input", { type: "checkbox" });
@@ -602,12 +1072,28 @@ async function showPatch(main, path, page, filter) {
   head.append(objectEditor(path, doc, "data", { skip: new Set(["ops", "sets", "enabled"]) }));
   main.append(head);
 
-  if (d.sets && Object.keys(d.sets).length) {
-    main.append(el("details", { class: "card" }, el("summary", null, el("b", null, `ID 묶음 ${Object.keys(d.sets).length}개 (@이름 으로 참조)`)),
-      objectEditor(path, d, "sets")));
-  }
+  const setCount = d.sets ? Object.keys(d.sets).length : 0;
+  const setsCard = el("details", { class: "card", open: setCount > 0 && setCount < 4 },
+    el("summary", null, el("b", null, `ID 묶음 ${setCount}개`), el("span", { class: "muted" }, " — 여러 작업에서 같은 ID 목록을 \"@이름\" 으로 쓸 때")));
+  if (d.sets) setsCard.append(objectEditor(path, d, "sets", { addKind: "sets", removable: () => true }));
+  else setsCard.append(el("div", { class: "tools" }, el("button", { onclick: () => {
+    // 파일 안 순서를 key, title, enabled, sets, ops 로 맞춘다
+    const ops = d.ops; delete d.ops; d.sets = {}; d.ops = ops;
+    markDirty(path); rerender();
+  } }, "ID 묶음 쓰기 시작")));
+  main.append(setsCard);
 
-  const ops = Array.isArray(d.ops) ? d.ops : [];
+  // 작업 추가
+  const ops = Array.isArray(d.ops) ? d.ops : (d.ops = []);
+  const addCard = el("details", { class: "card", open: ops.length === 0 },
+    el("summary", null, el("b", null, "＋ 작업 추가"), el("span", { class: "muted" }, " — 자주 쓰는 작업을 고르거나 종류를 직접 고르세요")));
+  const recipes = el("div", { class: "recipes" });
+  for (const r of RECIPES) recipes.append(el("button", { onclick: () => addOps(path, r.ops()) }, r.title, el("small", null, r.desc)));
+  const kindSel = el("select", null, ...Object.keys(OP_SCHEMA).map(k => el("option", { value: k }, `${OP_NAMES[k]} (${k})`)));
+  addCard.append(recipes, el("div", { class: "tools" }, el("span", { class: "muted" }, "종류 직접 고르기:"), kindSel,
+    el("button", { onclick: () => addOps(path, [makeOp(kindSel.value)]) }, "추가")));
+  main.append(addCard);
+
   const search = el("input", { type: "text", placeholder: "작업 검색 (ID, 이름, 값…)", value: filter, style: "width:280px" });
   const matches = ops.map((op, i) => ({ op, i })).filter(({ op }) => {
     if (!filter) return true;
@@ -619,30 +1105,155 @@ async function showPatch(main, path, page, filter) {
   const pages = Math.max(1, Math.ceil(matches.length / OPS_PER_PAGE));
   page = Math.min(page, pages);
   search.addEventListener("keydown", e => { if (e.key === "Enter") show({ kind: "patch", path, filter: search.value.trim() }); });
-  const pager = el("span", { class: "row" },
+  const pager = () => el("span", { class: "row" },
     el("button", { disabled: page <= 1, onclick: () => show({ kind: "patch", path, filter, page: page - 1 }) }, "◀"),
     el("span", { class: "muted" }, `${page} / ${pages} 쪽`),
     el("button", { disabled: page >= pages, onclick: () => show({ kind: "patch", path, filter, page: page + 1 }) }, "▶"));
   main.append(el("div", { class: "tools" }, el("b", null, `작업 ${ops.length}개`), filter ? el("span", { class: "muted" }, `· 검색 결과 ${matches.length}개`) : null,
-    search, el("button", { onclick: () => show({ kind: "patch", path, filter: search.value.trim() }) }, "검색"), pages > 1 ? pager : null));
+    search, el("button", { onclick: () => show({ kind: "patch", path, filter: search.value.trim() }) }, "검색"), pages > 1 ? pager() : null));
 
-  for (const { op, i } of matches.slice((page - 1) * OPS_PER_PAGE, page * OPS_PER_PAGE)) {
-    const card = el("div", { class: "card" });
-    const title = el("h3", null, el("span", { class: "muted" }, `#${i + 1}`), el("span", null, OP_NAMES[op.op] || op.op), el("span", { class: "badge mono" }, op.op),
-      op.stage ? el("span", { class: "badge stage-" + op.stage }, VALUE_HINTS.stage[op.stage] || op.stage) : null);
-    const who = op.newId || op.id;
-    const n = who && nameOf(who);
-    if (n) title.append(el("span", { class: "name" }, n));
-    card.append(title, objectEditor(path, ops, i, { skip: new Set(["op"]) }));
-    main.append(card);
+  for (const { i } of matches.slice((page - 1) * OPS_PER_PAGE, page * OPS_PER_PAGE)) main.append(opCard(path, ops, i));
+  if (pages > 1) main.append(el("div", { class: "tools" }, pager()));
+}
+
+function addOps(path, newOps) {
+  const d = state.docs[path].data;
+  d.ops = d.ops || [];
+  d.ops.push(...newOps);
+  markDirty(path);
+  const page = Math.ceil(d.ops.length / OPS_PER_PAGE);
+  show({ kind: "patch", path, page }).then(() => {
+    const cards = document.querySelectorAll("main .opcard");
+    cards[cards.length - newOps.length]?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+  toast(`작업 ${newOps.length}개를 맨 아래에 추가했습니다. 빨간 칸을 채우세요.`);
+}
+
+function opCard(path, ops, i) {
+  const op = ops[i];
+  const mod = modOf(path);
+  const schema = OP_SCHEMA[op.op];
+  const move = (to) => { if (to < 0 || to >= ops.length) return; [ops[i], ops[to]] = [ops[to], ops[i]]; markDirty(path); rerender(); };
+  const dup = () => {
+    const copy = JSON.parse(JSON.stringify(op));
+    if (copy.newId) copy.newId = newMongoId();
+    if (copy.op === "addPreset") { copy.id = newMongoId(); if (copy.preset) copy.preset._id = copy.id; }
+    ops.splice(i + 1, 0, copy); markDirty(path); rerender();
+    toast(copy.newId ? "복제했습니다. 새 아이템 ID 는 새로 뽑았습니다." : "복제했습니다.");
+  };
+  const del = () => { if (!confirm(`#${i + 1} ${OP_NAMES[op.op] || op.op} 작업을 지울까요?`)) return; ops.splice(i, 1); markDirty(path); rerender(); };
+
+  const card = el("div", { class: "card opcard" });
+  const title = el("h3", null, el("span", { class: "muted" }, `#${i + 1}`), el("span", null, OP_NAMES[op.op] || op.op), el("span", { class: "badge mono" }, op.op),
+    op.stage ? el("span", { class: "badge stage-" + op.stage }, VALUE_HINTS.stage[op.stage] || op.stage) : null);
+  const who = op.newId || op.id;
+  const n = who && nameOf(who);
+  if (n) title.append(el("span", { class: "name" }, n));
+  title.append(el("span", { class: "grow" }),
+    el("button", { class: "small", title: "위로", disabled: i === 0, onclick: () => move(i - 1) }, "↑"),
+    el("button", { class: "small", title: "아래로", disabled: i === ops.length - 1, onclick: () => move(i + 1) }, "↓"),
+    el("button", { class: "small", onclick: dup }, "복제"),
+    el("button", { class: "small danger", onclick: del }, "삭제"));
+  card.append(title);
+  if (OP_HELP[op.op]) card.append(el("div", { class: "hint", style: "margin:-4px 0 6px" }, OP_HELP[op.op]));
+
+  // 대상 지정 방식
+  const skip = new Set(["op"]);
+  if (schema?.targets) {
+    const cur = TARGET_KEYS.find(k => k in op) || "targets";
+    const sel = el("select", null, ...TARGET_KEYS.map(k => { const o = el("option", { value: k }, TARGET_NAMES[k]); if (k === cur) o.selected = true; return o; }));
+    sel.addEventListener("change", () => {
+      for (const k of TARGET_KEYS) delete op[k];
+      // 새 대상 키를 op/stage 바로 뒤에 두려고 순서를 다시 짠다
+      const rest = { ...op }; for (const k of Object.keys(op)) delete op[k];
+      op.op = rest.op; if (rest.stage) op.stage = rest.stage; delete rest.op; delete rest.stage;
+      op[sel.value] = sel.value === "targetsAll" ? true : [];
+      Object.assign(op, rest);
+      markDirty(path); rerender();
+    });
+    card.append(el("div", { class: "field" }, el("label", null, el("b", null, "대상 지정 방식")),
+      el("div", null, sel, sel.value === "targetsByBaseClass" ? el("div", { class: "hint" }, "예: 탄창 5448bc234bdc2d3c308b4569, 돌격소총 5447b5f14bdc2d61278b4567 — 하위 분류까지 전부 잡힙니다") : null), el("span")));
+    if (op.targetsAll === true) skip.add("targetsAll");
   }
-  if (pages > 1) main.append(el("div", { class: "tools" }, pager.cloneNode(true)));
-  // cloneNode 는 이벤트를 안 가져오므로 아래 페이저는 다시 연결
-  const lower = main.lastChild.querySelectorAll("button");
-  if (lower.length === 2) {
-    lower[0].onclick = () => show({ kind: "patch", path, filter, page: page - 1 });
-    lower[1].onclick = () => show({ kind: "patch", path, filter, page: page + 1 });
+
+  const optional = schema?.optional || {};
+  // 속성 값 중 슬롯 목록(Slots 등 객체 목록)·묶음(Prefab 등)은 JSON 으로 편집한다
+  const propChild = pk => { const t = PROP_TYPES[PROP_LOWER[pk.toLowerCase()]]; return t === "a" ? { raw: true } : {}; };
+  const childOpts = k => {
+    if (k === "props") return { childObj: { addKind: "props", removable: () => true, childOpts: propChild } };
+    if (k === "slotProps") return { childObj: { addKind: "slotProps", removable: () => true, underscoreFields: true } };
+    if (k === "whenPropEquals") return { childObj: { addKind: "props", removable: () => true } };
+    if (k === "preset") return { raw: true };
+    return {};
+  };
+  card.append(objectEditor(path, ops, i, {
+    skip,
+    removable: k => k in optional,
+    childOpts,
+  }));
+
+  // 선택 항목 추가
+  const missing = Object.keys(optional).filter(k => !(k in op));
+  if (missing.length) {
+    const sel = el("select", null, ...missing.map(k => el("option", { value: k }, `${KEY_LABELS[k] || k} (${k})`)));
+    card.append(el("div", { class: "addrow" }, el("b", null, "선택 항목"), sel, el("button", { class: "small", onclick: () => {
+      op[sel.value] = JSON.parse(JSON.stringify(optional[sel.value])); markDirty(path); rerender();
+    } }, "＋ 추가")));
   }
+
+  if (op.op === "cloneItem" && op.newId) card.append(localeBox(mod, op.newId));
+  return card;
+}
+
+// 새 아이템의 게임 표시 이름 (모드의 db/locales/global/kr.json · en.json)
+function localeBox(mod, id) {
+  const box = el("div", { class: "nested", style: "margin-top:8px" }, el("b", null, "게임에 보일 이름"),
+    el("span", { class: "muted" }, " — db/locales/global 의 kr.json(한국어) · en.json(영어). 한국어 클라이언트는 kr, 없으면 영어로 보입니다"));
+  for (const lang of ["kr", "en"]) {
+    const doc = getLocaleDoc(mod, lang, false);
+    for (const part of ["Name", "ShortName", "Description"]) {
+      const key = `${id} ${part}`;
+      const real = doc ? findLocaleKey(doc, key) : key;
+      const value = doc?.data?.[real] ?? "";
+      const inp = part === "Description"
+        ? el("textarea", { rows: 2, style: "font-family:inherit" })
+        : el("input", { type: "text", class: "wide" });
+      inp.value = value;
+      inp.addEventListener("input", () => setLocale(mod, lang, real, inp.value));
+      const label = { Name: "이름", ShortName: "짧은 이름", Description: "설명" }[part];
+      box.append(el("div", { class: "field" }, el("label", null, el("b", null, `${lang === "kr" ? "한국어" : "영어"} ${label}`), part), inp, el("span")));
+    }
+    if (!doc) box.append(el("div", { class: "hint" }, `${lang}.json 이 아직 없습니다 — 칸을 채우고 저장하면 새로 만듭니다`));
+  }
+  return box;
+}
+
+async function deletePatch(path) {
+  const doc = state.docs[path];
+  const mod = modOf(path);
+  const key = doc?.data?.key;
+  if (!confirm(`'${doc?.data?.title || baseName(path)}' 패치를 삭제할까요?\n파일은 .editor-backup 폴더로 옮겨지고, config.json 목록에서도 빠집니다.`)) return;
+  if (!doc.isNew) {
+    try { await api("POST", "/api/deletefile?path=" + encodeURIComponent(path)); }
+    catch (e) { toast("삭제 실패: " + e.message); return; }
+  }
+  const createdIds = (doc?.data?.ops || []).filter(o => o.op === "cloneItem" && o.newId).map(o => o.newId);
+  delete state.docs[path];
+  state.files = state.files.filter(f => f.path !== path);
+  const localeChanged = removeLocaleFor(mod, createdIds);
+  for (const lp of localeChanged) { const ld = state.docs[lp]; if (ld.isNew && !Object.keys(ld.data).length) { delete state.docs[lp]; state.files = state.files.filter(f => f.path !== lp); } }
+  if (!doc.isNew) for (const lp of localeChanged) if (state.docs[lp]?.dirty) { try { await saveDoc(lp); } catch (e) { toast("이름표 정리 실패: " + e.message); } }
+  const cfgPath = fileOf(mod, "config.json");
+  const cfgDoc = state.docs[cfgPath];
+  if (cfgDoc?.data?.patches && key in cfgDoc.data.patches) {
+    delete cfgDoc.data.patches[key];
+    markDirty(cfgPath);
+    // 파일은 이미 지웠으니 config 도 바로 저장해서 서로 맞춘다
+    if (!doc.isNew) { try { await saveDoc(cfgPath); } catch (e) { toast("config.json 저장 실패: " + e.message); } }
+  }
+  refreshSaveBar(); buildNav();
+  show({ kind: "config", mod });
+  toast("패치를 삭제했습니다" + (doc.isNew ? "" : " (백업 있음)"));
 }
 
 async function showPacks(main, path) {
@@ -660,15 +1271,19 @@ async function showPacks(main, path) {
 
 async function showGeneric(main, path) {
   const doc = await loadDoc(path);
+  const name = baseName(path);
   const titles = { "values.json": "공용 수치", "ammo.json": "공용 ID 묶음" };
-  main.append(fileHeader(`${modOf(path)} — ${titles[baseName(path)] || baseName(path)}`, path));
+  main.append(fileHeader(`${modOf(path)} — ${titles[name] || name}`, path));
   if (doc.error) return;
-  if (baseName(path) === "values.json") main.append(el("div", { class: "note" }, "패치 파일에서 \"$이름\" 으로 쓰는 값입니다. 여기서 한 번 바꾸면 그 값을 쓰는 모든 곳에 반영됩니다."));
-  main.append(el("div", { class: "card" }, Array.isArray(doc.data) ? valueEditor(path, doc, "data") : objectEditor(path, doc, "data")));
+  if (name === "values.json") main.append(el("div", { class: "note" }, "패치 파일에서 \"$이름\" 으로 쓰는 값입니다. 여기서 한 번 바꾸면 그 값을 쓰는 모든 곳에 반영됩니다."));
+  if (name === "ammo.json") main.append(el("div", { class: "note" }, "이 모드의 모든 패치에서 \"@이름\" 으로 쓸 수 있는 ID 묶음입니다."));
+  const addKind = name === "values.json" ? "free" : name === "ammo.json" ? "sets" : null;
+  main.append(el("div", { class: "card" }, Array.isArray(doc.data) ? valueEditor(path, doc, "data")
+    : objectEditor(path, doc, "data", { addKind, removable: addKind ? (k => !k.startsWith("_")) : null })));
 }
 
 async function showRaw(main, path, back) {
-  const doc = await loadDoc(path);
+  const doc = state.docs[path] || await loadDoc(path);
   main.append(el("h2", null, "JSON 직접 편집 — " + baseName(path)), el("div", { class: "sub" }, path.replace(/\//g, "\\")));
   main.append(el("div", { class: "note" }, "고급 편집입니다. 쉼표·따옴표 하나만 틀려도 저장되지 않습니다(빨간 테두리). 저장은 아래 [모두 저장] 으로 합니다."));
   const ta = el("textarea", { rows: 32, spellcheck: "false" });
@@ -678,6 +1293,7 @@ async function showRaw(main, path, back) {
     try {
       doc.data = JSON.parse(ta.value); doc.error = null;
       doc.trailingNewline = ta.value.endsWith("\n");
+      if (doc.kind === "locale") { doc.kind = "json"; }   // 직접 편집하면 통째로 쓴다
       ta.classList.remove("invalid"); msg.textContent = "";
       markDirty(path);
     } catch (e) { ta.classList.add("invalid"); msg.textContent = "JSON 문법 오류: " + e.message; doc.error = "JSON 문법 오류: " + e.message; refreshSaveBar(); }
@@ -693,16 +1309,17 @@ function showSettings(main) {
   main.append(el("h2", null, "SPT 경로 / 적용 설정"),
     el("div", { class: "card" },
       el("div", { class: "field" }, el("label", null, el("b", null, "SPT 설치 폴더"), "예: E:\\SPT 4.1"), el("div", null, root,
-        el("div", { class: i.modsDirFound ? "hint name" : "hint bad" }, i.modsDirFound ? "SPT_Runtime\\user\\mods 폴더를 찾았습니다" : "이 경로에서 SPT_Runtime\\user\\mods 폴더를 찾지 못했습니다"))),
+        el("div", { class: i.modsDirFound ? "hint name" : "hint bad" }, i.modsDirFound ? "SPT_Runtime\\user\\mods 폴더를 찾았습니다" : "이 경로에서 SPT_Runtime\\user\\mods 폴더를 찾지 못했습니다")), el("span")),
       el("div", { class: "field" }, el("label", null, el("b", null, "저장할 때 SPT 에도 바로 적용")),
         el("div", null, el("label", { class: "switch" }, apply, el("span")),
-          el("div", { class: "hint" }, "켜 두면 저장할 때 설치된 모드 폴더의 같은 파일도 함께 바꿉니다. JSON 만 고쳤다면 빌드 없이 서버 재시작만 하면 됩니다."))),
-      el("div", { class: "field" }, el("label", null, el("b", null, "설치된 모드")), el("div", null, rows)),
+          el("div", { class: "hint" }, "켜 두면 저장할 때 설치된 모드 폴더의 같은 파일도 함께 바꿉니다. JSON 만 고쳤다면 빌드 없이 서버 재시작만 하면 됩니다.")), el("span")),
+      el("div", { class: "field" }, el("label", null, el("b", null, "설치된 모드")), el("div", null, rows), el("span")),
       el("div", { class: "field" }, el("label", null, el("b", null, "아이템 이름 표시")), el("div", null,
-        i.gameLocale ? "설치된 SPT 의 한국어 아이템 이름을 쓰고 있습니다" : "SPT 원본 아이템 이름 파일을 찾지 못해, 모드가 추가한 아이템 이름만 표시합니다")),
+        i.gameLocale ? "설치된 SPT 의 한국어 아이템 이름을 쓰고 있습니다" : "SPT 원본 아이템 이름 파일을 찾지 못해, 모드가 추가한 아이템 이름만 표시합니다"), el("span")),
       el("div", { class: "tools" }, el("button", { class: "primary", onclick: async () => {
         await api("POST", "/api/settings", JSON.stringify({ sptRoot: root.value, applyOnSave: apply.checked }));
-        await refreshInfo(); if (i.gameLocale !== state.info.gameLocale) await loadNames();
+        const before = i.gameLocale;
+        await refreshInfo(); if (before !== state.info.gameLocale) await loadNames();
         toast("설정을 저장했습니다"); show({ kind: "settings" });
       } }, "설정 저장"))));
 }
@@ -726,31 +1343,54 @@ function showBuild(main) {
 // ---------------------------------------------------------------------------
 // 저장
 // ---------------------------------------------------------------------------
+async function saveDoc(path) {
+  const doc = state.docs[path];
+  const text = serialize(doc);
+  const r = await api("POST", (doc.isNew ? "/api/newfile?path=" : "/api/file?path=") + encodeURIComponent(path), text);
+  doc.text = text; doc.dirty = false; doc.isNew = false; doc.edits = {};
+  return r;
+}
+
 async function saveAll() {
   const dirty = Object.entries(state.docs).filter(([, d]) => d.dirty);
   if (dirty.some(([, d]) => d.error)) { toast("문법 오류가 있는 파일이 있어 저장하지 않았습니다. 빨간 칸을 고치세요."); return; }
+  // 저장 전 검사 — 바뀐 모드의 패치 전부
+  const mods = new Set(dirty.map(([p]) => modOf(p)));
+  const problems = [];
+  for (const mod of mods) {
+    for (const p of patchFiles(mod)) for (const e of checkPatch(p).errs) problems.push(`${baseName(p)}: ${e}`);
+    for (const e of checkConfig(mod)) problems.push(e);
+  }
+  if (problems.length && !confirm(`검사에서 오류 ${problems.length}건이 나왔습니다. 이대로면 서버에서 동작하지 않거나 서버가 죽을 수 있습니다.\n\n` +
+      problems.slice(0, 12).join("\n") + (problems.length > 12 ? `\n… 외 ${problems.length - 12}건` : "") + "\n\n그래도 저장할까요?")) return;
+  // 새 패치 파일을 config 보다 먼저 저장한다 (config 가 없는 파일을 가리키는 순간이 없도록)
+  dirty.sort(([a], [b]) => (a.endsWith("config.json") ? 1 : 0) - (b.endsWith("config.json") ? 1 : 0));
   const results = [];
-  for (const [path, doc] of dirty) {
-    const text = serialize(doc);
+  for (const [path] of dirty) {
+    const wasNew = state.docs[path].isNew;
     try {
-      const r = await api("POST", "/api/file?path=" + encodeURIComponent(path), text);
-      doc.text = text; doc.dirty = false;
-      results.push(`✔ ${baseName(path)}` + (r.applied ? " (SPT 에도 적용)" : "") + (r.applyError ? ` — SPT 적용 실패: ${r.applyError}` : ""));
+      const r = await saveDoc(path);
+      results.push(`✔ ${baseName(path)}${wasNew ? " (새 파일)" : ""}` + (r.applied ? " → SPT 에도 적용" : "") + (r.applyError ? ` — SPT 적용 실패: ${r.applyError}` : ""));
     } catch (e) { results.push(`✖ ${baseName(path)} — ${e.message}`); }
   }
-  refreshSaveBar(); refreshNavFlags(); buildNav();
+  refreshSaveBar(); buildNav();
+  if (state.view) rerender();
   const applied = results.some(r => r.includes("SPT 에도 적용"));
-  toast(results.join("\n") + (applied ? "\n\n서버를 재시작하면 반영됩니다." : ""), 6000);
+  toast(results.join("\n") + (applied ? "\n\n서버를 재시작하면 반영됩니다." : ""), 7000);
 }
 
 function revertAll() {
-  if (!confirm("저장하지 않은 변경을 모두 버릴까요?")) return;
-  for (const doc of Object.values(state.docs)) {
+  if (!confirm("저장하지 않은 변경을 모두 버릴까요? (아직 저장 안 한 새 패치도 사라집니다)")) return;
+  for (const [path, doc] of Object.entries(state.docs)) {
     if (!doc.dirty) continue;
+    if (doc.isNew) { delete state.docs[path]; state.files = state.files.filter(f => f.path !== path); continue; }
     try { doc.data = JSON.parse(doc.text); doc.error = null; } catch (e) { doc.error = e.message; }
-    doc.trailingNewline = doc.text.endsWith("\n"); doc.dirty = false;
+    doc.trailingNewline = doc.text.endsWith("\n"); doc.dirty = false; doc.edits = {};
+    if (isLocalePath(path)) doc.kind = "locale";
   }
-  refreshSaveBar(); buildNav(); show(state.view);
+  refreshSaveBar(); buildNav();
+  const v = state.view;
+  if (v && (v.path && !state.docs[v.path])) show({ kind: "config", mod: modOf(v.path) }); else show(v);
 }
 
 async function refreshInfo() {
@@ -768,6 +1408,10 @@ document.getElementById("btnSaveAll").onclick = saveAll;
 document.getElementById("btnRevert").onclick = revertAll;
 document.getElementById("btnBuild").onclick = () => show({ kind: "build" });
 document.getElementById("btnSettings").onclick = () => show({ kind: "settings" });
+document.getElementById("btnSearch").onclick = () => openItemSearch((id, name) => {
+  navigator.clipboard?.writeText(id).catch(() => { });
+  toast(`${name}\n${id}\n(ID 를 클립보드에 복사했습니다)`);
+});
 document.getElementById("btnQuit").onclick = async () => {
   if (Object.values(state.docs).some(d => d.dirty) && !confirm("저장 안 된 변경이 있습니다. 그래도 끌까요?")) return;
   try { await api("POST", "/api/shutdown"); } catch { }
@@ -777,11 +1421,12 @@ window.addEventListener("beforeunload", e => { if (Object.values(state.docs).som
 window.addEventListener("keydown", e => { if ((e.ctrlKey || e.metaKey) && e.key === "s") { e.preventDefault(); saveAll(); } });
 
 (async () => {
+  document.getElementById("dl-props").append(...Object.keys(PROP_TYPES).sort().map(k => el("option", { value: k }, KEY_LABELS[k] || "")));
+  document.getElementById("dl-slotprops").append(...Object.keys(SLOT_PROPS).map(k => el("option", { value: k }, KEY_LABELS[k] || "")));
   try {
     await refreshInfo();
     state.files = (await api("GET", "/api/files")).files;
-    // 메뉴에 제목·켜짐 표시를 하려면 설정과 패치 파일을 먼저 읽어야 한다 (전부 합쳐 수백 KB)
-    await Promise.all(state.files.filter(f => !f.path.includes("/locales/")).map(f => loadDoc(f.path).catch(() => null)));
+    await Promise.all(state.files.filter(f => !isLocalePath(f.path)).map(f => loadDoc(f.path).catch(() => null)));
     await loadNames();
     buildNav();
     const first = state.files.find(f => f.path.endsWith("/mod/config.json"));

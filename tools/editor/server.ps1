@@ -26,9 +26,11 @@ $BackupRoot   = Join-Path $RepoRoot '.editor-backup'
 $Solution     = Join-Path $RepoRoot 'Project-HANA-VI-4.1.slnx'
 
 # 편집해도 되는 파일만 허용한다 (그 밖의 경로는 읽기/쓰기 모두 거부).
-$WritablePattern = '^4\.1/[A-Za-z0-9_.\-]+/mod/(config\.json|db/(values|packs|ammo)\.json|db/patches/[A-Za-z0-9_.\-]+\.json)$'
-# 읽기만 허용 (아이템 이름 표시용 로케일)
-$ReadablePattern = '^4\.1/[A-Za-z0-9_.\-]+/mod/db/locales/global/[a-z\-]+\.json$'
+# 로케일(아이템 이름표)은 패처에서 새 아이템 이름을 넣을 때 쓴다.
+$WritablePattern = '^4\.1/[A-Za-z0-9_.\-]+/mod/(config\.json|db/(values|packs|ammo)\.json|db/patches/[A-Za-z0-9_.\-]+\.json|db/locales/global/[a-z\-]+\.json)$'
+# 새로 만들기 / 삭제는 패치 파일과 로케일만
+$CreatablePattern = '^4\.1/[A-Za-z0-9_.\-]+/mod/db/(patches/[A-Za-z0-9_.\-]+|locales/global/[a-z\-]+)\.json$'
+$DeletablePattern = '^4\.1/[A-Za-z0-9_.\-]+/mod/db/patches/[A-Za-z0-9_.\-]+\.json$'
 
 # 브라우저 밖의 웹사이트가 이 서버에 몰래 요청을 보내지 못하게 하는 1회용 암호.
 $Token = [Guid]::NewGuid().ToString('N')
@@ -145,13 +147,11 @@ function Send-Json($req, $obj, [int]$status = 200) {
 }
 
 # 저장소 기준 상대 경로를 검사해서 실제 경로로 바꾼다. 허용 목록 밖이면 $null.
-function Resolve-RepoFile([string]$rel, [bool]$forWrite) {
+function Resolve-RepoFile([string]$rel, [string]$pattern) {
     if (-not $rel) { return $null }
     $rel = $rel.Replace('\', '/')
     if ($rel.Contains('..')) { return $null }
-    $ok = $rel -match $WritablePattern
-    if (-not $ok -and -not $forWrite) { $ok = $rel -match $ReadablePattern }
-    if (-not $ok) { return $null }
+    if ($rel -notmatch $pattern) { return $null }
     return (Join-Path $RepoRoot ($rel.Replace('/', '\')))
 }
 
@@ -162,6 +162,42 @@ function Get-DeployedPath($s, [string]$rel) {
     $modDir = [System.IO.Path]::Combine((Get-ModsDir $s), $m.Groups[1].Value)
     if (-not (Test-Path -LiteralPath $modDir)) { return $null }
     return [System.IO.Path]::Combine($modDir, $m.Groups[2].Value.Replace('/', [System.IO.Path]::DirectorySeparatorChar))
+}
+
+# 문법 검사는 편집 화면(브라우저)이 저장 전에 한다. 여기서는 빈 내용/엉뚱한 내용만 막는다.
+# (PowerShell 5.1 의 ConvertFrom-Json 은 대소문자만 다른 키가 있으면 멀쩡한 JSON 도 거부해서 쓰지 않는다)
+function Test-JsonShape([string]$text) {
+    $t = $text.Trim()
+    if ($t.Length -lt 2) { return $false }
+    return (($t[0] -eq '{' -and $t[-1] -eq '}') -or ($t[0] -eq '[' -and $t[-1] -eq ']'))
+}
+
+# 백업: .editor-backup\<날짜-시간>\<원래 경로>
+function Backup-RepoFile([string]$rel, [string]$full) {
+    $stamp = Get-Date -Format 'yyyyMMdd-HHmmss'
+    $bak = Join-Path (Join-Path $BackupRoot $stamp) ($rel.Replace('/', '\'))
+    New-Item -ItemType Directory -Force -Path (Split-Path $bak) | Out-Null
+    Copy-Item -LiteralPath $full -Destination $bak -Force
+    return $bak
+}
+
+# 저장소 파일을 쓰고, 설정이 켜져 있으면 설치된 SPT 모드 폴더의 같은 파일도 쓴다.
+function Write-RepoFile($s, [string]$rel, [string]$full, [string]$body, $bak) {
+    [System.IO.File]::WriteAllText($full, $body, $Utf8NoBom)
+    $applied = $null; $applyError = $null
+    if ($s.applyOnSave) {
+        $dst = Get-DeployedPath $s $rel
+        if ($dst) {
+            try {
+                New-Item -ItemType Directory -Force -Path (Split-Path $dst) | Out-Null
+                [System.IO.File]::WriteAllText($dst, $body, $Utf8NoBom)
+                $applied = $dst
+            } catch { $applyError = $_.Exception.Message }
+        }
+    }
+    Write-Host ("[저장] {0}" -f $rel) -ForegroundColor Green
+    if ($applied) { Write-Host ("       → SPT 에도 적용: {0}" -f $applied) -ForegroundColor DarkGreen }
+    return @{ ok = $true; backup = $bak; applied = $applied; applyError = $applyError }
 }
 
 function Get-FileList {
@@ -252,7 +288,7 @@ function Handle-Request($req) {
         }
         'GET /api/files' { Send-Json $req @{ files = (Get-FileList) } }
         'GET /api/file' {
-            $full = Resolve-RepoFile $req.Query['path'] $false
+            $full = Resolve-RepoFile $req.Query['path'] $WritablePattern
             if (-not $full -or -not (Test-Path -LiteralPath $full)) { Send-Json $req @{ error = '허용되지 않았거나 없는 파일' } 404; break }
             Send-Text $req 200 'text/plain; charset=utf-8' ([System.IO.File]::ReadAllText($full, $Utf8NoBom))
         }
@@ -264,35 +300,39 @@ function Handle-Request($req) {
         }
         'POST /api/file' {
             $rel = $req.Query['path']
-            $full = Resolve-RepoFile $rel $true
+            $full = Resolve-RepoFile $rel $WritablePattern
             if (-not $full -or -not (Test-Path -LiteralPath $full)) { Send-Json $req @{ ok = $false; error = '허용되지 않은 파일입니다' } 400; break }
-            # 문법 검사는 편집 화면(브라우저)이 저장 전에 한다. 여기서는 빈 내용/엉뚱한 내용만 막는다.
-            # (PowerShell 5.1 의 ConvertFrom-Json 은 대소문자만 다른 키가 있으면 멀쩡한 JSON 도 거부해서 쓰지 않는다)
-            $trimmed = $req.Body.Trim()
-            if ($trimmed.Length -lt 2 -or -not (($trimmed[0] -eq '{' -and $trimmed[-1] -eq '}') -or ($trimmed[0] -eq '[' -and $trimmed[-1] -eq ']'))) {
+            if (-not (Test-JsonShape $req.Body)) {
                 Send-Json $req @{ ok = $false; error = '내용이 JSON 이 아니라서 저장하지 않았습니다' } 400; break
             }
-            # 백업: .editor-backup\<날짜-시간>\<원래 경로>
-            $stamp = Get-Date -Format 'yyyyMMdd-HHmmss'
-            $bak = Join-Path (Join-Path $BackupRoot $stamp) ($rel.Replace('/', '\'))
-            New-Item -ItemType Directory -Force -Path (Split-Path $bak) | Out-Null
-            Copy-Item -LiteralPath $full -Destination $bak -Force
-            [System.IO.File]::WriteAllText($full, $req.Body, $Utf8NoBom)
-
-            $applied = $null; $applyError = $null
-            if ($s.applyOnSave) {
-                $dst = Get-DeployedPath $s $rel
-                if ($dst) {
-                    try {
-                        New-Item -ItemType Directory -Force -Path (Split-Path $dst) | Out-Null
-                        [System.IO.File]::WriteAllText($dst, $req.Body, $Utf8NoBom)
-                        $applied = $dst
-                    } catch { $applyError = $_.Exception.Message }
-                }
+            $bak = Backup-RepoFile $rel $full
+            Send-Json $req (Write-RepoFile $s $rel $full $req.Body $bak)
+        }
+        'POST /api/newfile' {
+            $rel = $req.Query['path']
+            $full = Resolve-RepoFile $rel $CreatablePattern
+            if (-not $full) { Send-Json $req @{ ok = $false; error = '여기에는 새 파일을 만들 수 없습니다' } 400; break }
+            if (Test-Path -LiteralPath $full) { Send-Json $req @{ ok = $false; error = '같은 이름의 파일이 이미 있습니다' } 400; break }
+            if (-not (Test-JsonShape $req.Body)) { Send-Json $req @{ ok = $false; error = '내용이 JSON 이 아니라서 만들지 않았습니다' } 400; break }
+            New-Item -ItemType Directory -Force -Path (Split-Path $full) | Out-Null
+            Send-Json $req (Write-RepoFile $s $rel $full $req.Body $null)
+        }
+        'POST /api/deletefile' {
+            $rel = $req.Query['path']
+            $full = Resolve-RepoFile $rel $DeletablePattern
+            if (-not $full -or -not (Test-Path -LiteralPath $full)) { Send-Json $req @{ ok = $false; error = '삭제할 수 없는 파일입니다' } 400; break }
+            # 지우지 않고 백업 폴더로 옮긴다. 설치된 SPT 쪽 사본도 같이 옮겨야 서버가 더 이상 읽지 않는다.
+            $bak = Backup-RepoFile $rel $full
+            Remove-Item -LiteralPath $full -Force
+            $removedDeployed = $null
+            $dst = Get-DeployedPath $s $rel
+            if ($dst -and (Test-Path -LiteralPath $dst)) {
+                $dbak = $bak + '.spt-installed'
+                Move-Item -LiteralPath $dst -Destination $dbak -Force
+                $removedDeployed = $dst
             }
-            Write-Host ("[저장] {0}" -f $rel) -ForegroundColor Green
-            if ($applied) { Write-Host ("       → SPT 에도 적용: {0}" -f $applied) -ForegroundColor DarkGreen }
-            Send-Json $req @{ ok = $true; backup = $bak; applied = $applied; applyError = $applyError }
+            Write-Host ("[삭제] {0} (백업: {1})" -f $rel, $bak) -ForegroundColor Yellow
+            Send-Json $req @{ ok = $true; backup = $bak; removedDeployed = $removedDeployed }
         }
         'POST /api/settings' {
             try { $j = $req.Body | ConvertFrom-Json } catch { Send-Json $req @{ ok = $false } 400; break }
