@@ -28,6 +28,7 @@ public class ExtraPackInjector(
     ISptLogger<ExtraPackInjector> logger,
     PackReader reader,
     CustomItemService customItems,
+    TemplateTable templateTable,
     JsonUtil jsonUtil)
 {
     /// <summary>3.11 의 wttCurrencyIds. JSON 에 "ROUBLES" 처럼 이름으로 적혀 있다.</summary>
@@ -303,7 +304,7 @@ public class ExtraPackInjector(
                 {
                     UnlimitedCount = restriction is null,
                     StackObjectsCount = restriction ?? 999999,
-                    BuyRestrictionMax = restriction,
+                    BuyRestrictionMax = (int?)restriction,
                     BuyRestrictionCurrent = restriction is null ? null : 0,
                 },
             });
@@ -361,9 +362,6 @@ public class ExtraPackInjector(
         var handbookPath = Path.Combine(root, "templates", "handbook.json");
         if (reader.ReadNode(handbookPath)?["Items"] is JsonArray hbItems)
         {
-            templates.Handbook.Items ??= new List<HandbookItem>();
-            templates.Prices ??= new Dictionary<MongoId, double>();
-
             foreach (var node in hbItems.OfType<JsonObject>())
             {
                 try
@@ -423,8 +421,6 @@ public class ExtraPackInjector(
         // itemsToAdd: 기존 아이템 슬롯에 끼워 넣기 + 도감 등록
         if (modify["itemsToAdd"] is JsonArray toAdd)
         {
-            templates.Handbook.Items ??= new List<HandbookItem>();
-
             foreach (var entry in toAdd.OfType<JsonObject>())
             {
                 if (!MongoIds.TryParse(entry["_id"]?.GetValue<string>(), out var id)) continue;
@@ -612,6 +608,10 @@ public class ExtraPackInjector(
         {
             ItemTplToClone = source,
             NewId = newId,
+            // 4.1 은 이 값을 새 아이템의 내부 이름(_name)으로 쓴다. 3.11 은 복제 원본의 _name 을 그대로 뒀으므로 똑같이 맞춘다.
+            NewItemName = templateTable.Items.TryGetValue(source, out var sourceItem) && sourceItem.Name is { } srcName
+                ? srcName
+                : itemId,
             ParentId = MongoIds.TryParse(cfg[parentKey]?.GetValue<string>(), out var parent) ? parent : default,
             OverrideProperties = overrides,
             HandbookParentId = cfg["handbookParentId"]?.GetValue<string>(),

@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HANA-VI 설정 편집기</title>
+<style>
+:root {
+  --bg: #f6f7f9; --panel: #ffffff; --text: #1d2330; --muted: #6b7385; --line: #dfe3ea;
+  --accent: #2f6fdf; --accent-weak: #e7efff; --ok: #1f8a4c; --warn: #b7791f; --bad: #c53030;
+  --note-bg: #fff8e6; --note-line: #f1d699; --input: #ffffff; --chip: #eef1f5;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171d; --panel: #1c2028; --text: #e6e9ef; --muted: #98a1b3; --line: #2e3440;
+    --accent: #6c9cff; --accent-weak: #22304d; --ok: #4cc38a; --warn: #e0a84b; --bad: #ff6b6b;
+    --note-bg: #2a2516; --note-line: #5a4a20; --input: #151920; --chip: #262c37;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.5 "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+header { position: sticky; top: 0; z-index: 10; background: var(--panel); border-bottom: 1px solid var(--line); padding: 10px 16px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+header h1 { font-size: 16px; margin: 0 12px 0 0; }
+header .spacer { flex: 1; }
+button { font: inherit; border: 1px solid var(--line); background: var(--panel); color: var(--text); border-radius: 6px; padding: 5px 12px; cursor: pointer; }
+button:hover { border-color: var(--accent); }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+button:disabled { opacity: .5; cursor: default; }
+input[type=text], textarea, select { font: inherit; color: var(--text); background: var(--input); border: 1px solid var(--line); border-radius: 5px; padding: 4px 7px; }
+input[type=text]:focus, textarea:focus { outline: 2px solid var(--accent-weak); border-color: var(--accent); }
+input:disabled, textarea:disabled { background: var(--chip); color: var(--muted); cursor: not-allowed; }
+textarea { width: 100%; font-family: Consolas, "D2Coding", monospace; font-size: 12.5px; }
+.invalid { border-color: var(--bad) !important; background: color-mix(in srgb, var(--bad) 8%, var(--input)); }
+.layout { display: flex; min-height: calc(100vh - 54px); }
+nav { width: 300px; flex-shrink: 0; border-right: 1px solid var(--line); background: var(--panel); overflow-y: auto; max-height: calc(100vh - 54px); position: sticky; top: 54px; }
+nav .mod { border-bottom: 1px solid var(--line); }
+nav .mod > summary { padding: 9px 14px; font-weight: 600; cursor: pointer; }
+nav a { display: flex; gap: 6px; align-items: center; padding: 4px 14px 4px 24px; color: var(--text); text-decoration: none; font-size: 13px; }
+nav a:hover { background: var(--accent-weak); }
+nav a.active { background: var(--accent-weak); color: var(--accent); font-weight: 600; }
+nav a .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; background: var(--muted); }
+nav a .dot.on { background: var(--ok); }
+nav a .dirty { color: var(--warn); margin-left: auto; }
+nav .group { padding: 6px 14px 2px 24px; font-size: 11.5px; color: var(--muted); }
+main { flex: 1; padding: 18px 22px 80px; min-width: 0; max-width: 1100px; }
+h2 { margin: 0 0 4px; font-size: 19px; }
+.sub { color: var(--muted); margin-bottom: 14px; font-size: 12.5px; word-break: break-all; }
+.note { background: var(--note-bg); border: 1px solid var(--note-line); border-radius: 6px; padding: 6px 10px; margin: 6px 0; font-size: 12.5px; white-space: pre-wrap; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; margin: 10px 0; }
+.card h3 { margin: 0 0 8px; font-size: 14px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.badge { font-size: 11px; padding: 1px 7px; border-radius: 10px; background: var(--chip); color: var(--muted); font-weight: 500; }
+.badge.stage-preload { background: #e8f4ff; color: #1c5fa8; }
+.badge.stage-trader { background: #f3e8ff; color: #6b2fa8; }
+@media (prefers-color-scheme: dark) { .badge.stage-preload { background: #1d3550; color: #9cc8ff; } .badge.stage-trader { background: #34224d; color: #d1b0ff; } }
+.field { display: grid; grid-template-columns: 210px 1fr; gap: 4px 12px; align-items: start; padding: 4px 0; border-top: 1px dashed var(--line); }
+.field:first-child { border-top: 0; }
+.field > label { color: var(--muted); font-size: 12.5px; padding-top: 5px; word-break: break-all; }
+.field > label b { color: var(--text); font-weight: 600; display: block; }
+.nested { border-left: 3px solid var(--line); padding-left: 10px; }
+.hint { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.hint.bad { color: var(--bad); }
+.name { color: var(--ok); }
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.switch { position: relative; display: inline-block; width: 40px; height: 22px; flex-shrink: 0; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.switch span { position: absolute; inset: 0; background: #b9c0cc; border-radius: 22px; transition: .15s; cursor: pointer; }
+.switch span:before { content: ""; position: absolute; width: 16px; height: 16px; left: 3px; top: 3px; background: #fff; border-radius: 50%; transition: .15s; }
+.switch input:checked + span { background: var(--ok); }
+.switch input:checked + span:before { transform: translateX(18px); }
+.switch input:disabled + span { opacity: .5; cursor: default; }
+table { border-collapse: collapse; width: 100%; }
+td, th { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: middle; }
+th { font-size: 12px; color: var(--muted); font-weight: 600; }
+.mono { font-family: Consolas, "D2Coding", monospace; font-size: 12px; }
+.muted { color: var(--muted); }
+.savebar { position: fixed; bottom: 0; left: 0; right: 0; background: var(--panel); border-top: 1px solid var(--line); padding: 9px 16px; display: none; gap: 10px; align-items: center; z-index: 20; box-shadow: 0 -4px 14px rgba(0,0,0,.08); }
+.savebar.show { display: flex; }
+.toast { position: fixed; right: 16px; bottom: 64px; max-width: 520px; background: var(--text); color: var(--bg); padding: 9px 14px; border-radius: 8px; z-index: 30; white-space: pre-wrap; display: none; }
+.toast.show { display: block; }
+pre.log { background: var(--input); border: 1px solid var(--line); border-radius: 6px; padding: 10px; max-height: 55vh; overflow: auto; font-size: 12px; white-space: pre-wrap; }
+.tools { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 8px 0 4px; }
+details.ids summary { cursor: pointer; font-size: 12px; color: var(--muted); }
+details.ids div { font-size: 12px; }
+input.num { width: 140px; }
+input.wide { width: 100%; }
+@media (max-width: 820px) {
+  .layout { display: block; } nav { width: auto; position: static; max-height: 40vh; }
+  .field { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>HANA-VI 설정 편집기</h1>
+  <span class="muted" id="status">불러오는 중…</span>
+  <span class="spacer"></span>
+  <button id="btnSettings">SPT 경로 / 적용 설정</button>
+  <button id="btnBuild">빌드 + 배포</button>
+  <button id="btnQuit">편집기 끄기</button>
+</header>
+<div class="layout">
+  <nav id="nav"></nav>
+  <main id="main"><p class="muted">왼쪽에서 모드와 항목을 고르세요.</p></main>
+</div>
+<div class="savebar" id="savebar">
+  <b id="dirtyCount"></b>
+  <span class="muted" id="dirtyList"></span>
+  <span class="spacer" style="flex:1"></span>
+  <button id="btnRevert">되돌리기</button>
+  <button class="primary" id="btnSaveAll">모두 저장</button>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+const TOKEN = "__EDITOR_TOKEN__";
+
+// ---------------------------------------------------------------------------
+// 사람이 읽는 이름표
+// ---------------------------------------------------------------------------
+const OP_NAMES = {
+  setProps: "값 덮어쓰기", adjustProps: "값 더하기/빼기", appendProps: "목록에 덧붙이기",
+  addFilter: "장착·장전 허용 목록에 추가", cloneItem: "새 아이템 만들기(복제)", handbookEntry: "도감 등록·기준 가격",
+  addPreset: "무기 프리셋 등록", traderOffer: "상인 판매 등록", questWeapons: "퀘스트 무기 조건 추가",
+  masteryTemplates: "무기 숙련도 묶음",
+};
+const KEY_LABELS = {
+  key: "연결 키", title: "패치 이름", enabled: "사용", ops: "작업 목록", sets: "ID 묶음(@이름)",
+  op: "작업 종류", stage: "적용 단계", targets: "대상 아이템", targetsByParent: "대상 분류(_parent)",
+  targetsByBaseClass: "대상 베이스클래스", targetsAll: "DB 의 모든 아이템", whenPropEquals: "조건: 이 값일 때만",
+  props: "바꿀 값", into: "어디에 추가", slots: "슬롯 이름", slotIndexes: "슬롯 순서(0부터)", add: "추가할 아이템",
+  replace: "기존 목록을 지우고 교체", whenFilterContains: "조건: 이 ID 가 이미 허용된 곳만", slotProps: "슬롯 자체 값",
+  from: "복제 원본", newId: "새 아이템 ID", newParentId: "새 아이템 분류", id: "아이템 ID", parentId: "도감 분류",
+  price: "가격", canSellOnRagfair: "플리마켓 판매 가능", traderId: "상인", count: "재고 수량", currency: "화폐",
+  loyaltyLevel: "필요 신뢰도 레벨", preset: "프리셋 내용", questId: "퀘스트 ID", masteryName: "숙련도 이름",
+  level2: "숙련 2단계", level3: "숙련 3단계",
+  verboseLogging: "서버 로그에 적용 내역 출력", patches: "패치 켜기/끄기", oldLocales: "옛 아이템 이름표 사용",
+  lvl1Traders: "팩 상인 물품을 신뢰도 1부터 판매", excludeItemIds: "검사 완료에서 뺄 아이템", excludeParentIds: "검사 완료에서 뺄 분류",
+  name: "이름", folder: "팩 폴더", format: "데이터 형식", itemFiles: "아이템 파일", clothesFiles: "의상 파일",
+  useGlobals: "프리셋·숙련도(globals) 넣기", useTraders: "상인 판매 넣기",
+  // 자주 쓰는 아이템 속성
+  bFirerate: "연사속도 (발/분)", SingleFireRate: "단발 연사속도", Recoil: "반동", Ergonomics: "인체공학",
+  Weight: "무게(kg)", Width: "가로 칸 수", Height: "세로 칸 수", StackMaxSize: "최대 겹치기 수",
+  Damage: "데미지", PenetrationPower: "관통력", ArmorDamage: "방탄 피해(%)", InitialSpeed: "초속(m/s)",
+  BackgroundColor: "배경색", weapFireType: "사격 모드", MalfunctionChance: "고장 확률", Accuracy: "정확도",
+  Prefab: "3D 모델(번들 경로)", ExaminedByDefault: "처음부터 검사됨", CheckOverride: "탄 확인 보정",
+  ReloadMagType: "재장전 방식", VisibleAmmoRangesString: "탄 잔량 표시 구간", magAnimationIndex: "탄창 애니메이션 번호",
+  _max_count: "최대 개수", _parent: "부모(슬롯 소속)", CanSellOnRagfair: "플리마켓 판매 가능", Durability: "내구도",
+  MaxDurability: "최대 내구도", Velocity: "총구 속도 보정(%)", Loudness: "소음", ConflictingItems: "같이 못 끼우는 아이템",
+  Slots: "슬롯", ExtraSizeLeft: "왼쪽 추가 칸", ExtraSizeRight: "오른쪽 추가 칸", ExtraSizeUp: "위 추가 칸", ExtraSizeDown: "아래 추가 칸",
+};
+const VALUE_HINTS = {
+  into: { slot: "부품 슬롯", chamber: "약실", cartridge: "탄창 안", grid: "가방·조끼 칸" },
+  stage: { preload: "아이템 추가 단계", postload: "기존 값 수정 단계(기본)", trader: "상인 등록 단계" },
+};
+const TRADERS = {
+  "54cb50c76803fa8b248b4571": "프라퍼", "54cb57776803fa99248b456e": "테라피스트", "579dc571d53a0658a154fbec": "펜스",
+  "58330581ace78e27b8b10cee": "스키어", "5935c25fb3acc3127c3d8cd9": "피스키퍼", "5a7c2eca46aef81a7ca2145d": "메카닉",
+  "5ac3b934156ae10c4430e83c": "레그맨", "5c0647fdd443bcd8ff2c9d5b": "예거", "638f541a29ffd1183d187f57": "라이트키퍼(등대지기)",
+  "6617beeaa9cfa777ca915b7c": "레프",
+};
+const CURRENCIES = { "5449016a4bdc2d6f028b456f": "루블", "5696686a4bdc2da3298b456a": "달러", "569668774bdc2da2298b4568": "유로" };
+// 바꾸면 모드가 깨지는 칸은 잠가 둔다 (정말 필요하면 "JSON 직접 편집" 으로)
+const READONLY_KEYS = new Set(["key", "op", "stage", "newId", "folder", "format", "itemFiles", "clothesFiles"]);
+const ID_RE = /^[0-9a-f]{24}$/i;
+const COLOR_RE = /^#[0-9a-f]{6}$/i;
+const OPS_PER_PAGE = 40;
+
+// ---------------------------------------------------------------------------
+// 상태
+// ---------------------------------------------------------------------------
+const state = {
+  info: null,
+  files: [],          // [{mod, path}]
+  docs: {},           // path -> {text, data, trailingNewline, dirty, error}
+  names: {},          // 아이템 ID -> 이름
+  view: null,
+};
+
+async function api(method, path, body) {
+  const res = await fetch(path, {
+    method, headers: { "X-Editor-Token": TOKEN, "Content-Type": "text/plain; charset=utf-8" }, body,
+  });
+  const ct = res.headers.get("content-type") || "";
+  const data = ct.includes("json") ? await res.json() : await res.text();
+  if (!res.ok) throw new Error((data && data.error) || ("HTTP " + res.status));
+  return data;
+}
+
+async function loadDoc(path) {
+  if (state.docs[path]) return state.docs[path];
+  const text = await api("GET", "/api/file?path=" + encodeURIComponent(path));
+  const doc = { text, trailingNewline: text.endsWith("\n"), dirty: false, error: null, data: null };
+  try { doc.data = JSON.parse(text); } catch (e) { doc.error = "JSON 문법 오류: " + e.message; }
+  state.docs[path] = doc;
+  return doc;
+}
+
+function serialize(doc) { return JSON.stringify(doc.data, null, 2) + (doc.trailingNewline ? "\n" : ""); }
+
+function markDirty(path) {
+  const doc = state.docs[path];
+  doc.dirty = serialize(doc) !== doc.text;
+  refreshSaveBar();
+  refreshNavFlags();
+}
+
+function el(tag, attrs, ...kids) {
+  const e = document.createElement(tag);
+  if (attrs) for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") e.className = v;
+    else if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
+    else if (v !== undefined && v !== null && v !== false) e.setAttribute(k, v === true ? "" : v);
+  }
+  for (const kid of kids.flat()) if (kid !== null && kid !== undefined && kid !== false) e.append(kid.nodeType ? kid : document.createTextNode(String(kid)));
+  return e;
+}
+
+function toast(msg, ms = 3500) {
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove("show"), ms);
+}
+
+// ---------------------------------------------------------------------------
+// 파일 경로 도우미
+// ---------------------------------------------------------------------------
+const modFiles = mod => state.files.filter(f => f.mod === mod).map(f => f.path);
+const fileOf = (mod, rel) => state.files.find(f => f.mod === mod && f.path.endsWith("/mod/" + rel))?.path;
+const patchFiles = mod => modFiles(mod).filter(p => p.includes("/db/patches/"));
+const baseName = p => p.split("/").pop();
+const modOf = path => path.split("/")[1];
+
+function nameOf(id) {
+  if (typeof id !== "string") return null;
+  return TRADERS[id] || CURRENCIES[id] || state.names[id] || state.names[id.toLowerCase()] || null;
+}
+
+// ---------------------------------------------------------------------------
+// 아이템 이름 불러오기 (모드 로케일 + 설치된 SPT 의 kr.json)
+// ---------------------------------------------------------------------------
+function absorbLocale(obj, overwrite) {
+  if (!obj || typeof obj !== "object") return;
+  for (const [k, v] of Object.entries(obj)) {
+    if (typeof v !== "string" || !k.endsWith(" Name")) continue;
+    const id = k.slice(0, -5);
+    if (!ID_RE.test(id)) continue;
+    if (overwrite || !state.names[id]) state.names[id] = v;
+    if (overwrite || !state.names[id.toLowerCase()]) state.names[id.toLowerCase()] = v;
+  }
+}
+
+async function loadNames() {
+  if (state.info.gameLocale) {
+    try { absorbLocale(await api("GET", "/api/gamelocale?lang=kr"), true); } catch { /* 없으면 ID 만 표시 */ }
+  }
+  const locs = state.files.filter(f => f.path.includes("/locales/global/"));
+  // 한국어 먼저, 없는 것만 영어로 채운다
+  locs.sort((a, b) => (baseName(a.path) === "kr.json" ? -1 : 1) - (baseName(b.path) === "kr.json" ? -1 : 1));
+  for (const f of locs) {
+    try { const d = await loadDoc(f.path); absorbLocale(d.data, false); } catch { }
+  }
+  // 패치 안의 _name 메모도 이름으로 쓴다
+  for (const f of state.files.filter(f => f.path.includes("/db/patches/"))) {
+    const d = state.docs[f.path]; if (!d || !d.data) continue;
+    for (const op of d.data.ops || []) {
+      const id = op.newId || op.id;
+      if (op._name && typeof id === "string" && !state.names[id]) state.names[id] = op._name;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 왼쪽 메뉴
+// ---------------------------------------------------------------------------
+function effectivePatchOn(mod, patchDoc) {
+  const cfg = state.docs[fileOf(mod, "config.json")];
+  const key = patchDoc.data?.key;
+  if (cfg?.data?.patches && key in cfg.data.patches) return !!cfg.data.patches[key];
+  return !!patchDoc.data?.enabled;
+}
+
+function buildNav() {
+  const nav = document.getElementById("nav");
+  nav.innerHTML = "";
+  const mods = [...new Set(state.files.map(f => f.mod))];
+  for (const mod of mods) {
+    const det = el("details", { class: "mod", open: true }, el("summary", null, mod));
+    const add = (view, label, path, dot) => {
+      const a = el("a", { href: "#", "data-view": JSON.stringify(view), "data-path": path || "",
+        onclick: ev => { ev.preventDefault(); show(view); } },
+        dot === undefined ? null : el("span", { class: "dot" + (dot ? " on" : "") }), label, el("span", { class: "dirty" }));
+      det.append(a);
+    };
+    if (fileOf(mod, "config.json")) add({ kind: "config", mod }, "기본 설정 · 패치 켜기/끄기", fileOf(mod, "config.json"));
+    if (fileOf(mod, "db/values.json")) add({ kind: "generic", path: fileOf(mod, "db/values.json") }, "공용 수치 (values.json)", fileOf(mod, "db/values.json"));
+    if (fileOf(mod, "db/packs.json")) add({ kind: "packs", path: fileOf(mod, "db/packs.json") }, "아이템 팩 켜기/끄기", fileOf(mod, "db/packs.json"));
+    if (fileOf(mod, "db/ammo.json")) add({ kind: "generic", path: fileOf(mod, "db/ammo.json") }, "공용 ID 묶음 (ammo.json)", fileOf(mod, "db/ammo.json"));
+    const pf = patchFiles(mod);
+    if (pf.length) {
+      det.append(el("div", { class: "group" }, `패치 파일 ${pf.length}개`));
+      for (const p of pf) {
+        const d = state.docs[p];
+        add({ kind: "patch", path: p }, d?.data?.title || baseName(p), p, d?.data ? effectivePatchOn(mod, d) : false);
+      }
+    }
+    nav.append(det);
+  }
+  refreshNavFlags();
+}
+
+function refreshNavFlags() {
+  for (const a of document.querySelectorAll("nav a")) {
+    const p = a.dataset.path;
+    const d = p && state.docs[p];
+    a.querySelector(".dirty").textContent = d && d.dirty ? "● 수정됨" : "";
+    const v = JSON.parse(a.dataset.view);
+    a.classList.toggle("active", JSON.stringify(state.view) === a.dataset.view);
+    if (v.kind === "patch" && d?.data) a.querySelector(".dot")?.classList.toggle("on", effectivePatchOn(modOf(p), d));
+  }
+}
+
+function refreshSaveBar() {
+  const dirty = Object.entries(state.docs).filter(([, d]) => d.dirty);
+  const bar = document.getElementById("savebar");
+  bar.classList.toggle("show", dirty.length > 0);
+  document.getElementById("dirtyCount").textContent = `저장 안 된 파일 ${dirty.length}개`;
+  document.getElementById("dirtyList").textContent = dirty.map(([p]) => modOf(p) + "/" + baseName(p)).join(", ");
+}
+
+// ---------------------------------------------------------------------------
+// 값 편집 위젯 (JSON 의 어떤 모양이든 그려 준다)
+// ---------------------------------------------------------------------------
+function labelFor(key) {
+  const k = String(key);
+  return KEY_LABELS[k] ? el("label", null, el("b", null, KEY_LABELS[k]), k) : el("label", null, el("b", null, k));
+}
+
+function refHint(path, value) {
+  if (typeof value !== "string") return null;
+  const mod = modOf(path);
+  if (value.startsWith("$")) {
+    const vals = state.docs[fileOf(mod, "db/values.json")]?.data;
+    const v = vals ? vals[value.slice(1)] : undefined;
+    return el("div", { class: "hint" }, v === undefined ? "공용 수치 참조 — values.json 에 없음!" : `공용 수치 참조 → 현재 값 ${v} (공용 수치 메뉴에서 수정)`);
+  }
+  if (value.startsWith("@")) {
+    const doc = state.docs[path]?.data;
+    const own = doc?.sets?.[value.slice(1)];
+    const shared = state.docs[fileOf("HANA_VI-AIO", "db/ammo.json")]?.data?.[value.slice(1)]
+      || state.docs[fileOf(mod, "db/ammo.json")]?.data?.[value.slice(1)];
+    const set = own || shared;
+    return el("div", { class: set ? "hint" : "hint bad" }, set ? `ID 묶음 참조 → ${set.length}개 (${own ? "이 파일의 sets" : "ammo.json"})` : "ID 묶음을 찾지 못함!");
+  }
+  if (ID_RE.test(value)) {
+    const n = nameOf(value);
+    return n ? el("div", { class: "hint name" }, n) : null;
+  }
+  return null;
+}
+
+function validId(orig, v) {
+  // 원래 ID 였던 칸은 ID(24자 16진수) 또는 @묶음 / $값 참조만 허용
+  if (typeof orig === "string" && ID_RE.test(orig)) return ID_RE.test(v) || v.startsWith("@") || v.startsWith("$");
+  return true;
+}
+
+function primitiveEditor(path, parent, key, readOnly) {
+  const value = parent[key];
+  const wrap = el("div");
+  if (typeof value === "boolean") {
+    const cb = el("input", { type: "checkbox", disabled: readOnly });
+    cb.checked = value;
+    cb.addEventListener("change", () => { parent[key] = cb.checked; markDirty(path); });
+    wrap.append(el("div", { class: "row" }, el("label", { class: "switch" }, cb, el("span")), el("span", { class: "muted" }, value ? "켜짐" : "꺼짐")));
+    cb.addEventListener("change", () => wrap.querySelector(".muted").textContent = cb.checked ? "켜짐" : "꺼짐");
+    return wrap;
+  }
+  if (value === null) { wrap.append(el("span", { class: "muted" }, "(비어 있음)")); return wrap; }
+  if (typeof value === "number") {
+    const inp = el("input", { type: "text", class: "num", inputmode: "decimal", value: String(value), disabled: readOnly });
+    const msg = el("div", { class: "hint bad" });
+    inp.addEventListener("input", () => {
+      const t = inp.value.trim();
+      const n = Number(t);
+      const ok = t !== "" && Number.isFinite(n);
+      inp.classList.toggle("invalid", !ok);
+      msg.textContent = ok ? "" : "숫자만 넣을 수 있습니다 (이 칸은 저장되지 않음)";
+      if (ok) { parent[key] = n; markDirty(path); }
+    });
+    wrap.append(inp, msg);
+    return wrap;
+  }
+  // 문자열
+  const orig = value;
+  const isColor = COLOR_RE.test(value);
+  const inp = el("input", { type: "text", class: isColor ? "" : "wide", value, disabled: readOnly, spellcheck: "false" });
+  const hintBox = el("div");
+  const setHint = v => {
+    hintBox.innerHTML = "";
+    const h = refHint(path, v); if (h) hintBox.append(h);
+    const vh = VALUE_HINTS[key]?.[v]; if (vh) hintBox.append(el("div", { class: "hint" }, vh));
+  };
+  let picker = null;
+  if (isColor) {
+    picker = el("input", { type: "color", value, disabled: readOnly });
+    picker.addEventListener("input", () => { inp.value = picker.value.toUpperCase(); inp.dispatchEvent(new Event("input")); });
+  }
+  inp.addEventListener("input", () => {
+    const v = inp.value;
+    const ok = validId(orig, v.trim());
+    inp.classList.toggle("invalid", !ok);
+    if (!ok) { hintBox.innerHTML = ""; hintBox.append(el("div", { class: "hint bad" }, "아이템 ID 는 24자리 16진수여야 합니다 (이 칸은 저장되지 않음)")); return; }
+    parent[key] = v.trim() === v ? v : v.trim();
+    if (picker && COLOR_RE.test(v)) picker.value = v;
+    setHint(v);
+    markDirty(path);
+  });
+  setHint(value);
+  wrap.append(picker ? el("div", { class: "row" }, picker, inp) : inp, hintBox);
+  return wrap;
+}
+
+function listEditor(path, parent, key, readOnly) {
+  const arr = parent[key];
+  const numeric = arr.length > 0 && arr.every(x => typeof x === "number");
+  const ta = el("textarea", { rows: Math.min(Math.max(arr.length, 2), 12), disabled: readOnly, spellcheck: "false" });
+  ta.value = arr.join("\n");
+  const msg = el("div", { class: "hint bad" });
+  const names = el("details", { class: "ids" });
+  const origIds = arr.some(x => typeof x === "string" && ID_RE.test(x));
+  const renderNames = () => {
+    const cur = parent[key];
+    const ids = cur.filter(x => typeof x === "string" && (ID_RE.test(x) || x.startsWith("@") || x.startsWith("$")));
+    names.innerHTML = "";
+    if (!ids.length) return;
+    names.append(el("summary", null, `이름 보기 (${ids.length}개)`));
+    const box = el("div");
+    for (const id of ids) {
+      const h = refHint(path, id);
+      box.append(el("div", null, el("span", { class: "mono" }, id), " ", h ? h.textContent : el("span", { class: "muted" }, "(이름 모름)")));
+    }
+    names.append(box);
+  };
+  ta.addEventListener("input", () => {
+    const lines = ta.value.split(/\r?\n/).map(s => s.trim()).filter(s => s !== "");
+    let bad = null;
+    let out = lines;
+    if (numeric) {
+      out = lines.map(Number);
+      if (out.some(n => !Number.isFinite(n))) bad = "숫자만 한 줄에 하나씩 넣으세요";
+    } else if (origIds) {
+      const wrong = lines.find(s => !(ID_RE.test(s) || s.startsWith("@") || s.startsWith("$")));
+      if (wrong) bad = `아이템 ID 가 아닌 줄이 있습니다: "${wrong}"`;
+    }
+    ta.classList.toggle("invalid", !!bad);
+    msg.textContent = bad ? bad + " (이 칸은 저장되지 않음)" : "";
+    if (bad) return;
+    parent[key] = out;
+    renderNames();
+    markDirty(path);
+  });
+  renderNames();
+  return el("div", null, ta, el("div", { class: "hint" }, "한 줄에 하나씩"), msg, names);
+}
+
+function rawEditor(path, parent, key) {
+  // 모양이 섞인 목록 등 위젯으로 그리기 애매한 값은 JSON 그대로 고치게 한다
+  const ta = el("textarea", { rows: 6, spellcheck: "false" });
+  ta.value = JSON.stringify(parent[key], null, 2);
+  const msg = el("div", { class: "hint bad" });
+  ta.addEventListener("input", () => {
+    try { parent[key] = JSON.parse(ta.value); ta.classList.remove("invalid"); msg.textContent = ""; markDirty(path); }
+    catch (e) { ta.classList.add("invalid"); msg.textContent = "JSON 문법 오류 (이 칸은 저장되지 않음): " + e.message; }
+  });
+  return el("div", null, ta, el("div", { class: "hint" }, "JSON 형식 그대로 편집"), msg);
+}
+
+function valueEditor(path, parent, key, readOnly) {
+  const v = parent[key];
+  if (Array.isArray(v)) {
+    if (v.every(x => x === null || typeof x !== "object")) return listEditor(path, parent, key, readOnly);
+    if (v.every(x => x && typeof x === "object" && !Array.isArray(x))) {
+      const box = el("div", { class: "nested" });
+      v.forEach((_, i) => box.append(el("div", { class: "muted" }, `${i + 1}번째`), objectEditor(path, v, i)));
+      return box;
+    }
+    return rawEditor(path, parent, key);
+  }
+  if (v && typeof v === "object") return el("div", { class: "nested" }, objectEditor(path, parent, key));
+  return primitiveEditor(path, parent, key, readOnly);
+}
+
+function objectEditor(path, parent, key, opts = {}) {
+  const obj = parent[key];
+  const box = el("div");
+  const skip = opts.skip || new Set();
+  for (const k of Object.keys(obj)) {
+    if (skip.has(k)) continue;
+    if (k.startsWith("_") && k !== "_max_count" && k !== "_parent" && k !== "_id") {
+      const val = obj[k];
+      box.append(el("div", { class: "note" }, (Array.isArray(val) ? val.join("\n") : typeof val === "object" ? JSON.stringify(val) : String(val))));
+      continue;
+    }
+    const ro = READONLY_KEYS.has(k) || (opts.readOnly && opts.readOnly.has(k));
+    box.append(el("div", { class: "field" }, labelFor(k), valueEditor(path, obj, k, ro)));
+  }
+  return box;
+}
+
+// ---------------------------------------------------------------------------
+// 화면들
+// ---------------------------------------------------------------------------
+function fileHeader(title, path, extra) {
+  const doc = state.docs[path];
+  const head = el("div", null,
+    el("h2", null, title),
+    el("div", { class: "sub" }, path.replace(/\//g, "\\")),
+  );
+  const rawBtn = el("button", { onclick: () => show({ kind: "raw", path, back: state.view }) }, "JSON 직접 편집");
+  head.append(el("div", { class: "tools" }, extra || null, rawBtn));
+  if (doc.error) head.append(el("div", { class: "note" }, doc.error + "\n→ 'JSON 직접 편집' 으로 고치세요."));
+  return head;
+}
+
+async function show(view) {
+  state.view = view;
+  const main = document.getElementById("main");
+  main.innerHTML = "";
+  refreshNavFlags();
+  try {
+    if (view.kind === "config") await showConfig(main, view.mod);
+    else if (view.kind === "patch") await showPatch(main, view.path, view.page || 1, view.filter || "");
+    else if (view.kind === "packs") await showPacks(main, view.path);
+    else if (view.kind === "generic") await showGeneric(main, view.path);
+    else if (view.kind === "raw") await showRaw(main, view.path, view.back);
+    else if (view.kind === "build") showBuild(main);
+    else if (view.kind === "settings") showSettings(main);
+  } catch (e) {
+    main.append(el("div", { class: "note" }, "화면을 그리지 못했습니다: " + e.message));
+  }
+  window.scrollTo(0, 0);
+}
+
+async function showConfig(main, mod) {
+  const path = fileOf(mod, "config.json");
+  const doc = await loadDoc(path);
+  main.append(fileHeader(`${mod} — 기본 설정`, path));
+  if (doc.error) return;
+  const cfg = doc.data;
+  const card = el("div", { class: "card" });
+  const skip = new Set(["patches"]);
+  card.append(objectEditor(path, doc, "data", { skip }));
+  main.append(card);
+
+  if (cfg.patches && typeof cfg.patches === "object") {
+    const pf = patchFiles(mod);
+    const table = el("table", null, el("tr", null, el("th", null, "켜기"), el("th", null, "패치"), el("th", null, "키"), el("th")));
+    const known = new Set();
+    for (const p of pf) {
+      const pd = await loadDoc(p);
+      const key = pd.data?.key;
+      if (!key) continue;
+      known.add(key);
+      const inCfg = key in cfg.patches;
+      const cb = el("input", { type: "checkbox" });
+      cb.checked = inCfg ? !!cfg.patches[key] : !!pd.data.enabled;
+      cb.addEventListener("change", () => { cfg.patches[key] = cb.checked; markDirty(path); });
+      table.append(el("tr", null,
+        el("td", null, el("label", { class: "switch" }, cb, el("span"))),
+        el("td", null, pd.data.title || key, inCfg ? null : el("span", { class: "badge" }, "config 에 없음 · 파일 기본값")),
+        el("td", { class: "mono muted" }, key),
+        el("td", null, el("button", { onclick: () => show({ kind: "patch", path: p }) }, "내용 보기"))));
+    }
+    for (const key of Object.keys(cfg.patches).filter(k => !known.has(k))) {
+      table.append(el("tr", null, el("td"), el("td", { class: "hint bad" }, "이 키에 해당하는 패치 파일이 없습니다"), el("td", { class: "mono" }, key), el("td")));
+    }
+    const allOn = el("button", { onclick: () => { for (const k of known) cfg.patches[k] = true; markDirty(path); show(state.view); } }, "전부 켜기");
+    const allOff = el("button", { onclick: () => { for (const k of known) cfg.patches[k] = false; markDirty(path); show(state.view); } }, "전부 끄기");
+    main.append(el("div", { class: "card" }, el("h3", null, "패치 켜기/끄기", allOn, allOff), table));
+  }
+}
+
+async function showPatch(main, path, page, filter) {
+  const doc = await loadDoc(path);
+  const mod = modOf(path);
+  const d = doc.data;
+  main.append(fileHeader(d?.title || baseName(path), path));
+  if (doc.error) return;
+
+  // 이 패치를 켜고 끄는 건 config.json 쪽 값이 이긴다 → 여기서 바꾸면 config.json 을 고친다
+  const cfgPath = fileOf(mod, "config.json");
+  const cfgDoc = cfgPath ? await loadDoc(cfgPath) : null;
+  const head = el("div", { class: "card" });
+  if (cfgDoc?.data?.patches) {
+    const cb = el("input", { type: "checkbox" });
+    cb.checked = effectivePatchOn(mod, doc);
+    cb.addEventListener("change", () => { cfgDoc.data.patches[d.key] = cb.checked; markDirty(cfgPath); });
+    head.append(el("div", { class: "row" }, el("label", { class: "switch" }, cb, el("span")),
+      el("b", null, "이 패치 사용"), el("span", { class: "muted" }, "(config.json 의 patches 에 저장됩니다)")));
+  }
+  head.append(objectEditor(path, doc, "data", { skip: new Set(["ops", "sets", "enabled"]) }));
+  main.append(head);
+
+  if (d.sets && Object.keys(d.sets).length) {
+    main.append(el("details", { class: "card" }, el("summary", null, el("b", null, `ID 묶음 ${Object.keys(d.sets).length}개 (@이름 으로 참조)`)),
+      objectEditor(path, d, "sets")));
+  }
+
+  const ops = Array.isArray(d.ops) ? d.ops : [];
+  const search = el("input", { type: "text", placeholder: "작업 검색 (ID, 이름, 값…)", value: filter, style: "width:280px" });
+  const matches = ops.map((op, i) => ({ op, i })).filter(({ op }) => {
+    if (!filter) return true;
+    const f = filter.toLowerCase();
+    const text = JSON.stringify(op).toLowerCase();
+    if (text.includes(f)) return true;
+    return JSON.stringify(op).match(/[0-9a-f]{24}/gi)?.some(id => (nameOf(id) || "").toLowerCase().includes(f));
+  });
+  const pages = Math.max(1, Math.ceil(matches.length / OPS_PER_PAGE));
+  page = Math.min(page, pages);
+  search.addEventListener("keydown", e => { if (e.key === "Enter") show({ kind: "patch", path, filter: search.value.trim() }); });
+  const pager = el("span", { class: "row" },
+    el("button", { disabled: page <= 1, onclick: () => show({ kind: "patch", path, filter, page: page - 1 }) }, "◀"),
+    el("span", { class: "muted" }, `${page} / ${pages} 쪽`),
+    el("button", { disabled: page >= pages, onclick: () => show({ kind: "patch", path, filter, page: page + 1 }) }, "▶"));
+  main.append(el("div", { class: "tools" }, el("b", null, `작업 ${ops.length}개`), filter ? el("span", { class: "muted" }, `· 검색 결과 ${matches.length}개`) : null,
+    search, el("button", { onclick: () => show({ kind: "patch", path, filter: search.value.trim() }) }, "검색"), pages > 1 ? pager : null));
+
+  for (const { op, i } of matches.slice((page - 1) * OPS_PER_PAGE, page * OPS_PER_PAGE)) {
+    const card = el("div", { class: "card" });
+    const title = el("h3", null, el("span", { class: "muted" }, `#${i + 1}`), el("span", null, OP_NAMES[op.op] || op.op), el("span", { class: "badge mono" }, op.op),
+      op.stage ? el("span", { class: "badge stage-" + op.stage }, VALUE_HINTS.stage[op.stage] || op.stage) : null);
+    const who = op.newId || op.id;
+    const n = who && nameOf(who);
+    if (n) title.append(el("span", { class: "name" }, n));
+    card.append(title, objectEditor(path, ops, i, { skip: new Set(["op"]) }));
+    main.append(card);
+  }
+  if (pages > 1) main.append(el("div", { class: "tools" }, pager.cloneNode(true)));
+  // cloneNode 는 이벤트를 안 가져오므로 아래 페이저는 다시 연결
+  const lower = main.lastChild.querySelectorAll("button");
+  if (lower.length === 2) {
+    lower[0].onclick = () => show({ kind: "patch", path, filter, page: page - 1 });
+    lower[1].onclick = () => show({ kind: "patch", path, filter, page: page + 1 });
+  }
+}
+
+async function showPacks(main, path) {
+  const doc = await loadDoc(path);
+  main.append(fileHeader("아이템 팩 켜기/끄기", path));
+  if (doc.error) return;
+  doc.data.forEach((pack, i) => {
+    if (!pack || typeof pack !== "object") return;
+    const card = el("div", { class: "card" });
+    if (pack.name) card.append(el("h3", null, pack.name, pack.format ? el("span", { class: "badge" }, pack.format) : null));
+    card.append(objectEditor(path, doc.data, i, { skip: new Set(["name"]) }));
+    main.append(card);
+  });
+}
+
+async function showGeneric(main, path) {
+  const doc = await loadDoc(path);
+  const titles = { "values.json": "공용 수치", "ammo.json": "공용 ID 묶음" };
+  main.append(fileHeader(`${modOf(path)} — ${titles[baseName(path)] || baseName(path)}`, path));
+  if (doc.error) return;
+  if (baseName(path) === "values.json") main.append(el("div", { class: "note" }, "패치 파일에서 \"$이름\" 으로 쓰는 값입니다. 여기서 한 번 바꾸면 그 값을 쓰는 모든 곳에 반영됩니다."));
+  main.append(el("div", { class: "card" }, Array.isArray(doc.data) ? valueEditor(path, doc, "data") : objectEditor(path, doc, "data")));
+}
+
+async function showRaw(main, path, back) {
+  const doc = await loadDoc(path);
+  main.append(el("h2", null, "JSON 직접 편집 — " + baseName(path)), el("div", { class: "sub" }, path.replace(/\//g, "\\")));
+  main.append(el("div", { class: "note" }, "고급 편집입니다. 쉼표·따옴표 하나만 틀려도 저장되지 않습니다(빨간 테두리). 저장은 아래 [모두 저장] 으로 합니다."));
+  const ta = el("textarea", { rows: 32, spellcheck: "false" });
+  ta.value = doc.data !== null ? serialize(doc) : doc.text;
+  const msg = el("div", { class: "hint bad" });
+  ta.addEventListener("input", () => {
+    try {
+      doc.data = JSON.parse(ta.value); doc.error = null;
+      doc.trailingNewline = ta.value.endsWith("\n");
+      ta.classList.remove("invalid"); msg.textContent = "";
+      markDirty(path);
+    } catch (e) { ta.classList.add("invalid"); msg.textContent = "JSON 문법 오류: " + e.message; doc.error = "JSON 문법 오류: " + e.message; refreshSaveBar(); }
+  });
+  main.append(el("div", { class: "tools" }, back ? el("button", { onclick: () => show(back) }, "← 보기 화면으로") : null), ta, msg);
+}
+
+function showSettings(main) {
+  const i = state.info;
+  const root = el("input", { type: "text", value: i.sptRoot, style: "width:360px" });
+  const apply = el("input", { type: "checkbox" }); apply.checked = !!i.applyOnSave;
+  const rows = Object.entries(i.deployed || {}).map(([m, ok]) => el("div", null, ok ? "✔ " : "✖ ", m, ok ? "" : el("span", { class: "muted" }, " — 아직 설치 안 됨 (빌드 + 배포 를 한 번 하세요)")));
+  main.append(el("h2", null, "SPT 경로 / 적용 설정"),
+    el("div", { class: "card" },
+      el("div", { class: "field" }, el("label", null, el("b", null, "SPT 설치 폴더"), "예: E:\\SPT 4.1"), el("div", null, root,
+        el("div", { class: i.modsDirFound ? "hint name" : "hint bad" }, i.modsDirFound ? "SPT_Runtime\\user\\mods 폴더를 찾았습니다" : "이 경로에서 SPT_Runtime\\user\\mods 폴더를 찾지 못했습니다"))),
+      el("div", { class: "field" }, el("label", null, el("b", null, "저장할 때 SPT 에도 바로 적용")),
+        el("div", null, el("label", { class: "switch" }, apply, el("span")),
+          el("div", { class: "hint" }, "켜 두면 저장할 때 설치된 모드 폴더의 같은 파일도 함께 바꿉니다. JSON 만 고쳤다면 빌드 없이 서버 재시작만 하면 됩니다."))),
+      el("div", { class: "field" }, el("label", null, el("b", null, "설치된 모드")), el("div", null, rows)),
+      el("div", { class: "field" }, el("label", null, el("b", null, "아이템 이름 표시")), el("div", null,
+        i.gameLocale ? "설치된 SPT 의 한국어 아이템 이름을 쓰고 있습니다" : "SPT 원본 아이템 이름 파일을 찾지 못해, 모드가 추가한 아이템 이름만 표시합니다")),
+      el("div", { class: "tools" }, el("button", { class: "primary", onclick: async () => {
+        await api("POST", "/api/settings", JSON.stringify({ sptRoot: root.value, applyOnSave: apply.checked }));
+        await refreshInfo(); if (i.gameLocale !== state.info.gameLocale) await loadNames();
+        toast("설정을 저장했습니다"); show({ kind: "settings" });
+      } }, "설정 저장"))));
+}
+
+function showBuild(main) {
+  main.append(el("h2", null, "빌드 + 배포"),
+    el("div", { class: "note" }, "C# 코드를 컴파일해서 SPT 의 user\\mods 폴더에 복사하고, 각 모드 폴더의 release\\ 에 zip 도 만듭니다.\nJSON 만 고쳤다면 빌드할 필요 없습니다 — 저장할 때 SPT 에 바로 적용(설정)이 켜져 있으면 서버 재시작만 하면 됩니다.\n⚠ SPT 서버가 켜져 있으면 DLL 을 덮어쓰지 못하니 서버를 먼저 끄세요."));
+  const log = el("pre", { class: "log" }, "아직 실행하지 않았습니다.");
+  const btn = el("button", { class: "primary", onclick: async () => {
+    if (Object.values(state.docs).some(d => d.dirty) && !confirm("저장 안 된 변경이 있습니다. 저장하지 않은 내용은 빌드에 들어가지 않습니다. 계속할까요?")) return;
+    btn.disabled = true; log.textContent = "빌드 중입니다… (처음엔 1~3분 걸립니다)";
+    try {
+      const r = await api("POST", "/api/build");
+      log.textContent = (r.ok ? "✔ 빌드 성공\n\n" : "✖ 빌드 실패\n" + (r.hint ? "→ " + r.hint + "\n" : "") + "\n") + (r.log || "");
+    } catch (e) { log.textContent = "빌드 요청 실패: " + e.message; }
+    btn.disabled = false; refreshInfo();
+  } }, "빌드 시작");
+  main.append(el("div", { class: "tools" }, btn, state.info.dotnet ? null : el("span", { class: "hint bad" }, ".NET SDK 가 없습니다 — 'HANA-VI 빌드.bat' 을 먼저 한 번 실행하세요")), log);
+}
+
+// ---------------------------------------------------------------------------
+// 저장
+// ---------------------------------------------------------------------------
+async function saveAll() {
+  const dirty = Object.entries(state.docs).filter(([, d]) => d.dirty);
+  if (dirty.some(([, d]) => d.error)) { toast("문법 오류가 있는 파일이 있어 저장하지 않았습니다. 빨간 칸을 고치세요."); return; }
+  const results = [];
+  for (const [path, doc] of dirty) {
+    const text = serialize(doc);
+    try {
+      const r = await api("POST", "/api/file?path=" + encodeURIComponent(path), text);
+      doc.text = text; doc.dirty = false;
+      results.push(`✔ ${baseName(path)}` + (r.applied ? " (SPT 에도 적용)" : "") + (r.applyError ? ` — SPT 적용 실패: ${r.applyError}` : ""));
+    } catch (e) { results.push(`✖ ${baseName(path)} — ${e.message}`); }
+  }
+  refreshSaveBar(); refreshNavFlags(); buildNav();
+  const applied = results.some(r => r.includes("SPT 에도 적용"));
+  toast(results.join("\n") + (applied ? "\n\n서버를 재시작하면 반영됩니다." : ""), 6000);
+}
+
+function revertAll() {
+  if (!confirm("저장하지 않은 변경을 모두 버릴까요?")) return;
+  for (const doc of Object.values(state.docs)) {
+    if (!doc.dirty) continue;
+    try { doc.data = JSON.parse(doc.text); doc.error = null; } catch (e) { doc.error = e.message; }
+    doc.trailingNewline = doc.text.endsWith("\n"); doc.dirty = false;
+  }
+  refreshSaveBar(); buildNav(); show(state.view);
+}
+
+async function refreshInfo() {
+  state.info = await api("GET", "/api/info");
+  const i = state.info;
+  const deployed = Object.values(i.deployed || {}).filter(Boolean).length;
+  document.getElementById("status").textContent =
+    `SPT: ${i.sptRoot} ${i.modsDirFound ? `(설치된 모드 ${deployed}개)` : "(폴더 없음 — 경로 설정 필요)"} · 저장 시 SPT 적용 ${i.applyOnSave ? "켜짐" : "꺼짐"}`;
+}
+
+// ---------------------------------------------------------------------------
+// 시작
+// ---------------------------------------------------------------------------
+document.getElementById("btnSaveAll").onclick = saveAll;
+document.getElementById("btnRevert").onclick = revertAll;
+document.getElementById("btnBuild").onclick = () => show({ kind: "build" });
+document.getElementById("btnSettings").onclick = () => show({ kind: "settings" });
+document.getElementById("btnQuit").onclick = async () => {
+  if (Object.values(state.docs).some(d => d.dirty) && !confirm("저장 안 된 변경이 있습니다. 그래도 끌까요?")) return;
+  try { await api("POST", "/api/shutdown"); } catch { }
+  document.body.innerHTML = "<p style='padding:40px'>편집기를 껐습니다. 이 탭은 닫아도 됩니다.</p>";
+};
+window.addEventListener("beforeunload", e => { if (Object.values(state.docs).some(d => d.dirty)) { e.preventDefault(); e.returnValue = ""; } });
+window.addEventListener("keydown", e => { if ((e.ctrlKey || e.metaKey) && e.key === "s") { e.preventDefault(); saveAll(); } });
+
+(async () => {
+  try {
+    await refreshInfo();
+    state.files = (await api("GET", "/api/files")).files;
+    // 메뉴에 제목·켜짐 표시를 하려면 설정과 패치 파일을 먼저 읽어야 한다 (전부 합쳐 수백 KB)
+    await Promise.all(state.files.filter(f => !f.path.includes("/locales/")).map(f => loadDoc(f.path).catch(() => null)));
+    await loadNames();
+    buildNav();
+    const first = state.files.find(f => f.path.endsWith("/mod/config.json"));
+    if (first) show({ kind: "config", mod: first.mod });
+  } catch (e) {
+    document.getElementById("main").innerHTML = "";
+    document.getElementById("main").append(el("div", { class: "note" }, "편집기 서버와 연결하지 못했습니다: " + e.message + "\n'HANA-VI 설정 편집기.bat' 창이 켜져 있는지 확인하세요."));
+  }
+})();
+</script>
+</body>
+</html>

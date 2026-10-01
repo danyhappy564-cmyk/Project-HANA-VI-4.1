@@ -91,7 +91,7 @@ public class PackInjector(
 
             // 깊은 복사여야 한다. record 의 with 식은 얕은 복사라서 슬롯 목록이 원본과
             // 공유되고, 복제본 슬롯을 고치면 원본까지 바뀐다.
-            built = cloner.Clone(source) with { Id = newId };
+            built = cloner.Clone(source)! with { Id = newId };
             built = ApplyOverrides(pack, id, built, entry.Item);
         }
         else
@@ -135,7 +135,7 @@ public class PackInjector(
 
         try
         {
-            var baseNode = JsonNode.Parse(jsonUtil.Serialize(item, false));
+            var baseNode = JsonNode.Parse(jsonUtil.Serialize(item, false) ?? "null");
             var patchNode = JsonNode.Parse(patch.GetRawText());
             if (baseNode is null || patchNode is null) return item;
 
@@ -277,7 +277,6 @@ public class PackInjector(
         if (entry.Handbook is null || string.IsNullOrEmpty(entry.Handbook.ParentId)) return;
 
         var itemId = new MongoId(id);
-        templates.Handbook.Items ??= new List<HandbookItem>();
         if (templates.Handbook.Items.Any(h => h.Id == itemId)) return;
 
         templates.Handbook.Items.Add(new HandbookItem
@@ -293,7 +292,6 @@ public class PackInjector(
         var entries = reader.ReadEntries(pack, pack.ClothesFiles);
         if (entries.Count == 0) return 0;
 
-        templates.Customization ??= new Dictionary<MongoId, CustomizationItem>();
         var made = 0;
 
         foreach (var (id, entry) in entries)
@@ -308,7 +306,7 @@ public class PackInjector(
             if (entry.Clone is not null
                 && templates.Customization.TryGetValue(new MongoId(entry.Clone), out var source))
             {
-                built = cloner.Clone(source) with { Id = newId };
+                built = cloner.Clone(source)! with { Id = newId };
                 built = ApplyClothingOverrides(pack, id, built, entry.Item);
             }
             else if (entry.Item is { } whole)
@@ -338,7 +336,7 @@ public class PackInjector(
 
         try
         {
-            var baseNode = JsonNode.Parse(jsonUtil.Serialize(item, false));
+            var baseNode = JsonNode.Parse(jsonUtil.Serialize(item, false) ?? "null");
             var patchNode = JsonNode.Parse(patch.GetRawText());
             if (baseNode is null || patchNode is null) return item;
 
@@ -360,7 +358,6 @@ public class PackInjector(
         // 무기 프리셋
         if (root["ItemPresets"] is JsonObject presets)
         {
-            globals.ItemPresets ??= new Dictionary<MongoId, Preset>();
             foreach (var (presetId, value) in presets)
             {
                 if (value is null) continue;

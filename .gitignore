@@ -2,3 +2,7 @@ bin/
 obj/
 release/
 __pycache__/
+
+# 설정 편집기 / 빌드 스크립트가 만드는 로컬 파일
+.editor-settings.json
+.editor-backup/

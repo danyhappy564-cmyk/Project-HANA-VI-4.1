@@ -24,6 +24,13 @@
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
   </PropertyGroup>
 
+  <!-- SPT 4.1 에는 SPTarkov.Server.Core.Models.Eft.Common.Tables.Path(봇 이동 경로 타입)가 있어서
+       `using ...Tables;` 를 쓴 파일에서 그냥 `Path` 라고 쓰면 System.IO.Path 와 헷갈려 빌드가 깨진다(CS0104).
+       모든 프로젝트에서 `Path` 는 파일 경로용 System.IO.Path 를 뜻하도록 고정한다. -->
+  <ItemGroup>
+    <Using Include="System.IO.Path" Alias="Path" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="SPTushonka.Common" Version="$(SptVersion)" />
     <PackageReference Include="SPTushonka.DI" Version="$(SptVersion)" />
@@ -31,10 +38,12 @@
     <PackageReference Include="SPTushonka.Server.Core" Version="$(SptVersion)" />
   </ItemGroup>
 
-  <!-- mod/ 아래 payload(config.json, db/**)는 전부 출력 폴더로 복사된다.
-       ModHelper.GetAbsolutePathToModFolder() 가 이 폴더를 가리킨다. -->
+  <!-- mod/ 아래 payload(config.json, db/**, bundles/**, bundles.json)는 출력 폴더 "바로 아래"로 복사된다.
+       ModHelper.GetAbsolutePathToModFolder() 는 DLL 이 있는 폴더를 돌려주고, SPT 의 BundleLoader 도
+       <모드폴더>/bundles.json 을 찾으므로 mod/ 단계를 벗겨내야 한다.
+       (예전 LinkBase="" 는 빈 값이라 무시돼서 출력에 mod/ 폴더가 그대로 남았다 → 설정·패치·번들을 못 찾음) -->
   <ItemGroup>
-    <None Include="mod\**\*" CopyToOutputDirectory="PreserveNewest" LinkBase="" />
+    <None Include="mod\**\*" Link="%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <!-- ========== 배포: 빌드 결과를 user/mods/<모드이름>/ 로 복사 ==========

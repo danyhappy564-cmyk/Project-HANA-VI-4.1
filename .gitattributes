@@ -1,0 +1,2 @@
+# Windows 용 실행 파일은 CRLF 그대로 저장 (LF 로 바뀌면 cmd 가 오작동할 수 있다)
+*.bat -text

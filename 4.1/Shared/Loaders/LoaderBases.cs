@@ -112,6 +112,10 @@ public abstract class TraderLoaderBase(
     TradersTable traders
 ) : HanaViLoaderBase(loader)
 {
+    // 파생 클래스는 생성자 매개변수를 직접 쓰지 말고 이걸 쓴다 (같은 값을 두 번 들고 있는 CS9107 경고 방지).
+    protected ISptLogger<TraderLoaderBase> Logger => logger;
+    protected TradersTable Traders => traders;
+
     protected override void Run()
     {
         var added = 0;
@@ -198,6 +202,10 @@ public abstract class LocaleLoaderBase(
     /// <summary>이 모드의 폴더 경로. 파생 클래스가 팩 로케일 폴더를 찾을 때 쓴다.</summary>
     protected string ModFolder => modHelper.GetAbsolutePathToModFolder(Assembly.GetExecutingAssembly());
 
+    // 파생 클래스는 생성자 매개변수를 직접 쓰지 말고 이걸 쓴다 (CS9107 경고 방지).
+    protected ISptLogger<LocaleLoaderBase> Logger => logger;
+    protected LocaleTable Locales => locales;
+
     protected override void Run()
     {
         LoadFolder(Path.Combine(ModFolder, "db", "locales", "global"));
@@ -234,6 +242,7 @@ public abstract class LocaleLoaderBase(
 
             lazy.AddTransformer(dict =>
             {
+                if (dict is null) return dict;
                 foreach (var (key, value) in payload) dict[key] = value;
                 return dict;
             });

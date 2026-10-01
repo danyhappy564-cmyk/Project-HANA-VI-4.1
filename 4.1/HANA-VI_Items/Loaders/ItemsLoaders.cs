@@ -110,11 +110,12 @@ public class ItemsLocaleLoader(
 
             foreach (var (lang, entries) in injector.CollectLocales(pack))
             {
-                if (!locales.Global.TryGetValue(lang, out var lazy)) continue;
+                if (!Locales.Global.TryGetValue(lang, out var lazy)) continue;
 
                 var payload = entries;
                 lazy.AddTransformer(dict =>
                 {
+                    if (dict is null) return dict;
                     foreach (var (key, value) in payload) dict[key] = value;
                     return dict;
                 });
@@ -123,7 +124,7 @@ public class ItemsLocaleLoader(
             }
         }
 
-        if (applied > 0) logger.Info($"[{ModName}] 팩 로케일 {applied}줄 적용");
+        if (applied > 0) Logger.Info($"[{ModName}] 팩 로케일 {applied}줄 적용");
     }
 }
 
@@ -165,14 +166,14 @@ public class ItemsTraderLoader(
 
             added += pack.Format switch
             {
-                "wtt" => extra.InjectWttTraders(pack, traders),
-                "mosin" => extra.InjectMosinTraders(pack, traders),
-                "nerv" => extra.InjectNervTraders(pack, traders),
+                "wtt" => extra.InjectWttTraders(pack, Traders),
+                "mosin" => extra.InjectMosinTraders(pack, Traders),
+                "nerv" => extra.InjectNervTraders(pack, Traders),
                 "raw" => 0,   // 3.11 injectMxlr 은 상인을 건드리지 않는다
-                _ => injector.InjectTraders(pack, traders, config.Lvl1Traders),
+                _ => injector.InjectTraders(pack, Traders, config.Lvl1Traders),
             };
         }
 
-        if (added > 0) logger.Info($"[{ItemsMod.Name}] 팩 상인 물품 {added}건 등록");
+        if (added > 0) Logger.Info($"[{ItemsMod.Name}] 팩 상인 물품 {added}건 등록");
     }
 }

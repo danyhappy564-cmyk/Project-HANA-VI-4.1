@@ -359,7 +359,7 @@ public class PatchEngine(
         // 반드시 '깊은' 복사여야 한다. record 의 with 식은 얕은 복사라서 Slots 리스트가
         // 원본과 공유되고, 복제본 슬롯에 스코프를 추가하면 원본 마운트까지 같이 바뀐다.
         // 3.11 원본이 jsonUtil.clone() 을 쓴 것과 같은 이유다.
-        var clone = cloner.Clone(source) with
+        var clone = cloner.Clone(source)! with
         {
             Id = newId,
             Name = op.NewName ?? op.NewId,
@@ -394,7 +394,6 @@ public class PatchEngine(
             return false;
         }
 
-        globals.ItemPresets ??= new Dictionary<MongoId, Preset>();
         if (globals.ItemPresets.ContainsKey(presetId)) return false;
 
         try
@@ -487,8 +486,6 @@ public class PatchEngine(
 
         var id = new MongoId(op.Id);
         var handbook = templates.Handbook;
-        handbook.Items ??= new List<HandbookItem>();
-
         if (handbook.Items.All(h => h.Id != id))
         {
             handbook.Items.Add(new HandbookItem
