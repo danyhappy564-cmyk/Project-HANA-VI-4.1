@@ -3061,7 +3061,7 @@
           "Caliber": "Caliber58x42",
           "BallisticCoeficient": 0.275,
           "InitialSpeed": 940,
-          "StackMaxSize": 250
+          "StackMaxSize": 180
     }
       },
       "handbook": {
@@ -3111,7 +3111,7 @@
           "BallisticCoeficient": 0.281,
           "Caliber": "Caliber58x42",
           "InitialSpeed": 935,
-          "StackMaxSize": 250
+          "StackMaxSize": 180
     }
       },
       "handbook": {
@@ -3161,7 +3161,7 @@
           "BallisticCoeficient": 0.279,
           "Caliber": "Caliber58x42",
           "InitialSpeed": 910,
-          "StackMaxSize": 250
+          "StackMaxSize": 180
     }
       },
       "handbook": {

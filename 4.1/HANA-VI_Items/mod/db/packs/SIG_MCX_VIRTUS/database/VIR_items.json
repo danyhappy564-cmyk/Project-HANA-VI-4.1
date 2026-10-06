@@ -13,7 +13,7 @@
           "path": "patron_6mm_arc.bundle",
           "rcid": ""
         },
-        "StackMaxSize": 250,
+        "StackMaxSize": 180,
         "CanSellOnRagfair": false,
         "CanRequireOnRagfair": false,
         "InitialSpeed": 1039,

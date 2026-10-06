@@ -1975,7 +1975,7 @@
 			"TracerDistance": 0,
 			"LightBleedingDelta": 0.50,
 			"HeavyBleedingDelta": 0.75,
-			"StackMaxSize": 50,
+			"StackMaxSize": 100,
 			"Weight": 0.069,
 			"ExaminedByDefault": true,
 			"Caliber": "Caliber10.36x77mm",
