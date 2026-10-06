@@ -1,0 +1,100 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Real\\Desktop\\navi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C2537D16-7671-B921-CFD6-FB6DD21921C4}|4.1\\HANA-VI-SuperAmmo\\HANA-VI-SuperAmmo.csproj|c:\\users\\real\\desktop\\navi\\4.1\\hana-vi-superammo\\hana-vi-superammo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C2537D16-7671-B921-CFD6-FB6DD21921C4}|4.1\\HANA-VI-SuperAmmo\\HANA-VI-SuperAmmo.csproj|solutionrelative:4.1\\hana-vi-superammo\\hana-vi-superammo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4232C07-1935-32D4-4ADE-8E5F31C06143}|4.1\\HANA-VI-AllExamined\\HANA-VI-AllExamined.csproj|c:\\users\\real\\desktop\\navi\\4.1\\hana-vi-allexamined\\hana-vi-allexamined.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C4232C07-1935-32D4-4ADE-8E5F31C06143}|4.1\\HANA-VI-AllExamined\\HANA-VI-AllExamined.csproj|solutionrelative:4.1\\hana-vi-allexamined\\hana-vi-allexamined.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3FD2223-5C34-F1EE-7388-85C3D08923E5}|4.1\\HANA-VI_Items\\HANA-VI_Items.csproj|c:\\users\\real\\desktop\\navi\\4.1\\hana-vi_items\\hana-vi_items.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E3FD2223-5C34-F1EE-7388-85C3D08923E5}|4.1\\HANA-VI_Items\\HANA-VI_Items.csproj|solutionrelative:4.1\\hana-vi_items\\hana-vi_items.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E234A785-7E50-9B27-0DE4-7032C864D46F}|4.1\\HANA_VI-AIO\\HANA_VI-AIO.csproj|c:\\users\\real\\desktop\\navi\\4.1\\hana_vi-aio\\hana_vi-aio.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E234A785-7E50-9B27-0DE4-7032C864D46F}|4.1\\HANA_VI-AIO\\HANA_VI-AIO.csproj|solutionrelative:4.1\\hana_vi-aio\\hana_vi-aio.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HANA-VI-SuperAmmo.csproj",
+              "DocumentMoniker": "C:\\Users\\Real\\Desktop\\navi\\4.1\\HANA-VI-SuperAmmo\\HANA-VI-SuperAmmo.csproj",
+              "RelativeDocumentMoniker": "4.1\\HANA-VI-SuperAmmo\\HANA-VI-SuperAmmo.csproj",
+              "ToolTip": "C:\\Users\\Real\\Desktop\\navi\\4.1\\HANA-VI-SuperAmmo\\HANA-VI-SuperAmmo.csproj",
+              "RelativeToolTip": "4.1\\HANA-VI-SuperAmmo\\HANA-VI-SuperAmmo.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-10-01T16:17:27.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HANA-VI-AllExamined.csproj",
+              "DocumentMoniker": "C:\\Users\\Real\\Desktop\\navi\\4.1\\HANA-VI-AllExamined\\HANA-VI-AllExamined.csproj",
+              "RelativeDocumentMoniker": "4.1\\HANA-VI-AllExamined\\HANA-VI-AllExamined.csproj",
+              "ToolTip": "C:\\Users\\Real\\Desktop\\navi\\4.1\\HANA-VI-AllExamined\\HANA-VI-AllExamined.csproj",
+              "RelativeToolTip": "4.1\\HANA-VI-AllExamined\\HANA-VI-AllExamined.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-10-01T16:17:26.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HANA-VI_Items.csproj",
+              "DocumentMoniker": "C:\\Users\\Real\\Desktop\\navi\\4.1\\HANA-VI_Items\\HANA-VI_Items.csproj",
+              "RelativeDocumentMoniker": "4.1\\HANA-VI_Items\\HANA-VI_Items.csproj",
+              "ToolTip": "C:\\Users\\Real\\Desktop\\navi\\4.1\\HANA-VI_Items\\HANA-VI_Items.csproj",
+              "RelativeToolTip": "4.1\\HANA-VI_Items\\HANA-VI_Items.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-10-01T16:17:25.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HANA_VI-AIO.csproj",
+              "DocumentMoniker": "C:\\Users\\Real\\Desktop\\navi\\4.1\\HANA_VI-AIO\\HANA_VI-AIO.csproj",
+              "RelativeDocumentMoniker": "4.1\\HANA_VI-AIO\\HANA_VI-AIO.csproj",
+              "ToolTip": "C:\\Users\\Real\\Desktop\\navi\\4.1\\HANA_VI-AIO\\HANA_VI-AIO.csproj",
+              "RelativeToolTip": "4.1\\HANA_VI-AIO\\HANA_VI-AIO.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-10-01T16:17:24.58Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
